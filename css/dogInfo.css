@@ -1,10 +1,10 @@
 @font-face{
     font-family: kanitLight;
-    src: url(/assignmentSE/font/Kanit/Kanit-Light.ttf);
+    src: url(../asset/font/Kanit/Kanit-Light.ttf);
 }
 @font-face{
     font-family: kanitMedium;
-    src: url(/assignmentSE/font/Kanit/Kanit-Medium.ttf)
+    src: url(../asset/font/Kanit/Kanit-Medium.ttf)
 }
 #menu{
     color: black;
