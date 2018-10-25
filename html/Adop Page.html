@@ -57,7 +57,7 @@
 .sidenav a,.dropdown-btn {
     padding: 6px 8px 6px 16px;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 18px;
   color: #815811;
   display: block;
   border: none;
@@ -154,16 +154,53 @@
 		<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <!---Side Bar -->      
-<div class="sidenav">
-                <a href="#location">Shop Location</a>
-                <a href="#Pricerange">Price Range</a>
-                <a href="#Size">Size</a>
-                <a href="#Age">Age</a>
-                <a href="#Gender">Gender</a>
+  <div class="sidenav">
+        <a><input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category"></a>
+        <a>Location</a>
+        <a><select name="Location" id="Shop">
+                <option value="0" selected disabled>Bangkok</option>
+                <option value="1">Korat</option>
+                <option value="2">Yaha</option>
+                <option value="3">Tokyo</option>
+                <option value="4">Berlin</option>
+                <option value="5">London</option>
+            </select></a>
+        <a href="#clients">Clients</a>
+        <a>Age</a>
+        <a><select name="birthday-day" id="day">
+          <option value="0" selected disabled>Month</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+      </select></a>
+       
+        <a>Size</a>
+        <a>
+                <input type="checkbox" name="radio-choice" id="radio-choice-1" value="choice-1" />
+                <label for="check-choice-1">S</label>
                 
-                        
-                
-</div>	        
+                <input type="checkbox" name="radio-choice" id="radio-choice-2" value="choice-2" />
+                <label for="check-choice-2">M</label>
+
+                <input type="checkbox" name="radio-choice" id="radio-choice-2" value="choice-2" />
+                <label for="check-choice-3">L</label>
+        
+        </a>
+        <a>Gender</a>
+        <a>
+        <input type="radio" name="gen1" value="male"> Male<br>
+        <input type="radio" name="gen2" value="Female"> Female
+        </a>
+      </div>	        
 <div class="main">
         <h2>For Adoptation</h2>
 
