@@ -7,23 +7,20 @@ $(function () {
         type:"GET",
         dataType: "json",
         success: function(shop){
-            console.log("recieved " +shop.name);
+            console.log("recieved " +shop.shopName);
 
             var img = "<img id='logo_shop' class='float-left' src=' " + shop.url + ">";
-            var name = "<h2 id='shop_name'>" +shop.name+ "</h2>";
-            var blurb = "<p>" +shop.number+ " " +shop.owner+ "</p>";
-            var descrip = "<p>" +shop.description+ "</p>";
+            var name = "<h2 id='shop_name'>" +shop.shopName+ "</h2>";
+            var blurb = "<p>" +shop.phoneNumber+ " " +shop.firstName+" "+shop.lastName+  "</p>";
+            var description = "<p>" +shop.description+ "</p>";
             var cer = "<p>" +shop.certificate+ "</p>";
             var latitude = shop.lat;
             var longitude = shop.long;
 
-            var txt = img + name + blurb + descrip + cer;
-            
-            $(".info").append(txt);
-
-
-           
-        
+            var intro = img + name + blurb ;
+            $("#intro-info-section").append(intro);
+            $("#desc-info-section").append(description);
+            $("#cer-info-section").append(cer);
         }
     });
 
