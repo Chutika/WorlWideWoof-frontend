@@ -1,28 +1,30 @@
-console.log("connect");
+$(function(){
 
-//initialize 
-const Http = new XMLHttpRequest();
-//specify url endpoint and http method 
-const url = "http://35.193.129.5:8080/test"
-//tie the http method and URL
-Http.open("POST", url);
-//fire off request
-Http.send();
+   
+    $('#submitBtn').click(function(event){
+        
+        var formData = {
+            shopName: $('input[name=shopName]').val(),
+            firstName: $('input[name=firstName]').val(),
+            lastName: $('input[name=lastName]').val(),
+            phoneNumber: $('input[name=phoneNumber]').val(),
+            description: $('input[name=description]').val(),
+            shopLocation: $('input[name=shopLocation]').val()
+        }
 
-//log the http response to the console
-Http.onreadystatechange=(e)=>{
-    console.log(Http.responseText)
-}
+        $.ajax({
+            url:"http://35.193.129.5:8080/test",
+            type:"POST",
+            dataType: "json",
+            data: formData,
+            success: function(data){
+                console.log($('input[name=shopName]').val());
+                console.log(data);
+                console.log("Submit form success " +data.shopName+ " " +data.firstName+ " " +data.lastName+ " " +data.phoneNumber+ " " +data.description+ " " +data.shopLocation);
+            }
+        });
 
-//readyStae == 4 means the  request is done
-//readyState
-// 0 UNSENT
-// 1 OPENED
-// 2 HEADERS_RECIEVED
-// 3 LOADING
-// 4 DONE
-Http.onreadystatechange=function(){
-    if(this.readyState == 4 && this.status == 200){
-        console.log(Http.responseText);
-    }
-}
+        event.preventDefault();
+    });
+    
+});
