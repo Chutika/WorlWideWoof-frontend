@@ -16,6 +16,12 @@
 	<!-- custom style -->
 	<link rel="stylesheet" type="text/css" href="../css/aboutShop(edit).css">
 
+	<!-- jQuery CDN -->
+	<script
+  	src="https://code.jquery.com/jquery-3.3.1.js"
+  	integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  	crossorigin="anonymous"></script>
+
 	<style type="text/css">
 
 		#map{
@@ -77,34 +83,39 @@
 	<!-- -------------- General Info about Shop ---------------------------- -->
 
 	<div class="info">
-        <form action="" method="POST">
+        <form action="http://35.193.129.5:8080/test" method="POST">
 		
 			<div class="form-group">
 				<label for="shopLogo"> Please upload you shop logo</label>
 				<input type="file" class="form-control-file" id="shopLogo">
 			</div>
 			<div class="form-group">
+				<label for="name">Shop name </label>
+				<input id="name" type="text" class="form-control" name="shopName" placeholder="Shop name"> 
+			</div>
+
+			<div class="form-group">
 				<label for="firstName">First name </label>
-				<input id="firstName" type="text" class="form-control" placeholder="First name"> 
+				<input id="firstName" type="text" class="form-control" name="firstName" placeholder="First name"> 
 			</div>
 			<div class="form-group">
 				<label for="lastName">Last Name </label>
-				<input type="text" class="form-control" placeholder="Last name"> 
+				<input type="text" class="form-control" name="lastName"placeholder="Last name"> 
 			</div>
 			<div class="form-group">
 					<label for="phoneNumber">Phone number</label>
-					<input type="number" class="form-control" id="phoneNumber" placeholder="xxx-xxxxxxx">
+					<input type="number" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="xxx-xxxxxxx">
 			</div>
 			<div class="form-group">
 				<label for="shopDescription">Description</label>
-				<input type="textarea" id="shopDescription" class="form-control" placeholder ="Describe your shop ...">
+				<input type="textarea" id="shopDescription" class="form-control" name="description" placeholder ="Describe your shop ...">
 			</div>
 			<div class="form-group">
 					<label for="shopLocation">Shop Location</label>
-					<input type="url" id="shopLocation" class="form-control" placeholder ="Describe your shop ...">
+					<input type="url" id="shopLocation" class="form-control" name="shopLocation" placeholder ="Describe your shop ...">
 			</div>
 			
-			<button type="submit" class="btn btn-primary btn-lg">Save</button>
+			<button id="submitBtn" class="btn btn-primary btn-lg">Save</button>
         </form>
 	</div>
 	<!-- ------------------------------------------------------------------- -->
