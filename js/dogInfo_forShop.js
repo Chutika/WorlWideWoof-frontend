@@ -1,3 +1,4 @@
+
 function clickLogo(){
     location.href="dogInfo.html"
 }
