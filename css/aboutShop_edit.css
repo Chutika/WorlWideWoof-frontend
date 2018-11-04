@@ -42,6 +42,7 @@ hr{
 	padding: 0px 0px 0px 0px;
 	margin-top: 150px;
 }
+
 .sec-nav-item{
 	width: 100%;
 	text-align: center;
@@ -61,13 +62,23 @@ hr{
 .sec-nav-line{
 	width: 100%;
 }
-
+.sec-nav-inactive{
+	border: none;
+}
 
 .sec-nav-active{
 	border: none;
 	color: #FFE32E;
 	background-color: #FFE32E;
 	height: 10px;
+}
+
+#aboutShopMenu{
+	text-align: center;
+}
+
+#dogListMenu{
+	text-align: center;
 }
 
 /* -----------------------------------------------------*/
