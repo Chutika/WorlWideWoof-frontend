@@ -53,17 +53,30 @@ hr{
 
 /* -----------------------------------------------------*/
 
-/* ------------------ div body -------------------------*/
-
-.body{
-	margin-top: 100px;
+/* ----------------------- map -------------------------*/
+#map{
+	height: 500px;
+	width: 100%;
+	/* margin: auto; */
 }
 /* -----------------------------------------------------*/
 
 .info{
 	margin: auto;
+	padding-top: 80px;
 	width: 60%;
 }
 .form-group{
 	margin: 50px 0px;
+}
+
+.circle{
+	width: 140px;
+	height: 140px;
+	margin-right: 50px;
+	
+	border-radius: 50%;
+}
+#submitBtn{
+	margin-top: 40px;
 }
