@@ -1,19 +1,16 @@
-function clickLogo(){
-    location.href="html/landingPage.html"
-}
+/*--------------------------------- MAP ---------------------------------*/
+    // Initialize and add the map
+    function initMap() {
 
-function clickShopMenu(){
-    location.href="html/forSale.html"
-    document.getElementById("shopMenu").style.backgroundColor = "#F1D102";
-    document.getElementById("foundMenu").style.backgroundColor = "#FFE32E";
-    document.getElementById("shopMenu").style.fontWeight="500";
-    document.getElementById("foundMenu").style.fontWeight="normal";
+        // The location of Uluru
+        var uluru = { lat: 13.023, lng: 14.022 };
 
-}
-function clickFoundationMenu(){
-    location.href="html/forAdopt.html"
-    document.getElementById("shopMenu").style.backgroundColor = "#FFE32E";
-    document.getElementById("foundMenu").style.backgroundColor = "#F1D102";
-    document.getElementById("shopMenu").style.fontWeight="normal";
-    document.getElementById("foundMenu").style.fontWeight="500";
-}
+        // The map, centered at Uluru
+        var map = new google.maps.Map(
+            document.getElementById('map'), { zoom: 15, center: uluru });
+
+        // The marker, positioned at Uluru
+        var marker = new google.maps.Marker({ position: uluru, map: map });
+    }
+
+    /*--------------------------------------------------------------------------*/

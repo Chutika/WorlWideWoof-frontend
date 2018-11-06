@@ -61,12 +61,10 @@ hr{
 /* ----------------------- map -------------------------*/
 #map{
 	height: 500px;
-	width: 60%;
-	margin: auto;
+	width: 100%;
+	/* margin: auto; */
 }
 /* -----------------------------------------------------*/
-
-
 
 
 h2{
@@ -76,7 +74,7 @@ h2{
 .info{
 	
 	margin: auto;
-	padding-top: 40px;
+	padding-top: 80px;
 	width: 60%;
 }
 

@@ -1,53 +1,120 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <title>test Page</title>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-      <link rel="stylesheet" type="text/css" media="screen" href="test.css" />
-      
- 
-   
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    
-    </head>
-    <body>
+<html>
 
-    
-    <h1>2</h1>
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <p class="nav-link" id="brandMenu" onclick="clickLogo()">WWWoof!</p>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-          <li class="nav-item "  id="shopMenu" onclick="clickShopMenu()">
-            <p class="nav-link nav-menu" >ร้านค้า<span class="sr-only">(current)</span></p>
-          </li>
-          <li class="nav-item"  id="foundMenu" onclick="clickFoundationMenu()">
-            <p class="nav-link nav-menu">มูลนิธิ</p>
-          </li>
-        </ul>
+<head>
+  <title>Simple Map</title>
+  <meta name="viewport" content="initial-scale=1.0">
+  <meta charset="utf-8">
+  <!-- jQuery CDN -->
+	<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+  <style>
+    /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+    #map {
+      height: 100%;
+    }
+
+    /* Optional: Makes the sample page fill the window. */
+    html,
+    body {
+      height: 500px;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <form method="POST" action=192.168.182.55:8888/test" target="" enctype="multipart/form-data">
+    <input id="location-lat" name="location" type="hidden" value="" />
+    <input id="location-lng" name="location" type="hidden" value="" />
+  </form>
+
+  <div id="map"></div>
+
+  <button id="submit">Submit</button>
+
+  <script>
+    var map;
+    var marker;
+
+    function initMap() {
+      //bangkok 13.752450, 100.497571
+      var myLatlng = new google.maps.LatLng(13.752450, 100.497571);
+
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: myLatlng,
+        zoom: 12
+      });
+
+      google.maps.event.addListener(map, 'click', function (event) {
         
-        <form class="form-inline my-2 my-lg-0">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item "  id="loginMenu" onclick="">
-                    <p class="nav-link nav-menu" ><img src="../asset/Icon/person.svg" alt="" style="width:40px;" id="person"> Log in</p>
-                </li>
-                <li class="nav-item"  id="signupMenu" onclick="">
-                    <p class="nav-link nav-menu" >Sign up</p>
-                </li>
-            </ul>    
-        </form>
-      </div>    
-    </nav>
+        var lat = event.latLng.lat(); 
+        var lng = event.latLng.lng();
 
-         
-<script src="test.js"></script>
+        var location ={lat:lat, lng:lng}
+
+        console.log(typeof location);
+        console.log("location " +location.lat+ "    " +location.lng );
+      
+        placeMarker(location);
+        submitForm(location);
+        
+      });
+    }
+
+     function placeMarker(location) {
+      if (marker) {
+        marker.setPosition(location);
+      } else {
+        marker = new google.maps.Marker({
+          position: location,
+          map: map,
+          draggable:true,
+        });
+      }
+
+      $("#location-lat").val(location.lat);
+      $("#location-lng").val(location.lng);
+      console.log("placeMarker: " + $("#location-lat").val());
+
+    }
+
+    function submitForm(location){
+       $('#submit').click(function(event){
+
+         var latitude = $("#location-lat").val();
+         var longitude = $("#location-lng").val();
+
+         var location = {lat:latitude, lng:longitude}
+
+         console.log("sent data : " +location.lat + " " +location.lng+ " end");
+
+        $.ajax({
+            url:"192.168.182.55:8888/test",
+            type:"POST",
+            dataType: "json",
+            data: location,
+            
+            success: function(data){
+                console.log("Success " +data );
+                
+            }
+        });
+
+        event.preventDefault();
+    });
+     }
+
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMscvPhIuLIWUzsKKFdGS_zr0NbNxrxGw&callback=initMap"
+    async defer>
+    </script>
+
 </body>
+
 </html>
