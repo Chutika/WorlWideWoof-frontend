@@ -1,5 +1,3 @@
-
-
 function clickLogo(){
     location.href="landingPage.html"
 }

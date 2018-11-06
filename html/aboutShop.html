@@ -1,71 +1,78 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>About shop</title>
 
 	<!-- Required meta tags for proper responsive behaviors -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<!-- bootstrap v4 -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	 crossorigin="anonymous">
 
 	<!-- Kanit fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Kanit:300,400,500,600,700&amp;subset=thai" rel="stylesheet">
 
 	<!-- custom style -->
+	
+	<link rel="stylesheet" type="text/css" href="../css/navbar.css">
 	<link rel="stylesheet" type="text/css" href="../css/aboutShop.css">
 
 	<!-- jQuery CDN -->
-	<script
-  	src="https://code.jquery.com/jquery-3.3.1.js"
-  	integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  	crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+	 crossorigin="anonymous"></script>
 
 </head>
+
 <body>
 
 	<!-- -------------------------- primary navbar ---------------------------- -->
-	<nav class="navbar fixed-top navbar-expand-lg">
-		<img  id="logo_brand" class="d-inline-block align-top" src="../asset/Icon/pawprint.svg" alt="">
-  		<a class="navbar-brand" href="#">WWWoof!</a>
+	<nav class="navbar navbar-expand-lg navbar-light">
+		<p class="nav-link" id="brandMenu" onclick="clickLogo()">WWWoof!</p>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02"
+		 aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
 
-  		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    	<span class="navbar-toggler-icon"></span>
-  		</button>
+		<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+				<li class="nav-item " id="shopMenu" onclick="clickShopMenu()">
+					<p class="nav-link nav-menu">ร้านค้า<span class="sr-only">(current)</span></p>
+				</li>
+				<li class="nav-item" id="foundMenu" onclick="clickFoundationMenu()">
+					<p class="nav-link nav-menu">มูลนิธิ</p>
+				</li>
+			</ul>
 
-  		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-    		<ul class="navbar-nav mr-auto">
-      			<li class="nav-item">
-        			<a class="nav-link " href="#">ร้านค้า</a>
-      			</li>
-      			<li class="nav-item">
-        			<a class="nav-link" href="#">มูลนิธิ</a>
-        		</li>
-        		
-    		</ul>
-
-    		<div id="right_nav" class="navbar-nav ml-auto">
-    			<img id="ic_person" class="d-inline-block" src="../asset/Icon/person.svg" alt="">
-    			<a class="nav-link" href="#">Log in</a>
-    			<a class="nav-link" href="#">Sign up</a>
-    		</div>
-  		</div>
+			<form class="form-inline my-2 my-lg-0">
+				<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+					<li class="nav-item " id="loginMenu" onclick="">
+						<p class="nav-link nav-menu"><img src="../asset/Icon/person.svg" alt="" style="width:40px;" id="person"> Log in</p>
+					</li>
+					<li class="nav-item" id="signupMenu" onclick="">
+						<p class="nav-link nav-menu">Sign up</p>
+					</li>
+				</ul>
+			</form>
+		</div>
 	</nav>
+
 	<!-- ------------------------------------------------------------------- -->
 
-	<div class="body">
+
 
 	<!-- ---------------- Secondary navbar --------------------------------- -->
 	<nav class="sec-nav navbar navbar-expand-lg mx-auto">
-    	<div class="menu-in-sec-nav">
-    		<a id="aboutShopMenu" class="sec-nav-item navbar-nav nav-item nav-link active" href="#">เกี่ยวกับร้าน<span class="sr-only">(current)</span></a>
-    		<hr class="sec-nav-line sec-nav-active">
-    	</div>
-    	<div class="menu-in-sec-nav">
-    		<a id="dogListMenu" class="sec-nav-item navbar-nav nav-item nav-link" href="dogList.html">รายการสุนัข</a>
-    		<hr class="sec-nav-line sec-nav-inactive">
-    	</div>
+		<div class="menu-in-sec-nav">
+			<a id="aboutShopMenu" class="sec-nav-item navbar-nav nav-item nav-link active" href="#">เกี่ยวกับร้าน<span class="sr-only">(current)</span></a>
+			<hr class="sec-nav-line sec-nav-active">
+		</div>
+		<div class="menu-in-sec-nav">
+			<a id="dogListMenu" class="sec-nav-item navbar-nav nav-item nav-link" href="dogList.html">รายการสุนัข</a>
+			<hr class="sec-nav-line sec-nav-inactive">
+		</div>
 	</nav>
 	<!-- ------------------------------------------------------------------- -->
 
@@ -74,11 +81,19 @@
 	<!-- -------------- General Info about Shop ---------------------------- -->
 
 	<div class="info">
-		<div class="info-section" id="intro-info-section"></div>
+		<div class="info-section  " id="intro-info-section">
+		
+			
+			<!-- <img class="circle float-left" id="logo-shop" src="https://cdn.dribbble.com/users/375867/screenshots/1392018/dog-shop-logo.png"
+			 alt="">
+			<h2>Dog Hong hong</h2>
+			<p>Chutika werayuthwattana 088-8888888</p> -->
 
+		</div>
+		<br>
 		<div class="info-section" id="desc-info-section">
 			<h2>Description</h2>
-	
+
 		</div>
 
 		<div class="info-section" id="cer-info-section">
@@ -87,27 +102,33 @@
 
 		<div class="info-section" id="map-info-section">
 			<h2>Map</h2>
-			<p>detail about the location of shop</p>	
+			<p>detail about the location of shop</p>
 		</div>
-
+		<!-- ---------------------------- map ---------------------------------- -->
+		<div class="info-section" id="map"></div>
+		<!-- ------------------------------------------------------------------- -->
 		<form action="aboutShop_edit.html" method="GET">
 			<button type="submit" class="btn btn-primary btn-lg">Edit</button>
 		</form>
 	</div>
 	<!-- ------------------------------------------------------------------- -->
 
-	</div>
 
-	<!-- ---------------------------- map ---------------------------------- -->
-	<div id="map"></div>
 
-	
+
+
+	<!-- ---------------------------- javascript ---------------------------------- -->
+	<script>
+
+	</script>
+
 	<script src="../js/aboutShop.js"></script>
-	<script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMscvPhIuLIWUzsKKFdGS_zr0NbNxrxGw&callback=initMap">
-    </script>
-	
-    <!-- ------------------------------------------------------------------- -->
+	<script src="../js/navigation.js"></script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMscvPhIuLIWUzsKKFdGS_zr0NbNxrxGw&callback=initMap">
+	</script>
+
+	<!-- ------------------------------------------------------------------- -->
 
 </body>
+
 </html>

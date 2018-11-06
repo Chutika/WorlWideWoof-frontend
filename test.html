@@ -1,9 +1,46 @@
-$(function(){
-    alert("edit connect");
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Simple Map</title>
+  <meta name="viewport" content="initial-scale=1.0">
+  <meta charset="utf-8">
+  <!-- jQuery CDN -->
+	<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+  <style>
+    /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+    #map {
+      height: 100%;
+    }
+
+    /* Optional: Makes the sample page fill the window. */
+    html,
+    body {
+      height: 500px;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <form method="POST" action=192.168.182.55:8888/test" target="" enctype="multipart/form-data">
+    <input id="location-lat" name="location" type="hidden" value="" />
+    <input id="location-lng" name="location" type="hidden" value="" />
+  </form>
+
+  <div id="map"></div>
+
+  <button id="submit">Submit</button>
+
+  <script>
     var map;
     var marker;
-
-    initMap();  
 
     function initMap() {
       //bangkok 13.752450, 100.497571
@@ -18,6 +55,7 @@ $(function(){
         
         var lat = event.latLng.lat(); 
         var lng = event.latLng.lng();
+
         var location ={lat:lat, lng:lng}
 
         console.log(typeof location);
@@ -47,23 +85,12 @@ $(function(){
     }
 
     function submitForm(location){
+       $('#submit').click(function(event){
 
-       $('#submitBtn').click(function(event){
-        var formData = {
-            shopName: $('input[name=shopName]').val(),
-            firstName: $('input[name=firstName]').val(),
-            lastName: $('input[name=lastName]').val(),
-            phoneNumber: $('input[name=phoneNumber]').val(),
-            description: $('input[name=description]').val(),
-            shopLocation: $('input[name=shopLocation]').val(),
-            latitude : $("#location-lat").val(),
-            longitude : $("#location-lng").val()
-        }
+         var latitude = $("#location-lat").val();
+         var longitude = $("#location-lng").val();
 
-        //  var latitude = $("#location-lat").val();
-        //  var longitude = $("#location-lng").val();
-
-        //  var location = {lat:latitude, lng:longitude}
+         var location = {lat:latitude, lng:longitude}
 
          console.log("sent data : " +location.lat + " " +location.lng+ " end");
 
@@ -71,7 +98,7 @@ $(function(){
             url:"192.168.182.55:8888/test",
             type:"POST",
             dataType: "json",
-            data: formData,
+            data: location,
             
             success: function(data){
                 console.log("Success " +data );
@@ -81,8 +108,13 @@ $(function(){
 
         event.preventDefault();
     });
-    }
+     }
 
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMscvPhIuLIWUzsKKFdGS_zr0NbNxrxGw&callback=initMap"
+    async defer>
+    </script>
 
-    
-});
+</body>
+
+</html>
