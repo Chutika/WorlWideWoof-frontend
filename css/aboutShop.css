@@ -84,12 +84,14 @@ h2{
 
 #logo_shop{
 	width: 113px;
+	height: 113px;
 	margin: 0px 50px 0px 0px
 }
 
-#shop_name{
+/* #shop_name{
 	font-size: 50px;
-}
+	font-weight: 500px;
+} */
 .circle{
 	width: 140px;
 	height: 140px;
@@ -98,6 +100,3 @@ h2{
 	border-radius: 50%;
 }
 
-.d-inline-block{
-	width: 100%;
-}

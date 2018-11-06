@@ -11,7 +11,8 @@ $(function () {
         success: function(shop){
             console.log("recieved " +shop.shopName);
 
-            var img = "<img id='logo_shop' class='float-left' src=' " + shop.url + ">";
+            var img = "<img id='logo_shop' class='float-left circle' src=' " + shop.url + ">";
+           
             var name = "<h2 id='shop_name'>" +shop.shopName+ "</h2>";
             var blurb = "<p>" +shop.phoneNumber+ " " +shop.firstName+" "+shop.lastName+  "</p>";
             var description = "<p>" +shop.description+ "</p>";
