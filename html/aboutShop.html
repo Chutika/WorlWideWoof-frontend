@@ -15,6 +15,7 @@
 
 	<!-- custom style -->
 	<link rel="stylesheet" type="text/css" href="../css/aboutShop.css">
+	<link rel="stylesheet" type="text/css" href="../css/navbar.css">
 
 	<!-- jQuery CDN -->
 	<script
@@ -26,35 +27,38 @@
 <body>
 
 	<!-- -------------------------- primary navbar ---------------------------- -->
-	<nav class="navbar fixed-top navbar-expand-lg">
-		<img  id="logo_brand" class="d-inline-block align-top navbar-brand" src="../asset/Icon/pawprint.svg" alt="">
-  		<a class="navbar-brand" href="#">WWWoof!</a>
-
-  		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-    	<span class="navbar-toggler-icon"></span>
-  		</button>
-
-  		<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-    		<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      			<li class="nav-item">
-        			<a class="nav-link " href="#">ร้านค้า</a>
-      			</li>
-      			<li class="nav-item">
-        			<a class="nav-link" href="#">มูลนิธิ</a>
-        		</li>
-        		
-    		</ul>
-
-    		<div id="right_nav" class="navbar-nav ml-auto">
-    			<img id="ic_person" class="d-inline-block" src="../asset/Icon/person.svg" alt="">
-    			<a class="nav-link" href="#">Log in</a>
-    			<a class="nav-link" href="#">Sign up</a>
-    		</div>
-  		</div>
-	</nav>
+	<nav class="navbar navbar-expand-lg navbar-light">
+			<p class="nav-link" id="brandMenu" onclick="clickLogo()">WWWoof!</p>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+		
+		  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+			  <li class="nav-item "  id="shopMenu" onclick="clickShopMenu()">
+				<p class="nav-link nav-menu" >ร้านค้า<span class="sr-only">(current)</span></p>
+			  </li>
+			  <li class="nav-item"  id="foundMenu" onclick="clickFoundationMenu()">
+				<p class="nav-link nav-menu">มูลนิธิ</p>
+			  </li>
+			</ul>
+			
+			<form class="form-inline my-2 my-lg-0">
+				<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+					<li class="nav-item "  id="loginMenu" onclick="">
+						<p class="nav-link nav-menu" ><img src="../asset/Icon/person.svg" alt="" style="width:40px;" id="person"> Log in</p>
+					</li>
+					<li class="nav-item"  id="signupMenu" onclick="">
+						<p class="nav-link nav-menu" >Sign up</p>
+					</li>
+				</ul>    
+			</form>
+		  </div>    
+		</nav>
+	
 	<!-- ------------------------------------------------------------------- -->
 
-	<div class="body">
+	
 
 	<!-- ---------------- Secondary navbar --------------------------------- -->
 	<nav class="sec-nav navbar navbar-expand-lg mx-auto">
@@ -74,7 +78,14 @@
 	<!-- -------------- General Info about Shop ---------------------------- -->
 
 	<div class="info">
-		<div class="info-section" id="intro-info-section"></div>
+		<div class="info-section d-inline-block" id="intro-info-section">
+		
+			<img class="circle float-left" id="logo-shop" src="https://cdn.dribbble.com/users/375867/screenshots/1392018/dog-shop-logo.png" alt="">
+			<h2>Dog Hong hong</h2>
+		
+			<p>Chutika werayuthwattana 088-8888888</p>
+			
+		</div>
 
 		<div class="info-section" id="desc-info-section">
 			<h2>Description</h2>
@@ -96,13 +107,16 @@
 	</div>
 	<!-- ------------------------------------------------------------------- -->
 
-	</div>
+
 
 	<!-- ---------------------------- map ---------------------------------- -->
 	<div id="map"></div>
+<!-- ------------------------------------------------------------------- -->
 
+<!-- ---------------------------- javascript ---------------------------------- -->
 	
 	<script src="../js/aboutShop.js"></script>
+	<script src="../js/navigation.js"></script>
 	<script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMscvPhIuLIWUzsKKFdGS_zr0NbNxrxGw&callback=initMap">
     </script>

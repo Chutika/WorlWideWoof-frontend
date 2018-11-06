@@ -1,36 +1,6 @@
-body{
-	font-family: 'Kanit', sans-serif;
-	font-weight: 300;
-	font-size: 25px;
-}
 
-/* --------------- primary nav bar --------------------*/
-.navbar{
-	background-color: #FFE32E;
-	padding-right: 51px; 
-	padding-left: 51px;
-}
-.navbar a{
-	color: #352304;
-}
-.navbar-brand{
-	font-family: 'Kanit', sans-serif;
-	font-weight: 500;
-	font-size: 25px;
-}
-#logo_brand{
-	margin-right: 10px;
-	width: 26px;
-	height: 26px;
-}
 
-#ic_person{
-	width: 24px;
-	height: 24px;
-	margin-top: 13px;
-}
 
-/* -----------------------------------------------------*/
 
 /* ------------- Secondary nav bar --------------------*/
 hr{
@@ -40,7 +10,9 @@ hr{
 	background-color: #FFFFFF;
 	width: 60%;
 	padding: 0px 0px 0px 0px;
-	margin-top: 150px;
+	margin-top: 40px;
+	
+	
 }
 
 .sec-nav-item{
@@ -57,6 +29,7 @@ hr{
 	width: 50%;
 	margin: auto;
 	align-content: center;
+	
 	
 }
 .sec-nav-line{
@@ -75,10 +48,12 @@ hr{
 
 #aboutShopMenu{
 	text-align: center;
+	color: #352304;
 }
 
 #dogListMenu{
 	text-align: center;
+	color: #352304;
 }
 
 /* -----------------------------------------------------*/
@@ -91,12 +66,7 @@ hr{
 }
 /* -----------------------------------------------------*/
 
-/* ------------------ div body -------------------------*/
 
-.body{
-	margin-top: 100px;
-}
-/* -----------------------------------------------------*/
 
 
 h2{
@@ -104,12 +74,14 @@ h2{
 }
 
 .info{
+	
 	margin: auto;
+	padding-top: 40px;
 	width: 60%;
 }
 
 .info-section{
-	margin: 30px 0px 50px 0px;
+	margin: 30px 0px 30px 0px;
 }
 
 #logo_shop{
@@ -119,4 +91,15 @@ h2{
 
 #shop_name{
 	font-size: 50px;
+}
+.circle{
+	width: 140px;
+	height: 140px;
+	margin-right: 50px;
+	
+	border-radius: 50%;
+}
+
+.d-inline-block{
+	width: 100%;
 }
