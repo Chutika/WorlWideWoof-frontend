@@ -26,3 +26,21 @@ function clickFoundationMenu(){
     $("#loginMenu p").removeClass("active");
     $("#signupMenu p").removeClass("active");
 }
+
+function clickloginMenu(){
+    location.href="loginSignup3.html"
+    
+    $("#shopMenu p").removeClass("active");
+    $("#foundMenu p").removeClass("active");
+    $("#loginMenu p").addClass("active");
+    $("#signupMenu p").removeClass("active");
+}
+
+function clicksignupMenu(){
+    location.href="loginSignup3.html"
+    
+    $("#shopMenu p").removeClass("active");
+    $("#foundMenu p").removeClass("active");
+    $("#loginMenu p").removeClass("active");
+    $("#signupMenu p").addClass("active");
+}
