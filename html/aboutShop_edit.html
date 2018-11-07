@@ -82,13 +82,17 @@
 	<div class="info">
         <form action="http://35.193.129.5:8080/test" method="POST" enctype="multipart/form-data">
 		
-			<div class="form-group">
-				<label for="shopLogo"> Please upload you shop logo</label>
-				<input type="file" class="form-control-file" id="shopLogo">
+			<img class="circle " id="oldImg" src="https://cdn.dribbble.com/users/375867/screenshots/1392018/dog-shop-logo.png"
+					alt="">
+			<div class="form-group form-inline">
+					
+				<label for="shopLogo"> Please upload you shop logo </label>
+				<input type="file" class="form-control-file" name="url" id="shopLogo">
+				
 			</div>
 			<div class="form-group">
 				<label for="name">Shop name </label>
-				<input id="name" type="text" class="form-control" name="shopName" placeholder="Shop name"> 
+				<input id="name" type="text" class="form-control" name="shopName" placeholder="Shop name" required> 
 			</div>
 
 			<div class="form-group">
@@ -101,7 +105,7 @@
 			</div>
 			<div class="form-group">
 					<label for="phoneNumber">Phone number</label>
-					<input type="number" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="xxx-xxxxxxx">
+					<input type="text" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="xxx-xxxxxxx" required>
 			</div>
 			<div class="form-group">
 				<label for="shopDescription">Description</label>
@@ -109,7 +113,7 @@
 			</div>
 			<div class="form-group">
 					<label for="shopLocation">Shop Location</label>
-					<textarea id="shopLocation" class="form-control" name="shopLocation" cols="20" rows="5" placeholder="Describe your shop location..."></textarea>		
+					<textarea id="shopLocation" class="form-control" name="shopLocation" cols="20" rows="5" placeholder="Describe your shop location..." required></textarea>		
 			</div>
 			<div>
 				<input id="location-lat" name="location" type="hidden" value="" />

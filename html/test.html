@@ -64,8 +64,11 @@
     <h2 id="test">test page</h2>
 
 
-
-	
+	<div class="custom-file">
+			<input type="file" class="custom-file-input" id="customFile">
+			<label class="custom-file-label" for="customFile">Choose file</label>
+		  </div>
+		  <button type="submit" class="btn btn-primary">Submit</button>
 
 
 
@@ -73,7 +76,19 @@
 
 	<!-- ---------------------------- javascript ---------------------------------- -->
 
+	<script>
+		// Variable to store your files
+var files;
 
+// Add events
+$('input[type=file]').on('change', prepareUpload);
+
+// Grab the files and set them to our variable
+function prepareUpload(event)
+{
+  files = event.target.files;
+}
+	</script>
 	<script src="../js/navigation.js"></script>
 	
 	
