@@ -1,12 +1,16 @@
+<<<<<<< HEAD
 var slideIndex = 1;
 showSlides(slideIndex);
+=======
+
+>>>>>>> master
 
 function clickLogo(){
-    location.href="dogInfo.html"
+    location.href="landingPage.html"
 }
 
 function clickShopMenu(){
-    // location.href="dogInfo.html"
+    location.href="forSale.html"
     document.getElementById("shopMenu").style.backgroundColor = "#F1D102";
     document.getElementById("foundMenu").style.backgroundColor = "#FFE32E";
     document.getElementById("shopMenu").style.fontWeight="500";
@@ -14,7 +18,7 @@ function clickShopMenu(){
 
 }
 function clickFoundationMenu(){
-    // location.href="dogInfo.html"
+    location.href="forAdopt.html"
     document.getElementById("shopMenu").style.backgroundColor = "#FFE32E";
     document.getElementById("foundMenu").style.backgroundColor = "#F1D102";
     document.getElementById("shopMenu").style.fontWeight="normal";

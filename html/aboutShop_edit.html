@@ -14,7 +14,8 @@
 	<link href="https://fonts.googleapis.com/css?family=Kanit:300,400,500,600,700&amp;subset=thai" rel="stylesheet">
 
 	<!-- custom style -->
-	<link rel="stylesheet" type="text/css" href="../css/aboutShop(edit).css">
+	<link rel="stylesheet" type="text/css" href="../css/aboutShop_edit.css">
+	<link rel="stylesheet" type="text/css" href="../css/navbar.css">
 
 	<!-- jQuery CDN -->
 	<script
@@ -22,58 +23,54 @@
   	integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
   	crossorigin="anonymous"></script>
 
-	<style type="text/css">
-
-		#map{
-			height: 500px;
-			width: 60%;
-			margin: auto;
-		}
-	</style>
 
 </head>
 <body>
 
 	<!-- -------------------------- primary navbar ---------------------------- -->
-	<nav class="navbar fixed-top navbar-expand-lg">
-		<img  id="logo_brand" class="d-inline-block align-top" src="../asset/Icon/pawprint.svg" alt="">
-  		<a class="navbar-brand" href="#">WWWoof!</a>
+	<nav class="navbar navbar-expand-lg navbar-light">
+		<p class="nav-link" id="brandMenu" onclick="clickLogo()">WWWoof!</p>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02"
+		 aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
 
-  		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    	<span class="navbar-toggler-icon"></span>
-  		</button>
+		<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+				<li class="nav-item " id="shopMenu" onclick="clickShopMenu()">
+					<p class="nav-link nav-menu">ร้านค้า<span class="sr-only">(current)</span></p>
+				</li>
+				<li class="nav-item" id="foundMenu" onclick="clickFoundationMenu()">
+					<p class="nav-link nav-menu">มูลนิธิ</p>
+				</li>
+			</ul>
 
-  		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-    		<ul class="navbar-nav mr-auto">
-      			<li class="nav-item">
-        			<a class="nav-link " href="#">ร้านค้า</a>
-      			</li>
-      			<li class="nav-item">
-        			<a class="nav-link" href="#">มูลนิธิ</a>
-        		</li>
-        		
-    		</ul>
-
-    		<div id="right_nav" class="navbar-nav ml-auto">
-    			<img id="ic_person" class="d-inline-block" src="../asset/Icon/person.svg" alt="">
-    			<a class="nav-link" href="#">Log in</a>
-    			<a class="nav-link" href="#">Sign up</a>
-    		</div>
-  		</div>
+			<form class="form-inline my-2 my-lg-0">
+				<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+					<li class="nav-item " id="loginMenu" onclick="">
+						<p class="nav-link nav-menu"><img src="../asset/Icon/person.svg" alt="" style="width:40px;" id="person"> Log in  </p>
+					</li>
+					<li class="nav-item" id="signupMenu" onclick="">
+						<p class="nav-link nav-menu">Sign up</p>
+					</li>
+				</ul>
+			</form>
+		</div>
 	</nav>
-	<!-- ------------------------------------------------------------------- -->
 
-<div class="body">
+    <!-- ------------------------------------------------------------------- -->
+
+
 
 	<!-- ---------------- Secondary navbar --------------------------------- -->
 	<nav class="sec-nav navbar navbar-expand-lg mx-auto">
     	<div class="menu-in-sec-nav">
-    		<a class="sec-nav-item navbar-nav nav-item nav-link active" href="#">เกี่ยวกับร้าน <span class="sr-only">(current)</span></a>
+    		<a id="aboutShopMenu" class="sec-nav-item navbar-nav nav-item nav-link active" href="#">เกี่ยวกับร้าน<span class="sr-only">(current)</span></a>
     		<hr class="sec-nav-line sec-nav-active">
     	</div>
     	<div class="menu-in-sec-nav">
-    		<a class="sec-nav-item navbar-nav nav-item nav-link" href="dogList.html">รายการสุนัข</a>
-    		<hr class="sec-nav-line">
+    		<a id="dogListMenu" class="sec-nav-item navbar-nav nav-item nav-link" href="dogList.html">รายการสุนัข</a>
+    		<hr class="sec-nav-line sec-nav-inactive">
     	</div>
 	</nav>
 	<!-- ------------------------------------------------------------------- -->
@@ -83,7 +80,7 @@
 	<!-- -------------- General Info about Shop ---------------------------- -->
 
 	<div class="info">
-        <form action="http://35.193.129.5:8080/test" method="POST">
+        <form action="http://35.193.129.5:8080/test" method="POST" enctype="multipart/form-data">
 		
 			<div class="form-group">
 				<label for="shopLogo"> Please upload you shop logo</label>
@@ -112,15 +109,25 @@
 			</div>
 			<div class="form-group">
 					<label for="shopLocation">Shop Location</label>
-					<input type="url" id="shopLocation" class="form-control" name="shopLocation" placeholder ="Describe your shop ...">
+					<textarea id="shopLocation" class="form-control" name="shopLocation" cols="20" rows="5" placeholder="Describe your shop location..."></textarea>		
 			</div>
-			
+			<div>
+				<input id="location-lat" name="location" type="hidden" value="" />
+				<input id="location-lng" name="location" type="hidden" value="" />
+			</div>
+
+			<p>Please pin your location on google map</p>
+			<div id="map"></div>
+
 			<button id="submitBtn" class="btn btn-primary btn-lg">Save</button>
-        </form>
+		</form>
+		
+		
+
 	</div>
 	<!-- ------------------------------------------------------------------- -->
 
-</div>
+
 
 	<!-- ---------------------------- map ---------------------------------- -->
 	
@@ -141,13 +148,14 @@
   			// The marker, positioned at Uluru
   			var marker = new google.maps.Marker({position: uluru, map: map});
 		}
-    </script>
+    </script>-->
 
 	<script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMscvPhIuLIWUzsKKFdGS_zr0NbNxrxGw&callback=initMap">
-	</script> -->
+	</script> 
 	
 	<script type="text/javascript" src="../js/aboutShop_edit.js"></script>
+	<script src="../js/navigation.js"></script>
 
     <!-- ------------------------------------------------------------------- -->
 

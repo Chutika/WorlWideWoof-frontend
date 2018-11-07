@@ -1,7 +1,5 @@
 
 
-
-
 /* ------------- Secondary nav bar --------------------*/
 hr{
 	width: 50%;
@@ -11,8 +9,6 @@ hr{
 	width: 60%;
 	padding: 0px 0px 0px 0px;
 	margin-top: 40px;
-	
-	
 }
 
 .sec-nav-item{
@@ -29,7 +25,6 @@ hr{
 	width: 50%;
 	margin: auto;
 	align-content: center;
-	
 	
 }
 .sec-nav-line{
@@ -66,28 +61,14 @@ hr{
 }
 /* -----------------------------------------------------*/
 
-
-h2{
-	font-weight: 500;
-}
-
 .info{
-	
 	margin: auto;
 	padding-top: 80px;
 	width: 60%;
 }
-
-.info-section{
-	margin: 30px 0px 30px 0px;
+.form-group{
+	margin: 50px 0px;
 }
-
-#logo_shop{
-	width: 113px;
-	height: 113px;
-	margin: 0px 50px 0px 0px
-}
-
 
 .circle{
 	width: 140px;
@@ -96,4 +77,6 @@ h2{
 	
 	border-radius: 50%;
 }
-
+#submitBtn{
+	margin-top: 40px;
+}

@@ -1,3 +1,8 @@
+body{
+	font-family: 'Kanit', sans-serif;
+	font-weight: 300;
+	font-size: 25px;
+}
 @font-face{
     font-family: kanitLight;
     src: url(../asset/font/Kanit/Kanit-Light.ttf);
@@ -78,7 +83,7 @@
 
 nav{
     background-color: #FFE32E;
-    /* height: 82px; */
+    height: 80px;
 }
 #divUnderNav{
     margin-top:80px;
