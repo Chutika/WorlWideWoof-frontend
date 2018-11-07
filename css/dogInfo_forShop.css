@@ -6,9 +6,15 @@
     font-family: kanitMedium;
     src: url(../asset/font/Kanit/Kanit-Medium.ttf)
 }
+#navBar{
+    height: 82px;
+}
+
 #menu{
     color: black;
     font-size: 25px;
+    padding: 0px;
+    margin: 0px;
 }
 #person{ 
     float: left;
@@ -42,10 +48,11 @@
 }
 
 #brandMenu{
-    padding-top: 5px;
+    /* padding-top: 5px;
     padding-bottom: 5px;
     padding-left: 8px;
-    padding-right: 8px;
+    padding-right: 8px; */
+    margin: 0px;
     cursor: pointer;
     font-family: 'kanitMedium', Kanit ,sans-serif;
     color: black;
@@ -72,8 +79,8 @@
     text-align: right;
     color: #815811;
     font-family: 'kanitLight', Kanit ,sans-serif;
-    font-size: 50px;
-    margin-right:52px;
+    font-size: 37px;
+    margin-left: 302.8px;
 }
 
 nav{
@@ -85,15 +92,15 @@ nav{
 }
 
 #Labrador{
-    width: 379.74px;
-    height: 436.83px;
+    width: 329.74px;
+    height: 386.83px;
     margin-top: 45.33px;
     margin-left: 51.79px;
 }
 
 #dogName{
     font-family: 'kanitMedium', Kanit ,sans-serif;
-    font-size: 50px;
+    font-size: 40px;
     color: #F1D102;
     margin-top: 23px;
     margin-left: 57px;
@@ -101,11 +108,126 @@ nav{
 }
 #content{
     font-family: 'kanitLight', Kanit ,sans-serif;
-    font-size: 25px;
+    font-size: 22px;
     color: #352304;
     margin-left: 57px;
     font-weight: 400;
 }
 #test{
     background-color: #352304;
+}
+
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Position the image container (needed to position the left and right arrows) */
+  .container {
+    position: relative;
+  }
+  
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+  }
+  
+  /* Add a pointer when hovering over the thumbnail images */
+  .cursor {
+    cursor: pointer;
+  }
+  
+  /* Next & previous buttons */
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+  /* Container for image text */
+  .caption-container {
+    text-align: center;
+    background-color: #222;
+    padding: 2px 16px;
+    color: white;
+  }
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Six columns side by side */
+  .column {
+    float: left;
+    width: 99.90px;
+    height: 99.90px;
+    margin-top:15.01px;
+  }
+  
+  /* Add a transparency effect for thumnbail images */
+  .demo {
+    opacity: 0.6;
+    height: 99.90px;
+  }
+  
+  .active,
+  .demo:hover {
+    opacity: 1;
+  }
+  #slideShow{
+      margin-left: 51.79px;
+      width: 329.74px;
+  }
+#centerDemo{
+    margin-right: 15.01px;
+    margin-left: 15.01px;
+}
+
+.button{
+    background-color:#FFE32E;
+    border: none;
+    color: #40331D;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    margin-left: 302.8px;
+    margin-top:18px;
+    cursor: pointer;
+    width: 318.47px;
+    font-family: 'kanitMedium', Kanit ,sans-serif;
+    border-radius: 27px;
 }
