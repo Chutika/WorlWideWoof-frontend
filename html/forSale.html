@@ -1,329 +1,30 @@
-<<<<<<< Updated upstream:html/forSale.html
 <!DOCTYPE html>
 <html>
-
 <head>
-  <title>For Sale Page</title>
-  <meta charset="utf-8">
+	<title>For Sale Page</title>
+	<meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link href='https://fonts.googleapis.com/css?family=Raleway:400,800' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" type="text/css" href="../css/forSale.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-    crossorigin="anonymous">
+	<link href='https://fonts.googleapis.com/css?family=Raleway:400,800' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="../css/forSale.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link rel="stylesheet" href="/web/assets/font-awesome/css/font-awesome.min.css?v=1001">
+  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="../js/navigation.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+  
 
+ <!-- Kanit fonts -->
+ <link href="https://fonts.googleapis.com/css?family=Kanit:300,400,500,600,700&amp;subset=thai" rel="stylesheet">
 
-
-</head>
-
-<body>
-  <script>
-    /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
-    var dropdown = document.getElementsByClassName("dropdown-btn");
-    var i;
-
-    for (i = 0; i < dropdown.length; i++) {
-      dropdown[i].addEventListener("click", function () {
-        this.classList.toggle("active");
-        var dropdownContent = this.nextElementSibling;
-        if (dropdownContent.style.display === "block") {
-          dropdownContent.style.display = "none";
-        } else {
-          dropdownContent.style.display = "block";
-        }
-      });
-    }
-  </script>
-
-  <!-- DEFAULT NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-light">
-    <p class="nav-link" id="brandMenu" onclick="clickLogo()">WWWoof!</p>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
-      aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-        <li class="nav-item " id="shopMenu" onclick="clickShopMenu()">
-          <p class="nav-link" id="menu">ร้านค้า<span class="sr-only">(current)</span></p>
-        </li>
-        <li class="nav-item" id="foundMenu" onclick="clickFoundationMenu()">
-          <p class="nav-link" id="menu">มูลนิธิ</p>
-        </li>
-      </ul>
-
-      <form class="form-inline my-2 my-lg-0">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-          <li class="nav-item " id="shopMenu" onclick="">
-
-            <p style="" class="nav-link" id="menu"><img src="../asset/Icon/person.svg" alt="Login" style="width:40px;"
-                id="person"> Log in</p>
-          </li>
-          <li class="nav-item" id="foundMenu" onclick="">
-            <p class="nav-link" id="menu">Sign up</p>
-          </li>
-        </ul>
-      </form>
-    </div>
-  </nav>
-  <!---Side Bar -->
-  <div class="sidenav" style="position:absolute;width: 16%">
-    <a><input style="width: 100%" type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category"></a>
-    <a>Location</a>
-    <a><select name="Location" id="Shop">
-        <option value="0" selected disabled>Bangkok</option>
-        <option value="1">Korat</option>
-        <option value="2">Yaha</option>
-        <option value="3">Tokyo</option>
-        <option value="4">Berlin</option>
-        <option value="5">London</option>
-      </select></a>
-    <a>Breed</a>
-    <a><select name="Breed-type" id="Breed">
-        <option value="0" selected disabled>Breed</option>
-        <option value="1">Husky</option>
-        <option value="2">Shiba</option>
-        <option value="3">Kaka</option>
-        <option value="4">Baba</option>
-        <option value="5">Thai</option>
-      </select></a>
-    <a>Age</a>
-    <a><select name="birthday-day" id="day">
-        <option value="0" selected disabled>Month</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
-        <option value="11">11</option>
-        <option value="12">12</option>
-      </select></a>
-
-    <a>Size</a>
-    <a>
-      <input type="checkbox" name="radio-choice" id="radio-choice-1" value="choice-1" />
-      <label for="check-choice-1">S</label>
-
-      <input type="checkbox" name="radio-choice" id="radio-choice-2" value="choice-2" />
-      <label for="check-choice-2">M</label>
-
-      <input type="checkbox" name="radio-choice" id="radio-choice-2" value="choice-2" />
-      <label for="check-choice-3">L</label>
-
-    </a>
-    <a>Gender</a>
-    <a>
-      <input type="checkbox" name="gen1" value="male"> Male<br>
-      <input type="checkbox" name="gen2" value="Female"> Female
-    </a>
-  </div>
-  <!-- Main -->
-  <div class="main">
-    <div>
-      <p style="position: relative;left: 38%"><img src="../asset/icon/charity.svg" style="float:left ;width:35px;height:35px;margin-right: 20px;">
-        For Adoptation
-      </p>
-</div>
-<div>
-  <p class="my-3 text-center"id="content"style="position: relative;">เย้</p>
-    </div>
-    <!-- Photo -->
-    <div style="overflow: hidden; display: flex; justify-content:space-around;">
-      <!-- PHOTO 1 -->
-      <div class="card my-3 mx-auto" id="picture">
-        <a href=""><img class="card-img-top" src="https://s7d1.scene7.com/is/image/PETCO/puppy-090517-dog-featured-355w-200h-d"
-            alt="dog"></a>
-        <div class="card-body">
-          <div class="row">
-            <div class="col-7">
-              <p class="card-text" id="titleFontPicture">Max
-                <span id="subFontPicture"><br>Labrador 3 months</span></p>
-            </div>
-            <div class="col-5">
-              <p class="card-text" id="titleFontPicture"><img src="../asset/Icon/black-shop-tag.svg" alt="Login" style="width:20px; margin-top:3px;"
-                  id="person">30K</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-      <!-- PHOTO 2 -->
-      <div class="card my-3 mx-auto" id="picture">
-        <a href="#"><img class="card-img-top" src="https://s7d1.scene7.com/is/image/PETCO/puppy-090517-dog-featured-355w-200h-d"
-            alt="dog"></a>
-        <div class="card-body">
-          <div class="row">
-            <div class="col-7">
-              <p class="card-text" id="titleFontPicture">Max
-                <span id="subFontPicture"><br>Labrador 3 months</span></p>
-            </div>
-            <div class="col-5">
-              <p class="card-text" id="titleFontPicture"><img src="../asset/Icon/black-shop-tag.svg" alt="Login" style="width:20px; margin-top:3px;"
-                  id="person">30K</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-      <!-- PHOTO 3 -->
-      <div class="card my-3 mx-auto" id="picture">
-        <a href="#"><img class="card-img-top" src="https://s7d1.scene7.com/is/image/PETCO/puppy-090517-dog-featured-355w-200h-d"
-            alt="dog"></a>
-        <div class="card-body">
-          <div class="row">
-            <div class="col-7">
-              <p class="card-text" id="titleFontPicture">Max
-                <span id="subFontPicture"><br>Labrador 3 months</span></p>
-            </div>
-            <div class="col-5">
-              <p class="card-text" id="titleFontPicture"><img src="../asset/Icon/black-shop-tag.svg" alt="Login" style="width:20px; margin-top:3px;"
-                  id="person">30K</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-    <div style="overflow: hidden; display: flex; justify-content:space-around;">
-      <!-- PHOTO 1 -->
-      <div class="card my-3 mx-auto" id="picture">
-        <a href=""><img class="card-img-top" src="https://s7d1.scene7.com/is/image/PETCO/puppy-090517-dog-featured-355w-200h-d"
-            alt="dog"></a>
-        <div class="card-body">
-          <div class="row">
-            <div class="col-7">
-              <p class="card-text" id="titleFontPicture">Max
-                <span id="subFontPicture"><br>Labrador 3 months</span></p>
-            </div>
-            <div class="col-5">
-              <p class="card-text" id="titleFontPicture"><img src="../asset/Icon/black-shop-tag.svg" alt="Login" style="width:20px; margin-top:3px;"
-                  id="person">30K</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-      <!-- PHOTO 2 -->
-      <div class="card my-3 mx-auto" id="picture">
-        <a href="#"><img class="card-img-top" src="https://s7d1.scene7.com/is/image/PETCO/puppy-090517-dog-featured-355w-200h-d"
-            alt="dog"></a>
-        <div class="card-body">
-          <div class="row">
-            <div class="col-7">
-              <p class="card-text" id="titleFontPicture">Max
-                <span id="subFontPicture"><br>Labrador 3 months</span></p>
-            </div>
-            <div class="col-5">
-              <p class="card-text" id="titleFontPicture"><img src="../asset/Icon/black-shop-tag.svg" alt="Login" style="width:20px; margin-top:3px;"
-                  id="person">30K</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-      <!-- PHOTO 3 -->
-      <div class="card my-3 mx-auto" id="picture">
-        <a href="#"><img class="card-img-top" src="https://s7d1.scene7.com/is/image/PETCO/puppy-090517-dog-featured-355w-200h-d"
-            alt="dog"></a>
-        <div class="card-body">
-          <div class="row">
-            <div class="col-7">
-              <p class="card-text" id="titleFontPicture">Max
-                <span id="subFontPicture"><br>Labrador 3 months</span></p>
-            </div>
-            <div class="col-5">
-              <p class="card-text" id="titleFontPicture"><img src="../asset/Icon/black-shop-tag.svg" alt="Login" style="width:20px; margin-top:3px;"
-                  id="person">30K</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-    <div style="overflow: hidden; display: flex; justify-content:space-around;">
-      <!-- PHOTO 1 -->
-      <div class="card my-3 mx-auto" id="picture">
-        <a href=""><img class="card-img-top" src="https://s7d1.scene7.com/is/image/PETCO/puppy-090517-dog-featured-355w-200h-d"
-            alt="dog"></a>
-        <div class="card-body">
-          <div class="row">
-            <div class="col-7">
-              <p class="card-text" id="titleFontPicture">Max
-                <span id="subFontPicture"><br>Labrador 3 months</span></p>
-            </div>
-            <div class="col-5">
-              <p class="card-text" id="titleFontPicture"><img src="../asset/Icon/black-shop-tag.svg" alt="Login" style="width:20px; margin-top:3px;"
-                  id="person">30K</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-      <!-- PHOTO 2 -->
-      <div class="card my-3 mx-auto" id="picture">
-        <a href="#"><img class="card-img-top" src="https://s7d1.scene7.com/is/image/PETCO/puppy-090517-dog-featured-355w-200h-d"
-            alt="dog"></a>
-        <div class="card-body">
-          <div class="row">
-            <div class="col-7">
-              <p class="card-text" id="titleFontPicture">Max
-                <span id="subFontPicture"><br>Labrador 3 months</span></p>
-            </div>
-            <div class="col-5">
-              <p class="card-text" id="titleFontPicture"><img src="../asset/Icon/black-shop-tag.svg" alt="Login" style="width:20px; margin-top:3px;"
-                  id="person">30K</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-      <!-- PHOTO 3 -->
-      <div class="card my-3 mx-auto" id="picture">
-        <a href="#"><img class="card-img-top" src="https://s7d1.scene7.com/is/image/PETCO/puppy-090517-dog-featured-355w-200h-d"
-            alt="dog"></a>
-        <div class="card-body">
-          <div class="row">
-            <div class="col-7">
-              <p class="card-text" id="titleFontPicture">Max
-                <span id="subFontPicture"><br>Labrador 3 months</span></p>
-            </div>
-            <div class="col-5">
-              <p class="card-text" id="titleFontPicture"><img src="../asset/Icon/black-shop-tag.svg" alt="Login" style="width:20px; margin-top:3px;"
-                  id="person">30K</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <div style="background-color:#FFE32E;">
-    <h1 style="position: relative;left: 45%; ">About Us</h1>
-    <h4 style="position: relative;left: 45%; ">Team of god of year</h4>
-
-  </div>
-=======
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Sell Page</title>
-	<meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link href='https://fonts.googleapis.com/css?family=Raleway:400,800' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="../css/sellpage.css">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	<link rel="stylesheet" href="/web/assets/font-awesome/css/font-awesome.min.css?v=1001">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ <!-- custom style -->
+ 
+ <link rel="stylesheet" type="text/css" href="../css/navbar.css">
  
  
  
@@ -349,37 +50,37 @@
 		
 		<!-- DEFAULT NAVBAR -->
 		<nav class="navbar navbar-expand-lg navbar-light">
-                                <p class="nav-link" id="brandMenu" onclick="clickLogo()">WWWoof!</p>
-                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                                  <span class="navbar-toggler-icon"></span>
-                                </button>
-                              
-                                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                                  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                                    <li class="nav-item " id="shopMenu" onclick="clickShopMenu()">
-                                      <p class="nav-link" id="menu">ร้านค้า<span class="sr-only">(current)</span></p>
-                                    </li>
-                                    <li class="nav-item" id="foundMenu" onclick="clickFoundationMenu()">
-                                      <p class="nav-link" id="menu">มูลนิธิ</p>
-                                    </li>
-                                  </ul>
-                                  
-                                  <form class="form-inline my-2 my-lg-0">
-                                      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                                          <li class="nav-item " id="shopMenu" onclick="">
-                                              
-                                              <p style="" class="nav-link" id="menu"><img src="../asset/Icon/person.svg" alt="Login" style="width:40px;" id="person"> Log in</p>
-                                          </li>
-                                          <li class="nav-item" id="foundMenu" onclick="">
-                                              <p class="nav-link" id="menu">Sign up</p>
-                                          </li>
-                                      </ul>    
-                                  </form>
-                                </div>    
-                              </nav>
+      <p class="nav-link" id="brandMenu" onclick="clickLogo()">WWWoof!</p>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02"
+       aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li  class="nav-item " id="shopMenu" onclick="clickShopMenu()">
+            <p style="padding-bottom:0 px" class="nav-link nav-menu">ร้านค้า<span class="sr-only">(current)</span></p>
+          </li>
+          <li class="nav-item" id="foundMenu" onclick="clickFoundationMenu()">
+            <p class="nav-link nav-menu">มูลนิธิ</p>
+          </li>
+        </ul>
+  
+        <form class="form-inline my-2 my-lg-0">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item " id="loginMenu" onclick="">
+              <p class="nav-link nav-menu"><img src="../asset/Icon/person.svg" alt="" style="width:40px;" id="person"> Log in  </p>
+            </li>
+            <li class="nav-item" id="signupMenu" onclick="">
+              <p class="nav-link nav-menu">Sign up</p>
+            </li>
+          </ul>
+        </form>
+      </div>
+    </nav>
   <!---Side Bar -->      
-  <div class="sidenav" style="position:absolute;width: 16%">
-        <a><input style="width: 100%" type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category"></a>
+  <div class="sidenav" style="position:absolute;width: 13%">
+        <a ><input style="width: 100%" type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category"></a>
         <a>Location</a>
         <a><select name="Location" id="Shop">
                 <option value="0" selected disabled>Bangkok</option>
@@ -433,21 +134,119 @@
         <input type="checkbox" name="gen2" value="Female"> Female
         </a>
         <a href="">
-        <button>GO!!</button>
+                <button>GO!!</button>
         </a>
       </div>	
 <!-- Main -->        
 <div class="main">
                 <div>
-                                <p style="position: relative;left: 43%"><img src="../asset/icon/black-shop-tag.svg" style="float:left ;width:35px;height:35px;">
-                                  <h2 class="my-3 text-center">For Sell</h2>
+                                <p style="position: relative;margin-left: 42%"><img src="../asset/icon/charity.svg" style="float:left ;width:35px;height:35px;margin-right: 20px;">
+                                  For Sale
                                 </p>
                         </div>
                         <div>
-                            <p id="content"style="position: relative;left: 45%">เย้</p>
+                            <p class="my-3 text-center"id="content"style="position: relative;">เย้</p>
                 </div>
         <!-- Photo -->     
         <div style="overflow: hidden; display: flex; justify-content:space-around;">
+                <!-- PHOTO 1 -->
+                <div style="margin:5px;" class="card my-3 mx-auto" id="picture">
+                  <a href=""><img  class="card-img-top" src="https://s7d1.scene7.com/is/image/PETCO/puppy-090517-dog-featured-355w-200h-d" alt="dog"></a>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-7">
+                          <p class="card-text" id="titleFontPicture">Max 
+                            <span id="subFontPicture"><br>Labrador 3 months</span></p>
+                      </div>
+                      <div class="col-5">
+                          <p class="card-text" id="titleFontPicture"><img src="../asset/Icon/black-shop-tag.svg" alt="darkTag" id="darkTag">30K</p>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+                <!-- PHOTO 2 -->
+                <div  class="card my-3 mx-auto" id="picture">
+                  <a href="#"><img class="card-img-top" src="https://s7d1.scene7.com/is/image/PETCO/puppy-090517-dog-featured-355w-200h-d" alt="dog"></a>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-7">
+                          <p class="card-text" id="titleFontPicture">Max 
+                            <span id="subFontPicture"><br>Labrador 3 months</span></p>
+                      </div>
+                      <div class="col-5">
+                          <p class="card-text" id="titleFontPicture"><img src="../asset/Icon/black-shop-tag.svg" alt="darkTag" id="darkTag">30K</p>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+                <!-- PHOTO 3 -->
+                <div class="card my-3 mx-auto" id="picture">
+                  <a href="#"><img class="card-img-top" src="https://s7d1.scene7.com/is/image/PETCO/puppy-090517-dog-featured-355w-200h-d" alt="dog"></a>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-7">
+                          <p class="card-text" id="titleFontPicture">Max 
+                            <span id="subFontPicture"><br>Labrador 3 months</span></p>
+                      </div>
+                      <div class="col-5">
+                          <p class="card-text" id="titleFontPicture"><img src="../asset/Icon/black-shop-tag.svg" alt="darkTag" id="darkTag">30K</p>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div><div style="overflow: hidden; display: flex; justify-content:space-around;">
+                    <!-- PHOTO 1 -->
+                    <div  class="card my-3 mx-auto" id="picture">
+                      <a href=""><img  class="card-img-top" src="https://s7d1.scene7.com/is/image/PETCO/puppy-090517-dog-featured-355w-200h-d" alt="dog"></a>
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col-7">
+                              <p class="card-text" id="titleFontPicture">Max 
+                                <span id="subFontPicture"><br>Labrador 3 months</span></p>
+                          </div>
+                          <div class="col-5">
+                              <p class="card-text" id="titleFontPicture"><img src="../asset/Icon/black-shop-tag.svg" alt="darkTag" id="darkTag">30K</p>
+                          </div>
+                        </div>
+                        
+                      </div>
+                    </div>
+                    <!-- PHOTO 2 -->
+                    <div  class="card my-3 mx-auto" id="picture">
+                      <a href="#"><img class="card-img-top" src="https://s7d1.scene7.com/is/image/PETCO/puppy-090517-dog-featured-355w-200h-d" alt="dog"></a>
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col-7">
+                              <p class="card-text" id="titleFontPicture">Max 
+                                <span id="subFontPicture"><br>Labrador 3 months</span></p>
+                          </div>
+                          <div class="col-5">
+                              <p class="card-text" id="titleFontPicture"><img src="../asset/Icon/black-shop-tag.svg" alt="darkTag" id="darkTag">30K</p>
+                          </div>
+                        </div>
+                        
+                      </div>
+                    </div>
+                    <!-- PHOTO 3 -->
+                    <div class="card my-3 mx-auto" id="picture">
+                      <a href="#"><img class="card-img-top" src="https://s7d1.scene7.com/is/image/PETCO/puppy-090517-dog-featured-355w-200h-d" alt="dog"></a>
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col-7">
+                              <p class="card-text" id="titleFontPicture">Max 
+                                <span id="subFontPicture"><br>Labrador 3 months</span></p>
+                          </div>
+                          <div class="col-5">
+                              <p class="card-text" id="titleFontPicture"><img src="../asset/Icon/black-shop-tag.svg" alt="darkTag" id="darkTag">30K</p>
+                          </div>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div><div style="overflow: hidden; display: flex; justify-content:space-around;">
                         <!-- PHOTO 1 -->
                         <div  class="card my-3 mx-auto" id="picture">
                           <a href=""><img  class="card-img-top" src="https://s7d1.scene7.com/is/image/PETCO/puppy-090517-dog-featured-355w-200h-d" alt="dog"></a>
@@ -458,7 +257,7 @@
                                     <span id="subFontPicture"><br>Labrador 3 months</span></p>
                               </div>
                               <div class="col-5">
-                                  <p class="card-text" id="titleFontPicture"><img src="../asset/Icon/black-shop-tag.svg" alt="Login" style="width:20px; margin-top:3px;" id="person">30K</p>
+                                  <p class="card-text" id="titleFontPicture"><img src="../asset/Icon/black-shop-tag.svg" alt="darkTag" id="darkTag">30K</p>
                               </div>
                             </div>
                             
@@ -474,7 +273,7 @@
                                     <span id="subFontPicture"><br>Labrador 3 months</span></p>
                               </div>
                               <div class="col-5">
-                                  <p class="card-text" id="titleFontPicture"><img src="../asset/Icon/black-shop-tag.svg" alt="Login" style="width:20px; margin-top:3px;" id="person">30K</p>
+                                  <p class="card-text" id="titleFontPicture"><img src="../asset/Icon/black-shop-tag.svg" alt="darkTag" id="darkTag">30K</p>
                               </div>
                             </div>
                             
@@ -490,113 +289,17 @@
                                     <span id="subFontPicture"><br>Labrador 3 months</span></p>
                               </div>
                               <div class="col-5">
-                                  <p class="card-text" id="titleFontPicture"><img src="../asset/Icon/black-shop-tag.svg" alt="Login" style="width:20px; margin-top:3px;" id="person">30K</p>
+                                  <p class="card-text" id="titleFontPicture"><img src="../asset/Icon/black-shop-tag.svg" alt="darkTag" id="darkTag">30K</p>
                               </div>
                             </div>
                             
                           </div>
                         </div>
                       </div>
-                                <div style="overflow: hidden; display: flex; justify-content:space-around;">
-            <!-- PHOTO 1 -->
-            <div  class="card my-3 mx-auto" id="picture">
-              <a href=""><img  class="card-img-top" src="https://s7d1.scene7.com/is/image/PETCO/puppy-090517-dog-featured-355w-200h-d" alt="dog"></a>
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-7">
-                      <p class="card-text" id="titleFontPicture">Max 
-                        <span id="subFontPicture"><br>Labrador 3 months</span></p>
-                  </div>
-                  <div class="col-5">
-                      <p class="card-text" id="titleFontPicture"><img src="../asset/Icon/black-shop-tag.svg" alt="Login" style="width:20px; margin-top:3px;" id="person">30K</p>
-                  </div>
-                </div>
-                
-              </div>
-            </div>
-            <!-- PHOTO 2 -->
-            <div  class="card my-3 mx-auto" id="picture">
-              <a href="#"><img class="card-img-top" src="https://s7d1.scene7.com/is/image/PETCO/puppy-090517-dog-featured-355w-200h-d" alt="dog"></a>
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-7">
-                      <p class="card-text" id="titleFontPicture">Max 
-                        <span id="subFontPicture"><br>Labrador 3 months</span></p>
-                  </div>
-                  <div class="col-5">
-                      <p class="card-text" id="titleFontPicture"><img src="../asset/Icon/black-shop-tag.svg" alt="Login" style="width:20px; margin-top:3px;" id="person">30K</p>
-                  </div>
-                </div>
-                
-              </div>
-            </div>
-            <!-- PHOTO 3 -->
-            <div class="card my-3 mx-auto" id="picture">
-              <a href="#"><img class="card-img-top" src="https://s7d1.scene7.com/is/image/PETCO/puppy-090517-dog-featured-355w-200h-d" alt="dog"></a>
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-7">
-                      <p class="card-text" id="titleFontPicture">Max 
-                        <span id="subFontPicture"><br>Labrador 3 months</span></p>
-                  </div>
-                  <div class="col-5">
-                      <p class="card-text" id="titleFontPicture"><img src="../asset/Icon/black-shop-tag.svg" alt="Login" style="width:20px; margin-top:3px;" id="person">30K</p>
-                  </div>
-                </div>
-                
-              </div>
-            </div>
-          </div>
-          <div style="overflow: hidden; display: flex; justify-content:space-around;">
-            <!-- PHOTO 1 -->
-            <div  class="card my-3 mx-auto" id="picture">
-              <a href=""><img  class="card-img-top" src="https://s7d1.scene7.com/is/image/PETCO/puppy-090517-dog-featured-355w-200h-d" alt="dog"></a>
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-7">
-                      <p class="card-text" id="titleFontPicture">Max 
-                        <span id="subFontPicture"><br>Labrador 3 months</span></p>
-                  </div>
-                  <div class="col-5">
-                      <p class="card-text" id="titleFontPicture"><img src="../asset/Icon/black-shop-tag.svg" alt="Login" style="width:20px; margin-top:3px;" id="person">30K</p>
-                  </div>
-                </div>
-                
-              </div>
-            </div>
-            <!-- PHOTO 2 -->
-            <div  class="card my-3 mx-auto" id="picture">
-              <a href="#"><img class="card-img-top" src="https://s7d1.scene7.com/is/image/PETCO/puppy-090517-dog-featured-355w-200h-d" alt="dog"></a>
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-7">
-                      <p class="card-text" id="titleFontPicture">Max 
-                        <span id="subFontPicture"><br>Labrador 3 months</span></p>
-                  </div>
-                  <div class="col-5">
-                      <p class="card-text" id="titleFontPicture"><img src="../asset/Icon/black-shop-tag.svg" alt="Login" style="width:20px; margin-top:3px;" id="person">30K</p>
-                  </div>
-                </div>
-                
-              </div>
-            </div>
-            <!-- PHOTO 3 -->
-            <div class="card my-3 mx-auto" id="picture">
-              <a href="#"><img class="card-img-top" src="https://s7d1.scene7.com/is/image/PETCO/puppy-090517-dog-featured-355w-200h-d" alt="dog"></a>
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-7">
-                      <p class="card-text" id="titleFontPicture">Max 
-                        <span id="subFontPicture"><br>Labrador 3 months</span></p>
-                  </div>
-                  <div class="col-5">
-                      <p class="card-text" id="titleFontPicture"><img src="../asset/Icon/black-shop-tag.svg" alt="Login" style="width:20px; margin-top:3px;" id="person">30K</p>
-                  </div>
-                </div>
-                
-              </div>
-            </div>
-          </div>
+            
+                        
+               
+
 
 </div>
 
@@ -605,4 +308,3 @@
 	<h4 style="position: relative;left: 45%; ">Team of god of year</h4>
 
 </div>
->>>>>>> Stashed changes:html/forSell.html

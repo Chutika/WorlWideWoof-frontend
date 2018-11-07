@@ -111,6 +111,13 @@ cursor: pointer;
 outline: none;
 
 }
+#darkTag{
+    width:20px; 
+    /* margin-top:24px; */
+    float: left;
+    height: 25px;
+    margin-right: 5px;
+}
 /* On mouse-over */
 .sidenav a:hover, .dropdown-btn:hover {
 color: #815811;
