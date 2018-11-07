@@ -1,0 +1,36 @@
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin:10% auto 20% auto;
+    margin-right:30%;
+    margin-left:30%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* The grid: Two equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 50%;
+    padding: 15px;
+    text-align: center;
+    font-size: 25px;
+    cursor: pointer;
+    color: #352304;
+}
+
+.containerTab {
+    padding: 80px;
+    color: #352304;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
