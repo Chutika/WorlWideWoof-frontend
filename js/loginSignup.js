@@ -42,6 +42,12 @@ $('.form').find('input, textarea').on('keyup blur focus', function (e) {
     
   });
   
+//  test GET and POST    //
+
+// End test GET and POST //
+
+
+
   $('#facebook-button').on('click', function() {
     // Initialize with your OAuth.io app public key
     OAuth.initialize('HwAr2OtSxRgEEnO2-JnYjsuA3tc');
