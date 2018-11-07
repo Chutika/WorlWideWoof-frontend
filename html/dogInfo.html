@@ -7,9 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
     crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" media="screen" href="../css/dogInfo.css" />
+  
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/dogInfo.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/navbar.css" />
 
   <script src="../js/dogInfo.js"></script>
+  <script src="../js/navigation.js"></script>
+
+
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
@@ -82,7 +87,11 @@
 
           <div class="container-fluid col-sm-7" id="contentDog">
             <div class="container-fluid col-sm-9 " id="divContent">
+              
               <p id="dogName">Max</p>
+              <p id="shop" onclick="goToPage()">
+                ร้าน dogShop
+              </p>
               <p id="content">
                 ผมอายุ 1 ปี ครับ เป็นหมาซื่อสัตย์ สงบเสงี่ยม เฝ้าบ้านได้ครับ
               </p>
@@ -108,7 +117,7 @@
         <p class="my-3 text-center" id="font">ตัวอื่นที่คล้ายกัน</p>
 
         <!-- --------------------------------------------- Card ------------------------------------------------ -->
-        <div class="card my-3 mx-auto" id="pictureCard">
+        <div class="card my-3 mx-auto" id="pictureCard" onclick="clickSameDog()">
           <img class="card-img-top" src="https://s7d1.scene7.com/is/image/PETCO/puppy-090517-dog-featured-355w-200h-d"
             alt="dog">
           <div class="card-body">
@@ -125,7 +134,7 @@
           </div>
         </div>
         <!-- ---------------------------------------------------------------------------------------------------------------------------------- -->
-        <div class="card my-3 mx-auto" id="pictureCard">
+        <div class="card my-3 mx-auto" id="pictureCard" onclick="clickSameDog()">
           <img class="card-img-top" src="https://s7d1.scene7.com/is/image/PETCO/puppy-090517-dog-featured-355w-200h-d"
             alt="dog">
           <div class="card-body">
