@@ -1,28 +1,33 @@
-<<<<<<< HEAD
 var slideIndex = 1;
 showSlides(slideIndex);
-=======
-
->>>>>>> master
 
 function clickLogo(){
+    //route page
     location.href="landingPage.html"
+
+    //set current nav-menu
+    $("#shopMenu p").removeClass("active");
+    $("#foundMenu p").removeClass("active");
+    $("#loginMenu p").removeClass("active");
+    $("#signupMenu p").removeClass("active");
 }
 
 function clickShopMenu(){
     location.href="forSale.html"
-    document.getElementById("shopMenu").style.backgroundColor = "#F1D102";
-    document.getElementById("foundMenu").style.backgroundColor = "#FFE32E";
-    document.getElementById("shopMenu").style.fontWeight="500";
-    document.getElementById("foundMenu").style.fontWeight="normal";
+   
+    $("#shopMenu p").addClass("active");
+    $("#foundMenu p").removeClass("active");
+    $("#loginMenu p").removeClass("active");
+    $("#signupMenu p").removeClass("active");
 
 }
 function clickFoundationMenu(){
     location.href="forAdopt.html"
-    document.getElementById("shopMenu").style.backgroundColor = "#FFE32E";
-    document.getElementById("foundMenu").style.backgroundColor = "#F1D102";
-    document.getElementById("shopMenu").style.fontWeight="normal";
-    document.getElementById("foundMenu").style.fontWeight="500";
+    
+    $("#shopMenu p").removeClass("active");
+    $("#foundMenu p").addClass("active");
+    $("#loginMenu p").removeClass("active");
+    $("#signupMenu p").removeClass("active");
 }
 
 // Thumbnail image controls
