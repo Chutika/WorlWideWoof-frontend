@@ -58,12 +58,50 @@ nav{
 }
 
 /* -----------------------------------------------------*/
+/*--------------------- Card -------------------------- */
+#nameDog{
+    font-family: 'kanitMedium', Kanit ,sans-serif;
+    color: #352304;
+    font-size: 26px;
+    line-height: 0.9;
+    font-weight: 500;
+}
+
+#price{
+    font-family: 'kanitMedium', Kanit ,sans-serif;
+    color: #352304;
+    font-size: 26px;
+    line-height: 0.9;
+    font-weight: 500;
+    margin-top: 24px;
+}
+
+#detailDog{
+    
+    font-family: 'kanitMedium', Kanit ,sans-serif;
+    color: #352304;
+    font-size: 13px;
+}
+#darkTag{
+    width:20px; 
+    /* margin-top:24px; */
+    float: left;
+    height: 25px;
+    margin-right: 5px;
+}
+
+/* ---------------------- Body RIGHT Side --------------------------*/
+#rightSide{
+    background-color:rgba(0, 0, 0, 0.06);
+
+}
+/* --------------------------------------------------- */
+
 #Bath{
-    text-align: right;
     color: #815811;
     font-family: 'kanitLight', Kanit ,sans-serif;
     font-size: 37px;
-    margin-left: 302.8px;
+    margin-left: 252.8px;
 }
 
 #divUnderNav{
@@ -82,20 +120,18 @@ nav{
     font-size: 40px;
     color: #F1D102;
     margin-top: 23px;
-    margin-left: 57px;
+    /* margin-left: 57px; */
 
 }
 #content{
     font-family: 'kanitLight', Kanit ,sans-serif;
     font-size: 22px;
     color: #352304;
-    margin-left: 57px;
+    /* margin-left: 57px; */
     font-weight: 400;
 }
-#test{
-    background-color: #352304;
-}
 
+/* ------------ Slide Show ---------------- */
 * {
     box-sizing: border-box;
   }
@@ -179,16 +215,22 @@ nav{
   .demo {
     opacity: 0.6;
     height: 99.90px;
+    width: 99.90px;
+    
   }
   
   .active,
   .demo:hover {
     opacity: 1;
+    height: 99.90px;
+    width: 99.90px;
   }
   #slideShow{
       margin-left: 51.79px;
       width: 329.74px;
   }
+  /* --------------------------------------------------- */
+  /* ----------- Button Price -------------- */
 #centerDemo{
     margin-right: 15.01px;
     margin-left: 15.01px;
@@ -203,10 +245,15 @@ nav{
     text-decoration: none;
     display: inline-block;
     font-size: 25px;
-    margin-left: 302.8px;
+    margin-left: 252.8px;
     margin-top:18px;
     cursor: pointer;
-    width: 318.47px;
+    width: 288.47px;
     font-family: 'kanitMedium', Kanit ,sans-serif;
     border-radius: 27px;
+}
+  /* --------------------------------------------------- */
+#contentDog{
+    margin-left: 30px;
+    padding-left: 0px;
 }
