@@ -186,7 +186,7 @@ Main components
 header[role=banner] {
   position: relative;
   height: 50px;
-  background: #343642;
+  background:#FFE32E;
 }
 header[role=banner] #cd-logo {
   float: left;
@@ -304,7 +304,7 @@ header[role=banner]::after {
     border-radius: 50em;
   }
   .main-nav a.cd-signup {
-    background: #2f889a;
+    background: #FFE32E;
     border: none;
   }
 }
@@ -485,8 +485,8 @@ xsigin/signup popup
 .cd-form input[type=submit] {
   padding: 16px 0;
   cursor: pointer;
-  background: #2f889a;
-  color: #FFF;
+  background: #FFE32E;
+  color: #40331D;
   font-weight: bold;
   border: none;
   -webkit-appearance: none;

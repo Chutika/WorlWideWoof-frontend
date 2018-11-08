@@ -1,7 +1,7 @@
 jQuery(document).ready(function($){
 	var $form_modal = $('.cd-user-modal'),
 		$form_login = $form_modal.find('#cd-login'),
-		$form_signup = $form_modal.find('#signupMenu'),
+		$form_signup = $form_modal.find('#cd-signup'),
 		$form_forgot_password = $form_modal.find('#cd-reset-password'),
 		$form_modal_tab = $('.cd-switcher'),
 		$tab_login = $form_modal_tab.children('li').eq(0).children('a'),
@@ -22,7 +22,7 @@ jQuery(document).ready(function($){
 			//show modal layer
 			$form_modal.addClass('is-visible');	
 			//show the selected form
-			( $(event.target).is('.signupMenu') ) ? signup_selected() : login_selected();
+			( $(event.target).is('.cd-signup') ) ? signup_selected() : login_selected();
 		}
 
 	});
@@ -149,21 +149,3 @@ jQuery.fn.putCursorAtEnd = function() {
 jQuery('#cody-info ul li').eq(1).on('click', function(){
 $('#cody-info').hide();
 });
-
-function clickloginMenu(){
-    location.href="loginSignup3.html"
-    
-    $("#shopMenu p").removeClass("active");
-    $("#foundMenu p").removeClass("active");
-    $("#loginMenu p").addClass("active");
-    $("#signupMenu p").removeClass("active");
-}
-
-function clicksignupMenu(){
-    location.href="loginSignup3.html"
-    
-    $("#shopMenu p").removeClass("active");
-    $("#foundMenu p").removeClass("active");
-    $("#loginMenu p").removeClass("active");
-    $("#signupMenu p").addClass("active");
-}
