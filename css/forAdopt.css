@@ -122,3 +122,7 @@ padding-right: 8px;
 .sidenav {padding-top: 10px;}
 .sidenav a {font-size: 18px;}
 }
+
+#aboutUs:hover{
+    cursor: pointer;
+}
