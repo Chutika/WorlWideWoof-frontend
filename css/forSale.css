@@ -193,3 +193,7 @@ nav{
     margin-right: 5px;
     
 }
+
+#aboutUs:hover{
+    cursor: pointer;
+}
