@@ -21,17 +21,14 @@ body{
     color:#352304;
 } */
 /* -----------------------------------------------------*/
-#info{
-
-}
 #slide{
-    padding-left: 50px;
+    padding-left: 150px;
 }
 #Bath{
     color: #815811;
     font-family: 'kanitLight', Kanit ,sans-serif;
     font-size: 37px;
-    margin-left: 332.8px;
+    margin-left: 122.8px;
 }
 
 #imageDog{
@@ -46,9 +43,6 @@ body{
     color: #F1D102;
     /* margin-left: 57px; */
 
-}
-#detailDog{
- padding-right: 90px;
 }
 
 #content{
@@ -173,6 +167,9 @@ body{
     margin-left: 15.01px;
 }
 /* --------------------------------------------------- */
+#detailDog{
+    padding-left: 90px;
+}
   /* ----------- Button Price -------------- */
 .button{
     background-color:#FFE32E;
@@ -183,11 +180,44 @@ body{
     text-decoration: none;
     display: inline-block;
     font-size: 25px;
-    margin-left: 322.8px;
+    margin-left: 122.8px;
     margin-top:18px;
+    margin-bottom: 20px;
     cursor: pointer;
     width: 288.47px;
     font-family: 'kanitMedium', Kanit ,sans-serif;
     border-radius: 27px;
 }
   /* --------------------------------------------------- */
+#inBody{
+    width: 100%;
+}
+
+.form-inline { 
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+  }
+
+  #delete{
+      float: right;
+      
+  }
+
+  #edit{
+      float: right;
+      
+  }
+
+  .icon{
+      padding-left: 5px;
+      padding-right: 5px;
+  }
+
+  #delete{
+    margin-right: 90px;
+  }
+
+  #edit{
+      margin-right: 40px;
+  }
