@@ -20,7 +20,23 @@ function clickFoundationMenu(){
     document.getElementById("shopMenu").style.fontWeight="normal";
     document.getElementById("foundMenu").style.fontWeight="500";
 }
+function clickloginMenu(){
+    location.href="loginSignup3.html"
+    
+    $("#shopMenu p").removeClass("active");
+    $("#foundMenu p").removeClass("active");
+    $("#loginMenu p").addClass("active");
+    $("#signupMenu p").removeClass("active");
+}
 
+function clicksignupMenu(){
+    location.href="loginSignup3.html"
+    
+    $("#shopMenu p").removeClass("active");
+    $("#foundMenu p").removeClass("active");
+    $("#loginMenu p").removeClass("active");
+    $("#signupMenu p").addClass("active");
+}
 // Thumbnail image controls
 function currentSlide(n) {
   showSlides(n);
