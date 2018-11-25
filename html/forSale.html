@@ -20,7 +20,9 @@
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
-
+<!-- jQuery CDN -->
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+crossorigin="anonymous"></script>
 
   <!-- Kanit fonts -->
   <link href="https://fonts.googleapis.com/css?family=Kanit:300,400,500,600,700&amp;subset=thai" rel="stylesheet">
@@ -129,7 +131,7 @@
   <!-- Main -->
   <div class="main">
     <div>
-      <p style="position: relative;margin-left: 42%"><img src="../asset/icon/charity.svg" style="float:left ;width:35px;height:35px;margin-right: 20px;">
+      <p style="position: relative;margin-left: 42%"><img src="../asset/icon/black-shop-tag.svg" style="float:left ;width:35px;height:35px;margin-right: 20px;">
         For Sale
       </p>
     </div>
@@ -139,14 +141,12 @@
     <!-- Photo -->
     <div style="overflow: hidden; display: flex; justify-content:space-around;">
       <!-- PHOTO 1 -->
-      <div style="margin:5px;" class="card my-3 mx-auto" id="picture">
-        <a href="../html/dogInfo.html"><img class="card-img-top" src="https://s7d1.scene7.com/is/image/PETCO/puppy-090517-dog-featured-355w-200h-d"
-            alt="dog"></a>
-        <div class="card-body">
+      <div class="card my-3 mx-auto" id="picture">
+       <!---img1-------->
+        <div class="card-body" id="body1">
           <div class="row">
-            <div class="col-7">
-              <p class="card-text" id="titleFontPicture">Max
-                <span id="subFontPicture"><br>Labrador 3 months</span></p>
+            <div class="col-7"id="name1">
+              <!---name1----->
             </div>
             <div class="col-5">
               <p class="card-text" id="titleFontPicture"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag">30K</p>
@@ -157,144 +157,128 @@
       </div>
       <!-- PHOTO 2 -->
       <div class="card my-3 mx-auto" id="picture">
-        <a href="../html/dogInfo.html"><img class="card-img-top" src="https://s7d1.scene7.com/is/image/PETCO/puppy-090517-dog-featured-355w-200h-d"
-            alt="dog"></a>
-        <div class="card-body">
-          <div class="row">
-            <div class="col-7">
-              <p class="card-text" id="titleFontPicture">Max
-                <span id="subFontPicture"><br>Labrador 3 months</span></p>
-            </div>
-            <div class="col-5">
+        <!---img2-------->
+         <div class="card-body" id="body2">
+           <div class="row">
+             <div class="col-7"id="name2">
+               <!---name2----->
+             </div>
+             <div class="col-5">
               <p class="card-text" id="titleFontPicture"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag">30K</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
+             </div>
+           </div>
+ 
+         </div>
+       </div>
       <!-- PHOTO 3 -->
       <div class="card my-3 mx-auto" id="picture">
-        <a href="../html/dogInfo.html"><img class="card-img-top" src="https://s7d1.scene7.com/is/image/PETCO/puppy-090517-dog-featured-355w-200h-d"
-            alt="dog"></a>
-        <div class="card-body">
-          <div class="row">
-            <div class="col-7">
-              <p class="card-text" id="titleFontPicture">Max
-                <span id="subFontPicture"><br>Labrador 3 months</span></p>
-            </div>
-            <div class="col-5">
+        <!---img3-------->
+         <div class="card-body" id="body3">
+           <div class="row">
+             <div class="col-7"id="name3">
+               <!---name3----->
+             </div>
+             <div class="col-5">
               <p class="card-text" id="titleFontPicture"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag">30K</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
+             </div>
+           </div>
+ 
+         </div>
+       </div>
     </div>
     <div style="overflow: hidden; display: flex; justify-content:space-around;">
-      <!-- PHOTO 1 -->
+      <!-- PHOTO 4 -->
       <div class="card my-3 mx-auto" id="picture">
-        <a href="../html/dogInfo.html"><img class="card-img-top" src="https://s7d1.scene7.com/is/image/PETCO/puppy-090517-dog-featured-355w-200h-d"
-            alt="dog"></a>
-        <div class="card-body">
-          <div class="row">
-            <div class="col-7">
-              <p class="card-text" id="titleFontPicture">Max
-                <span id="subFontPicture"><br>Labrador 3 months</span></p>
-            </div>
-            <div class="col-5">
+        <!---img4-------->
+         <div class="card-body" id="body4">
+           <div class="row">
+             <div class="col-7"id="name4">
+               <!---name4----->
+             </div>
+             <div class="col-5">
               <p class="card-text" id="titleFontPicture"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag">30K</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-      <!-- PHOTO 2 -->
+             </div>
+           </div>
+ 
+         </div>
+       </div>
+      <!-- PHOTO 5 -->
       <div class="card my-3 mx-auto" id="picture">
-        <a href="../html/dogInfo.html"><img class="card-img-top" src="https://s7d1.scene7.com/is/image/PETCO/puppy-090517-dog-featured-355w-200h-d"
-            alt="dog"></a>
-        <div class="card-body">
-          <div class="row">
-            <div class="col-7">
-              <p class="card-text" id="titleFontPicture">Max
-                <span id="subFontPicture"><br>Labrador 3 months</span></p>
-            </div>
-            <div class="col-5">
+        <!---img5-------->
+         <div class="card-body" id="body5">
+           <div class="row">
+             <div class="col-7"id="name5">
+               <!---name5----->
+             </div>
+             <div class="col-5">
               <p class="card-text" id="titleFontPicture"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag">30K</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-      <!-- PHOTO 3 -->
+             </div>
+           </div>
+ 
+         </div>
+       </div>
+      <!-- PHOTO 6 -->
       <div class="card my-3 mx-auto" id="picture">
-        <a href="../html/dogInfo.html"><img class="card-img-top" src="https://s7d1.scene7.com/is/image/PETCO/puppy-090517-dog-featured-355w-200h-d"
-            alt="dog"></a>
-        <div class="card-body">
-          <div class="row">
-            <div class="col-7">
-              <p class="card-text" id="titleFontPicture">Max
-                <span id="subFontPicture"><br>Labrador 3 months</span></p>
-            </div>
-            <div class="col-5">
+        <!---img6-------->
+         <div class="card-body" id="body6">
+           <div class="row">
+             <div class="col-7"id="name6">
+               <!---name6----->
+             </div>
+             <div class="col-5">
               <p class="card-text" id="titleFontPicture"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag">30K</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
+             </div>
+           </div>
+ 
+         </div>
+       </div>
     </div>
     <div style="overflow: hidden; display: flex; justify-content:space-around;">
-      <!-- PHOTO 1 -->
+      <!-- PHOTO 7 -->
       <div class="card my-3 mx-auto" id="picture">
-        <a href="../html/dogInfo.html"><img class="card-img-top" src="https://s7d1.scene7.com/is/image/PETCO/puppy-090517-dog-featured-355w-200h-d"
-            alt="dog"></a>
-        <div class="card-body">
-          <div class="row">
-            <div class="col-7">
-              <p class="card-text" id="titleFontPicture">Max
-                <span id="subFontPicture"><br>Labrador 3 months</span></p>
-            </div>
-            <div class="col-5">
+        <!---img7-------->
+         <div class="card-body" id="body7">
+           <div class="row">
+             <div class="col-7"id="name7">
+               <!---name7----->
+             </div>
+             <div class="col-5">
               <p class="card-text" id="titleFontPicture"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag">30K</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-      <!-- PHOTO 2 -->
+             </div>
+           </div>
+ 
+         </div>
+       </div>
+      <!-- PHOTO 8 -->
       <div class="card my-3 mx-auto" id="picture">
-        <a href="../html/dogInfo.html"><img class="card-img-top" src="https://s7d1.scene7.com/is/image/PETCO/puppy-090517-dog-featured-355w-200h-d"
-            alt="dog"></a>
-        <div class="card-body">
-          <div class="row">
-            <div class="col-7">
-              <p class="card-text" id="titleFontPicture">Max
-                <span id="subFontPicture"><br>Labrador 3 months</span></p>
-            </div>
-            <div class="col-5">
+        <!---img8-------->
+         <div class="card-body" id="body8">
+           <div class="row">
+             <div class="col-7"id="name8">
+               <!---name8----->
+             </div>
+             <div class="col-5">
               <p class="card-text" id="titleFontPicture"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag">30K</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-      <!-- PHOTO 3 -->
+             </div>
+           </div>
+ 
+         </div>
+       </div>
+      <!-- PHOTO 9 -->
       <div class="card my-3 mx-auto" id="picture">
-        <a href="../html/dogInfo.html"><img class="card-img-top" src="https://s7d1.scene7.com/is/image/PETCO/puppy-090517-dog-featured-355w-200h-d"
-            alt="dog"></a>
-        <div class="card-body">
-          <div class="row">
-            <div class="col-7">
-              <p class="card-text" id="titleFontPicture">Max
-                <span id="subFontPicture"><br>Labrador 3 months</span></p>
-            </div>
-            <div class="col-5">
+        <!---img9-------->
+         <div class="card-body" id="body9">
+           <div class="row">
+             <div class="col-7"id="name9">
+               <!---name9----->
+             </div>
+             <div class="col-5">
               <p class="card-text" id="titleFontPicture"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag">30K</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
+             </div>
+           </div>
+ 
+         </div>
+       </div>
     </div>
 
 
@@ -302,7 +286,13 @@
 
 
   </div>
-
+  <p>
+  <h1 style="position: relative; left:75%;">
+    <a href="#" class="button" style="box-shadow: 5px 5px 5px grey;">PREVIOUS</a>
+    <a href="#" class="button" style="box-shadow: 5px 5px 5px grey;">NEXT</a>
+  </h1>
+  
+  </p>
   <div style="background-color:#FFE32E;">
     <h1 id="aboutUs" style="position: relative;left: 45%; " onclick="goToShopInfo()">About Us</h1>
     <h4 style="position: relative;left: 45%; ">Team of god of year</h4>
