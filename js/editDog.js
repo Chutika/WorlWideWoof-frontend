@@ -1,4 +1,6 @@
 $(function () {
+    alert("edit dog js connected");
+    getInfo();
     validateName();
     submitForm();
 
@@ -45,20 +47,45 @@ $(function () {
         });
     };
 
-    function validateName(){
-        var $regexname=/^([a-zA-Z]{0,9})$/;
-            $('#name').on('keypress keydown keyup',function(){
-                     if (!$(this).val().match($regexname)) {
-                      // there is a mismatch, hence show the error message
-                         $('#name + .valid-msg').removeClass('hidden');
-                         $('#name + .valid-msg').show();
-                     }
-                   else{
-                        // else, do not display message
-                        $('#name + .valid-msg').addClass('hidden');
-                       }
-                 });
-    }
+    function validateName() {
+        var $regexname = /^([a-zA-Z]{0,9})$/;
+        $('#name').on('keypress keydown keyup', function () {
+            if (!$(this).val().match($regexname)) {
+                // there is a mismatch, hence show the error message
+                $('#name + .valid-msg').removeClass('hidden');
+                $('#name + .valid-msg').show();
+            }
+            else {
+                // else, do not display message
+                $('#name + .valid-msg').addClass('hidden');
+            }
+        });
+    };
+
+    function getInfo(){
+        $.ajax({
+            url: "http://192.168.1.7:8888/dogtest",
+            type: "GET",
+            dataType: "json",
+            // data: {number: "additional Data"},
+            success: function (dog) {
+                               
+                alert("recieved : " +dog.breed);
+    
+                $('input[name=dogName]').val(dog.name);
+                $('input[name=description]').val(dog.description);
+                $('input[name=size]:checked').val(dog.size);
+                $('input[name=weight]').val(dog.weight);
+                $('input[name=breed]').val(dog.breed);
+                $('input[name=momBreed]').val(dog.momBreed);
+                $('input[name=dadBreed]').val(dog.dadBreed);
+                $('input[name=primaryColor]').val(dog.primaryColor);
+                $("input[name=price]").val(dog.price);
+                $("input[name=service]:checked").val(dog.service);
+               
+            }
+        });
+    };
 
 
 
