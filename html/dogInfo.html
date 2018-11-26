@@ -66,20 +66,20 @@
         <div class="row">
           <div class="container-fluid col-sm-4" id="">
 
-            <img src=" <%= pictures[0] %> "
+            <img src=" <%= dog.pictures[0] %> "
               alt="main picture" id="mainPicture">
 
             <div class="row" id="slideShow">
               <div class="column">
-                <img class="demo cursor" id="fontSide" src="<%= pictures[0] %>"
+                <img class="demo cursor" id="fontSide" src="<%= dog.pictures[0] %>"
                   onclick="currentSlide(1)" alt="frontSide">
               </div>
               <div class="column" id="centerDemo">
-                <img class="demo cursor" src="<%= pictures[1] %>"
+                <img class="demo cursor" src="<%= dog.pictures[1] %>"
                   onclick="currentSlide(2)" alt="leftSide">
               </div>
               <div class="column">
-                <img class="demo cursor" src="<%= pictures[2] %>"
+                <img class="demo cursor" src="<%= dog.pictures[2] %>"
                   onclick="currentSlide(3)" alt="rightSide">
               </div>
             </div>
@@ -115,13 +115,13 @@
 
             <!-- Modal Header -->
             <div class="modal-header">
-              <h4 class="modal-title" id="shopName">ชื่อร้าน</h4>
+              <h4 class="modal-title" id="shopName"><%= dog.shopName %></h4>
               <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
 
             <!-- Modal body -->
             <div class="modal-body">
-              <p> เบอร์โทรติดต่อ : <span id="phoneNumber"><%= phoneNumner %></span> </p>
+              <p> เบอร์โทรติดต่อ : <span id="phoneNumber"><%= dog.phoneNumner %></span> </p>
               <p id="moreInfoAboutShop" onclick="gotoInfoShop()"> รายละเอียดเพิ่มเติมเกี่ยวกับร้าน</p>
             </div>
 
@@ -162,8 +162,8 @@
           <div class="card-body">
             <div class="row">
               <div class="col-7">
-                <p class="card-text" id="nameDog"><%= similarDog[0].name %>
-                  <span id="detailDog"><br><%= similarDog[0].breed %> <%= similarDog[0].age %></span></p>
+                <p class="card-text" id="nameDog"><%= similarDog[1].name %>
+                  <span id="detailDog"><br><%= similarDog[1].breed %> <%= similarDog[1].age %></span></p>
               </div>
               <div class="col-5">
                 <p class="card-text" id="price"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag"><%= price %>K</p>
