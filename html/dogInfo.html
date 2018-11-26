@@ -139,34 +139,34 @@
         <p class="my-3 text-center" id="font">ตัวอื่นที่คล้ายกัน</p>
 
         <!-- --------------------------------------------- Card ------------------------------------------------ -->
-        <div class="card my-3 mx-auto" id="pictureCard" onclick=" location.href = '<%= similarDog.url %>' ">
-          <img class="card-img-top" src="https://s7d1.scene7.com/is/image/PETCO/puppy-090517-dog-featured-355w-200h-d"
+        <div class="card my-3 mx-auto" id="pictureCard" onclick=" location.href = '<%= similarDogs[0].url %>' ">
+          <img class="card-img-top" src="<%= similarDogs[0].picture %>"
             alt="dog">
           <div class="card-body">
             <div class="row">
               <div class="col-7">
-                <p class="card-text" id="nameDog"><%= similarDog[0].name %>
-                  <span id="detailDog"><br><%= similarDog[0].breed %> <%= similarDog[0].age %></span></p>
+                <p class="card-text" id="nameDog"><%= similarDogs[0].name %>
+                  <span id="detailDog"><br><%= similarDogs[0].breed %> <%= similarDogs[0].age %></span></p>
               </div>
               <div class="col-5">
-                <p class="card-text" id="price"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag"><%= similarDog[0].price %>K</p>
+                <p class="card-text" id="price"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag"><%= similarDogs[0].price %>K</p>
               </div>
             </div>
 
           </div>
         </div>
         <!-- ---------------------------------------------------------------------------------------------------------------------------------- -->
-        <div class="card my-3 mx-auto" id="pictureCard" onclick=" location.href = '<%= similarDog.url %>' >
-          <img class="card-img-top" src="https://s7d1.scene7.com/is/image/PETCO/puppy-090517-dog-featured-355w-200h-d"
+        <div class="card my-3 mx-auto" id="pictureCard" onclick=" location.href = '<%= similarDogs[1].url %>' ">
+          <img class="card-img-top" src="<%= similarDogs[1].picture %>"
             alt="dog">
           <div class="card-body">
             <div class="row">
               <div class="col-7">
-                <p class="card-text" id="nameDog"><%= similarDog[1].name %>
-                  <span id="detailDog"><br><%= similarDog[1].breed %> <%= similarDog[1].age %></span></p>
+                <p class="card-text" id="nameDog"><%= similarDogs[1].name %>
+                  <span id="detailDog"><br><%= similarDogs[1].breed %> <%= similarDogs[1].age %></span></p>
               </div>
               <div class="col-5">
-                <p class="card-text" id="price"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag"><%= similarDog[1].price %>K</p>
+                <p class="card-text" id="price"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag"><%= similarDogs[1].price %>K</p>
               </div>
             </div>
 
