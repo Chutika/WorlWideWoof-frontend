@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<title>About shop</title>
+	<title>Add dog</title>
 
 	<!-- Required meta tags for proper responsive behaviors -->
 	<meta charset="utf-8">
@@ -22,6 +22,11 @@
 	<!-- jQuery CDN -->
 	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
 	 crossorigin="anonymous"></script>
+
+	 <!-- navbar -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
 
 </head>
@@ -80,7 +85,7 @@
 
 
 
-	<!-- -------------- General Info about Shop ---------------------------- -->
+	<!-- -------------- Info about dog ---------------------------- -->
 
 	<div class="info">
 		<form action="http://10.66.8.124:8888/test" method="POST" enctype="multipart/form-data">
@@ -91,11 +96,13 @@
 			</div>
 			<div class="form-group">
 				<label for="name">Dog name </label>
-				<input id="name" type="text" class="form-control" name="dogName" placeholder="Dog name" required>
+				<input id="name" type="text" class="form-control" name="dogName" maxlength="9" placeholder="Dog name" required>
+				<p class="hidden valid-msg">English only, no more than 9 characters</p>
 			</div>
 			<div class="form-group">
 				<label for="dogDescription">Description</label>
-				<input type="textarea" id="dogDescription" class="form-control" name="description" placeholder="Describe your dog ...">
+				<input type="textarea" id="dogDescription" class="form-control" maxlength="200" name="description" placeholder="Describe your dog ...">
+				<p class="hidden valid-msg">no more than 200 characters</p>
 			</div>
 			<div class="form-check">
 				<p>Size</p>
@@ -118,8 +125,8 @@
 			</div>
 
 			<div class="form-group">
-				<label for="weight">Weight</label>
-				<input type="number" class="form-control" id="weight" name="weight" placeholder="xx kg.">
+				<label for="weight">Weight (kg)</label>
+				<input type="number" class="form-control" id="weight" name="weight" max="160" placeholder="xx kg.">
 			</div>
 
 			<div class="form-group">
@@ -136,14 +143,22 @@
 			</div>
 
 			<div class="form-group">
-				<label for="primaryColor">Primary Color </label>
-				<input type="text" id="primaryColor" class="form-control" name="primaryColor" placeholder="Primary color" required>
+				<p>Age</p>
+				<div class="form-row">
+					<div class="col">
+				  		<input type="number" class="form-control" min="0" max="30" placeholder="Years">
+					</div>
+					<div class="col">
+				  		<input type="number" class="form-control" min="0" max="11" placeholder="Months">
+					</div>
 			</div>
+		</div>
+
 			<div class="form-group">
 
 				<div class="form-group">
 					<label for="price">Price</label>
-					<input type="number" class="form-control" id="price" name="price" placeholder="baht" required>
+					<input type="number" class="form-control" id="price" name="price" min="0" placeholder="baht" required>
 				</div>
 				<div class="form-check">
 					<p>Services</p>

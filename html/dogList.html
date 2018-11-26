@@ -18,11 +18,17 @@
 	<!-- custom style -->
 	
 	<link rel="stylesheet" type="text/css" href="../css/navbar.css">
-	<link rel="stylesheet" type="text/css" href="../css/aboutShop.css">
+	<link rel="stylesheet" type="text/css" href="../css/secNavBar.css">
+	<link rel="stylesheet" type="text/css" href="../css/dogList.css">
 
 	<!-- jQuery CDN -->
 	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
 	 crossorigin="anonymous"></script>
+	 
+	<!-- navbar -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
 </head>
 
@@ -58,7 +64,7 @@
 			</form>
 		</div>
 	</nav>
-
+<br>
     <!-- ------------------------------------------------------------------- -->
 
 
@@ -77,55 +83,65 @@
 	<!-- ------------------------------------------------------------------- -->
 
 
+	<div id="info">
+	<!-- -------------- Infomation abput dog list ---------------------------- -->
 
-	<!-- -------------- General Info about Shop ---------------------------- -->
+	<!-- As a heading -->
+	<nav id="search-bar" class="navbar navbar-expand-lg navbar-light mx-auto">
+			<span class="navbar-brand mb-0 h1">Filter</span>
 
-	<div class="info">
-		<div class="info-section  " id="intro-info-section">
-		
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		  <span class="navbar-toggler-icon"></span>
+		</button>
+	  
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+		  <ul class="navbar-nav mr-auto">
+
+			<li class="nav-item dropdown">
+			  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				Dropdown
+			  </a>
+			  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+				<a class="dropdown-item" href="#">Action</a>
+				<a class="dropdown-item" href="#">Another action</a>
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="#">Something else here</a>
+			  </div>
+			</li>
+
+			<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					  Dropdown
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					  <a class="dropdown-item" href="#">Action</a>
+					  <a class="dropdown-item" href="#">Another action</a>
+					  <div class="dropdown-divider"></div>
+					  <a class="dropdown-item" href="#">Something else here</a>
+					</div>
+				  </li>
 			
-			<!-- <img class="circle float-left" id="logo-shop" src="https://cdn.dribbble.com/users/375867/screenshots/1392018/dog-shop-logo.png"
-			 alt="">
-			<h2>Dog Hong hong</h2>
-			<p>Chutika werayuthwattana 088-8888888</p> -->
-
+		  </ul>
+		  
 		</div>
-		<br>
-		<div class="info-section" id="desc-info-section">
-			<h2>Description</h2>
+	  </nav>
+	<h1>Something</h1>
 
-		</div>
-
-		<div class="info-section" id="cer-info-section">
-			<h2>Certificate</h2>
-		</div>
-
-		<div class="info-section" id="map-info-section">
-			<h2>Map</h2>
-			<p>detail about the location of shop</p>
-		</div>
-		<!-- ---------------------------- map ---------------------------------- -->
-		<div class="info-section" id="map"></div>
-		<!-- ------------------------------------------------------------------- -->
-		<form action="aboutShop_edit.html" method="GET">
-			<button type="submit" class="btn btn-primary btn-lg">Edit</button>
-		</form>
-	</div>
-	<!-- ------------------------------------------------------------------- -->
-
-
+	<form action="addDog.html" method="GET">
+		<button type="submit" class="btn btn-primary btn-lg">Add Dog</button>
+	</form>
+</div>
 
 
 
 	<!-- ---------------------------- javascript ---------------------------------- -->
-	<script>
 
-	</script>
-
-	<script src="../js/aboutShop.js"></script>
+	
+	<script src="../js/dogList.js"></script>
 	<script src="../js/navigation.js"></script>
-	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMscvPhIuLIWUzsKKFdGS_zr0NbNxrxGw&callback=initMap">
-	</script>
+	
+	
 
 	<!-- ------------------------------------------------------------------- -->
 

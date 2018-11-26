@@ -1,5 +1,5 @@
 $(function () {
- 
+    validateName();
     submitForm();
 
     function submitForm() {
@@ -43,6 +43,21 @@ $(function () {
 
             event.preventDefault();
         });
+    };
+
+    function validateName(){
+        var $regexname=/^([a-zA-Z]{0,9})$/;
+            $('#name').on('keypress keydown keyup',function(){
+                     if (!$(this).val().match($regexname)) {
+                      // there is a mismatch, hence show the error message
+                         $('#name + .valid-msg').removeClass('hidden');
+                         $('#name + .valid-msg').show();
+                     }
+                   else{
+                        // else, do not display message
+                        $('#name + .valid-msg').addClass('hidden');
+                       }
+                 });
     }
 
 
