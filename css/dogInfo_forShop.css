@@ -6,34 +6,95 @@
     font-family: kanitMedium;
     src: url(../asset/font/Kanit/Kanit-Medium.ttf)
 }
-
-
-body{
-    font-family: 'Kanit', sans-serif;
-    font-size: 25px;
-    font-weight: 300;
-    color:#352304;
+#navBar{
+    height: 82px;
 }
-/* .fontMedium{
-    font-family: 'KanitMedium', sans-serif;
+
+#menu{
+    color: black;
     font-size: 25px;
-    font-weight: 300;
-    color:#352304;
-} */
-/* -----------------------------------------------------*/
-#slide{
-    padding-left: 150px;
+    padding: 0px;
+    margin: 0px;
+}
+#person{ 
+    float: left;
+}
+#rightSide{
+    background-color:rgba(0, 0, 0, 0.06);
+
+}
+#picture{
+    width: 288.95px;
+    height: 256.76px;
+    box-shadow: 0px 3px 10px #00000010 ;
+}
+#font{
+    font-family: 'kanitMedium', Kanit ,sans-serif;
+    color: #815811;
+    font-size: 25px;
+}
+#titleFontPicture{
+    font-family: 'kanitMedium', Kanit ,sans-serif;
+    color: #352304;
+    font-size: 26px;
+    line-height: 0.9;
+    font-weight: 500;
+}
+#subFontPicture{
+    
+    font-family: 'kanitMedium', Kanit ,sans-serif;
+    color: #352304;
+    font-size: 13px;
+}
+
+#brandMenu{
+    /* padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 8px;
+    padding-right: 8px; */
+    margin: 0px;
+    cursor: pointer;
+    font-family: 'kanitMedium', Kanit ,sans-serif;
+    color: black;
+    font-size: 25px;
+    font-weight: 500;
+}
+#shopMenu{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
+    cursor: pointer;
+    font-family: 'kanitLight', Kanit ,sans-serif;
+}
+#foundMenu{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
+    cursor: pointer;
+    font-family: 'kanitLight', Kanit ,sans-serif;
 }
 #Bath{
+    text-align: right;
     color: #815811;
     font-family: 'kanitLight', Kanit ,sans-serif;
     font-size: 37px;
-    margin-left: 122.8px;
+    margin-left: 302.8px;
 }
 
-#imageDog{
+nav{
+    background-color: #FFE32E;
+    /* height: 82px; */
+}
+#divUnderNav{
+    margin-top:80px;
+}
+
+#Labrador{
     width: 329.74px;
     height: 386.83px;
+    margin-top: 45.33px;
     margin-left: 51.79px;
 }
 
@@ -41,37 +102,29 @@ body{
     font-family: 'kanitMedium', Kanit ,sans-serif;
     font-size: 40px;
     color: #F1D102;
-    /* margin-left: 57px; */
+    margin-top: 23px;
+    margin-left: 57px;
 
 }
-
 #content{
     font-family: 'kanitLight', Kanit ,sans-serif;
     font-size: 22px;
     color: #352304;
-    /* margin-left: 57px; */
+    margin-left: 57px;
     font-weight: 400;
 }
-/* ----- Back & Edit ------ */
-#tapBar{
-    padding: 20px;
-}
-#back{
-    padding-left:20px;
-}
-#back:hover{
-    cursor: pointer;
-}
-#edit{
-    float: right;
+#test{
+    background-color: #352304;
 }
 
-/* ------------ Slide Show ---------------- */
 * {
     box-sizing: border-box;
   }
   
   /* Position the image container (needed to position the left and right arrows) */
+  .container {
+    position: relative;
+  }
   
   /* Hide the images by default */
   .mySlides {
@@ -147,30 +200,21 @@ body{
   .demo {
     opacity: 0.6;
     height: 99.90px;
-    width: 99.90px;
-    
   }
   
   .active,
   .demo:hover {
     opacity: 1;
-    height: 99.90px;
-    width: 99.90px;
   }
   #slideShow{
       margin-left: 51.79px;
       width: 329.74px;
   }
-  
 #centerDemo{
     margin-right: 15.01px;
     margin-left: 15.01px;
 }
-/* --------------------------------------------------- */
-#detailDog{
-    padding-left: 90px;
-}
-  /* ----------- Button Price -------------- */
+
 .button{
     background-color:#FFE32E;
     border: none;
@@ -180,44 +224,10 @@ body{
     text-decoration: none;
     display: inline-block;
     font-size: 25px;
-    margin-left: 122.8px;
+    margin-left: 302.8px;
     margin-top:18px;
-    margin-bottom: 20px;
     cursor: pointer;
-    width: 288.47px;
+    width: 318.47px;
     font-family: 'kanitMedium', Kanit ,sans-serif;
     border-radius: 27px;
 }
-  /* --------------------------------------------------- */
-#inBody{
-    width: 100%;
-}
-
-.form-inline { 
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-  }
-
-  #delete{
-      float: right;
-      
-  }
-
-  #edit{
-      float: right;
-      
-  }
-
-  .icon{
-      padding-left: 5px;
-      padding-right: 5px;
-  }
-
-  #delete{
-    margin-right: 90px;
-  }
-
-  #edit{
-      margin-right: 40px;
-  }

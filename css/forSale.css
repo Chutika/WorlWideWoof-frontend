@@ -57,8 +57,76 @@ body{
     font-size: 25px;
     font-weight: 500;
 }
+#shopMenu{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
+    cursor: pointer;
+    font-family: 'kanitLight', Kanit ,sans-serif;
+}
+#foundMenu{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
+    cursor: pointer;
+    font-family: 'kanitLight', Kanit ,sans-serif;
+}
+#Bath{
+    text-align: right;
+    color: #815811;
+    font-family: 'kanitLight', Kanit ,sans-serif;
+    font-size: 50px;
+    margin-right:52px;
+}
 
+nav{
+    background-color: #FFE32E;
+    height: 80px;
+}
+#divUnderNav{
+    margin-top:80px;
+}
 
+#Labrador{
+    width: 379.74px;
+    height: 436.83px;
+    margin-top: 45.33px;
+    margin-left: 51.79px;
+}
+
+#dogName{
+    font-family: 'kanitMedium', Kanit ,sans-serif;
+    font-size: 50px;
+    color: #F1D102;
+    margin-top: 23px;
+    margin-left: 57px;
+
+}
+#content{
+    font-family: 'kanitLight', Kanit ,sans-serif;
+    font-size: 25px;
+    color: #352304;
+    margin-left: 57px;
+    font-weight: 400;
+}
+#test{
+    background-color: #352304;
+}
+.button {
+    background-color:#FFE32E;
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 30%;
+}
 .card-img-top {
     width: 286.95px;
     height: 161.66px;
@@ -68,6 +136,10 @@ body{
     height: 100%;
 }
 
+
+nav{
+  background-color:#FFE32E;
+}
 .button {
   background-color:#FFE32E;
   border: none;
@@ -111,13 +183,6 @@ cursor: pointer;
 outline: none;
 
 }
-#darkTag{
-    width:20px; 
-    /* margin-top:24px; */
-    float: left;
-    height: 25px;
-    margin-right: 5px;
-}
 /* On mouse-over */
 .sidenav a:hover, .dropdown-btn:hover {
 color: #815811;
@@ -150,68 +215,4 @@ padding-right: 8px;
 @media screen and (max-height: 500px) {
 .sidenav {padding-top: 10px;}
 .sidenav a {font-size: 18px;}
-}
-/*----------------------------------------*/
-
-nav{
-    background-color: #FFE32E;
-    height: 80px;
-}
-.navbar{
-    padding-left: 51px;
-    padding-right: 51px;
-}
-.navbar-nav li > p:hover{
-    background-color:#F1D102;
-    font-weight: 500;
-} 
-.navbar-nav li > p.active{
-    background-color:#F1D102;
-    font-weight: 500;
-} 
-.nav-menu{    
-    height: 80px;
-    padding: 16px 8px;
-    cursor: pointer;
-    margin-left: 15px;
-    margin-right: 15px;
-    margin-bottom: 0px;
-}
-
-#brandMenu{
-    font-weight: 500;
-    cursor: pointer;
-    margin-top: 8px;
-    margin-bottom: 18px;
-}
-
-#person{ 
-    float: left;
-    width: 25px;
-    height: 25px;
-    margin-top: 6px;
-    margin-right: 5px;
-    
-}
-
-#aboutUs:hover{
-    cursor: pointer;
-}
-#font{
-    font-family: 'kanitMedium', Kanit ,sans-serif;
-    color: #815811;
-    font-size: 25px;
-}
-.card-text{
-    font-family: 'kanitMedium', Kanit ,sans-serif;
-    color: #352304;
-    font-size: 26px;
-    line-height: 0.9;
-    font-weight: 500;
-}
-#subFontPicture{
-    
-    font-family: 'kanitMedium', Kanit ,sans-serif;
-    color: #352304;
-    font-size: 13px;
 }

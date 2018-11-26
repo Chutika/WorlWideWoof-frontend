@@ -27,6 +27,11 @@ function clickFoundationMenu(){
     $("#signupMenu p").removeClass("active");
 }
 
-function goToDogInfo(){
-    location.href="dogInfo.html"
+function clickloginMenu(){
+    location.href="loginSignup4.html"
+    
+    $("#shopMenu p").removeClass("active");
+    $("#foundMenu p").removeClass("active");
+    $("#loginMenu p").addClass("active");
+    $("#signupMenu p").removeClass("active");
 }

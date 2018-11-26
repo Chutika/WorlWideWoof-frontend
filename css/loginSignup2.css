@@ -5,10 +5,10 @@
 }
 
 body {
-    margin:10% auto 20% auto;
-    margin-right:30%;
-    margin-left:30%;
-    font-family: Arial, Helvetica, sans-serif;
+    margin:5%;
+    margin-right:20%;
+    margin-left:20%;
+    font-family: Kanit;
 }
 
 /* The grid: Two equal columns that floats next to each other */

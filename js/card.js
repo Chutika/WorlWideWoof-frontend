@@ -1,3 +1,0 @@
-function clickSameDog(){
-    location.href=""
-  }
