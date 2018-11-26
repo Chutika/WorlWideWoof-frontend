@@ -71,20 +71,20 @@
     <div class="row" id="inBody">
       <!-- Image and SlideShow -->
       <div class="container-fluid col-5" id="slide">
-        <img src="<%= pictures[0] %>"
+        <img src="<%= dog.pictures[0] %>"
           alt="frontSide" id="imageDog">
         <!-- --------- Slide Show --------- -->
         <div class="row" id="slideShow">
           <div class="column">
-            <img class="demo cursor" id="fontSide" src="<%= pictures[0] %>"
+            <img class="demo cursor" id="fontSide" src="<%= dog.pictures[0] %>"
               onclick="currentSlide(1)" alt="frontSide">
           </div>
           <div class="column" id="centerDemo">
-            <img class="demo cursor" src="<%= pictures[1] %>"
+            <img class="demo cursor" src="<%= dog.pictures[1] %>"
               onclick="currentSlide(2)" alt="leftSide">
           </div>
           <div class="column">
-            <img class="demo cursor" src="<%= pictures[2] %>"
+            <img class="demo cursor" src="<%= dog.pictures[2] %>"
               onclick="currentSlide(3)" alt="rightSide">
           </div>
         </div>
