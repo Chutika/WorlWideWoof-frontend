@@ -71,27 +71,27 @@
     <div class="row" id="inBody">
       <!-- Image and SlideShow -->
       <div class="container-fluid col-5" id="slide">
-        <img src="<%= picture[0] %>"
+        <img src="<%= pictures[0] %>"
           alt="frontSide" id="imageDog">
         <!-- --------- Slide Show --------- -->
         <div class="row" id="slideShow">
           <div class="column">
-            <img class="demo cursor" id="fontSide" src="<%= picture[0] %>"
+            <img class="demo cursor" id="fontSide" src="<%= pictures[0] %>"
               onclick="currentSlide(1)" alt="frontSide">
           </div>
           <div class="column" id="centerDemo">
-            <img class="demo cursor" src="<%= picture[1] %>"
+            <img class="demo cursor" src="<%= pictures[1] %>"
               onclick="currentSlide(2)" alt="leftSide">
           </div>
           <div class="column">
-            <img class="demo cursor" src="<%= picture[2] %>"
+            <img class="demo cursor" src="<%= pictures[2] %>"
               onclick="currentSlide(3)" alt="rightSide">
           </div>
         </div>
       </div>
       <!-- --------------------- Info----------------------- -->
       <div class="container col-7" id="detailDog">
-        
+
         <p id="dogName"><%= dog.name %></p>
               <p><b>ร้าน</b> <span class="cursor" id="shop" onclick="goToPage()"><%= dog.shopName %></span></p>
               <p class="content"><b>บริการ : </b> <span id="type"><%= dog.type %></span></p>
