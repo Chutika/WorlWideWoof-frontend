@@ -47,5 +47,5 @@ function gotoDelete(){
 }
 
 function gotoEdit(){
-  location.href="#"
+  location.href="../html/editDog.html"
 }
