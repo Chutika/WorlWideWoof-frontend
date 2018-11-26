@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>dog Info</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+        
+        <link rel="stylesheet" type="text/css" media="screen" href="../css/dogInfo.css" />
+      
+        <script src="../js/dogInfo.js"></script>
+      
+      
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+          crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+          crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+          crossorigin="anonymous"></script>
+</head>
+<body>
+        <div class="container-fluid" id="main">
+                <div class="row">
+                  <div class="container-fluid col-sm-9" id="leftSide">
+                    
+                  </div>
+            <!-- ------------------ Right Side ------------------------------ -->
+                  <div class="container-fluid col-sm-3" id="rightSide">
+                    <p class="my-3 text-center" id="font">ตัวอื่นที่คล้ายกัน</p>
+            
+                    <!-- --------------------------------------------- Card ------------------------------------------------ -->
+                    <div class="card my-3 mx-auto" id="pictureCard" onclick="clickSameDog()">
+                      <img class="card-img-top" src="https://s7d1.scene7.com/is/image/PETCO/puppy-090517-dog-featured-355w-200h-d"
+                        alt="dog">
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col-7">
+                            <p class="card-text" id="nameDog">Max
+                              <span id="detailDog"><br>Labrador 3 months</span></p>
+                          </div>
+                          <div class="col-5">
+                            <p class="card-text" id="price"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag">30K</p>
+                          </div>
+                        </div>
+            
+                      </div>
+                    </div>
+                    <!-- ---------------------------------------------------------------------------------------------------------------------------------- -->
+                    <div class="card my-3 mx-auto" id="pictureCard" onclick="clickSameDog()">
+                      <img class="card-img-top" src="https://s7d1.scene7.com/is/image/PETCO/puppy-090517-dog-featured-355w-200h-d"
+                        alt="dog">
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col-7">
+                            <p class="card-text" id="nameDog">Max
+                              <span id="detailDog"><br>Labrador 3 months</span></p>
+                          </div>
+                          <div class="col-5">
+                            <p class="card-text" id="price"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag">30K</p>
+                          </div>
+                        </div>
+            
+                      </div>
+                    </div>
+                    <!-- ---------------------------------------------------------------------------------------------------------------------------------- -->
+            
+                  </div>
+                </div>
+              </div>
+    
+</body>
+</html>

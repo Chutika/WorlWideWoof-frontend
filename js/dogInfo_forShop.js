@@ -35,5 +35,17 @@ function goBack(){
 }
 
 function clickEdit(){
-  location.href="editDog.html"
+  location.href="editDog.html";
+}
+
+function goToPage(){
+  location.href="shopInfo.html";
+}
+
+function gotoDelete(){
+  location.href="dogList.html"
+}
+
+function gotoEdit(){
+  location.href="#"
 }

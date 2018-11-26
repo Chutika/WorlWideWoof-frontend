@@ -197,3 +197,21 @@ nav{
 #aboutUs:hover{
     cursor: pointer;
 }
+#font{
+    font-family: 'kanitMedium', Kanit ,sans-serif;
+    color: #815811;
+    font-size: 25px;
+}
+.card-text{
+    font-family: 'kanitMedium', Kanit ,sans-serif;
+    color: #352304;
+    font-size: 26px;
+    line-height: 0.9;
+    font-weight: 500;
+}
+#subFontPicture{
+    
+    font-family: 'kanitMedium', Kanit ,sans-serif;
+    color: #352304;
+    font-size: 13px;
+}

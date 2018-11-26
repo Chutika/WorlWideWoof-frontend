@@ -6,7 +6,11 @@ $(function () {
 
 
     $.ajax({
+<<<<<<< HEAD
         url: "http://10.66.11.35:8888/test",
+=======
+        url: "http://192.168.1.9:8888/test",
+>>>>>>> 7df21b3712dfcd4896c3382fdffcdf75376b5f7c
         type: "GET",
         dataType: "json",
         // data: {number: "additional Data"},

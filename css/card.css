@@ -1,0 +1,34 @@
+/*--------------------- Card -------------------------- */
+.card:hover{
+    cursor: pointer;
+}
+#nameDog{
+    font-family: 'kanitMedium', Kanit ,sans-serif;
+    color: #352304;
+    font-size: 26px;
+    line-height: 0.9;
+    font-weight: 500;
+}
+
+#price{
+    font-family: 'kanitMedium', Kanit ,sans-serif;
+    color: #352304;
+    font-size: 26px;
+    line-height: 0.9;
+    font-weight: 500;
+    margin-top: 24px;
+}
+
+#detailDog{
+    
+    font-family: 'kanitMedium', Kanit ,sans-serif;
+    color: #352304;
+    font-size: 13px;
+}
+#darkTag{
+    width:20px; 
+    /* margin-top:24px; */
+    float: left;
+    height: 25px;
+    margin-right: 5px;
+}

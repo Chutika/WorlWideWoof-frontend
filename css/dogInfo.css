@@ -71,7 +71,7 @@ body{
     margin-top:80px;
 }
 
-#Labrador{
+#mainPicture{
     width: 329.74px;
     height: 386.83px;
     margin-top: 45.33px;
@@ -86,9 +86,9 @@ body{
     /* margin-left: 57px; */
 
 }
-#content{
+.content{
     font-family: 'kanitLight', Kanit ,sans-serif;
-    font-size: 22px;
+    font-size: 20px;
     color: #352304;
     /* margin-left: 57px; */
     font-weight: 400;
@@ -219,4 +219,8 @@ body{
 #contentDog{
     margin-left: 30px;
     padding-left: 0px;
+}
+/*------------------------- Modal ----------------------------*/
+#moreInfoAboutShop:hover{
+    cursor: pointer;
 }
