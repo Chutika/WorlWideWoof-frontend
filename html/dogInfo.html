@@ -93,7 +93,7 @@
               <p class="content"><b>บริการ : </b> <span id="type"><%= dog.type %></span></p>
               <p class="content"><b>สายพันธ์ุ : </b><span id="breed"><%= dog.breed %></span> <b>ขนาด : </b><span id="size"><%= dog.size %></span></p>
               <p class="content"><b>เพศ :</b> <span id="gender"><%= dog.gender %></span></p>
-              <p class="content"><b>อายุ : </b><span id="age"><%= dog.age %></span> <b>น้ำหนัก : </b><span id="weight"><%= dog.weight %></span>kg</p>
+              <p class="content"><b>อายุ : </b><span id="age"><%= dog.age %></span> <b>น้ำหนัก : </b><span id="weight"><%= dog.weight %></span> กก.</p>
               <p class="content"><b>พ่อพันธ์ุ : </b><span id="father"><%= dog.dadBreed %></span></p>
               <p class="content"><b>แม่พันธ์ุ : </b><span id="father"><%= dog.momBreed %></span></p>
               <p class="content"><b>สีหลัก : </b><span id="primaryColor"><%= dog.primaryColor %></span>
@@ -139,7 +139,7 @@
         <p class="my-3 text-center" id="font">ตัวอื่นที่คล้ายกัน</p>
 
         <!-- --------------------------------------------- Card ------------------------------------------------ -->
-        <div class="card my-3 mx-auto" id="pictureCard" onclick="clickSameDog()">
+        <div class="card my-3 mx-auto" id="pictureCard" onclick=" location.href = '<%= similarDog.url %>' ">
           <img class="card-img-top" src="https://s7d1.scene7.com/is/image/PETCO/puppy-090517-dog-featured-355w-200h-d"
             alt="dog">
           <div class="card-body">
@@ -156,7 +156,7 @@
           </div>
         </div>
         <!-- ---------------------------------------------------------------------------------------------------------------------------------- -->
-        <div class="card my-3 mx-auto" id="pictureCard" onclick="clickSameDog()">
+        <div class="card my-3 mx-auto" id="pictureCard" onclick=" location.href = '<%= similarDog.url %>' >
           <img class="card-img-top" src="https://s7d1.scene7.com/is/image/PETCO/puppy-090517-dog-featured-355w-200h-d"
             alt="dog">
           <div class="card-body">
