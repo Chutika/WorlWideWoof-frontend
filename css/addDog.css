@@ -1,12 +1,10 @@
 
-
-
 .info{
 	margin: auto;
 	padding-top: 80px;
 	width: 60%;
 }
-.form-group{
+.form-group, #uploadForm{
 	margin: 50px 0px;
 }
 
@@ -32,3 +30,5 @@
 #title{
 	text-align: center;
 }
+
+

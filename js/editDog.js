@@ -34,7 +34,7 @@ $(function () {
             // expected output: "123"
 
             $.ajax({
-                url: "http://10.66.8.124:8888/test",
+                url: "http://10.66.11.35:8888/test",
                 type: "POST",
                 dataType: "json",
                 data: formData,
@@ -66,7 +66,7 @@ $(function () {
 
     function getInfo(){
         $.ajax({
-            url: "http://192.168.1.7:8888/dogtest",
+            url: "http://10.66.11.35:8888/dogtest",
             type: "GET",
             dataType: "json",
             // data: {number: "additional Data"},
