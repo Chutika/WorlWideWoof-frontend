@@ -105,12 +105,12 @@
 			<div class="form-group">
 				<label for="name">Dog name </label>
 				<input id="name" type="text" class="form-control" name="dogName" maxlength="9" placeholder="Dog name" required>
-				<p class="hidden valid-msg">English only, no more than 9 characters</p>
+				<p id="name-valid-msg" class="hidden valid-msg">English only, no more than 9 characters</p>
 			</div>
 			<div class="form-group">
 				<label for="dogDescription">Description</label>
 				<input type="textarea" id="dogDescription" class="form-control" maxlength="200" name="description" placeholder="Describe your dog ...">
-				<p class="hidden valid-msg">no more than 200 characters</p>
+				<p id="description-valid-msg" class="hidden valid-msg">no more than 200 characters</p>
 			</div>
 
 			<div class="form-group">
@@ -153,15 +153,18 @@
 			<div class="form-group">
 				<label for="weight">Weight (kg)</label>
 				<input type="number" class="form-control" id="weight" name="weight" max="160" placeholder="xx kg.">
+				<p id="weight-valid-msg" class="hidden valid-msg">Number only</p>
 			</div>
 			<div class="form-group">
 					<label for="primaryColor">Color </label>
 					<input type="text" id="dadBreed" class="form-control" name="primaryColor" placeholder="color">
+					<p id="primaryColor-valid-msg" class="hidden valid-msg">50chars, English only, not a number</p>
 				</div>
 
 			<div class="form-group">
 				<label for="breed">Breed </label>
 				<input id="breed" type="text" class="form-control" name="breed" placeholder="Dog Breed" required>
+				<p id="breed-valid-msg" class="hidden valid-msg">English only, no number</p>
 			</div>
 			<div class="form-group">
 				<label for="momBreed">Mother's Breed </label>
@@ -176,10 +179,12 @@
 				<p>Age</p>
 				<div class="form-row">
 					<div class="col">
-				  		<input type="number" class="form-control" min="0" max="30" placeholder="Years">
+						  <input type="number" id="yearInput" class="form-control" min="0" max="30" placeholder="Years">
+						  <p id="year-valid-msg" class="hidden valid-msg">Please fill with number between 0-30</p>
 					</div>
 					<div class="col">
-				  		<input type="number" class="form-control" min="0" max="11" placeholder="Months">
+						  <input type="number" id="monthInput" class="form-control" min="0" max="11" placeholder="Months">
+						  <p id="month-valid-msg" class="hidden valid-msg">Please fill with number between 0-11</p>
 					</div>
 			</div>
 		</div>
@@ -189,6 +194,7 @@
 				<div class="form-group">
 					<label for="price">Price</label>
 					<input type="number" class="form-control" id="price" name="price" min="0" placeholder="baht" required>
+					<p id="price-valid-msg" class="hidden valid-msg">Only positive number(no more than 10 million)</p>
 				</div>
 				<div class="form-check">
 					<p>Services</p>
@@ -211,7 +217,7 @@
 				</div>
 
 
-				<button id="submitBtn" class="btn btn-primary btn-lg">Save</button>
+				<button disabled id="submitBtn" class="btn btn-primary btn-lg">Save</button>
 		</form>
 
 

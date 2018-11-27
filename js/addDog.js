@@ -1,24 +1,134 @@
 $(function () {
-    validateName();
+   
     
     $('#submitBtn').click(function (event) { event.preventDefault(); submitForm(); });
 
+    //name validate
+    $('input[name=dogName]').on("change", function(){
+        var pattern = /^([a-zA-Z]{0,9})$/
+        if (!$(this).val().match(pattern)) {
+           
+            $('#name-valid-msg').removeClass('hidden');
+            $('#name-valid-msg').show();
+            $("#submitBtn").prop("disabled", true);
+            
+        }
+        else {
+            // else, do not display message
+            $('#name-valid-msg').addClass('hidden');
+            $("#submitBtn").prop("disabled", false);
+            
+        }
+        
+    });
 
+    $('input[name=description]').on("change", function(){
+        var pattern = /^([a-zA-Z]{0,140})$/
+        if (!$(this).val().match(pattern)) {
+           
+            $('#description-valid-msg').removeClass('hidden');
+            $('#description-valid-msg').show();
+            $("#submitBtn").prop("disabled", true);
+            
+        }
+        else {
+            // else, do not display message
+            $('#description-valid-msg').addClass('hidden');
+            $("#submitBtn").prop("disabled", false);
+            
+        }
+    });
 
-    function validateName() {
-        var $regexname = /^([a-zA-Z]{0,9})$/;
-        $('#name').on('keypress keydown keyup', function () {
-            if (!$(this).val().match($regexname)) {
-                // there is a mismatch, hence show the error message
-                $('#name + .valid-msg').removeClass('hidden');
-                $('#name + .valid-msg').show();
-            }
-            else {
-                // else, do not display message
-                $('#name + .valid-msg').addClass('hidden');
-            }
-        });
-    }
+    $('input[name=weight]').on("change", function(){
+        var pattern = /^([0-9])/
+        var value = $(this).val();
+        if (!value.match(pattern) || (value<=0 || value>350) ) {
+           
+            $('#weight-valid-msg').removeClass('hidden');
+            $('#weight-valid-msg').show();
+            $("#submitBtn").prop("disabled", true);
+            
+        }
+        else {
+            // else, do not display message
+            $('#weight-valid-msg').addClass('hidden');
+            $("#submitBtn").prop("disabled", false);
+            
+        }
+    });
+
+    $('input[name=primaryColor]').on("change", function(){
+        var pattern = /^([a-zA-Z]{0,50})$/
+        if (!$(this).val().match(pattern)) {
+           
+            $('#primaryColor-valid-msg').removeClass('hidden');
+            $('#primaryColor-valid-msg').show();
+            $("#submitBtn").prop("disabled", true);
+            
+        }
+        else {
+            // else, do not display message
+            $('#primaryColor-valid-msg').addClass('hidden');
+            $("#submitBtn").prop("disabled", false);
+            
+        }
+    });
+
+    $('input[name=price]').on("change", function(){
+        var pattern = /^([0-9])/
+        var value =$(this).val();
+        if (!value.match(pattern) || value<0 || value>1000000) {
+           
+            $('#price-valid-msg').removeClass('hidden');
+            $('#price-valid-msg').show();
+            $("#submitBtn").prop("disabled", true);
+            
+        }
+        else {
+            // else, do not display message
+            $('#price-valid-msg').addClass('hidden');
+            $("#submitBtn").prop("disabled", false);
+            
+        }
+    });
+
+    $('input#yearInput').on("change", function(){
+        var pattern = /^([0-9])/
+        var value =$(this).val();
+        if (!value.match(pattern) || value<0 || value>30) {
+           
+            $('#year-valid-msg').removeClass('hidden');
+            $('#year-valid-msg').show();
+            $("#submitBtn").prop("disabled", true);
+            
+        }
+        else {
+            // else, do not display message
+            $('#year-valid-msg').addClass('hidden');
+            $("#submitBtn").prop("disabled", false);
+            
+        }
+    });
+
+    $('input#monthInput').on("change", function(){
+        var pattern = /^([0-9])/
+        var value =$(this).val();
+        if (!value.match(pattern) || value<0 || value>30) {
+           
+            $('#month-valid-msg').removeClass('hidden');
+            $('#month-valid-msg').show();
+            $("#submitBtn").prop("disabled", true);
+            
+        }
+        else {
+            // else, do not display message
+            $('#month-valid-msg').addClass('hidden');
+            $("#submitBtn").prop("disabled", false);
+            
+        }
+    });
+
+   
 
 
 
@@ -66,3 +176,16 @@ function submitForm() {
     //     event.preventDefault();
     // });
 };
+
+// function validateForm(){
+//     dogName: $('input[name=dogName]').val(),
+//     description: $('input[name=description]').val(),
+//     size: $('input[name=size]:checked').val(),
+//     weight: $('input[name=weight]').val(),
+//     breed: $('input[name=breed]').val(),
+//     momBreed: $('input[name=momBreed]').val(),
+//     dadBreed: $('input[name=dadBreed]').val(),
+//     primaryColor: $('input[name=primaryColor]').val(),
+//     price: $("input[name=price]").val(),
+//     service: $("input[name=service]:checked").val()
+// }
