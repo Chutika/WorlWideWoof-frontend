@@ -1,10 +1,8 @@
 function goToShopInfo(){
     location.href="aboutShop.html"
 }
+
 $(function () {
-
-
-
 
     $.ajax({
         url: "https://us-central1-worldwidewoof-bcdfa.cloudfunctions.net/app/api/dog/",
