@@ -32,14 +32,8 @@ body{
     color: #815811;
     font-size: 25px;
 }
-#titleFontPicture{
-    font-family: 'kanitMedium', Kanit ,sans-serif;
-    color: #352304;
-    font-size: 26px;
-    line-height: 0.9;
-    font-weight: 500;
-}
-#subFontPicture{
+
+.span{
     
     font-family: 'kanitMedium', Kanit ,sans-serif;
     color: #352304;
@@ -115,8 +109,8 @@ outline: none;
     width:20px; 
     /* margin-top:24px; */
     float: left;
-    height: 25px;
-    margin-right: 5px;
+    height: 20px;
+    
 }
 /* On mouse-over */
 .sidenav a:hover, .dropdown-btn:hover {
@@ -205,7 +199,7 @@ nav{
 .card-text{
     font-family: 'kanitMedium', Kanit ,sans-serif;
     color: #352304;
-    font-size: 26px;
+    font-size: 20px;
     line-height: 0.9;
     font-weight: 500;
 }
