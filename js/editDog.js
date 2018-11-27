@@ -3,12 +3,14 @@ $(function () {
     getInfo();
     validateName();
     submitForm();
+   
 
     function submitForm() {
 
         $('#submitBtn').click(function (event) {
             var formData = {
-                dogPicture: $('#dogImg'),
+
+                //dogPicture: $('#dogImg'),
                 dogName: $('input[name=dogName]').val(),
                 description: $('input[name=description]').val(),
                 size: $('input[name=size]:checked').val(),
@@ -80,8 +82,22 @@ $(function () {
                 $('input[name=momBreed]').val(dog.momBreed);
                 $('input[name=dadBreed]').val(dog.dadBreed);
                 $('input[name=primaryColor]').val(dog.primaryColor);
-                $("input[name=price]").val(dog.price);
-                $("input[name=service]:checked").val(dog.service);
+                $("input[name=price]").val(dog.sellPrice);
+
+                if(dog.gender === 0){
+                    $("#m-gender").prop("checked", true);
+                }else{
+                    $("#f-gender").prop("checked", true);
+                }
+
+                if(dog.service === 0){
+                    $("#sale-service").prop("checked", true);
+                }else if(dog.service === 1){
+                    $("#rent-service").prop("checked", true);
+                }else{
+                    $("#both-service").prop("checked", true);
+                }
+        
                
             }
         });

@@ -90,12 +90,18 @@
 
 	<div class="info">
 			<h2 id="title">Add Dog</h2>
-		<form action="http://10.66.8.124:8888/test" method="POST" enctype="multipart/form-data">
+		<form action="http://192.168.1.7:8888/test" method="POST" enctype="multipart/form-data">
 
-			<div class="form-group">
-				<label for="dogImg"> Please upload your dog image</label>
-				<input type="file" class="form-control-file" id="dogImg">
-			</div>
+			<form enctype="multipart/form-data" action="http://192.168.1.7:8888/photos/upload" method="post">
+				<input name="photos" id="uploaded_images" type="file" accept="image/*" multiple="multiple" />
+		
+				<input type="button" value="Upload File" id="btn-upload" />
+				<button id="btn-reset">RESET</button>
+			</form>
+			<div id="resultMul">
+					<h3>selected images</h3>
+				</div>
+
 			<div class="form-group">
 				<label for="name">Dog name </label>
 				<input id="name" type="text" class="form-control" name="dogName" maxlength="9" placeholder="Dog name" required>
@@ -148,6 +154,10 @@
 				<label for="weight">Weight (kg)</label>
 				<input type="number" class="form-control" id="weight" name="weight" max="160" placeholder="xx kg.">
 			</div>
+			<div class="form-group">
+					<label for="primaryColor">Color </label>
+					<input type="text" id="dadBreed" class="form-control" name="primaryColor" placeholder="color">
+				</div>
 
 			<div class="form-group">
 				<label for="breed">Breed </label>
