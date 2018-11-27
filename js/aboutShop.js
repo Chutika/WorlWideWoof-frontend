@@ -6,7 +6,7 @@ $(function () {
 
 
     $.ajax({
-        url: "http://192.168.1.9:8888/test",
+        url: "http://10.66.11.35:8888/test",
         type: "GET",
         dataType: "json",
         // data: {number: "additional Data"},

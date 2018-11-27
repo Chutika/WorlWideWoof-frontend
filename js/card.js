@@ -1,3 +1,5 @@
 function clickSameDog(){
-    location.href="doginfo.html"
+    location.href="dogInfo.html"
   }
+
+  

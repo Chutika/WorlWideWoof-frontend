@@ -1,0 +1,55 @@
+/* ------------- Secondary nav bar --------------------*/
+hr{
+	width: 50%;
+}
+.sec-nav{
+	background-color: #FFFFFF;
+	width: 60%;
+	padding: 0px 0px 0px 0px;
+	margin-top: 40px;
+	
+	
+}
+
+.sec-nav-item{
+	width: 100%;
+	text-align: center;
+	padding-left: 16px;
+}
+	
+
+.active{
+	font-weight: 500;
+}
+.menu-in-sec-nav{
+	width: 50%;
+	margin: auto;
+	align-content: center;
+	
+	
+}
+.sec-nav-line{
+	width: 100%;
+}
+.sec-nav-inactive{
+	border: none;
+}
+
+.sec-nav-active{
+	border: none;
+	color: #FFE32E;
+	background-color: #FFE32E;
+	height: 10px;
+}
+
+#aboutShopMenu{
+	text-align: center;
+	color: #352304;
+}
+
+#dogListMenu{
+	text-align: center;
+	color: #352304;
+}
+
+/* -----------------------------------------------------*/

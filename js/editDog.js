@@ -25,7 +25,6 @@ $(function () {
     });
 
     $('input[name=description]').on("change", function () {
-        
         var pattern = /^[a-zA-Z_ ]*$/
         if (!$(this).val().match(pattern)) {
 

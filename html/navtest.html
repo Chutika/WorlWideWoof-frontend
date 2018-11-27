@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<title>About shop</title>
+	<title>Nav test</title>
 
 	<!-- Required meta tags for proper responsive behaviors -->
 	<meta charset="utf-8">
@@ -17,8 +17,7 @@
 
 	<!-- custom style -->
 	
-	<link rel="stylesheet" type="text/css" href="../css/navbar.css">
-	<link rel="stylesheet" type="text/css" href="../css/secNavBar.css">
+	<link rel="stylesheet" type="text/css" href="../css/navtest.css">
 	<link rel="stylesheet" type="text/css" href="../css/aboutShop.css">
 
 	<!-- jQuery CDN -->
@@ -50,15 +49,17 @@
 				<li class="nav-item" id="foundMenu" onclick="clickFoundationMenu()">
 					<p class="nav-link nav-menu">มูลนิธิ</p>
 				</li>
-			</ul>
-
+            </ul>
+            
 			<form class="form-inline my-2 my-lg-0">
 				<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-					<li class="nav-item " id="loginMenu" onclick="">
-						<p class="nav-link nav-menu"><img src="../asset/icon/person.svg" alt="" style="width:40px;" id="person"> Log in  </p>
+					<li class="nav-item " id="loginMenu">
+                            <button type="button" class="log-sign-button nav-menu" data-toggle="modal" data-target="#loginSignupModal">
+                                    <img src="../asset/icon/person.svg" alt="" style="width:40px;" id="person"> Log in  
+                                  </button>
 					</li>
-					<li class="nav-item" id="signupMenu" onclick="">
-						<p class="nav-link nav-menu">Sign up</p>
+					<li class="nav-item" id="signupMenu">
+						<button class="log-sign-button nav-menu" data-toggle="modal" data-target="#loginSignupModal">Sign up</button>
 					</li>
 				</ul>
 			</form>
@@ -67,56 +68,33 @@
 
     <!-- ------------------------------------------------------------------- -->
 
+    <!-- Modal -->
+    <div class="modal fade" id="loginSignupModal" tabindex="-1" role="dialog" aria-labelledby="LoginModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="LoginModalLabel">Login</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  ...
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
 
 
-	<!-- ---------------- Secondary navbar --------------------------------- -->
-	<nav class="sec-nav navbar navbar-expand-lg mx-auto">
-		<div class="menu-in-sec-nav">
-			<a id="aboutShopMenu" class="sec-nav-item navbar-nav nav-item nav-link active" href="#">เกี่ยวกับร้าน<span class="sr-only">(current)</span></a>
-			<hr class="sec-nav-line sec-nav-active">
-		</div>
-		<div class="menu-in-sec-nav">
-			<a id="dogListMenu" class="sec-nav-item navbar-nav nav-item nav-link" href="dogList.html">รายการสุนัข</a>
-			<hr class="sec-nav-line sec-nav-inactive">
-		</div>
-	</nav>
-	<!-- ------------------------------------------------------------------- -->
 
 
 
 	<!-- -------------- General Info about Shop ---------------------------- -->
 
-	<div class="info">
-		<div class="info-section  " id="intro-info-section">
-		
-			
-			<!-- <img class="circle float-left" id="logo-shop" src="https://cdn.dribbble.com/users/375867/screenshots/1392018/dog-shop-logo.png"
-			 alt="">
-			<h2>Dog Hong hong</h2>
-			<p>Chutika werayuthwattana 088-8888888</p> -->
-
-		</div>
-		<br>
-		<div class="info-section" id="desc-info-section">
-			<h2>Description</h2>
-
-		</div>
-
-		<div class="info-section" id="cer-info-section">
-			<h2>Certificate</h2>
-		</div>
-
-		<div class="info-section" id="map-info-section">
-			<h2>Map</h2>
-			<p>detail about the location of shop</p>
-		</div>
-		<!-- ---------------------------- map ---------------------------------- -->
-		<div class="info-section" id="map"></div>
-		<!-- ------------------------------------------------------------------- -->
-		<form action="aboutShop_edit.html" method="GET">
-			<button type="submit" class="btn btn-primary btn-lg">Edit</button>
-		</form>
-	</div>
 	<!-- ------------------------------------------------------------------- -->
 
 
@@ -124,13 +102,10 @@
 
 
 	<!-- ---------------------------- javascript ---------------------------------- -->
-	<script>
 
-	</script>
 
-	<script src="../js/aboutShop.js"></script>
-	<script src="../js/navigation.js"></script>
-	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMscvPhIuLIWUzsKKFdGS_zr0NbNxrxGw&callback=initMap">
+	<script src="../js/navtest.js"></script>
+	
 	</script>
 
 	<!-- ------------------------------------------------------------------- -->

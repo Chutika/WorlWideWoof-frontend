@@ -47,6 +47,12 @@ nav{
     
 }
 
+button.log-sign-button{
+    border: none;
+    background-color: #FFE32E;
+    font-weight: 300;
+}
+
 /* -----------------------------------------------------*/
 
 

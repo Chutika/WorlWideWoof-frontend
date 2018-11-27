@@ -1,0 +1,9 @@
+Description
+Size : S M L
+Weight : (kg)
+Breed
+Mother's Breed
+Father's Breed
+Age
+Price
+Services : Both Rent Sale

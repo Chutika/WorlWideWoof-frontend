@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<title>Add dog</title>
+	<title>Edit dog</title>
 
 	<!-- Required meta tags for proper responsive behaviors -->
 	<meta charset="utf-8">
@@ -91,7 +91,7 @@
 	<!-- -------------- Info about dog ---------------------------- -->
 
 	<div class="info">
-		<h2 id="title">Add Dog</h2>
+		<h2 id="title">Edit Dog</h2>
 
 
 		<!-- ................... upload multiple images ............................. -->
@@ -116,24 +116,33 @@
 		<div class="form-group">
 			<label for="name">Dog name </label>
 			<input id="name" type="text" class="form-control" name="dogName" maxlength="9" placeholder="Dog name" required>
+			<% $("input[name = dogName]").val(dog.name) %>
 			<p id="name-valid-msg" class="hidden valid-msg">English only, no more than 9 characters</p>
 		</div>
 		<div class="form-group">
 			<label for="dogDescription">Description</label>
 			<input type="textarea" id="dogDescription" class="form-control" maxlength="140" name="description" placeholder="Describe your dog ...">
+			<% $("input[name = description]").val(dog.description) %>
 			<p id="description-valid-msg" class="hidden valid-msg">no more than 140 characters</p>
 		</div>
 
 		<div class="form-group">
+				<% if(dog.size == "S"){ %>
+					<%$('#s-size').attr("checked", "checked"); %>
+				<% }else if(dog.service == "M"){ %>
+					<% $('#m-size').attr("checked", "checked"); %>
+				<% }else{ %>
+					<%	$('#l-size').attr("checked", "checked"); %>
+				<% } %>
 			<div class="form-check">
 				<p>Size</p>
-				<input class="form-check-input" type="radio" name="size" id="s-size" value="s" checked>
+				<input class="form-check-input" type="radio" name="size" id="s-size" value="s" >
 				<label class="form-check-label" for="s-size">
 					S
 				</label>
 			</div>
 			<div class="form-check">
-				<input class="form-check-input" type="radio" name="size" id="m-size" value="m">
+				<input class="form-check-input" type="radio" name="size" id="m-size" value="m" checked="checked">
 				<label class="form-check-label" for="m-size">
 					M
 				</label>
@@ -145,7 +154,12 @@
 				</label>
 			</div>
 		</div>
-
+		<% if(dog.gender == 0){ %>
+			<% $('#m-gender').attr("checked", "checked"); %>
+		<% }else { %>
+			<% $('#f-gender').attr("checked", "checked"); %>
+		<% } %>
+			
 		<div class="form-group">
 			<div class="form-check">
 				<p>Gender</p>
@@ -164,26 +178,31 @@
 		<div class="form-group">
 			<label for="weight">Weight (kg)</label>
 			<input type="number" class="form-control" id="weight" name="weight" max="160" placeholder="xx kg.">
+			<% $("input[name = weight]").val(dog.weight) %>
 			<p id="weight-valid-msg" class="hidden valid-msg">Number only</p>
 		</div>
 		<div class="form-group">
 			<label for="primaryColor">Color </label>
-			<input type="text" id="primaryColor" class="form-control" name="primaryColor" maxlength="100" placeholder="color">
+			<input type="text" id="primaryColor" class="form-control" name="primaryColor" maxlength="140"placeholder="color">
+			<% $("input[name = primaryColor]").val(dog.primaryColor) %>
 			<p id="primaryColor-valid-msg" class="hidden valid-msg">140 chars, English only, not a number</p>
 		</div>
 
 		<div class="form-group">
 			<label for="breed">Breed </label>
 			<input id="breed" type="text" class="form-control" name="breed" placeholder="Dog Breed" required>
+			<% $("input[name = breed]").val(dog.breed) %>
 			<p id="breed-valid-msg" class="hidden valid-msg">English only, no number</p>
 		</div>
 		<div class="form-group">
 			<label for="momBreed">Mother's Breed </label>
 			<input type="text" id="momBreed" class="form-control" name="momBreed" placeholder="Mother's Breed">
+			<% $("input[name = momBreed]").val(dog.momBreed) %>
 		</div>
 		<div class="form-group">
 			<label for="dadBreed">Father's Breed </label>
 			<input type="text" id="dadBreed" class="form-control" name="dadBreed" placeholder="Father's Breed">
+			<% $("input[name = dadBreed]").val(dog.dadBreed) %>
 		</div>
 
 		<div class="form-group">
@@ -191,10 +210,12 @@
 			<div class="form-row">
 				<div class="col">
 					<input type="number" id="yearInput" class="form-control" min="0" max="30" placeholder="Years">
+					<% $("input#yearInput").val(dog.year) %>
 					<p id="year-valid-msg" class="hidden valid-msg">Please fill with number between 0-30</p>
 				</div>
 				<div class="col">
 					<input type="number" id="monthInput" class="form-control" min="0" max="11" placeholder="Months">
+					<% $("input#monthInput").val(dog.month) %>
 					<p id="month-valid-msg" class="hidden valid-msg">Please fill with number between 0-11</p>
 				</div>
 			</div>
@@ -205,8 +226,18 @@
 			<div class="form-group">
 				<label for="price">Price</label>
 				<input type="number" class="form-control" id="price" name="price" min="0" placeholder="baht" required>
+				<% $("input[name = price]").val(dog.sellPrice) %>
 				<p id="price-valid-msg" class="hidden valid-msg">Only positive number(no more than 10 million)</p>
 			</div>
+
+			<% if(dog.service == "sale"){ %>
+				<%$('#sale-service').attr("checked", "checked"); %>
+			<% }else if(dog.service == "rent"){ %>
+				<% $('#rent-service').attr("checked", "checked"); %>
+			<% }else{ %>
+				<%	$('#rent-service').attr("checked", "checked"); %>
+			<% } %>
+
 			<div class="form-check">
 				<p>Services</p>
 				<input class="form-check-input" type="radio" name="service" id="both-services" value="both" checked>
@@ -242,7 +273,7 @@
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
 
 
-		<script type="text/javascript" src="../js/addDog.js"></script>
+		<script type="text/javascript" src="../js/editDog.js"></script>
 		<script src="../js/navigation.js"></script>
 
 		<!-- ------------------------------------------------------------------- -->
