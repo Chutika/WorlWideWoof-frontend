@@ -133,7 +133,7 @@ $(function () {
     //-----------------------------------------------------------------------------------------------------------
 
     $("#images").change(preview_image);
-    $("#reset-img").click(function(){
+    $("#reset-img").click(function () {
         document.getElementById("uploadForm").reset();
     });
 
@@ -215,62 +215,75 @@ $(function () {
     }
     function submitForm() {
 
+        console.log("type of weight value " + typeof (Number($('input[name=weight]').val())));
+
         // $('#submitBtn').click(function (event) {
         var formData = {
             //dogPicture: $('#dogImg'),
-            shopId: "5bfae1f0d60e84c41ccde8755bfae1f0d60e84c41ccde875",
-            dogName: $('input[name=dogName]').val(),
+            shopId: "5bfae1f0d60e84c41ccde875",
+            name: $('input[name=dogName]').val(),
             description: $('input[name=description]').val(),
             size: $('input[name=size]:checked').val(),
-            weight: $('input[name=weight]').val(),
-            year: $('input#yearInput').val(),
-            month: $('input#monthInput').val(),
+            weight: Number($('input[name=weight]').val()),
+            // year: $('input#yearInput').val(),
+            // month: $('input#monthInput').val(),
             breed: $('input[name=breed]').val(),
             momBreed: $('input[name=momBreed]').val(),
             dadBreed: $('input[name=dadBreed]').val(),
             primaryColor: $('input[name=primaryColor]').val(),
-            price: $("input[name=price]").val(),
+            sellPrice: $("input[name=price]").val(),
             service: $("input[name=service]:checked").val()
         }
-    
+
         var str = "";
         for (var key in formData) {
             str += formData[key];
         }
         console.log(str);
-     
-    
+
+
         $.ajax({
-            url: "http://192.168.1.26:8080/api/dog/new",
+            url: "https://us-central1-worldwidewoof-bcdfa.cloudfunctions.net/app/api/dog/new",
             type: "POST",
             dataType: "json",
             data: formData,
-    
+
             success: function (res) {
-                console.log("Data Form Sent Success " + res);
-                $("input#dogId").val(res);
+                console.log("Data Form Sent Success " + res + " " + res.id);
+                $("input#dogId").val(res.id);
+               
+                imgAPI = "https://us-central1-worldwidewoof-bcdfa.cloudfunctions.net/app/api/dog/"+res.id+"/uploadImage"
+        
+                $('#uploadForm').attr('action', imgAPI);
+                console.log("action " +$('#uploadForm').attr('action'));
                 sendFiles();
-    
+
             },
-            error: function(jqXHR,textStatus,errorThrown ){
-                console.log("Something went wrong " +errorThrown+ " " +textStatus);
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log("Something went wrong " + errorThrown + " " + textStatus);
             }
         });
-    
+
         //     event.preventDefault();
         // });
     };
 
-    function sendFiles() {
-
+    function sendFiles(num) {
+       
         $('#uploadForm').ajaxSubmit({
             target: '#uploadStatus',
-            success: function () {
+          
+            success: function (res) {
+                console.log("Files Form Sent Success " + res);
                 // ------------- reset -------------
                 imgCount = 0;
                 document.getElementById("uploadForm").reset();
+                document.getElementById("dataForm").reset();
                 $("div#images_preview img").remove();
                 $('#uploadStatus').html('Uploaded successfully');
+
+                // window.location.assign("dogList.html")
+
             },
             error: function () {
                 $('#uploadStatus').html('Fail to upload images, please try again.');

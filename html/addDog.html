@@ -96,10 +96,10 @@
 
 		<!-- ................... upload multiple images ............................. -->
 		<!-- images upload form -->
-		<form method="post" id="uploadForm" enctype="multipart/form-data" action="http://192.168.1.26:8080/api/dog/new">
+		<form method="post" id="uploadForm" enctype="multipart/form-data" action="">
 			<label>Choose Images</label>
 			<input type="number" hidden id="dogId">
-			<input type="file" accept=".jpg, .png" name="images" id="images" multiple>
+			<input type="file" accept=".jpg, .png" name="file" id="images" multiple>
 			<button id="reset-img" hidden>Reset</button>
 			<input type="submit" name="submit" value="UPLOAD" hidden disabled />
 		</form>
@@ -112,7 +112,7 @@
 
 		<!-- ................... ....................................................... -->
 
-		<form action=" http://192.168.1.26:8080/api/dog/new" method="POST"></form>
+		<form id="dataForm" method="POST" action="https://us-central1-worldwidewoof-bcdfa.cloudfunctions.net/app/api/dog/new"></form>
 		<div class="form-group">
 			<label for="name">Dog name </label>
 			<input id="name" type="text" class="form-control" name="dogName" maxlength="9" placeholder="Dog name" required>
@@ -168,7 +168,7 @@
 		</div>
 		<div class="form-group">
 			<label for="primaryColor">Color </label>
-			<input type="text" id="dadBreed" class="form-control" name="primaryColor" placeholder="color">
+			<input type="text" id="primaryColor" class="form-control" name="primaryColor" placeholder="color">
 			<p id="primaryColor-valid-msg" class="hidden valid-msg">50chars, English only, not a number</p>
 		</div>
 
