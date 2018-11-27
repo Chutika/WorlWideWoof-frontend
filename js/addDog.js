@@ -25,7 +25,8 @@ $(function () {
     });
 
     $('input[name=description]').on("change", function () {
-        var pattern = /^([a-zA-Z]{0,140})$/
+        
+        var pattern = /^[a-zA-Z0-9_ ]*$/
         if (!$(this).val().match(pattern)) {
 
             $('#description-valid-msg').removeClass('hidden');
@@ -60,7 +61,7 @@ $(function () {
     });
 
     $('input[name=primaryColor]').on("change", function () {
-        var pattern = /^([a-zA-Z]{0,50})$/
+        var pattern = /^[a-zA-Z0-9_ ]*$/
         if (!$(this).val().match(pattern)) {
 
             $('#primaryColor-valid-msg').removeClass('hidden');
