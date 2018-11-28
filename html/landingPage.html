@@ -9,7 +9,7 @@
 
   <!-- bootstrap v4 -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-      crossorigin="anonymous">
+    crossorigin="anonymous">
 
   <!-- Kanit fonts -->
   <link href="https://fonts.googleapis.com/css?family=Kanit:300,400,500,600,700&amp;subset=thai" rel="stylesheet">
@@ -21,15 +21,15 @@
 
   <!-- jQuery CDN -->
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-      crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-      crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-      crossorigin="anonymous"></script>
-    
-	<script src="../js/config.js"></script>
+    crossorigin="anonymous"></script>
+
+  <script src="../js/config.js"></script>
   <script src="../js/newNavBar.js"></script>
 
   <script src="../js/card.js"></script>
@@ -44,110 +44,111 @@
   <nav class="navbar navbar-expand-lg navbar-light">
     <p class="nav-link" id="brandMenu" onclick="clickLogo()">WWWoof!</p>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
-        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item " id="shopMenu" onclick="clickShopMenu()">
-                <p class="nav-link nav-menu">ร้านค้า<span class="sr-only">(current)</span></p>
-            </li>
-            <!-- <li class="nav-item" id="foundMenu" onclick="clickFoundationMenu()">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item " id="shopMenu" onclick="clickShopMenu()">
+          <p class="nav-link nav-menu">ร้านค้า<span class="sr-only">(current)</span></p>
+        </li>
+        <!-- <li class="nav-item" id="foundMenu" onclick="clickFoundationMenu()">
                 <p class="nav-link nav-menu">มูลนิธิ</p>
             </li> -->
+      </ul>
+
+      <form class="form-inline my-2 my-lg-0">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item main-nav" id="loginMenu" onclick="">
+            <p class="nav-link nav-menu cd-signin"><img src="../asset/icon/person.svg" alt="" style="width:40px;" id="person">
+              ลงชื่อเข้าใช้
+            </p>
+          </li>
+          <li class="nav-item main-nav" id="signupMenu" onclick="">
+            <p class="nav-link nav-menu cd-signup">สมัครสมาชิก</p>
+          </li>
         </ul>
-
-        <form class="form-inline my-2 my-lg-0">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item main-nav" id="loginMenu" onclick="">
-                    <p class="nav-link nav-menu cd-signin"><img src="../asset/icon/person.svg" alt="" style="width:40px;" id="person">
-                        ลงชื่อเข้าใช้
-                    </p>
-                </li>
-                <li class="nav-item main-nav" id="signupMenu" onclick="">
-                    <p class="nav-link nav-menu cd-signup">สมัครสมาชิก</p>
-                </li>
-            </ul>
-        </form>
+      </form>
     </div>
-</nav>
-<br>
-<!-- ------------------------------------------------------------------- -->
+  </nav>
+  <br>
+  <!-- ------------------------------------------------------------------- -->
 
-<!--------------------------------- Modal ------------------------------------>
-<div class="cd-user-modal">
+  <!--------------------------------- Modal ------------------------------------>
+  <div class="cd-user-modal">
     <!-- this is the entire modal form, including the background -->
     <div class="cd-user-modal-container">
-        <!-- this is the container wrapper -->
-        <ul class="cd-switcher">
-            <li><a href="#0">ลงชื่อเข้าใช้</a></li>
-            <li><a href="#0">สมัครสมาชิก</a></li>
-        </ul>
+      <!-- this is the container wrapper -->
+      <ul class="cd-switcher">
+        <li><a href="#0">ลงชื่อเข้าใช้</a></li>
+        <li><a href="#0">สมัครสมาชิก</a></li>
+      </ul>
 
-        <div id="cd-login">
-            <!-- log in form -->
-            <form class="cd-form">
-                <p class="fieldset">
-                    <label class="image-replace cd-email" for="signin-email">อีเมล์</label>
-                    <input class="full-width has-padding has-border" name="email" id="signin-email" type="email"
-                        placeholder="E-mail">
-                    <span class="cd-error-message">Error message here!</span>
-                </p>
+      <div id="cd-login">
+        <!-- log in form -->
+        <form class="cd-form">
+          <p class="fieldset">
+            <label class="image-replace cd-email" for="signin-email">อีเมล์</label>
+            <input class="full-width has-padding has-border" name="email" id="signin-email" type="email" placeholder="E-mail">
+            <span class="cd-error-message">Error message here!</span>
+          </p>
 
-                <p class="fieldset">
-                    <label class="image-replace cd-password" for="signin-password">รหัสผ่าน</label>
-                    <input class="full-width has-padding has-border" name="password" id="signin-password" type="text"
-                        placeholder="Password">
-                    <a href="#0" class="hide-password">Hide</a>
-                    <span class="cd-error-message">Error message here!</span>
-                </p>
+          <p class="fieldset">
+            <label class="image-replace cd-password" for="signin-password">รหัสผ่าน</label>
+            <input class="full-width has-padding has-border" name="password" id="signin-password" type="text"
+              placeholder="Password">
+            <a href="#0" class="hide-password">Hide</a>
+            <span class="cd-error-message">Error message here!</span>
+          </p>
 
-                <p class="fieldset">
-                    <input id="loginButton" class="full-width" type="submit" value="Login">
-                </p>
-            </form>
+          <p class="fieldset">
+            <input id="loginButton" class="full-width" type="submit" value="Login">
+          </p>
+        </form>
 
-            <!-- <p class="cd-form-bottom-message"><a href="#0">Forgot your password?</a></p> -->
-            <!-- <a href="#0" class="cd-close-form">Close</a> -->
-        </div> <!-- cd-login -->
+        <!-- <p class="cd-form-bottom-message"><a href="#0">Forgot your password?</a></p> -->
+        <!-- <a href="#0" class="cd-close-form">Close</a> -->
+      </div> <!-- cd-login -->
 
-        <div id="cd-signup">
-            <!-- sign up form -->
-            <form class="cd-form">
-                <p class="fieldset">
-                    <label class="image-replace cd-username" for="signup-username">ชื่อร้านค้า</label>
-                    <input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Username" name="signup-username">
-                    <span class="cd-error-message">Error message here!</span>
-                </p>
+      <div id="cd-signup">
+        <!-- sign up form -->
+        <form class="cd-form">
+          <p class="fieldset">
+            <label class="image-replace cd-username" for="signup-username">ชื่อร้านค้า</label>
+            <input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Username"
+              name="signup-username">
+            <span class="cd-error-message">Error message here!</span>
+          </p>
 
-                <p class="fieldset">
-                    <label class="image-replace cd-email" for="signup-email">อีเมล์</label>
-                    <input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail" name="signup-email">
-                    <span class="cd-error-message">Error message here!</span>
-                </p>
+          <p class="fieldset">
+            <label class="image-replace cd-email" for="signup-email">อีเมล์</label>
+            <input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail" name="signup-email">
+            <span class="cd-error-message">Error message here!</span>
+          </p>
 
-                <p class="fieldset">
-                    <label class="image-replace cd-password" for="signup-password">รหัสผ่าน</label>
-                    <input class="full-width has-padding has-border" id="signup-password" type="text" placeholder="Password" name="signup-password">
-                    <a href="#0" class="hide-password">Hide</a>
-                    <span class="cd-error-message">Error message here!</span>
-                </p>
+          <p class="fieldset">
+            <label class="image-replace cd-password" for="signup-password">รหัสผ่าน</label>
+            <input class="full-width has-padding has-border" id="signup-password" type="text" placeholder="Password"
+              name="signup-password">
+            <a href="#0" class="hide-password">Hide</a>
+            <span class="cd-error-message">Error message here!</span>
+          </p>
 
-                <p class="fieldset">
-                    <input class="full-width has-padding" id="signUp" type="submit" value="Create account">
-                </p>
+          <p class="fieldset">
+            <input class="full-width has-padding" id="signUp" type="submit" value="Create account">
+          </p>
 
-                
-            </form>
 
-            <!-- <a href="#0" class="cd-close-form">Close</a> -->
-        </div> <!-- cd-signup -->
+        </form>
 
-        
-        <a href="#0" class="cd-close-form">ยกเลิก</a>
+        <!-- <a href="#0" class="cd-close-form">Close</a> -->
+      </div> <!-- cd-signup -->
+
+
+      <a href="#0" class="cd-close-form">ยกเลิก</a>
     </div> <!-- cd-user-modal-container -->
-</div> <!-- cd-user-modal -->
+  </div> <!-- cd-user-modal -->
 
   <!-- ------------------------------------------------------------------- -->
   <!-- SLIDE SHOW -->
@@ -183,105 +184,127 @@
   </div>
   <!-- SELL -->
   <div>
-    <p style="position: relative;left: 43%"><img src="../asset/icon/black-shop-tag.svg" style="float:left ;width:35px;height:35px;">
-      <h2 class="my-3 text-center">For Sell</h2>
+      <p style="position: relative;left: 43%">
+    <!-- <img src="../asset/icon/black-shop-tag.svg" style="float:left ;width:35px;height:35px;"> -->
+      <h2 class="my-3 text-center">สุนัขที่ถูกเพิ่มล่าสุด</h2>
     </p>
   </div>
   <div>
-    <p id="content" style="position: relative;left: 45%">เย้</p>
+    <p id="content" style="position: relative; text-align: center">สนใจอยากจะซื้อสุนัขซักตัวเหรอคะ? คลิ้กดูเพิ่มเติมที่ปุ่ม more เลยค่ะ</p>
   </div>
   <div id="box1" style="overflow: hidden; display: flex; justify-content:space-around;">
     <!-- CARD 0 -->
-    <div class="card my-3 mx-auto"onclick="clickSameDog()" id="picture">
-        <!---img0-------->
-        <img class='card-img-top' id='photo0' src="<%= dogs[0].pictures || '' %>"alt='dog'>
-        
+    <div class="card my-3 mx-auto" onclick="clickSameDog()" id="picture">
+      <!---img0-------->
+      <img class='card-img-top' id='photo0' src="<%= dogs[0].pictures || '' %>" alt='dog'>
+
       <div class="card-body" id="body0">
         <div class="row">
-          <div class="col-7"id="name0">
-              <!-- <p class='card-text' id='breed.titleFontPicture1'>"+shop[0].name+"</p>
+          <div class="col-7" id="name0">
+            <!-- <p class='card-text' id='breed.titleFontPicture1'>"+shop[0].name+"</p>
                 <p class='card-text' id='subFontPicture1'>"+shop[0].breed.title+"</p> -->
 
-              <p class="card-text" id="breed.titleFontPicture0"> <%= dogs[0].breed.title || '-' %> </p>
+            <p class="card-text" id="breed.titleFontPicture0">
+              <%= dogs[0].breed.title || '-' %>
+            </p>
 
-              <% if(dogs[0].gender == 0){ %>
-                <p class="card-text subFontPicture" id="subFontPicture0">ชื่อ <%= dogs[0].name || '-' %> (ผู้)</p>
-              <% } else if(dogs[0].gender== 1) { %>
-                <p class="card-text subFontPicture" id="subFontPicture0">ชื่อ <%= dogs[0].name || '-' %> (เมีย)</p>
-              <% }else{ %>
-                <p class="card-text subFontPicture" id="subFontPicture0">ชื่อ <%= dogs[0].name || '-' %> (-)</p>
-              <% } %>
-          
-             
+            <% if(dogs[0].gender == 0){ %>
+            <p class="card-text subFontPicture" id="subFontPicture0">ชื่อ
+              <%= dogs[0].name || '-' %> (ผู้)</p>
+            <% } else if(dogs[0].gender== 1) { %>
+            <p class="card-text subFontPicture" id="subFontPicture0">ชื่อ
+              <%= dogs[0].name || '-' %> (เมีย)</p>
+            <% }else{ %>
+            <p class="card-text subFontPicture" id="subFontPicture0">ชื่อ
+              <%= dogs[0].name || '-' %> (-)</p>
+            <% } %>
+
+
           </div>
           <div class="col-5">
-            <p class="card-text " id="titleFontPicture0"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag"><%= dogs[0].sellPrice || '-' %></p>
+            <p class="card-text " id="titleFontPicture0"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag">
+              <%= dogs[0].sellPrice || '-' %>
+            </p>
           </div>
         </div>
 
       </div>
     </div>
     <!-- CARD 1 -->
-    <div class="card my-3 mx-auto"onclick="clickSameDog()" id="picture">
+    <div class="card my-3 mx-auto" onclick="clickSameDog()" id="picture">
       <!---img1-------->
-      <img class='card-img-top' id='photo1' src="<%= dogs[1].pictures %>"alt='dog'>
+      <img class='card-img-top' id='photo1' src="<%= dogs[1].pictures %>" alt='dog'>
 
-       <div class="card-body" id="body1">
-         <div class="row">
-           <div class="col-7"id="name1">
-             <!---name1----->
-             <p class="card-text" id="breed.titleFontPicture1"> <%= dogs[1].breed.title || '-' %> </p>
+      <div class="card-body" id="body1">
+        <div class="row">
+          <div class="col-7" id="name1">
+            <!---name1----->
+            <p class="card-text" id="breed.titleFontPicture1">
+              <%= dogs[1].breed.title || '-' %>
+            </p>
 
-              <% if(dogs[1].gender == 0){ %>
-                <p class="card-text subFontPicture" id="subFontPicture1">ชื่อ <%= dogs[1].name || '-' %> (ผู้)</p>
-                <% } else if(dogs[1].gender== 1) { %>
-                  <p class="card-text subFontPicture" id="subFontPicture1">ชื่อ <%= dogs[1].name || '-' %> (เมีย)</p>
-                <% }else{ %>
-                  <p class="card-text subFontPicture" id="subFontPicture1">ชื่อ <%= dogs[1].name || '-' %> (-)</p>
-                <% } %>
+            <% if(dogs[1].gender == 0){ %>
+            <p class="card-text subFontPicture" id="subFontPicture1">ชื่อ
+              <%= dogs[1].name || '-' %> (ผู้)</p>
+            <% } else if(dogs[1].gender== 1) { %>
+            <p class="card-text subFontPicture" id="subFontPicture1">ชื่อ
+              <%= dogs[1].name || '-' %> (เมีย)</p>
+            <% }else{ %>
+            <p class="card-text subFontPicture" id="subFontPicture1">ชื่อ
+              <%= dogs[1].name || '-' %> (-)</p>
+            <% } %>
 
-           </div>
-           <div class="col-5">
-            <p class="card-text" id="titleFontPicture1"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag"><%= dogs[1].sellPrice || ' - ' %></p>
-           </div>
-         </div>
+          </div>
+          <div class="col-5">
+            <p class="card-text" id="titleFontPicture1"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag">
+              <%= dogs[1].sellPrice || ' - ' %>
+            </p>
+          </div>
+        </div>
 
-       </div>
-     </div>
+      </div>
+    </div>
     <!-- CARD 2 -->
-    <div class="card my-3 mx-auto"onclick="clickSameDog()" id="picture">
+    <div class="card my-3 mx-auto" onclick="clickSameDog()" id="picture">
       <!---img2-------->
-      <img class='card-img-top' id='photo2' src="<%= dogs[2].pictures %>"alt='dog'>
+      <img class='card-img-top' id='photo2' src="<%= dogs[2].pictures %>" alt='dog'>
 
-       <div class="card-body" id="body2">
-         <div class="row">
-           <div class="col-7"id="name2">
-             <!---name3----->
-             <p class="card-text" id="breed.titleFontPicture2"> <%= dogs[2].breed.title %> </p>
+      <div class="card-body" id="body2">
+        <div class="row">
+          <div class="col-7" id="name2">
+            <!---name3----->
+            <p class="card-text" id="breed.titleFontPicture2">
+              <%= dogs[2].breed.title %>
+            </p>
 
-              <% if(dogs[2].gender == 0){ %>
-                <p class="card-text subFontPicture" id="subFontPicture2">ชื่อ <%= dogs[2].name %> (ผู้)</p>
-                <% } else if(dogs[2].gender== 1) { %>
-                  <p class="card-text subFontPicture" id="subFontPicture2">ชื่อ <%= dogs[2].name || '-' %> (เมีย)</p>
-                <% }else{ %>
-                  <p class="card-text subFontPicture" id="subFontPicture2">ชื่อ <%= dogs[2].name || '-' %> (-)</p>
-                <% } %>
-           </div>
-           <div class="col-5">
-            <p class="card-text" id="titleFontPicture2"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag"><%= dogs[2].sellPrice || ' - ' %></p>
-           </div>
-         </div>
+            <% if(dogs[2].gender == 0){ %>
+            <p class="card-text subFontPicture" id="subFontPicture2">ชื่อ
+              <%= dogs[2].name %> (ผู้)</p>
+            <% } else if(dogs[2].gender== 1) { %>
+            <p class="card-text subFontPicture" id="subFontPicture2">ชื่อ
+              <%= dogs[2].name || '-' %> (เมีย)</p>
+            <% }else{ %>
+            <p class="card-text subFontPicture" id="subFontPicture2">ชื่อ
+              <%= dogs[2].name || '-' %> (-)</p>
+            <% } %>
+          </div>
+          <div class="col-5">
+            <p class="card-text" id="titleFontPicture2"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag">
+              <%= dogs[2].sellPrice || ' - ' %>
+            </p>
+          </div>
+        </div>
 
-       </div>
-     </div>
+      </div>
+    </div>
   </div>
   <h1 style="position: relative; left: 80%;">
     <a href="forSale.html" class="button" style="box-shadow: 5px 5px 5px grey;">MORE ></a>
   </h1>
   <h2 style="color:white">aaaaaaaaaaa</h2>
 
-  <!-- ADOPT -->
-  <div>
+  <!-- ----------------------------------- ADOPT ----------------------------------------------------- -->
+  <!-- <div>
     <p style="position: relative;left: 43%"><img src="../asset/icon/charity.svg" style="float:left ;width:35px;height:35px;">
       <h2 class="my-3 text-center">For Adopt</h2>
     </p>
@@ -289,97 +312,113 @@
   <div>
     <p id="content" style="position: relative;left: 45%">เย้</p>
   </div>
-  <div style="overflow: hidden; display: flex; justify-content:space-around;">
-    <!-- PHOTO 0 -->
-    <div class="card my-3 mx-auto"onclick="clickSameDog()" id="picture">
-      <!---img0-------->
-      <img class='card-img-top' id='photo0' src="<%= dogs[0].pictures || '' %>"alt='dog'>
-      
-    <div class="card-body" id="body0">
-      <div class="row">
-        <div class="col-7"id="name0">
-            <!-- <p class='card-text' id='breed.titleFontPicture1'>"+shop[0].name+"</p>
-              <p class='card-text' id='subFontPicture1'>"+shop[0].breed.title+"</p> -->
+  <div style="overflow: hidden; display: flex; justify-content:space-around;"> -->
 
-            <p class="card-text" id="breed.titleFontPicture0"> <%= dogs[0].breed.title || '-' %> </p>
+    <!-- CARD 0 -->
+    <!-- <div class="card my-3 mx-auto" onclick="clickSameDog()" id="picture"> -->
+      <!---img0-------->
+      <!-- <img class='card-img-top' id='photo0' src="<%= dogs[0].pictures || '' %>" alt='dog'>
+
+      <div class="card-body" id="body0">
+        <div class="row">
+          <div class="col-7" id="name0">
+            <p class="card-text" id="breed.titleFontPicture0">
+              <%= dogs[0].breed.title || '-' %>
+            </p>
 
             <% if(dogs[0].gender == 0){ %>
-              <p class="card-text subFontPicture" id="subFontPicture0">ชื่อ <%= dogs[0].name || '-' %> (ผู้)</p>
+            <p class="card-text subFontPicture" id="subFontPicture0">ชื่อ
+              <%= dogs[0].name || '-' %> (ผู้)</p>
             <% } else if(dogs[0].gender== 1) { %>
-              <p class="card-text subFontPicture" id="subFontPicture0">ชื่อ <%= dogs[0].name || '-' %> (เมีย)</p>
+            <p class="card-text subFontPicture" id="subFontPicture0">ชื่อ
+              <%= dogs[0].name || '-' %> (เมีย)</p>
             <% }else{ %>
-              <p class="card-text subFontPicture" id="subFontPicture0">ชื่อ <%= dogs[0].name || '-' %> (-)</p>
+            <p class="card-text subFontPicture" id="subFontPicture0">ชื่อ
+              <%= dogs[0].name || '-' %> (-)</p>
             <% } %>
-        
-           
-        </div>
-        <div class="col-5">
-          <p class="card-text" id="titleFontPicture"><img src="../asset/icon/charity.svg" alt="Login" style="width:35px; margin-top:10px;margin-left: 45px;"
-              id="person"></p>
+
+
+          </div>
+          <div class="col-5">
+            <p class="card-text" id="titleFontPicture"><img src="../asset/icon/charity.svg" alt="Login" style="width:35px; margin-top:10px;margin-left: 45px;"
+                id="person"></p>
+          </div>
         </div>
       </div>
+    </div> -->
 
-    </div>
-  </div>
-  <!-- CARD 1 -->
-  <div class="card my-3 mx-auto"onclick="clickSameDog()" id="picture">
-    <!---img1-------->
-    <img class='card-img-top' id='photo1' src="<%= dogs[1].pictures %>"alt='dog'>
+    <!-- CARD 1 -->
+    <!-- <div class="card my-3 mx-auto" onclick="clickSameDog()" id="picture"> -->
+      <!---img1-------->
+      <!-- <img class='card-img-top' id='photo1' src="<%= dogs[1].pictures %>" alt='dog'>
 
-     <div class="card-body" id="body1">
-       <div class="row">
-         <div class="col-7"id="name1">
-           <!---name1----->
-           <p class="card-text" id="breed.titleFontPicture1"> <%= dogs[1].breed.title || '-' %> </p>
+      <div class="card-body" id="body1">
+        <div class="row">
+          <div class="col-7" id="name1"> -->
+            <!---name1----->
+            <!-- <p class="card-text" id="breed.titleFontPicture1">
+              <%= dogs[1].breed.title || '-' %>
+            </p>
 
             <% if(dogs[1].gender == 0){ %>
-              <p class="card-text subFontPicture" id="subFontPicture1">ชื่อ <%= dogs[1].name || '-' %> (ผู้)</p>
-              <% } else if(dogs[1].gender== 1) { %>
-                <p class="card-text subFontPicture" id="subFontPicture1">ชื่อ <%= dogs[1].name || '-' %> (เมีย)</p>
-              <% }else{ %>
-                <p class="card-text subFontPicture" id="subFontPicture1">ชื่อ <%= dogs[1].name || '-' %> (-)</p>
-              <% } %>
+            <p class="card-text subFontPicture" id="subFontPicture1">ชื่อ
+              <%= dogs[1].name || '-' %> (ผู้)</p>
+            <% } else if(dogs[1].gender== 1) { %>
+            <p class="card-text subFontPicture" id="subFontPicture1">ชื่อ
+              <%= dogs[1].name || '-' %> (เมีย)</p>
+            <% }else{ %>
+            <p class="card-text subFontPicture" id="subFontPicture1">ชื่อ
+              <%= dogs[1].name || '-' %> (-)</p>
+            <% } %>
 
-         </div>
-         <div class="col-5">
-          <p class="card-text" id="titleFontPicture"><img src="../asset/icon/charity.svg" alt="Login" style="width:35px; margin-top:10px;margin-left: 45px;"
-              id="person"></p>
+          </div>
+          <div class="col-5">
+            <p class="card-text" id="titleFontPicture"><img src="../asset/icon/charity.svg" alt="Login" style="width:35px; margin-top:10px;margin-left: 45px;"
+                id="person"></p>
+          </div>
         </div>
-       </div>
+      </div>
+    </div> -->
 
-     </div>
-   </div>
-  <!-- CARD 2 -->
-  <div class="card my-3 mx-auto"onclick="clickSameDog()" id="picture">
-    <!---img2-------->
-    <img class='card-img-top' id='photo2' src="<%= dogs[2].pictures %>"alt='dog'>
+    <!-- CARD 2 -->
+    <!-- <div class="card my-3 mx-auto" onclick="clickSameDog()" id="picture"> -->
+      <!---img2-------->
+      <!-- <img class='card-img-top' id='photo2' src="<%= dogs[2].pictures %>" alt='dog'>
 
-     <div class="card-body" id="body2">
-       <div class="row">
-         <div class="col-7"id="name2">
-           <!---name3----->
-           <p class="card-text" id="breed.titleFontPicture2"> <%= dogs[2].breed.title %> </p>
+      <div class="card-body" id="body2">
+        <div class="row">
+          <div class="col-7" id="name2"> -->
+            <!---name3----->
+            <!-- <p class="card-text" id="breed.titleFontPicture2">
+              <%= dogs[2].breed.title %>
+            </p>
 
             <% if(dogs[2].gender == 0){ %>
-              <p class="card-text subFontPicture" id="subFontPicture2">ชื่อ <%= dogs[2].name %> (ผู้)</p>
-              <% } else if(dogs[2].gender== 1) { %>
-                <p class="card-text subFontPicture" id="subFontPicture2">ชื่อ <%= dogs[2].name || '-' %> (เมีย)</p>
-              <% }else{ %>
-                <p class="card-text subFontPicture" id="subFontPicture2">ชื่อ <%= dogs[2].name || '-' %> (-)</p>
-              <% } %>
-         </div>
-         <div class="col-5">
-          <p class="card-text" id="titleFontPicture"><img src="../asset/icon/charity.svg" alt="Login" style="width:35px; margin-top:10px;margin-left: 45px;"
-              id="person"></p>
+            <p class="card-text subFontPicture" id="subFontPicture2">ชื่อ
+              <%= dogs[2].name %> (ผู้)</p>
+            <% } else if(dogs[2].gender== 1) { %>
+            <p class="card-text subFontPicture" id="subFontPicture2">ชื่อ
+              <%= dogs[2].name || '-' %> (เมีย)</p>
+            <% }else{ %>
+            <p class="card-text subFontPicture" id="subFontPicture2">ชื่อ
+              <%= dogs[2].name || '-' %> (-)</p>
+            <% } %>
+          </div>
+          <div class="col-5">
+            <p class="card-text" id="titleFontPicture"><img src="../asset/icon/charity.svg" alt="Login" style="width:35px; margin-top:10px;margin-left: 45px;"
+                id="person"></p>
+          </div>
         </div>
-       </div>
 
-     </div>
-   </div>
-</div>
-  <h1 style="position: relative; left: 80%;">
+      </div>
+    </div>
+  </div> -->
+
+  <!-- ----------------------------------- ----------------------------------------------------------- -->
+  <!-- <h1 style="position: relative; left: 80%;">
     <a href="forAdopt.html" class="button" style="box-shadow: 5px 5px 5px grey;">MORE ></a>
-  </h1>
+  </h1> -->
+<!-- ----------------------------------- ----------------------------------------------------------- -->
   <h2 style="color:white">aaaaaaaaaaa</h2>
   <div style="background-color:#FFE32E;">
     <h1 id="aboutUs" style="position: relative;left: 45%; " onclick="goToShopInfo()">About Us</h1>
@@ -387,8 +426,8 @@
 
   </div>
 
-
-  <script src="../js/navigation.js"></script>
+  <script src="../js/config.js"></script>
+  <script src="../js/newNavBar.js"></script>
 </body>
 
 </html>
