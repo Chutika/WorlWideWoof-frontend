@@ -217,7 +217,7 @@ $(function () {
             dadBreed: $('#dadBreed').val(),
             primaryColor: $('input[name=primaryColor]').val(),
             sellPrice: Number($("input[name=price]").val()),
-            service: $("input[name=service]:checked").val()
+           
         }
 
         var str = "";
