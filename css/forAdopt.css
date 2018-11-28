@@ -39,7 +39,7 @@ body{
     line-height: 0.9;
     font-weight: 500;
 }
-#subFontPicture{
+.span{
     
     font-family: 'kanitMedium', Kanit ,sans-serif;
     color: #352304;
