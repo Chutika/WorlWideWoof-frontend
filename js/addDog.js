@@ -1,13 +1,13 @@
 $(function () {
-
-
+   
     $('#submitBtn').click(function (event) { event.preventDefault(); submitForm(); });
 
     //validate form info-----------------------------------------------------------------------------------
 
     //name validate
     $('input[name=dogName]').on("change", function () {
-        var pattern = /^([a-zA-Z]{0,9})$/
+        var pattern = /^[\u0E00-\u0E7F]+$/;
+        // var pattern = /^([a-zA-Z]{0,9})$/
         if (!$(this).val().match(pattern)) {
 
             $('#name-valid-msg').removeClass('hidden');
@@ -25,8 +25,8 @@ $(function () {
     });
 
     $('input[name=description]').on("change", function () {
-        
-        var pattern = /^[a-zA-Z_ ]*$/
+        var pattern = /^[\u0E00-\u0E7F\s]+$/;
+        // var pattern = /^[a-zA-Z_ ]*$/
         if (!$(this).val().match(pattern)) {
 
             $('#description-valid-msg').removeClass('hidden');
@@ -61,7 +61,8 @@ $(function () {
     });
 
     $('input[name=primaryColor]').on("change", function () {
-        var pattern = /^[a-zA-Z_ ]*$/
+        var pattern = /^[\u0E00-\u0E7F]+$/;
+        // var pattern = /^[a-zA-Z_ ]*$/
         if (!$(this).val().match(pattern)) {
 
             $('#primaryColor-valid-msg').removeClass('hidden');
@@ -221,16 +222,16 @@ $(function () {
         // $('#submitBtn').click(function (event) {
         var formData = {
             //dogPicture: $('#dogImg'),
-            shopId: "5bfae1f0d60e84c41ccde875",
+            shopId: "5bfd59a08122ce8779ca5d17",
             name: $('input[name=dogName]').val(),
             description: $('input[name=description]').val(),
             size: $('input[name=size]:checked').val(),
             weight: Number($('input[name=weight]').val()),
             // year: $('input#yearInput').val(),
             // month: $('input#monthInput').val(),
-            breed: $('input[name=breed]').val(),
-            momBreed: $('input[name=momBreed]').val(),
-            dadBreed: $('input[name=dadBreed]').val(),
+            breed: $('#breed').val(),
+            momBreed: $('#momBreed').val(),
+            dadBreed: $('#dadBreed').val(),
             primaryColor: $('input[name=primaryColor]').val(),
             sellPrice: $("input[name=price]").val(),
             service: $("input[name=service]:checked").val()

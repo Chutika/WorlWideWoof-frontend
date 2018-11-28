@@ -97,7 +97,7 @@
 		<!-- ................... upload multiple images ............................. -->
 		<!-- images upload form -->
 		<form method="post" id="uploadForm" enctype="multipart/form-data" action="">
-			<label>Choose Images</label>
+			<label>โปรดเลือกรูปภาพสุนัข</label>
 			<input type="number" hidden id="dogId">
 			<input type="file" accept=".jpg, .png" name="file" id="images" multiple>
 			<button id="reset-img" hidden>Reset</button>
@@ -114,88 +114,107 @@
 
 		<form id="dataForm" method="POST" action="https://us-central1-worldwidewoof-bcdfa.cloudfunctions.net/app/api/dog/new"></form>
 		<div class="form-group">
-			<label for="name">Dog name </label>
-			<input id="name" type="text" class="form-control" name="dogName" maxlength="9" placeholder="Dog name" required>
-			<p id="name-valid-msg" class="hidden valid-msg">English only, no more than 9 characters</p>
+			<label for="name">ชื่อสุนัข</label>
+			<input id="name" type="text" class="form-control" name="dogName" maxlength="20" placeholder="ชื่อสุนัข" required>
+			<p id="name-valid-msg" class="hidden valid-msg">ภาษาไทยเท่านั้น ไม่เกิน 20 ตัวอักษร ไม่มีการเว้นวรรค</p>
 		</div>
 		<div class="form-group">
-			<label for="dogDescription">Description</label>
-			<input type="textarea" id="dogDescription" class="form-control" maxlength="140" name="description" placeholder="Describe your dog ...">
-			<p id="description-valid-msg" class="hidden valid-msg">no more than 140 characters</p>
+			<label for="dogDescription">คำอธิบาย</label>
+			<input type="textarea" id="dogDescription" class="form-control" maxlength="140" name="description" placeholder="อธิบายสุนัข.....">
+			<p id="description-valid-msg" class="hidden valid-msg">ภาษาไทยเท่านั้น ไม่เกิน 140 ตัวอักษร</p>
 		</div>
 
 		<div class="form-group">
 			<div class="form-check">
-				<p>Size</p>
-				<input class="form-check-input" type="radio" name="size" id="s-size" value="s" checked>
+				<p>ขนาด</p>
+				<input class="form-check-input" type="radio" name="size" id="s-size" value="เล็ก" checked>
 				<label class="form-check-label" for="s-size">
-					S
+					พันธ์เล็ก
 				</label>
 			</div>
 			<div class="form-check">
-				<input class="form-check-input" type="radio" name="size" id="m-size" value="m">
+				<input class="form-check-input" type="radio" name="size" id="m-size" value="กลาง">
 				<label class="form-check-label" for="m-size">
-					M
+					พันธ์กลาง
 				</label>
 			</div>
 			<div class="form-check disabled">
-				<input class="form-check-input" type="radio" name="size" id="l-size" value="l">
+				<input class="form-check-input" type="radio" name="size" id="l-size" value="ใหญ่">
 				<label class="form-check-label" for="l-size">
-					L
+					พันธ์ใหญ่
 				</label>
 			</div>
 		</div>
 
 		<div class="form-group">
 			<div class="form-check">
-				<p>Gender</p>
+				<p>เพศ</p>
 				<input class="form-check-input" type="radio" name="gender" id="m-gender" value="0" checked>
 				<label class="form-check-label" for=m-gender">
-					Male
+					เพศผู้
 				</label>
 			</div>
 			<div class="form-check">
 				<input class="form-check-input" type="radio" name="gender" id="f-gender" value="1">
 				<label class="form-check-label" for="f-gender">
-					Female
+					เพศเมีย
 				</label>
 			</div>
 		</div>
 		<div class="form-group">
-			<label for="weight">Weight (kg)</label>
-			<input type="number" class="form-control" id="weight" name="weight" max="160" placeholder="xx kg.">
-			<p id="weight-valid-msg" class="hidden valid-msg">Number only</p>
+			<label for="weight">น้ำหนัก (กิโลกรัม)</label>
+			<input type="number" class="form-control" id="weight" name="weight" max="160" placeholder="xx กิโลกรัม">
+			<p id="weight-valid-msg" class="hidden valid-msg">ตัวเลขเท่านั้น</p>
 		</div>
 		<div class="form-group">
-			<label for="primaryColor">Color </label>
-			<input type="text" id="primaryColor" class="form-control" name="primaryColor" maxlength="100" placeholder="color">
-			<p id="primaryColor-valid-msg" class="hidden valid-msg">140 chars, English only, not a number</p>
-		</div>
-
-		<div class="form-group">
-			<label for="breed">Breed </label>
-			<input id="breed" type="text" class="form-control" name="breed" placeholder="Dog Breed" required>
-			<p id="breed-valid-msg" class="hidden valid-msg">English only, no number</p>
-		</div>
-		<div class="form-group">
-			<label for="momBreed">Mother's Breed </label>
-			<input type="text" id="momBreed" class="form-control" name="momBreed" placeholder="Mother's Breed">
-		</div>
-		<div class="form-group">
-			<label for="dadBreed">Father's Breed </label>
-			<input type="text" id="dadBreed" class="form-control" name="dadBreed" placeholder="Father's Breed">
+			<label for="primaryColor">สีขน</label>
+			<input type="text" id="primaryColor" class="form-control" name="primaryColor" maxlength="100" placeholder="สี">
+			<p id="primaryColor-valid-msg" class="hidden valid-msg">ภาษาไทยเท่านั้น ไม่มีการเว้นวรรค</p>
 		</div>
 
+		
 		<div class="form-group">
-			<p>Age</p>
+				<label for="breed">พันธุ์สุนัข</label>
+				<select class="form-control" id="breed">
+				  <option>ลาบลาดอร์</option>
+				  <option>ฮัสกี้</option>
+				  <option>พุดเดิ้ล</option>
+				  <option>ชิซุ</option>
+				  <option>เยอรมันเชฟเฟิร์ด</option>
+				</select>
+			  </div>
+			  <div class="form-group">
+					<label for="momBreed">แม่พันธุ์</label>
+					<select class="form-control" id="momBreed">
+					  <option>ลาบลาดอร์</option>
+					  <option>ฮัสกี้</option>
+					  <option>พุดเดิ้ล</option>
+					  <option>ชิซุ</option>
+					  <option>เยอรมันเชฟเฟิร์ด</option>
+					</select>
+				  </div>
+				  <div class="form-group">
+						<label for="dadBreed">พ่อพันธุ์</label>
+						<select class="form-control" id="dadBreed">
+						  <option>ลาบลาดอร์</option>
+						  <option>ฮัสกี้</option>
+						  <option>พุดเดิ้ล</option>
+						  <option>ชิซุ</option>
+						  <option>เยอรมันเชฟเฟิร์ด</option>
+						</select>
+					  </div>
+	
+
+		<div class="form-group">
+			<p>อายุ</p>
 			<div class="form-row">
 				<div class="col">
-					<input type="number" id="yearInput" class="form-control" min="0" max="30" placeholder="Years">
-					<p id="year-valid-msg" class="hidden valid-msg">Please fill with number between 0-30</p>
+					<input type="number" id="yearInput" class="form-control" min="0" max="30" placeholder="ปี">
+					<p id="year-valid-msg" class="hidden valid-msg">ตัวเลขเท่านั้น (0-30)</p>
 				</div>
 				<div class="col">
-					<input type="number" id="monthInput" class="form-control" min="0" max="11" placeholder="Months">
-					<p id="month-valid-msg" class="hidden valid-msg">Please fill with number between 0-11</p>
+					<input type="number" id="monthInput" class="form-control" min="0" max="11" placeholder="เดือน">
+					<p id="month-valid-msg" class="hidden valid-msg">ตัวเลขเท่านั้น (0-11)</p>
 				</div>
 			</div>
 		</div>
@@ -203,32 +222,32 @@
 		<div class="form-group">
 
 			<div class="form-group">
-				<label for="price">Price</label>
-				<input type="number" class="form-control" id="price" name="price" min="0" placeholder="baht" required>
-				<p id="price-valid-msg" class="hidden valid-msg">Only positive number(no more than 10 million)</p>
+				<label for="price">ราคาขาย</label>
+				<input type="number" class="form-control" id="price" name="price" min="0" placeholder="บาท" required>
+				<p id="price-valid-msg" class="hidden valid-msg">เลขจำนวนเต็มบวกเท่านั้น</p>
 			</div>
 			<div class="form-check">
-				<p>Services</p>
-				<input class="form-check-input" type="radio" name="service" id="both-services" value="both" checked>
+				<p>บริการ</p>
+				<input class="form-check-input" type="radio" name="service" id="both-services" value="2" checked>
 				<label class="form-check-label" for="both-services">
-					Both
+					ทั้งขายและเช่า
 				</label>
 			</div>
 			<div class="form-check">
-				<input class="form-check-input" type="radio" name="service" id="rent-service" value="rent">
+				<input class="form-check-input" type="radio" name="service" id="rent-service" value="0">
 				<label class="form-check-label" for="rent-service">
-					Rent
+					เช่า
 				</label>
 			</div>
 			<div class="form-check disabled">
-				<input class="form-check-input" type="radio" name="service" id="sale-service" value="sale">
+				<input class="form-check-input" type="radio" name="service" id="sale-service" value="1">
 				<label class="form-check-label" for="sale-service">
-					Sale
+					ขาย
 				</label>
 			</div>
 
 
-			<button disabled id="submitBtn" class="btn btn-primary btn-lg">Save</button>
+			<button disabled id="submitBtn" class="btn btn-primary btn-lg">บันทึก</button>
 			</form>
 
 
