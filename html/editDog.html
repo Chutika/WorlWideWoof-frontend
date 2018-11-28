@@ -17,7 +17,7 @@
 
 	<!-- custom style -->
 	<link rel="stylesheet" type="text/css" href="../css/addDog.css">
-	<link rel="stylesheet" type="text/css" href="../css/navbar.css">
+	<link rel="stylesheet" type="text/css" href="../css/newNavbar.css">
 	<link rel="stylesheet" type="text/css" href="../css/secNavBar.css">
 
 	<!-- jQuery CDN -->
@@ -37,38 +37,141 @@
 <body>
 
 	<!-- -------------------------- primary navbar ---------------------------- -->
-	<nav class="navbar navbar-expand-lg navbar-light">
-		<p class="nav-link" id="brandMenu" onclick="clickLogo()">WWWoof!</p>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02"
-		 aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <p class="nav-link" id="brandMenu" onclick="clickLogo()">WWWoof!</p>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-		<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-				<li class="nav-item " id="shopMenu" onclick="clickShopMenu()">
-					<p class="nav-link nav-menu">ร้านค้า<span class="sr-only">(current)</span></p>
-				</li>
-				<li class="nav-item" id="foundMenu" onclick="clickFoundationMenu()">
-					<p class="nav-link nav-menu">มูลนิธิ</p>
-				</li>
-			</ul>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item " id="shopMenu" onclick="clickShopMenu()">
+                    <p class="nav-link nav-menu">ร้านค้า<span class="sr-only">(current)</span></p>
+                </li>
+                <li class="nav-item" id="foundMenu" onclick="clickFoundationMenu()">
+                    <p class="nav-link nav-menu">มูลนิธิ</p>
+                </li>
+            </ul>
 
-			<form class="form-inline my-2 my-lg-0">
-				<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-					<li class="nav-item " id="loginMenu" onclick="">
-						<p class="nav-link nav-menu"><img src="../asset/icon/person.svg" alt="" style="width:40px;" id="person"> Log in
-						</p>
-					</li>
-					<li class="nav-item" id="signupMenu" onclick="">
-						<p class="nav-link nav-menu">Sign up</p>
-					</li>
-				</ul>
-			</form>
-		</div>
-	</nav>
+            <form class="form-inline my-2 my-lg-0">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item main-nav" id="loginMenu" onclick="">
+                        <p class="nav-link nav-menu cd-signin"><img src="../asset/icon/person.svg" alt="" style="width:40px;" id="person">
+                            Sign in
+                        </p>
+                    </li>
+                    <li class="nav-item main-nav" id="signupMenu" onclick="">
+                        <p class="nav-link nav-menu cd-signup">Sign up</p>
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </nav>
+    <br>
+    <!-- ------------------------------------------------------------------- -->
 
-	<!-- ------------------------------------------------------------------- -->
+    <!--------------------------------- Modal ------------------------------------>
+    <div class="cd-user-modal">
+        <!-- this is the entire modal form, including the background -->
+        <div class="cd-user-modal-container">
+            <!-- this is the container wrapper -->
+            <ul class="cd-switcher">
+                <li><a href="#0">Sign in</a></li>
+                <li><a href="#0">Sign up</a></li>
+            </ul>
+
+            <div id="cd-login">
+                <!-- log in form -->
+                <form class="cd-form">
+                    <p class="fieldset">
+                        <label class="image-replace cd-email" for="signin-email">E-mail</label>
+                        <input class="full-width has-padding has-border" name="email" id="signin-email" type="email"
+                            placeholder="E-mail">
+                        <span class="cd-error-message">Error message here!</span>
+                    </p>
+
+                    <p class="fieldset">
+                        <label class="image-replace cd-password" for="signin-password">Password</label>
+                        <input class="full-width has-padding has-border" name="password" id="signin-password" type="text"
+                            placeholder="Password">
+                        <a href="#0" class="hide-password">Hide</a>
+                        <span class="cd-error-message">Error message here!</span>
+                    </p>
+
+                    <p class="fieldset">
+                        <input type="checkbox" id="remember-me" checked>
+                        <label for="remember-me">Remember me</label>
+                    </p>
+
+                    <p class="fieldset">
+                        <input id="loginButton" class="full-width" type="submit" value="Login">
+                    </p>
+                </form>
+
+                <!-- <p class="cd-form-bottom-message"><a href="#0">Forgot your password?</a></p> -->
+                <!-- <a href="#0" class="cd-close-form">Close</a> -->
+            </div> <!-- cd-login -->
+
+            <div id="cd-signup">
+                <!-- sign up form -->
+                <form class="cd-form">
+                    <p class="fieldset">
+                        <label class="image-replace cd-username" for="signup-username">Username</label>
+                        <input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Username">
+                        <span class="cd-error-message">Error message here!</span>
+                    </p>
+
+                    <p class="fieldset">
+                        <label class="image-replace cd-email" for="signup-email">E-mail</label>
+                        <input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail">
+                        <span class="cd-error-message">Error message here!</span>
+                    </p>
+
+                    <p class="fieldset">
+                        <label class="image-replace cd-password" for="signup-password">Password</label>
+                        <input class="full-width has-padding has-border" id="signup-password" type="text" placeholder="Password">
+                        <a href="#0" class="hide-password">Hide</a>
+                        <span class="cd-error-message">Error message here!</span>
+                    </p>
+
+                    <p class="fieldset">
+                        <input type="checkbox" id="accept-terms">
+                        <label for="accept-terms">I agree to the <a href="#0">Terms</a></label>
+                    </p>
+
+                    <p class="fieldset">
+                        <input class="full-width has-padding" type="submit" value="Create account">
+                    </p>
+                </form>
+
+                <!-- <a href="#0" class="cd-close-form">Close</a> -->
+            </div> <!-- cd-signup -->
+
+            <!-- <div id="cd-reset-password"> -->
+                <!-- reset password form -->
+                <!-- <p class="cd-form-message">Lost your password? Please enter your email address. You will receive a link
+                    to create a new password.</p>
+
+                <form class="cd-form">
+                    <p class="fieldset">
+                        <label class="image-replace cd-email" for="reset-email">E-mail</label>
+                        <input class="full-width has-padding has-border" id="reset-email" type="email" placeholder="E-mail">
+                        <span class="cd-error-message">Error message here!</span>
+                    </p>
+
+                    <p class="fieldset">
+                        <input class="full-width has-padding" type="submit" value="Reset password">
+                    </p>
+                </form>
+
+                <p class="cd-form-bottom-message"><a href="#0">Back to log-in</a></p>
+            </div> cd-reset-password -->
+            <a href="#0" class="cd-close-form">Close</a>
+        </div> <!-- cd-user-modal-container -->
+    </div> <!-- cd-user-modal -->
+
+    <!-- ------------------------------------------------------------------- -->
 
 
 
@@ -117,26 +220,26 @@
 			<label for="name">ชื่อสุนัข</label>
 			<input id="name" type="text" class="form-control" name="dogName" maxlength="9" placeholder="ชื่อสุนัข" required>
 			<% $("input[name = dogName]").val(dog.name) %>
-			<p id="name-valid-msg" class="hidden valid-msg">English only, no more than 9 characters</p>
+			<p id="name-valid-msg" class="hidden valid-msg">ตัวอักษรภาษาไทยหรือภาษาอังกฤษเท่านั้น ไม่เกิน 20 ตัวอักษร ไม่มีการเว้นวรรค</p>
 		</div>
 		<div class="form-group">
 			<label for="dogDescription">คำอธิบาย</label>
 			<input type="textarea" id="dogDescription" class="form-control" maxlength="140" name="description" placeholder="อธิบายสุนัขของคุณ ...">
 			<% $("input[name = description]").val(dog.description) %>
-			<p id="description-valid-msg" class="hidden valid-msg">no more than 140 characters</p>
+			<p id="description-valid-msg" class="hidden valid-msg">ตัวอักษรภาษาไทยหรือภาษาอังกฤษเท่านั้น ไม่เกิน 140 ตัวอักษร</p>
 		</div>
 
 		<div class="form-group">
-				<% if(dog.size == "S"){ %>
-					<%$('#s-size').attr("checked", "checked"); %>
-				<% }else if(dog.service == "M"){ %>
-					<% $('#m-size').attr("checked", "checked"); %>
-				<% }else{ %>
-					<%	$('#l-size').attr("checked", "checked"); %>
-				<% } %>
+			<% if(dog.size == "S"){ %>
+			<%$('#s-size').attr("checked", "checked"); %>
+			<% }else if(dog.service == "M"){ %>
+			<% $('#m-size').attr("checked", "checked"); %>
+			<% }else{ %>
+			<%	$('#l-size').attr("checked", "checked"); %>
+			<% } %>
 			<div class="form-check">
 				<p>ขนาด</p>
-				<input class="form-check-input" type="radio" name="size" id="s-size" value="เล็ก" >
+				<input class="form-check-input" type="radio" name="size" id="s-size" value="เล็ก">
 				<label class="form-check-label" for="s-size">
 					พันธุ์เล็ก
 				</label>
@@ -155,11 +258,11 @@
 			</div>
 		</div>
 		<% if(dog.gender == 0){ %>
-			<% $('#m-gender').attr("checked", "checked"); %>
+		<% $('#m-gender').attr("checked", "checked"); %>
 		<% }else { %>
-			<% $('#f-gender').attr("checked", "checked"); %>
+		<% $('#f-gender').attr("checked", "checked"); %>
 		<% } %>
-			
+
 		<div class="form-group">
 			<div class="form-check">
 				<p>เพศ</p>
@@ -183,44 +286,98 @@
 		</div>
 		<div class="form-group">
 			<label for="primaryColor">สีขน </label>
-			<input type="text" id="primaryColor" class="form-control" name="primaryColor" maxlength="140"placeholder="สีขน">
+			<input type="text" id="primaryColor" class="form-control" name="primaryColor" maxlength="140" placeholder="สีขน">
 			<% $("input[name = primaryColor]").val(dog.primaryColor) %>
-			<p id="primaryColor-valid-msg" class="hidden valid-msg">ภาษาไทย ไม่เกิน 140 ตัวอักษร ไม่มีการเว้นวรรค</p>
+			<p id="primaryColor-valid-msg" class="hidden valid-msg">ตัวอักษรภาษาไทยหรือภาษาอังกฤษเท่านั้น ไม่มีการเว้นวรรค</p>
 		</div>
 		<div class="form-group">
-				<label for="breed">พันธุ์สุนัข</label>
-				<% $("input[name = breed]").val(dog.breed) %>
-				<select class="form-control" id="breed">
-				  <option>ลาบลาดอร์</option>
-				  <option>ฮัสกี้</option>
-				  <option>พุดเดิ้ล</option>
-				  <option>ชิซุ</option>
-				  <option>เยอรมันเชฟเฟิร์ด</option>
-				</select>
-			  </div>
-			  <div class="form-group">
-					<label for="momBreed">แม่พันธุ์</label>
-					<% $("input[name = momBreed]").val(dog.momBreed) %>
-					<select class="form-control" id="momBreed">
-					  <option>ลาบลาดอร์</option>
-					  <option>ฮัสกี้</option>
-					  <option>พุดเดิ้ล</option>
-					  <option>ชิซุ</option>
-					  <option>เยอรมันเชฟเฟิร์ด</option>
-					</select>
-				  </div>
-				  <div class="form-group">
-						<label for="dadBreed">พ่อพันธุ์</label>
-						<% $("input[name = dadBreed]").val(dog.dadBreed) %>
-						<select class="form-control" id="dadBreed">
-						  <option>ลาบลาดอร์</option>
-						  <option>ฮัสกี้</option>
-						  <option>พุดเดิ้ล</option>
-						  <option>ชิซุ</option>
-						  <option>เยอรมันเชฟเฟิร์ด</option>
-						</select>
-					  </div>
-		
+			<label for="breed">พันธุ์สุนัข</label>
+			<% $("input[name = breed]").val(dog.breed) %>
+			<select class="form-control" id="breed">
+				<option>โดเบอร์แมน พินช์เชอร์</option>
+				<option>นิวฟาวด์แลนด์</option>
+				<option>บลูด็อก</option>
+				<option>บลัดฮาวด์</option>
+				<option>บอสตัน เทอร์เรียร์</option>
+
+				<option>บิชอง ฟริเซ่</option>
+				<option>บีเกิล</option>
+				<option>บุลล์แมสติฟฟ์</option>
+				<option>ปอมเมอเรเนียน</option>
+				<option>ปั๊ก</option>
+
+				<option>ปาปิลอน</option>
+				<option>พันธุ์ทาง</option>
+				<option>พุดเดิ้ล</option>
+				<option>มอลทีส</option>
+				<option>ยอร์คเชียร์ เทอร์เรียร์</option>
+
+				<option>เยอรมัน เชฟเฟิร์ด</option>
+				<option>ร็อตไวเลอร์</option>
+				<option>โรดีเชียน ริดจ์แบ็ค</option>
+				<option>ลาบลาดอร์ รีทรีฟเวอร์</option>
+				<option>อาคิต้า</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="momBreed">แม่พันธุ์</label>
+			<% $("input[name = momBreed]").val(dog.momBreed) %>
+			<select class="form-control" id="momBreed">
+				<option>โดเบอร์แมน พินช์เชอร์</option>
+				<option>นิวฟาวด์แลนด์</option>
+				<option>บลูด็อก</option>
+				<option>บลัดฮาวด์</option>
+				<option>บอสตัน เทอร์เรียร์</option>
+
+				<option>บิชอง ฟริเซ่</option>
+				<option>บีเกิล</option>
+				<option>บุลล์แมสติฟฟ์</option>
+				<option>ปอมเมอเรเนียน</option>
+				<option>ปั๊ก</option>
+
+				<option>ปาปิลอน</option>
+				<option>พันธุ์ทาง</option>
+				<option>พุดเดิ้ล</option>
+				<option>มอลทีส</option>
+				<option>ยอร์คเชียร์ เทอร์เรียร์</option>
+
+				<option>เยอรมัน เชฟเฟิร์ด</option>
+				<option>ร็อตไวเลอร์</option>
+				<option>โรดีเชียน ริดจ์แบ็ค</option>
+				<option>ลาบลาดอร์ รีทรีฟเวอร์</option>
+				<option>อาคิต้า</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="dadBreed">พ่อพันธุ์</label>
+			<% $("input[name = dadBreed]").val(dog.dadBreed) %>
+			<select class="form-control" id="dadBreed">
+				<option>โดเบอร์แมน พินช์เชอร์</option>
+				<option>นิวฟาวด์แลนด์</option>
+				<option>บลูด็อก</option>
+				<option>บลัดฮาวด์</option>
+				<option>บอสตัน เทอร์เรียร์</option>
+
+				<option>บิชอง ฟริเซ่</option>
+				<option>บีเกิล</option>
+				<option>บุลล์แมสติฟฟ์</option>
+				<option>ปอมเมอเรเนียน</option>
+				<option>ปั๊ก</option>
+
+				<option>ปาปิลอน</option>
+				<option>พันธุ์ทาง</option>
+				<option>พุดเดิ้ล</option>
+				<option>มอลทีส</option>
+				<option>ยอร์คเชียร์ เทอร์เรียร์</option>
+
+				<option>เยอรมัน เชฟเฟิร์ด</option>
+				<option>ร็อตไวเลอร์</option>
+				<option>โรดีเชียน ริดจ์แบ็ค</option>
+				<option>ลาบลาดอร์ รีทรีฟเวอร์</option>
+				<option>อาคิต้า</option>
+			</select>
+		</div>
+
 
 		<div class="form-group">
 			<p>อายุ</p>
@@ -248,11 +405,11 @@
 			</div>
 
 			<% if(dog.service == "sale"){ %>
-				<%$('#sale-service').attr("checked", "checked"); %>
+			<%$('#sale-service').attr("checked", "checked"); %>
 			<% }else if(dog.service == "rent"){ %>
-				<% $('#rent-service').attr("checked", "checked"); %>
+			<% $('#rent-service').attr("checked", "checked"); %>
 			<% }else{ %>
-				<%	$('#rent-service').attr("checked", "checked"); %>
+			<%	$('#rent-service').attr("checked", "checked"); %>
 			<% } %>
 
 			<div class="form-check">
@@ -291,7 +448,7 @@
 
 
 		<script type="text/javascript" src="../js/editDog.js"></script>
-		<script src="../js/navigation.js"></script>
+		<script src="../js/newNavBar.js"></script>
 
 		<!-- ------------------------------------------------------------------- -->
 

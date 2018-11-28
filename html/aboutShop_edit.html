@@ -86,16 +86,24 @@
 	<!-- -------------- General Info about Shop ---------------------------- -->
 
 	<div class="info">
+			<form method="POST" enctype="multipart/form-data" id="fileUploadForm">
+				<!-- onchange="chng()" -->
+				<img id='img-upload' src="../asset/Icon/logo_shop.svg" width="75px" height="75px" align="center"><input accept="image/*" type="file"
+					id="imgInp" name="uploaded_image">
+		
+				<!-- <input type="submit" value="Submit" id="btnSubmit" /> -->
+		
+			</form>
         <form action="http://35.193.129.5:8080/test" method="POST" enctype="multipart/form-data">
 		
-			<img class="circle " id="oldImg" src="https://cdn.dribbble.com/users/375867/screenshots/1392018/dog-shop-logo.png"
+			<!-- <img class="circle " id="oldImg" src="https://cdn.dribbble.com/users/375867/screenshots/1392018/dog-shop-logo.png"
 					alt="">
 			<div class="form-group form-inline">
 					
 				<label for="shopLogo"> Please upload you shop logo </label>
 				<input type="file" class="form-control-file" name="url" id="shopLogo">
 				
-			</div>
+			</div> -->
 			<div class="form-group">
 				<label for="name">Shop name </label>
 				<input id="name" type="text" class="form-control" name="shopName" placeholder="Shop name" required> 

@@ -1,0 +1,40 @@
+
+/* ----------------------- map -------------------------*/
+#map{
+	height: 500px;
+	width: 100%;
+	/* margin: auto; */
+}
+/* -----------------------------------------------------*/
+
+
+h2{
+	font-weight: 500;
+}
+
+.info{
+	
+	margin: auto;
+	padding-top: 80px;
+	width: 60%;
+}
+
+.info-section{
+	margin: 30px 0px 30px 0px;
+}
+
+#logo_shop{
+	width: 113px;
+	height: 113px;
+	margin: 0px 50px 0px 0px
+}
+
+
+.circle{
+	width: 140px;
+	height: 140px;
+	margin-right: 50px;
+	
+	border-radius: 50%;
+}
+

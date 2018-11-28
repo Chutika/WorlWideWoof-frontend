@@ -7,7 +7,7 @@ $(function () {
 
     //name validate
     $('input[name=dogName]').on("change", function () {
-        var pattern = /^([a-zA-Z]{0,9})$/
+        var pattern = /^[\u0E00-\u0E7Fa-zA-Z]+$/;
         if (!$(this).val().match(pattern)) {
 
             $('#name-valid-msg').removeClass('hidden');
@@ -25,7 +25,7 @@ $(function () {
     });
 
     $('input[name=description]').on("change", function () {
-        var pattern = /^[a-zA-Z_ ]*$/
+        var pattern = /^[\u0E00-\u0E7Fa-zA-Z\s]+$/;
         if (!$(this).val().match(pattern)) {
 
             $('#description-valid-msg').removeClass('hidden');
@@ -60,7 +60,7 @@ $(function () {
     });
 
     $('input[name=primaryColor]').on("change", function () {
-        var pattern = /^[a-zA-Z_ ]*$/
+        var pattern = /^[\u0E00-\u0E7Fa-zA-Z]+$/;
         if (!$(this).val().match(pattern)) {
 
             $('#primaryColor-valid-msg').removeClass('hidden');
