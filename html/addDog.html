@@ -218,7 +218,7 @@
 		<form id="dataForm" method="POST" action="https://us-central1-worldwidewoof-bcdfa.cloudfunctions.net/app/api/dog/new"></form>
 		<div class="form-group">
 			<label for="name">ชื่อสุนัข</label>
-			<input id="name" type="text" class="form-control" name="dogName" maxlength="20" placeholder="ชื่อสุนัข" required>
+			<input id="name" type="text" class="form-control" name="dogName" maxlength="20" placeholder="ชื่อสุนัข">
 			<p id="name-valid-msg" class="hidden valid-msg">ตัวอักษรภาษาไทยหรือภาษาอังกฤษเท่านั้น ไม่เกิน 20 ตัวอักษร ไม่มีการเว้นวรรค</p>
 		</div>
 		<div class="form-group">
@@ -266,12 +266,12 @@
 		</div>
 		<div class="form-group">
 			<label for="weight">น้ำหนัก (กิโลกรัม)</label>
-			<input type="number" class="form-control" id="weight" name="weight" max="160" placeholder="xx กิโลกรัม">
+			<input type="number" class="form-control" id="weight" name="weight" max="160" placeholder="xx กิโลกรัม" required>
 			<p id="weight-valid-msg" class="hidden valid-msg">ตัวเลขเท่านั้น</p>
 		</div>
 		<div class="form-group">
 			<label for="primaryColor">สีขน</label>
-			<input type="text" id="primaryColor" class="form-control" name="primaryColor" maxlength="100" placeholder="สี">
+			<input type="text" id="primaryColor" class="form-control" name="primaryColor" maxlength="100" placeholder="สี" required>
 			<p id="primaryColor-valid-msg" class="hidden valid-msg">ตัวอักษรภาษาไทยหรือภาษาอังกฤษเท่านั้น ไม่มีการเว้นวรรค</p>
 		</div>
 
@@ -369,11 +369,11 @@
 			<p>อายุ</p>
 			<div class="form-row">
 				<div class="col">
-					<input type="number" id="yearInput" class="form-control" min="0" max="30" placeholder="ปี">
+					<input type="number" id="yearInput" class="form-control" min="0" max="30" placeholder="ปี" required>
 					<p id="year-valid-msg" class="hidden valid-msg">ตัวเลขเท่านั้น (0-30)</p>
 				</div>
 				<div class="col">
-					<input type="number" id="monthInput" class="form-control" min="0" max="11" placeholder="เดือน">
+					<input type="number" id="monthInput" class="form-control" min="0" max="11" placeholder="เดือน" required>
 					<p id="month-valid-msg" class="hidden valid-msg">ตัวเลขเท่านั้น (0-11)</p>
 				</div>
 			</div>
