@@ -1,6 +1,10 @@
+
 $(function () {
-   
-    $('#submitBtn').click(function (event) { event.preventDefault(); submitForm(); });
+
+    $('#submitBtn').click(function (event) {
+        event.preventDefault();
+        submitForm();
+    });
 
     //validate form info-----------------------------------------------------------------------------------
 
@@ -14,8 +18,7 @@ $(function () {
             $('#name-valid-msg').show();
             $("#submitBtn").prop("disabled", true);
 
-        }
-        else {
+        } else {
             // else, do not display message
             $('#name-valid-msg').addClass('hidden');
             $("#submitBtn").prop("disabled", false);
@@ -33,8 +36,7 @@ $(function () {
             $('#description-valid-msg').show();
             $("#submitBtn").prop("disabled", true);
 
-        }
-        else {
+        } else {
             // else, do not display message
             $('#description-valid-msg').addClass('hidden');
             $("#submitBtn").prop("disabled", false);
@@ -51,8 +53,7 @@ $(function () {
             $('#weight-valid-msg').show();
             $("#submitBtn").prop("disabled", true);
 
-        }
-        else {
+        } else {
             // else, do not display message
             $('#weight-valid-msg').addClass('hidden');
             $("#submitBtn").prop("disabled", false);
@@ -69,8 +70,7 @@ $(function () {
             $('#primaryColor-valid-msg').show();
             $("#submitBtn").prop("disabled", true);
 
-        }
-        else {
+        } else {
             // else, do not display message
             $('#primaryColor-valid-msg').addClass('hidden');
             $("#submitBtn").prop("disabled", false);
@@ -87,8 +87,7 @@ $(function () {
             $('#price-valid-msg').show();
             $("#submitBtn").prop("disabled", true);
 
-        }
-        else {
+        } else {
             // else, do not display message
             $('#price-valid-msg').addClass('hidden');
             $("#submitBtn").prop("disabled", false);
@@ -105,8 +104,7 @@ $(function () {
             $('#year-valid-msg').show();
             $("#submitBtn").prop("disabled", true);
 
-        }
-        else {
+        } else {
             // else, do not display message
             $('#year-valid-msg').addClass('hidden');
             $("#submitBtn").prop("disabled", false);
@@ -123,8 +121,7 @@ $(function () {
             $('#month-valid-msg').show();
             $("#submitBtn").prop("disabled", true);
 
-        }
-        else {
+        } else {
             // else, do not display message
             $('#month-valid-msg').addClass('hidden');
             $("#submitBtn").prop("disabled", false);
@@ -215,6 +212,7 @@ $(function () {
         }
 
     }
+
     function submitForm() {
 
         console.log("type of weight value " + typeof (Number($('input[name=weight]').val())));
@@ -228,13 +226,13 @@ $(function () {
             size: $('input[name=size]:checked').val(),
             gender: $('input[name=gender]:checked').val(),
             weight: Number($('input[name=weight]').val()),
-            year: Number( $('input#yearInput').val() ),
-            month: Number( $('input#monthInput').val() ),
+            year: Number($('input#yearInput').val()),
+            month: Number($('input#monthInput').val()),
             breed: $('#breed').val(),
             momBreed: $('#momBreed').val(),
             dadBreed: $('#dadBreed').val(),
             primaryColor: $('input[name=primaryColor]').val(),
-            sellPrice: Number( $("input[name=price]").val() ),
+            sellPrice: Number($("input[name=price]").val()),
             service: $("input[name=service]:checked").val()
         }
 
@@ -246,7 +244,8 @@ $(function () {
 
 
         $.ajax({
-            url: "https://us-central1-worldwidewoof-bcdfa.cloudfunctions.net/app/api/dog/new",
+
+            url: config.host + "/api/dog/new",
             type: "POST",
             dataType: "json",
             data: formData,
@@ -254,11 +253,11 @@ $(function () {
             success: function (res) {
                 console.log("Data Form Sent Success " + res + " " + res.id);
                 $("input#dogId").val(res.id);
-               
-                imgAPI = "https://us-central1-worldwidewoof-bcdfa.cloudfunctions.net/app/api/dog/"+res.id+"/uploadImage"
-        
+
+                imgAPI = config.host + "/api/dog/" + res.id + "/uploadImage"
+
                 $('#uploadForm').attr('action', imgAPI);
-                console.log("action " +$('#uploadForm').attr('action'));
+                console.log("action " + $('#uploadForm').attr('action'));
                 sendFiles();
 
             },
@@ -272,10 +271,9 @@ $(function () {
     };
 
     function sendFiles(num) {
-       
+
         $('#uploadForm').ajaxSubmit({
             target: '#uploadStatus',
-          
             success: function (res) {
                 console.log("Files Form Sent Success " + res);
                 // ------------- reset -------------
@@ -298,7 +296,3 @@ $(function () {
 
 
 });
-
-
-
-

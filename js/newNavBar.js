@@ -1,5 +1,5 @@
-const url = "https://us-central1-worldwidewoof-bcdfa.cloudfunctions.net/app/api/user/login";
-const signUp_url = "https://us-central1-worldwidewoof-bcdfa.cloudfunctions.net/app/api/user/";
+const url = config.host + "/api/user/login";
+const signUp_url = config.host + "/api/user";
 
 function clickLogo() {
     //route page
@@ -87,7 +87,7 @@ jQuery(document).ready(function ($) {
                 });
                 console.log('clicked');
                 event.preventDefault();
-                
+
             });
         }
 
@@ -95,31 +95,31 @@ jQuery(document).ready(function ($) {
             // ------------------------------- post request signup -------------------------------
             //select tag with id=post, if the selected is clicked POST request is sent
             $("#signUp").click(function () {
-				var data = JSON.stringify({
-					
-					email: $('input[name=signup-email]').val(),
-					password: $('input[name=signup-password]').val(),
-					shopName: $('input[name=signup-username]').val()
-				});
-				console.log(data);
-				$.ajax({
-					dataType: 'json',
-					url: signUp_url,
-					method: 'POST',
-					data: data,
-					contentType: 'application/json; charset=utf-8',
-					crossDomain: true,
-					success: (data) => {
+                var data = JSON.stringify({
+
+                    email: $('input[name=signup-email]').val(),
+                    password: $('input[name=signup-password]').val(),
+                    shopName: $('input[name=signup-username]').val()
+                });
+                console.log(data);
+                $.ajax({
+                    dataType: 'json',
+                    url: signUp_url,
+                    method: 'POST',
+                    data: data,
+                    contentType: 'application/json; charset=utf-8',
+                    crossDomain: true,
+                    success: (data) => {
                         console.log('done ' + JSON.stringify(data));
                         $form_modal.removeClass('is-visible');
-					},
-					error: (data) => {
-						console.log('fail ' + JSON.stringify(data));
-					}
-				});
+                    },
+                    error: (data) => {
+                        console.log('fail ' + JSON.stringify(data));
+                    }
+                });
                 console.log('clicked');
                 event.preventDefault();
-			});
+            });
         }
     });
     //================
