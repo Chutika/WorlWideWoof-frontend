@@ -147,50 +147,7 @@ padding-right: 8px;
 }
 /*----------------------------------------*/
 
-nav{
-    background-color: #FFE32E;
-   
-}
-.navbar{
-    padding-left: 51px;
-    padding-right: 51px;
-}
-.navbar-nav li > p:hover{
-    background-color:#F1D102;
-    font-weight: 500;
-} 
-.navbar-nav li > p.active{
-    background-color:#F1D102;
-    font-weight: 500;
-} 
-.nav-menu{    
-    height: 80px;
-    padding: 16px 8px;
-    cursor: pointer;
-    margin-left: 15px;
-    margin-right: 15px;
-    margin-bottom: 0px;
-}
 
-#brandMenu{
-    font-weight: 500;
-    cursor: pointer;
-    margin-top: 8px;
-    margin-bottom: 18px;
-}
-
-#person{ 
-    float: left;
-    width: 25px;
-    height: 25px;
-    margin-top: 6px;
-    margin-right: 5px;
-    
-}
-
-#aboutUs:hover{
-    cursor: pointer;
-}
 #font{
     font-family: 'kanitMedium', Kanit ,sans-serif;
     color: #815811;
@@ -208,4 +165,8 @@ nav{
     font-family: 'kanitMedium', Kanit ,sans-serif;
     color: #352304;
     font-size: 13px;
+   
+}
+p.card-text.subFontPicture{
+    font-size: 15px;
 }

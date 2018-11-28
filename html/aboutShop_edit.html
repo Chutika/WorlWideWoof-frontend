@@ -16,7 +16,7 @@
 	<!-- custom style -->
 	<link rel="stylesheet" type="text/css" href="../css/secNavBar.css">
 	<link rel="stylesheet" type="text/css" href="../css/aboutShop_edit.css">
-	<link rel="stylesheet" type="text/css" href="../css/navbar.css">
+	<link rel="stylesheet" type="text/css" href="../css/newNavbar.css">
 
 	<!-- jQuery CDN -->
 	<script
@@ -34,36 +34,132 @@
 <body>
 
 	<!-- -------------------------- primary navbar ---------------------------- -->
-	<nav class="navbar navbar-expand-lg navbar-light">
-		<p class="nav-link" id="brandMenu" onclick="clickLogo()">WWWoof!</p>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02"
-		 aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <p class="nav-link" id="brandMenu" onclick="clickLogo()">WWWoof!</p>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-		<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-				<li class="nav-item " id="shopMenu" onclick="clickShopMenu()">
-					<p class="nav-link nav-menu">ร้านค้า<span class="sr-only">(current)</span></p>
-				</li>
-				<li class="nav-item" id="foundMenu" onclick="clickFoundationMenu()">
-					<p class="nav-link nav-menu">มูลนิธิ</p>
-				</li>
-			</ul>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item " id="shopMenu" onclick="clickShopMenu()">
+                    <p class="nav-link nav-menu">ร้านค้า<span class="sr-only">(current)</span></p>
+                </li>
+                <li class="nav-item" id="foundMenu" onclick="clickFoundationMenu()">
+                    <p class="nav-link nav-menu">มูลนิธิ</p>
+                </li>
+            </ul>
 
-			<form class="form-inline my-2 my-lg-0">
-				<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-					<li class="nav-item " id="loginMenu" onclick="">
-						<p class="nav-link nav-menu"><img src="../asset/icon/person.svg" alt="" style="width:40px;" id="person"> Log in  </p>
-					</li>
-					<li class="nav-item" id="signupMenu" onclick="">
-						<p class="nav-link nav-menu">Sign up</p>
-					</li>
-				</ul>
-			</form>
-		</div>
-	</nav>
+            <form class="form-inline my-2 my-lg-0">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item main-nav" id="loginMenu" onclick="">
+                        <p class="nav-link nav-menu cd-signin"><img src="../asset/icon/person.svg" alt="" style="width:40px;" id="person">
+                            ลงชื่อเข้าใช้
+                        </p>
+                    </li>
+                    <li class="nav-item main-nav" id="signupMenu" onclick="">
+                        <p class="nav-link nav-menu cd-signup">สมัครสมาชิก</p>
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </nav>
+    <br>
+    <!-- ------------------------------------------------------------------- -->
 
+    <!--------------------------------- Modal ------------------------------------>
+    <div class="cd-user-modal">
+        <!-- this is the entire modal form, including the background -->
+        <div class="cd-user-modal-container">
+            <!-- this is the container wrapper -->
+            <ul class="cd-switcher">
+                <li><a href="#0">ลงชื่อเข้าใช้</a></li>
+                <li><a href="#0">สมัครสมาชิก</a></li>
+            </ul>
+
+            <div id="cd-login">
+                <!-- log in form -->
+                <form class="cd-form">
+                    <p class="fieldset">
+                        <label class="image-replace cd-email" for="signin-email">อีเมล์</label>
+                        <input class="full-width has-padding has-border" name="email" id="signin-email" type="email"
+                            placeholder="อีเมล">
+                        <span class="cd-error-message">Error message here!</span>
+                    </p>
+
+                    <p class="fieldset">
+                        <label class="image-replace cd-password" for="signin-password">รหัสผ่าน</label>
+                        <input class="full-width has-padding has-border" name="password" id="signin-password" type="text"
+                            placeholder="รหัสผ่าน">
+                        <a href="#0" class="hide-password">Hide</a>
+                        <span class="cd-error-message">Error message here!</span>
+                    </p>
+
+                    <p class="fieldset">
+                        <input id="loginButton" class="full-width" type="submit" value="Login">
+                    </p>
+                </form>
+
+                <!-- <p class="cd-form-bottom-message"><a href="#0">Forgot your password?</a></p> -->
+                <!-- <a href="#0" class="cd-close-form">Close</a> -->
+            </div> <!-- cd-login -->
+
+            <div id="cd-signup">
+                <!-- sign up form -->
+                <form class="cd-form">
+                    <p class="fieldset">
+                        <label class="image-replace cd-username" for="signup-username">ชื่อร้านค้า</label>
+                        <input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="ชื่อร้าน" name="signup-username">
+                        <span class="cd-error-message">Error message here!</span>
+                    </p>
+
+                    <p class="fieldset">
+                        <label class="image-replace cd-email" for="signup-email">อีเมล์</label>
+                        <input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="อีเมล" name="signup-email">
+                        <span class="cd-error-message">Error message here!</span>
+                    </p>
+
+                    <p class="fieldset">
+                        <label class="image-replace cd-password" for="signup-password">รหัสผ่าน</label>
+                        <input class="full-width has-padding has-border" id="signup-password" type="text" placeholder="รหัสผ่าน" name="signup-password">
+                        <a href="#0" class="hide-password">Hide</a>
+                        <span class="cd-error-message">Error message here!</span>
+                    </p>
+
+                    <p class="fieldset">
+                        <input class="full-width has-padding" id="signUp" type="submit" value="Create account">
+                    </p>
+
+                    
+                </form>
+
+                <!-- <a href="#0" class="cd-close-form">Close</a> -->
+            </div> <!-- cd-signup -->
+
+            <!-- <div id="cd-reset-password"> -->
+                <!-- reset password form -->
+                <!-- <p class="cd-form-message">Lost your password? Please enter your email address. You will receive a link
+                    to create a new password.</p>
+
+                <form class="cd-form">
+                    <p class="fieldset">
+                        <label class="image-replace cd-email" for="reset-email">E-mail</label>
+                        <input class="full-width has-padding has-border" id="reset-email" type="email" placeholder="E-mail">
+                        <span class="cd-error-message">Error message here!</span>
+                    </p>
+
+                    <p class="fieldset">
+                        <input class="full-width has-padding" type="submit" value="Reset password">
+                    </p>
+                </form>
+
+                <p class="cd-form-bottom-message"><a href="#0">Back to log-in</a></p>
+            </div> cd-reset-password -->
+            <a href="#0" class="cd-close-form">ยกเลิก</a>
+        </div> <!-- cd-user-modal-container -->
+    </div> <!-- cd-user-modal -->
+<!---side---->
     <!-- ------------------------------------------------------------------- -->
 
 
@@ -179,7 +275,8 @@
 	</script> 
 	
 	<script type="text/javascript" src="../js/aboutShop_edit.js"></script>
-	<script src="../js/navigation.js"></script>
+	<script src="../js/config.js"></script>
+	<script src="../js/newNavBar.js"></script>
 
     <!-- ------------------------------------------------------------------- -->
 

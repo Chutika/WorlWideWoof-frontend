@@ -37,120 +37,118 @@
 <body>
 
 	<!-- -------------------------- primary navbar ---------------------------- -->
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <p class="nav-link" id="brandMenu" onclick="clickLogo()">WWWoof!</p>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
-            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+	<nav class="navbar navbar-expand-lg navbar-light">
+		<p class="nav-link" id="brandMenu" onclick="clickLogo()">WWWoof!</p>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02"
+		 aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
 
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item " id="shopMenu" onclick="clickShopMenu()">
-                    <p class="nav-link nav-menu">ร้านค้า<span class="sr-only">(current)</span></p>
-                </li>
-                <li class="nav-item" id="foundMenu" onclick="clickFoundationMenu()">
-                    <p class="nav-link nav-menu">มูลนิธิ</p>
-                </li>
-            </ul>
+		<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+				<li class="nav-item " id="shopMenu" onclick="clickShopMenu()">
+					<p class="nav-link nav-menu">ร้านค้า<span class="sr-only">(current)</span></p>
+				</li>
+				<li class="nav-item" id="foundMenu" onclick="clickFoundationMenu()">
+					<p class="nav-link nav-menu">มูลนิธิ</p>
+				</li>
+			</ul>
 
-            <form class="form-inline my-2 my-lg-0">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <li class="nav-item main-nav" id="loginMenu" onclick="">
-                        <p class="nav-link nav-menu cd-signin"><img src="../asset/icon/person.svg" alt="" style="width:40px;" id="person">
-                            Sign in
-                        </p>
-                    </li>
-                    <li class="nav-item main-nav" id="signupMenu" onclick="">
-                        <p class="nav-link nav-menu cd-signup">Sign up</p>
-                    </li>
-                </ul>
-            </form>
-        </div>
-    </nav>
-    <br>
-    <!-- ------------------------------------------------------------------- -->
+			<form class="form-inline my-2 my-lg-0">
+				<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+					<li class="nav-item main-nav" id="loginMenu" onclick="">
+						<p class="nav-link nav-menu cd-signin"><img src="../asset/icon/person.svg" alt="" style="width:40px;" id="person">
+							Sign in
+						</p>
+					</li>
+					<li class="nav-item main-nav" id="signupMenu" onclick="">
+						<p class="nav-link nav-menu cd-signup">Sign up</p>
+					</li>
+				</ul>
+			</form>
+		</div>
+	</nav>
+	<br>
+	<!-- ------------------------------------------------------------------- -->
 
-    <!--------------------------------- Modal ------------------------------------>
-    <div class="cd-user-modal">
-        <!-- this is the entire modal form, including the background -->
-        <div class="cd-user-modal-container">
-            <!-- this is the container wrapper -->
-            <ul class="cd-switcher">
-                <li><a href="#0">Sign in</a></li>
-                <li><a href="#0">Sign up</a></li>
-            </ul>
+	<!--------------------------------- Modal ------------------------------------>
+	<div class="cd-user-modal">
+		<!-- this is the entire modal form, including the background -->
+		<div class="cd-user-modal-container">
+			<!-- this is the container wrapper -->
+			<ul class="cd-switcher">
+				<li><a href="#0">Sign in</a></li>
+				<li><a href="#0">Sign up</a></li>
+			</ul>
 
-            <div id="cd-login">
-                <!-- log in form -->
-                <form class="cd-form">
-                    <p class="fieldset">
-                        <label class="image-replace cd-email" for="signin-email">E-mail</label>
-                        <input class="full-width has-padding has-border" name="email" id="signin-email" type="email"
-                            placeholder="E-mail">
-                        <span class="cd-error-message">Error message here!</span>
-                    </p>
+			<div id="cd-login">
+				<!-- log in form -->
+				<form class="cd-form">
+					<p class="fieldset">
+						<label class="image-replace cd-email" for="signin-email">E-mail</label>
+						<input class="full-width has-padding has-border" name="email" id="signin-email" type="email" placeholder="E-mail">
+						<span class="cd-error-message">Error message here!</span>
+					</p>
 
-                    <p class="fieldset">
-                        <label class="image-replace cd-password" for="signin-password">Password</label>
-                        <input class="full-width has-padding has-border" name="password" id="signin-password" type="text"
-                            placeholder="Password">
-                        <a href="#0" class="hide-password">Hide</a>
-                        <span class="cd-error-message">Error message here!</span>
-                    </p>
+					<p class="fieldset">
+						<label class="image-replace cd-password" for="signin-password">Password</label>
+						<input class="full-width has-padding has-border" name="password" id="signin-password" type="text" placeholder="Password">
+						<a href="#0" class="hide-password">Hide</a>
+						<span class="cd-error-message">Error message here!</span>
+					</p>
 
-                    <p class="fieldset">
-                        <input type="checkbox" id="remember-me" checked>
-                        <label for="remember-me">Remember me</label>
-                    </p>
+					<p class="fieldset">
+						<input type="checkbox" id="remember-me" checked>
+						<label for="remember-me">Remember me</label>
+					</p>
 
-                    <p class="fieldset">
-                        <input id="loginButton" class="full-width" type="submit" value="Login">
-                    </p>
-                </form>
+					<p class="fieldset">
+						<input id="loginButton" class="full-width" type="submit" value="Login">
+					</p>
+				</form>
 
-                <!-- <p class="cd-form-bottom-message"><a href="#0">Forgot your password?</a></p> -->
-                <!-- <a href="#0" class="cd-close-form">Close</a> -->
-            </div> <!-- cd-login -->
+				<!-- <p class="cd-form-bottom-message"><a href="#0">Forgot your password?</a></p> -->
+				<!-- <a href="#0" class="cd-close-form">Close</a> -->
+			</div> <!-- cd-login -->
 
-            <div id="cd-signup">
-                <!-- sign up form -->
-                <form class="cd-form">
-                    <p class="fieldset">
-                        <label class="image-replace cd-username" for="signup-username">Username</label>
-                        <input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Username">
-                        <span class="cd-error-message">Error message here!</span>
-                    </p>
+			<div id="cd-signup">
+				<!-- sign up form -->
+				<form class="cd-form">
+					<p class="fieldset">
+						<label class="image-replace cd-username" for="signup-username">Username</label>
+						<input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Username">
+						<span class="cd-error-message">Error message here!</span>
+					</p>
 
-                    <p class="fieldset">
-                        <label class="image-replace cd-email" for="signup-email">E-mail</label>
-                        <input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail">
-                        <span class="cd-error-message">Error message here!</span>
-                    </p>
+					<p class="fieldset">
+						<label class="image-replace cd-email" for="signup-email">E-mail</label>
+						<input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail">
+						<span class="cd-error-message">Error message here!</span>
+					</p>
 
-                    <p class="fieldset">
-                        <label class="image-replace cd-password" for="signup-password">Password</label>
-                        <input class="full-width has-padding has-border" id="signup-password" type="text" placeholder="Password">
-                        <a href="#0" class="hide-password">Hide</a>
-                        <span class="cd-error-message">Error message here!</span>
-                    </p>
+					<p class="fieldset">
+						<label class="image-replace cd-password" for="signup-password">Password</label>
+						<input class="full-width has-padding has-border" id="signup-password" type="text" placeholder="Password">
+						<a href="#0" class="hide-password">Hide</a>
+						<span class="cd-error-message">Error message here!</span>
+					</p>
 
-                    <p class="fieldset">
-                        <input type="checkbox" id="accept-terms">
-                        <label for="accept-terms">I agree to the <a href="#0">Terms</a></label>
-                    </p>
+					<p class="fieldset">
+						<input type="checkbox" id="accept-terms">
+						<label for="accept-terms">I agree to the <a href="#0">Terms</a></label>
+					</p>
 
-                    <p class="fieldset">
-                        <input class="full-width has-padding" type="submit" value="Create account">
-                    </p>
-                </form>
+					<p class="fieldset">
+						<input class="full-width has-padding" type="submit" value="Create account">
+					</p>
+				</form>
 
-                <!-- <a href="#0" class="cd-close-form">Close</a> -->
-            </div> <!-- cd-signup -->
+				<!-- <a href="#0" class="cd-close-form">Close</a> -->
+			</div> <!-- cd-signup -->
 
-            <!-- <div id="cd-reset-password"> -->
-                <!-- reset password form -->
-                <!-- <p class="cd-form-message">Lost your password? Please enter your email address. You will receive a link
+			<!-- <div id="cd-reset-password"> -->
+			<!-- reset password form -->
+			<!-- <p class="cd-form-message">Lost your password? Please enter your email address. You will receive a link
                     to create a new password.</p>
 
                 <form class="cd-form">
@@ -167,11 +165,11 @@
 
                 <p class="cd-form-bottom-message"><a href="#0">Back to log-in</a></p>
             </div> cd-reset-password -->
-            <a href="#0" class="cd-close-form">Close</a>
-        </div> <!-- cd-user-modal-container -->
-    </div> <!-- cd-user-modal -->
+			<a href="#0" class="cd-close-form">Close</a>
+		</div> <!-- cd-user-modal-container -->
+	</div> <!-- cd-user-modal -->
 
-    <!-- ------------------------------------------------------------------- -->
+	<!-- ------------------------------------------------------------------- -->
 
 
 
@@ -279,85 +277,75 @@
 		<div class="form-group">
 			<label for="breed">พันธุ์สุนัข</label>
 			<select class="form-control" id="breed">
-				<option>โดเบอร์แมน พินช์เชอร์</option>
-				<option>นิวฟาวด์แลนด์</option>
-				<option>บลูด็อก</option>
-				<option>บลัดฮาวด์</option>
-				<option>บอสตัน เทอร์เรียร์</option>
-
-				<option>บิชอง ฟริเซ่</option>
-				<option>บีเกิล</option>
-				<option>บุลล์แมสติฟฟ์</option>
-				<option>ปอมเมอเรเนียน</option>
-				<option>ปั๊ก</option>
-
-				<option>ปาปิลอน</option>
-				<option>พันธุ์ทาง</option>
-				<option>พุดเดิ้ล</option>
-				<option>มอลทีส</option>
-				<option>ยอร์คเชียร์ เทอร์เรียร์</option>
-
-				<option>เยอรมัน เชฟเฟิร์ด</option>
-				<option>ร็อตไวเลอร์</option>
-				<option>โรดีเชียน ริดจ์แบ็ค</option>
-				<option>ลาบลาดอร์ รีทรีฟเวอร์</option>
-				<option>อาคิต้า</option>
+				<option value="โดเบอร์แมน พินช์เชอร์">โดเบอร์แมน พินช์เชอร์</option>
+											<option value="นิวฟาวด์แลนด์">นิวฟาวด์แลนด์</option>
+											<option value="บลูด็อก">บลูด็อก</option>
+											<option value="บลัดฮาวด์">บลัดฮาวด์</option>
+											<option value="บอสตัน เทอร์เรียร์">บอสตัน เทอร์เรียร์</option>
+											<option value="บิชอง ฟริเซ่">บิชอง ฟริเซ่</option>
+											<option value="บีเกิล">บีเกิล</option>
+											<option value="บุลล์แมสติฟฟ์">บุลล์แมสติฟฟ์</option>
+											<option value="ปอมเมอเรเนียน">ปอมเมอเรเนียน</option>
+											<option value="ปั๊ก">ปั๊ก</option>
+											<option value="ปาปิลอน">ปาปิลอน</option>
+											<option value="พันธุ์ทาง">พันธุ์ทาง</option>
+											<option value="พุดเดิ้ล">พุดเดิ้ล</option>
+											<option value="มอลทีส">มอลทีส</option>
+											<option value="ยอร์คเชียร์ เทอร์เรียร์">ยอร์คเชียร์ เทอร์เรียร์</option>
+											<option value="เยอรมัน เชฟเฟิร์ด">เยอรมัน เชฟเฟิร์ด</option>
+											<option value="ร็อตไวเลอร์">ร็อตไวเลอร์</option>
+											<option value="โรดีเชียน ริดจ์แบ็ค">โรดีเชียน ริดจ์แบ็ค</option>
+											<option value="ลาบลาดอร์ รีทรีฟเวอร์">ลาบลาดอร์ รีทรีฟเวอร์</option>
+											<option value="อาคิต้า">อาคิต้า</option>
 			</select>
 		</div>
 		<div class="form-group">
 			<label for="momBreed">แม่พันธุ์</label>
 			<select class="form-control" id="momBreed">
-				<option>โดเบอร์แมน พินช์เชอร์</option>
-				<option>นิวฟาวด์แลนด์</option>
-				<option>บลูด็อก</option>
-				<option>บลัดฮาวด์</option>
-				<option>บอสตัน เทอร์เรียร์</option>
-
-				<option>บิชอง ฟริเซ่</option>
-				<option>บีเกิล</option>
-				<option>บุลล์แมสติฟฟ์</option>
-				<option>ปอมเมอเรเนียน</option>
-				<option>ปั๊ก</option>
-
-				<option>ปาปิลอน</option>
-				<option>พันธุ์ทาง</option>
-				<option>พุดเดิ้ล</option>
-				<option>มอลทีส</option>
-				<option>ยอร์คเชียร์ เทอร์เรียร์</option>
-
-				<option>เยอรมัน เชฟเฟิร์ด</option>
-				<option>ร็อตไวเลอร์</option>
-				<option>โรดีเชียน ริดจ์แบ็ค</option>
-				<option>ลาบลาดอร์ รีทรีฟเวอร์</option>
-				<option>อาคิต้า</option>
+				<option value="โดเบอร์แมน พินช์เชอร์">โดเบอร์แมน พินช์เชอร์</option>
+											<option value="นิวฟาวด์แลนด์">นิวฟาวด์แลนด์</option>
+											<option value="บลูด็อก">บลูด็อก</option>
+											<option value="บลัดฮาวด์">บลัดฮาวด์</option>
+											<option value="บอสตัน เทอร์เรียร์">บอสตัน เทอร์เรียร์</option>
+											<option value="บิชอง ฟริเซ่">บิชอง ฟริเซ่</option>
+											<option value="บีเกิล">บีเกิล</option>
+											<option value="บุลล์แมสติฟฟ์">บุลล์แมสติฟฟ์</option>
+											<option value="ปอมเมอเรเนียน">ปอมเมอเรเนียน</option>
+											<option value="ปั๊ก">ปั๊ก</option>
+											<option value="ปาปิลอน">ปาปิลอน</option>
+											<option value="พันธุ์ทาง">พันธุ์ทาง</option>
+											<option value="พุดเดิ้ล">พุดเดิ้ล</option>
+											<option value="มอลทีส">มอลทีส</option>
+											<option value="ยอร์คเชียร์ เทอร์เรียร์">ยอร์คเชียร์ เทอร์เรียร์</option>
+											<option value="เยอรมัน เชฟเฟิร์ด">เยอรมัน เชฟเฟิร์ด</option>
+											<option value="ร็อตไวเลอร์">ร็อตไวเลอร์</option>
+											<option value="โรดีเชียน ริดจ์แบ็ค">โรดีเชียน ริดจ์แบ็ค</option>
+											<option value="ลาบลาดอร์ รีทรีฟเวอร์">ลาบลาดอร์ รีทรีฟเวอร์</option>
+											<option value="อาคิต้า">อาคิต้า</option>
 			</select>
 		</div>
 		<div class="form-group">
 			<label for="dadBreed">พ่อพันธุ์</label>
 			<select class="form-control" id="dadBreed">
-				<option>โดเบอร์แมน พินช์เชอร์</option>
-				<option>นิวฟาวด์แลนด์</option>
-				<option>บลูด็อก</option>
-				<option>บลัดฮาวด์</option>
-				<option>บอสตัน เทอร์เรียร์</option>
-
-				<option>บิชอง ฟริเซ่</option>
-				<option>บีเกิล</option>
-				<option>บุลล์แมสติฟฟ์</option>
-				<option>ปอมเมอเรเนียน</option>
-				<option>ปั๊ก</option>
-
-				<option>ปาปิลอน</option>
-				<option>พันธุ์ทาง</option>
-				<option>พุดเดิ้ล</option>
-				<option>มอลทีส</option>
-				<option>ยอร์คเชียร์ เทอร์เรียร์</option>
-
-				<option>เยอรมัน เชฟเฟิร์ด</option>
-				<option>ร็อตไวเลอร์</option>
-				<option>โรดีเชียน ริดจ์แบ็ค</option>
-				<option>ลาบลาดอร์ รีทรีฟเวอร์</option>
-				<option>อาคิต้า</option>
+				<option value="นิวฟาวด์แลนด์">นิวฟาวด์แลนด์</option>
+											<option value="บลูด็อก">บลูด็อก</option>
+											<option value="บลัดฮาวด์">บลัดฮาวด์</option>
+											<option value="บอสตัน เทอร์เรียร์">บอสตัน เทอร์เรียร์</option>
+											<option value="บิชอง ฟริเซ่">บิชอง ฟริเซ่</option>
+											<option value="บีเกิล">บีเกิล</option>
+											<option value="บุลล์แมสติฟฟ์">บุลล์แมสติฟฟ์</option>
+											<option value="ปอมเมอเรเนียน">ปอมเมอเรเนียน</option>
+											<option value="ปั๊ก">ปั๊ก</option>
+											<option value="ปาปิลอน">ปาปิลอน</option>
+											<option value="พันธุ์ทาง">พันธุ์ทาง</option>
+											<option value="พุดเดิ้ล">พุดเดิ้ล</option>
+											<option value="มอลทีส">มอลทีส</option>
+											<option value="ยอร์คเชียร์ เทอร์เรียร์">ยอร์คเชียร์ เทอร์เรียร์</option>
+											<option value="เยอรมัน เชฟเฟิร์ด">เยอรมัน เชฟเฟิร์ด</option>
+											<option value="ร็อตไวเลอร์">ร็อตไวเลอร์</option>
+											<option value="โรดีเชียน ริดจ์แบ็ค">โรดีเชียน ริดจ์แบ็ค</option>
+											<option value="ลาบลาดอร์ รีทรีฟเวอร์">ลาบลาดอร์ รีทรีฟเวอร์</option>
+											<option value="อาคิต้า">อาคิต้า</option>
 
 
 
@@ -420,7 +408,7 @@
 		 crossorigin="anonymous"></script>
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
 
-
+		<script type="text/javascript" src="../js/config.js" ></script>
 		<script type="text/javascript" src="../js/addDog.js"></script>
 		<script src="../js/newNavBar.js"></script>
 
