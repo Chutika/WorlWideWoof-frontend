@@ -32,12 +32,6 @@ crossorigin="anonymous"></script>
 
   <link rel="stylesheet" type="text/css" href="../css/navbar.css">
 
-  <style>
-    .hidden{
-      visibility: hidden;
-    }
-  </style>
-
 
 
 </head>
@@ -47,7 +41,6 @@ crossorigin="anonymous"></script>
     /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
     var dropdown = document.getElementsByClassName("dropdown-btn");
     var i;
-
     for (i = 0; i < dropdown.length; i++) {
       dropdown[i].addEventListener("click", function () {
         this.classList.toggle("active");
@@ -94,63 +87,46 @@ crossorigin="anonymous"></script>
   </nav>
   <!---Side Bar -->
   <div class="sidenav" style="position:absolute;width: 13%">
-    
-   
-    
+    <a><input style="width: 100%" type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category"></a>
+    <a>Location</a>
+    <a><select name="Location" id="Shop">
+        <option value='0' selected disabled>Location</option>
+        <option value='1'>Korat</option>
+        <option value='2'>Yaha</option>
+        <option value='3'>Tokyo</option>
+        <option value='4'>Berlin</option>
+        <option value='5'>London</option>
+        <option value='6'>Bangkok</option>
+      </select></a>
     <a>Breed</a>
     <a><select name="Breed-type" id="Breed">
-        <option value="0" selected disabled>Breed</option>
-        <option value="โดเบอร์แมน พินช์เชอร์">โดเบอร์แมน พินช์เชอร์</option>
-				<option value="นิวฟาวด์แลนด์">นิวฟาวด์แลนด์</option>
-				<option value="บลูด็อก">บลูด็อก</option>
-				<option value="บลัดฮาวด์">บลัดฮาวด์</option>
-				<option value="บอสตัน เทอร์เรียร์">บอสตัน เทอร์เรียร์</option>
-				<option value="บิชอง ฟริเซ่">บิชอง ฟริเซ่</option>
-				<option value="บีเกิล">บีเกิล</option>
-				<option value="บุลล์แมสติฟฟ์">บุลล์แมสติฟฟ์</option>
-				<option value="ปอมเมอเรเนียน">ปอมเมอเรเนียน</option>
-				<option value="ปั๊ก">ปั๊ก</option>
-				<option value="ปาปิลอน">ปาปิลอน</option>
-				<option value="พันธุ์ทาง">พันธุ์ทาง</option>
-				<option value="พุดเดิ้ล">พุดเดิ้ล</option>
-				<option value="มอลทีส">มอลทีส</option>
-				<option value="ยอร์คเชียร์ เทอร์เรียร์">ยอร์คเชียร์ เทอร์เรียร์</option>
-				<option value="เยอรมัน เชฟเฟิร์ด">เยอรมัน เชฟเฟิร์ด</option>
-				<option value="ร็อตไวเลอร์">ร็อตไวเลอร์</option>
-				<option value="โรดีเชียน ริดจ์แบ็ค">โรดีเชียน ริดจ์แบ็ค</option>
-				<option value="ลาบลาดอร์ รีทรีฟเวอร์">ลาบลาดอร์ รีทรีฟเวอร์</option>
-				<option value="อาคิต้า">อาคิต้า</option>
+        <!-- <option value="0" selected disabled>Breed</option>
+        <option value="1">Husky</option>
+        <option value="2">Shiba</option>
+        <option value="3">Kaka</option>
+        <option value="4">Baba</option>
+        <option value="5">Thai</option> -->
       </select></a>
 
     <a>Size</a>
-    <a id="Size">
-      <input type="checkbox" name="radio-choice" id="s" value="เล็ก" />
+    <a>
+      <input type="checkbox" name="radio-choice" id="s" value="choice-1" />
       <label for="check-choice-1">S</label>
 
-      <input type="checkbox" name="radio-choice" id="m" value="กลาง" />
+      <input type="checkbox" name="radio-choice" id="m" value="choice-2" />
       <label for="check-choice-2">M</label>
 
-      <input type="checkbox" name="radio-choice" id="l" value="ใหญ่" />
+      <input type="checkbox" name="radio-choice" id="l" value="choice-2" />
       <label for="check-choice-3">L</label>
 
     </a>
     <a>Gender</a>
-    <a id="Gender">
-      <input type="checkbox" name="gen1" value="0"> Male<br>
-      <input type="checkbox" name="gen2" value="1"> Female
+    <a>
+      <input type="checkbox" name="gen1" value="male"> Male<br>
+      <input type="checkbox" name="gen2" value="Female"> Female
     </a>
     <a>
       <button onclick="search()">GO!!</button>
-      <% $("button#seach").click(){ %>
-        <%	var url = ""; %>
-        <% var data = { %>
-          <% breed: $("#Breed").val(), %>
-          
-          <% size: $('input#Size=size:checked').val(), %>
-          <% gender: $('input#Gender=gender:checked').val(), %>
-        <% } %>
-        <% window.location.href = url + "/dogList.html?breed=" +data.breed+ "&size=" +data.size+ "&gender=" +data.gender; %>
-      <% } %>
     </a>
   </div>
   <!-- Main -->
@@ -167,15 +143,14 @@ crossorigin="anonymous"></script>
     <div id="box1" style="overflow: hidden; display: flex; justify-content:space-around;">
       <!-- PHOTO 1 -->
       <div class="card my-3 mx-auto"onclick="clickSameDog()" id="picture">
-        <img class='card-img-top' id='photo1' src=' <%= dog[0].pictures[0] %>'alt='dog1'>
+          <!---img2-------->
         <div class="card-body" id="body1">
           <div class="row">
             <div class="col-7"id="name1">
-              <p class='card-text' id='breed.titleFontPicture1'><%= shop[0].name %></p>
-              <p class='card-text' id='subFontPicture1'><%= shop[0].breed.title %></p>  
+                
             </div>
             <div class="col-5">
-              <p class="card-text" id="price1"><img src='../asset/icon/black-shop-tag.svg' alt='darkTag' id='darkTag'><%= shop[0].sellPrice %></p>
+              <p class="card-text" id="titleFontPicture"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag">30000</p>
             </div>
           </div>
 
@@ -183,15 +158,14 @@ crossorigin="anonymous"></script>
       </div>
       <!-- PHOTO 2 -->
       <div class="card my-3 mx-auto"onclick="clickSameDog()" id="picture">
-        <img class='card-img-top' id='photo2' src=' <%= dog[1].pictures[0] %>'alt='dog2'>
+        <!---img2-------->
          <div class="card-body" id="body2">
            <div class="row">
              <div class="col-7"id="name2">
-              <p class='card-text' id='breed.titleFontPicture2'><%= shop[1].name %></p>
-              <p class='card-text' id='subFontPicture2'><%= shop[1].breed.title %></p>  
+               <!---name2----->
              </div>
              <div class="col-5">
-              <p class="card-text" id="price2"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag"><%= shop[1].sellPrice %></p>
+              <p class="card-text" id="titleFontPicture"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag">30000</p>
              </div>
            </div>
  
@@ -199,15 +173,14 @@ crossorigin="anonymous"></script>
        </div>
       <!-- PHOTO 3 -->
       <div class="card my-3 mx-auto"onclick="clickSameDog()" id="picture">
-        <img class='card-img-top' id='photo3' src=' <%= dog[2].pictures[0] %>'alt='dog3'>
+        <!---img3-------->
          <div class="card-body" id="body3">
            <div class="row">
              <div class="col-7"id="name3">
-              <p class='card-text' id='breed.titleFontPicture3'><%= shop[2].name %></p>
-              <p class='card-text' id='subFontPicture3'><%= shop[2].breed.title %></p>
+               <!---name3----->
              </div>
              <div class="col-5">
-              <p class="card-text" id="price3"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag"><%= shop[2].sellPrice %></p>
+              <p class="card-text" id="titleFontPicture"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag">30000</p>
              </div>
            </div>
  
@@ -217,15 +190,14 @@ crossorigin="anonymous"></script>
     <div style="overflow: hidden; display: flex; justify-content:space-around;">
       <!-- PHOTO 4 -->
       <div class="card my-3 mx-auto"onclick="clickSameDog()" id="picture">
-        <img class='card-img-top' id='photo4' src=' <%= dog[3].pictures[0] %>'alt='dog4'>
+        <!---img4-------->
          <div class="card-body" id="body4">
            <div class="row">
              <div class="col-7"id="name4">
-              <p class='card-text' id='breed.titleFontPicture4'><%= shop[3].name %></p>
-              <p class='card-text' id='subFontPicture4'><%= shop[3].breed.title %></p>
+               <!---name4----->
              </div>
              <div class="col-5">
-              <p class="card-text" id="price4"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag"><%= shop[3].sellPrice %></p>
+              <p class="card-text" id="titleFontPicture"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag">30000</p>
              </div>
            </div>
  
@@ -233,15 +205,14 @@ crossorigin="anonymous"></script>
        </div>
       <!-- PHOTO 5 -->
       <div class="card my-3 mx-auto"onclick="clickSameDog()" id="picture">
-        <img class='card-img-top' id='photo5' src=' <%= dog[4].pictures[0] %>'alt='dog5'>
+        <!---img5-------->
          <div class="card-body" id="body5">
            <div class="row">
              <div class="col-7"id="name5">
-              <p class='card-text' id='breed.titleFontPicture5'><%= shop[4].name %></p>
-              <p class='card-text' id='subFontPicture5'><%= shop[4].breed.title %></p>
+               <!---name5----->
              </div>
              <div class="col-5">
-              <p class="card-text" id="price5"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag"><%= shop[4].sellPrice %></p>
+              <p class="card-text" id="titleFontPicture"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag">30000</p>
              </div>
            </div>
  
@@ -249,15 +220,14 @@ crossorigin="anonymous"></script>
        </div>
       <!-- PHOTO 6 -->
       <div class="card my-3 mx-auto"onclick="clickSameDog()" id="picture">
-        <img class='card-img-top' id='photo6' src=' <%= dog[5].pictures[0] %>'alt='dog6'>
+        <!---img6-------->
          <div class="card-body" id="body6">
            <div class="row">
              <div class="col-7"id="name6">
-              <p class='card-text' id='breed.titleFontPicture6'><%= shop[5].name %></p>
-              <p class='card-text' id='subFontPicture6'><%= shop[5].breed.title %></p>
+               <!---name6----->
              </div>
              <div class="col-5">
-              <p class="card-text" id="price6"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag"><%= shop[5].sellPrice %></p>
+              <p class="card-text" id="titleFontPicture"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag">30000</p>
              </div>
            </div>
  
@@ -267,15 +237,14 @@ crossorigin="anonymous"></script>
     <div style="overflow: hidden; display: flex; justify-content:space-around;">
       <!-- PHOTO 7 -->
       <div class="card my-3 mx-auto"onclick="clickSameDog()" id="picture">
-        <img class='card-img-top' id='photo7' src=' <%= dog[6].pictures[0] %>'alt='dog7'>
+        <!---img7-------->
          <div class="card-body" id="body7">
            <div class="row">
              <div class="col-7"id="name7">
-              <p class='card-text' id='breed.titleFontPicture7'><%= shop[6].name %></p>
-              <p class='card-text' id='subFontPicture7'><%= shop[6].breed.title %></p>
+               <!---name7----->
              </div>
              <div class="col-5">
-              <p class="card-text" id="price7"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag"><%= shop[6].sellPrice %></p>
+              <p class="card-text" id="titleFontPicture"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag">30000</p>
              </div>
            </div>
  
@@ -283,15 +252,14 @@ crossorigin="anonymous"></script>
        </div>
       <!-- PHOTO 8 -->
       <div class="card my-3 mx-auto"onclick="clickSameDog()" id="picture">
-        <img class='card-img-top' id='photo8' src=' <%= dog[7].pictures[0] %>'alt='dog8'>
+        <!---img8-------->
          <div class="card-body" id="body8">
            <div class="row">
              <div class="col-7"id="name8">
-              <p class='card-text' id='breed.titleFontPicture8'><%= shop[7].name %></p>
-              <p class='card-text' id='subFontPicture8'><%= shop[7].breed.title %></p>
+               <!---name8----->
              </div>
              <div class="col-5">
-              <p class="card-text" id="price8"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag"><%= shop[7].sellPrice %></p>
+              <p class="card-text" id="titleFontPicture"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag">30000</p>
              </div>
            </div>
  
@@ -299,15 +267,14 @@ crossorigin="anonymous"></script>
        </div>
       <!-- PHOTO 9 -->
       <div class="card my-3 mx-auto"onclick="clickSameDog()" id="picture">
-        <img class='card-img-top' id='photo9' src=' <%= dog[8].pictures[0] %>'alt='dog9'>
+        <!---img9-------->
          <div class="card-body" id="body9">
            <div class="row">
              <div class="col-7"id="name9">
-              <p class='card-text' id='breed.titleFontPicture9'><%= shop[8].name %></p>
-              <p class='card-text' id='subFontPicture9'><%= shop[8].breed.title %></p>
+               <!---name9----->
              </div>
              <div class="col-5">
-              <p class="card-text" id="price9"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag"><%= shop[8].sellPrice %></p>
+              <p class="card-text" id="titleFontPicture"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag">30000</p>
              </div>
            </div>
  
@@ -324,29 +291,7 @@ crossorigin="anonymous"></script>
   <h1 id="botton" style="position: relative; left:75%;">
     <!---------button-->
     <button onclick='pre()' class='button' id='previous'style='box-shadow: 5px 5px 5px grey;'>PREVIOUS</button>
-    <% function pre(){ %>
-      <%  var url = ""; %>
-      <%  var currPage = page; %>
-        <% if (currPage == 1 ){ %>
-          <%  $("#previous").prop("disabled", true); %>
-          <%  $("#previous").addClass("hidden"); %>
-        <% } %>
-        <% else{ %>
-          <%  window.location.href = url + "/forSale.html?page=" +currPage-1; %>
-        <% } %>
-      <% } %>
     <button onclick='next()' class='button'id='next'style='box-shadow: 5px 5px 5px grey;'>NEXT</button>
-    <% function next(){ %>
-    <%  var url = ""; %>
-    <%  var currPage = page; %>
-    <% if (currPage == page.length ){ %>
-      <%  $("#next").prop("disabled", true);%>
-      <%  $("#next").addClass("hidden");%>
-    <% } %>
-    <% else{ %>
-        <%  window.location.href = url + "/forSale.html?page=" +currPage+1; %>
-      <% } %>
-    <% } %>
   </h1>
   
   </p>
