@@ -56,11 +56,11 @@
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item main-nav" id="loginMenu" onclick="">
                         <p class="nav-link nav-menu cd-signin"><img src="../asset/icon/person.svg" alt="" style="width:40px;" id="person">
-                            Sign in
+                            ลงชื่อเข้าใช้
                         </p>
                     </li>
                     <li class="nav-item main-nav" id="signupMenu" onclick="">
-                        <p class="nav-link nav-menu cd-signup">Sign up</p>
+                        <p class="nav-link nav-menu cd-signup">สมัครสมาชิก</p>
                     </li>
                 </ul>
             </form>
@@ -75,31 +75,26 @@
         <div class="cd-user-modal-container">
             <!-- this is the container wrapper -->
             <ul class="cd-switcher">
-                <li><a href="#0">Sign in</a></li>
-                <li><a href="#0">Sign up</a></li>
+                <li><a href="#0">ลงชื่อเข้าใช้</a></li>
+                <li><a href="#0">สมัครสมาชิก</a></li>
             </ul>
 
             <div id="cd-login">
                 <!-- log in form -->
                 <form class="cd-form">
                     <p class="fieldset">
-                        <label class="image-replace cd-email" for="signin-email">E-mail</label>
+                        <label class="image-replace cd-email" for="signin-email">อีเมล์</label>
                         <input class="full-width has-padding has-border" name="email" id="signin-email" type="email"
                             placeholder="E-mail">
                         <span class="cd-error-message">Error message here!</span>
                     </p>
 
                     <p class="fieldset">
-                        <label class="image-replace cd-password" for="signin-password">Password</label>
+                        <label class="image-replace cd-password" for="signin-password">รหัสผ่าน</label>
                         <input class="full-width has-padding has-border" name="password" id="signin-password" type="text"
                             placeholder="Password">
                         <a href="#0" class="hide-password">Hide</a>
                         <span class="cd-error-message">Error message here!</span>
-                    </p>
-
-                    <p class="fieldset">
-                        <input type="checkbox" id="remember-me" checked>
-                        <label for="remember-me">Remember me</label>
                     </p>
 
                     <p class="fieldset">
@@ -115,27 +110,26 @@
                 <!-- sign up form -->
                 <form class="cd-form">
                     <p class="fieldset">
-                        <label class="image-replace cd-username" for="signup-username">Username</label>
-                        <input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Username">
+                        <label class="image-replace cd-username" for="signup-username">ชื่อร้านค้า</label>
+                        <input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Username" name="signup-username">
                         <span class="cd-error-message">Error message here!</span>
                     </p>
 
                     <p class="fieldset">
-                        <label class="image-replace cd-email" for="signup-email">E-mail</label>
-                        <input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail">
+                        <label class="image-replace cd-email" for="signup-email">อีเมล์</label>
+                        <input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail" name="signup-email">
                         <span class="cd-error-message">Error message here!</span>
                     </p>
 
                     <p class="fieldset">
-                        <label class="image-replace cd-password" for="signup-password">Password</label>
-                        <input class="full-width has-padding has-border" id="signup-password" type="text" placeholder="Password">
+                        <label class="image-replace cd-password" for="signup-password">รหัสผ่าน</label>
+                        <input class="full-width has-padding has-border" id="signup-password" type="text" placeholder="Password" name="signup-password">
                         <a href="#0" class="hide-password">Hide</a>
                         <span class="cd-error-message">Error message here!</span>
                     </p>
 
                     <p class="fieldset">
-                        <input type="checkbox" id="accept-terms">
-                        <label for="accept-terms">I agree to the <a href="#0">Terms</a></label>
+                        <input class="full-width has-padding" id="signUp" type="submit" value="Create account">
                     </p>
 
                     <p class="fieldset">
@@ -165,7 +159,7 @@
 
                 <p class="cd-form-bottom-message"><a href="#0">Back to log-in</a></p>
             </div> cd-reset-password -->
-            <a href="#0" class="cd-close-form">Close</a>
+            <a href="#0" class="cd-close-form">ยกเลิก</a>
         </div> <!-- cd-user-modal-container -->
     </div> <!-- cd-user-modal -->
 

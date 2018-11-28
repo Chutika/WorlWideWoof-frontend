@@ -1,4 +1,5 @@
 const url = "https://us-central1-worldwidewoof-bcdfa.cloudfunctions.net/app/api/user/login";
+const signUp_url = "https://us-central1-worldwidewoof-bcdfa.cloudfunctions.net/app/api/user/";
 
 function clickLogo() {
     //route page
@@ -78,6 +79,7 @@ jQuery(document).ready(function ($) {
                     crossDomain: true,
                     success: (data) => {
                         console.log('done ' + JSON.stringify(data));
+                        $form_modal.removeClass('is-visible');
                     },
                     error: (data) => {
                         console.log('fail ' + JSON.stringify(data));
@@ -85,46 +87,39 @@ jQuery(document).ready(function ($) {
                 });
                 console.log('clicked');
                 event.preventDefault();
+                
             });
         }
 
         function submitSignup() {
             // ------------------------------- post request signup -------------------------------
             //select tag with id=post, if the selected is clicked POST request is sent
-            $("#signupButton").click(function (event) {
-
-                //extract the value from form
-                var formData = {
-                    username: $('input[name=Username').val(),
-                    email: $('input[name=E-mail]').val(),
-                    password: $('input[name=Password').val()
-                }
-
-                var str = "";
-
-                for (var key in formData) {
-                    str += formData[key];
-                }
-
-                console.log(str);
-
-                //POST request using ajax
-                $.ajax({
-                    url: 'https://us-central1-worldwidewoof-bcdfa.cloudfunctions.net/app/api/user', //url that request will be sent to
-                    type: "POST",
-                    dataType: 'json',
-                    data: formData, //data that we want to send to server
-
-                    success: function (data) { //when the POSt request is syccess, do this function
-                        console.log("Post request success");
-                    },
-                    error: function () {
-                        console.log("Something went wrong. please try again");
-                    }
-                });
-                //stay on the same page
+            $("#signUp").click(function () {
+				var data = JSON.stringify({
+					
+					email: $('input[name=signup-email]').val(),
+					password: $('input[name=signup-password]').val(),
+					shopName: $('input[name=signup-username]').val()
+				});
+				console.log(data);
+				$.ajax({
+					dataType: 'json',
+					url: signUp_url,
+					method: 'POST',
+					data: data,
+					contentType: 'application/json; charset=utf-8',
+					crossDomain: true,
+					success: (data) => {
+                        console.log('done ' + JSON.stringify(data));
+                        $form_modal.removeClass('is-visible');
+					},
+					error: (data) => {
+						console.log('fail ' + JSON.stringify(data));
+					}
+				});
+                console.log('clicked');
                 event.preventDefault();
-            });
+			});
         }
     });
     //================
@@ -235,7 +230,7 @@ jQuery(document).ready(function ($) {
     //             if (input.val() == input.attr('placeholder')) {
     //                 input.val('');
     //             }
-    //         })
+    //         });
     //     });
     // }
 
