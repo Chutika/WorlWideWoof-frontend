@@ -33,6 +33,7 @@
   <script src="../js/newNavBar.js"></script>
 
   <link rel="stylesheet" type="text/css" media="screen" href="../css/landingpage.css" />
+  <script src="../js/config.js"></script>
   <script src="../js/landingPage.js"></script>
 
 </head>
@@ -59,10 +60,10 @@
 
       <form class="form-inline my-2 my-lg-0">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item " id="shopMenu" onclick="clickShopMenu()">
-                <p class="nav-link nav-menu">ร้านค้า<span class="sr-only">(current)</span></p>
-            </li>
-            <!-- <li class="nav-item" id="foundMenu" onclick="clickFoundationMenu()">
+          <li class="nav-item " id="shopMenu" onclick="clickShopMenu()">
+            <p class="nav-link nav-menu">ร้านค้า<span class="sr-only">(current)</span></p>
+          </li>
+          <!-- <li class="nav-item" id="foundMenu" onclick="clickFoundationMenu()">
                 <p class="nav-link nav-menu">มูลนิธิ</p>
             </li> -->
         </ul>
@@ -190,7 +191,7 @@
   </div>
   <div id="box1" style="overflow: hidden; display: flex; justify-content:space-around;">
     <!-- CARD 0 -->
-    <div class="card my-3 mx-auto"  onclick=" location.href = '/api/dog/'+'<%= dogsForSale[0]._id %>' " id="picture">
+    <div class="card my-3 mx-auto" onclick=" location.href = config.host+ '/api/dog/'+'<%= dogsForSale[0]._id %>' " id="picture">
       <!---img0-------->
       <img class='card-img-top' id='photo0' src="<%= dogsForSale[0].picture %>" alt='dog'>
 
@@ -204,7 +205,7 @@
               <%= dogsForSale[0].name %>
               <span id="detailDog"><br>
                 <%= dogsForSale[0].breed %> <br>
-                <%= dogsForSale[0].year %> ปี 
+                <%= dogsForSale[0].year %> ปี
                 <%= dogsForSale[0].month %> เดือน</span></p>
           </div>
           <div class="col-5">
@@ -218,7 +219,7 @@
     </div>
 
     <!-- CARD 1 -->
-    <div class="card my-3 mx-auto" onclick=" location.href = '/api/dog/'+'<%= dogsForSale[1]._id %>' " id="picture">
+    <div class="card my-3 mx-auto" onclick=" location.href = config.host + '/api/dog/'+'<%= dogsForSale[1]._id %>' " id="picture">
       <!---img1-------->
       <img class='card-img-top' id='photo1' src="<%= dogsForSale[1].picture %>" alt='dog'>
 
@@ -230,7 +231,7 @@
               <%= dogsForSale[1].name %>
               <span id="detailDog"><br>
                 <%= dogsForSale[1].breed %> <br>
-                <%= dogsForSale[1].year %>ปี 
+                <%= dogsForSale[1].year %>ปี
                 <%= dogsForSale[1].month %>เดือน</span></p>
 
           </div>
@@ -245,7 +246,7 @@
     </div>
 
     <!-- CARD 2 -->
-    <div class="card my-3 mx-auto" onclick=" location.href = '/api/dog/'+'<%= dogsForSale[2]._id %>' " id="picture">
+    <div class="card my-3 mx-auto" onclick=" location.href = config.host + '/api/dog/'+'<%= dogsForSale[2]._id %>' " id="picture">
       <!---img2-------->
       <img class='card-img-top' id='photo2' src="<%= dogsForSale[2].picture %>" alt='dog'>
 
@@ -257,7 +258,7 @@
               <%= dogsForSale[2].name %>
               <span id="detailDog"><br>
                 <%= dogsForSale[2].breed %> <br>
-                <%= dogsForSale[2].year %>ปี 
+                <%= dogsForSale[2].year %>ปี
                 <%= dogsForSale[2].month %>เดือน</span></p>
           </div>
           <div class="col-5">
