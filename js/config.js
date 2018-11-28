@@ -1,3 +1,3 @@
 var config = {
-    host: "http://localhost:5000/worldwidewoof-bcdfa/us-central1/app"
+    host: "https://us-central1-worldwidewoof-bcdfa.cloudfunctions.net/app"
 }
