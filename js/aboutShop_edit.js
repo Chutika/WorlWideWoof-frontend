@@ -5,6 +5,92 @@ $(function () {
 
   initMap();
   getShopInfo();
+  $("#imgInp").on("change", chng);
+
+  $("#imgInp").change(function () {
+    readURL(this);
+  });
+
+  // send selected image (POST ajax) ----------------------------------
+  // $("#btnSubmit").click(function (event) {
+
+  //   //stop submit the form, we will post it manually.
+  //   event.preventDefault();
+  //   sendSingleImg();
+
+  // });
+  function chng() {
+    var typ = document.getElementById("imgInp").value;
+    var res = typ.match(".jpg");
+    var res2 = typ.match(".png");
+    if (res || res2) {
+      console.log("accept");
+    }
+    else {
+
+      alert("Sorry only jpeg or PNG images are accepted");
+      document.getElementById("imgInp").value = "";
+
+    }
+  };
+
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+      //FileReader is used to read the contents of Blob or File
+      var reader = new FileReader();
+
+      // The load event is fired when a resource and its dependent resources have finished loading.
+      // Execute a JavaScript immediately after a page has been loaded:
+      // <body onload="myFunction()">
+      // The FileReader.onload property contains an event handler executed when the load event is fired, 
+
+      reader.onload = function (e) {
+        $('#img-upload').attr('src', e.target.result);
+      }
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+
+  function sendSingleImg() {
+    // Get form
+    var form = $('#fileUploadForm')[0];
+
+    // Create an FormData object 
+    var data = new FormData(form);
+
+    // // If you want to add an extra field for the FormData
+    // data.append("CustomField", "This is some extra data, testing");
+
+    // disabled the submit button
+    $("#btnSubmit").prop("disabled", true);
+
+    $.ajax({
+      type: "POST",
+      enctype: 'multipart/form-data',
+      url: "http://192.168.1.7:8888/profile",
+      data: data,
+      processData: false,
+      contentType: false,
+      cache: false,
+      timeout: 600000,
+      success: function (res) {
+
+        $("#result").text(res);
+        console.log("SUCCESS : ", res);
+        $("#btnSubmit").prop("disabled", false);
+
+      },
+      error: function (e) {
+
+        $("#result").text(e.responseText);
+        console.log("ERROR : ", e);
+        $("#btnSubmit").prop("disabled", false);
+
+      }
+    });
+  }
+
+  // ------------------ map ---------------------------------------
 
   function initMap() {
     //bangkok 13.752450, 100.497571
@@ -74,6 +160,7 @@ $(function () {
 
         success: function (data) {
           console.log("Success " + data);
+          sendSingleImg();
 
         }
       });
@@ -82,26 +169,26 @@ $(function () {
     });
   }
 
-  function getShopInfo(){
+  function getShopInfo() {
     $.ajax({
-      url:"http://10.66.8.124:8888/test",
+      url: "http://10.66.8.124:8888/test",
       type: "GET",
       dataType: "json",
-       success: function(res){
-         $('input[name=shopName]').val(res.shopName),
-         $('input[name=firstName]').val(res.firstName),
-         $('input[name=lastName]').val(res.lastName),
-        $('input[name=phoneNumber]').val(res.phoneNumber),
-        $('input[name=description]').val(res.description),
-        $('input[name=shopLocation]').val(res.location)
+      success: function (res) {
+        $('input[name=shopName]').val(res.shopName),
+          $('input[name=firstName]').val(res.firstName),
+          $('input[name=lastName]').val(res.lastName),
+          $('input[name=phoneNumber]').val(res.phoneNumber),
+          $('input[name=description]').val(res.description),
+          $('input[name=shopLocation]').val(res.location)
         // $("#location-lat").val(),
         //  $("#location-lng").val()
 
-        if(res.url !== null){
-      
+        if (res.url !== null) {
+
           $('#oldImg').attr('src', res.url);
         }
-       }
+      }
     });
   }
 
