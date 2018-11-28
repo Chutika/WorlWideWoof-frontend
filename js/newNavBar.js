@@ -64,7 +64,7 @@ jQuery(document).ready(function ($) {
             // ------------------------------- post request login -------------------------------
             // select tag with id=get, if the selected is clicked POST request is sent
 
-            $("#loginButton").click(function () {
+            $("#loginButton").click(function (event) {
                 var data = JSON.stringify({
                     email: $('input[name=email]').val(),
                     password: $('input[name=password]').val()
