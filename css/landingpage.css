@@ -3,7 +3,6 @@ body{
 	font-weight: 300;
 	font-size: 25px;
 }
-
 @font-face{
     font-family: kanitLight;
     src: url(../asset/font/Kanit/Kanit-Light.ttf);
@@ -23,12 +22,72 @@ body{
     background-color:rgba(0, 0, 0, 0.06);
 
 }
-
-.card my-3 mx-auto{
+#picture{
     width: 288.95px;
     height: 256.76px;
     box-shadow: 0px 3px 10px #00000010 ;
 }
+#font{
+    font-family: 'kanitMedium', Kanit ,sans-serif;
+    color: #815811;
+    font-size: 25px;
+}
+
+.span{
+    
+    font-family: 'kanitMedium', Kanit ,sans-serif;
+    color: #352304;
+    font-size: 13px;
+}
+
+#brandMenu{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
+    cursor: pointer;
+    font-family: 'kanitMedium', Kanit ,sans-serif;
+    color: black;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+
+.card-img-top {
+    width: 286.95px;
+    height: 161.66px;
+}
+.carousel-inner img {
+    width: 100%;
+    height: 100%;
+}
+
+.button {
+  background-color:#FFE32E;
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 30%;
+}
+ul {
+background-color: #FFE32E;
+}
+
+#darkTag{
+    width:20px; 
+    
+    float: left;
+    height: 20px;
+    
+}
+
+
 
 #font{
     font-family: 'kanitMedium', Kanit ,sans-serif;
@@ -42,98 +101,13 @@ body{
     line-height: 0.9;
     font-weight: 500;
 }
-
-
-#brandMenu{
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 8px;
-    padding-right: 8px;
-    cursor: pointer;
+#subFontPicture{
+    
     font-family: 'kanitMedium', Kanit ,sans-serif;
-    color: black;
-    font-size: 25px;
-    font-weight: 500;
-}
-#shopMenu{
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 8px;
-    padding-right: 8px;
-    cursor: pointer;
-    font-family: 'kanitLight', Kanit ,sans-serif;
-}
-#foundMenu{
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 8px;
-    padding-right: 8px;
-    cursor: pointer;
-    font-family: 'kanitLight', Kanit ,sans-serif;
-}
-#Bath{
-    text-align: right;
-    color: #815811;
-    font-family: 'kanitLight', Kanit ,sans-serif;
-    font-size: 50px;
-    margin-right:52px;
-}
-
-nav{
-    background-color: #FFE32E;
- 
-}
-#divUnderNav{
-    margin-top:80px;
-}
-
-#Labrador{
-    width: 379.74px;
-    height: 436.83px;
-    margin-top: 45.33px;
-    margin-left: 51.79px;
-}
-
-#dogName{
-    font-family: 'kanitMedium', Kanit ,sans-serif;
-    font-size: 50px;
-    color: #F1D102;
-    margin-top: 23px;
-    margin-left: 57px;
-
-}
-#content{
-    font-family: 'kanitLight', Kanit ,sans-serif;
-    font-size: 25px;
     color: #352304;
-    margin-left: 57px;
-    font-weight: 400;
+    font-size: 13px;
+   
 }
-#test{
-    background-color: #352304;
-}
-.button {
-    background-color:#FFE32E;
-    border: none;
-    color: black;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 30%;
-}
-.card-img-top {
-    width: 286.95px;
-    height: 161.66px;
-}
-.carousel-inner img {
-    width: 100%;
-    height: 100%;
-}
-
-#aboutUs:hover{
-    cursor: pointer;
+p.card-text.subFontPicture{
+    font-size: 15px;
 }

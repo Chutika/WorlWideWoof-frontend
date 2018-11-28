@@ -2,116 +2,175 @@
 <html>
 
 <head>
-  <title>For Sale Page</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link href='https://fonts.googleapis.com/css?family=Raleway:400,800' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" type="text/css" href="../css/forSale.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-    crossorigin="anonymous">
-  
+    <title>For Sale</title>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="../js/navigation.js"></script>
-  <script src="../js/forSell.js"></script>
-  <script src="../js/card.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-    crossorigin="anonymous"></script>
-<!-- jQuery CDN -->
-<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-crossorigin="anonymous"></script>
+    <!-- Required meta tags for proper responsive behaviors -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <!-- Kanit fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Kanit:300,400,500,600,700&amp;subset=thai" rel="stylesheet">
+    <!-- bootstrap v4 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
 
-  <!-- custom style -->
+    <!-- Kanit fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Kanit:300,400,500,600,700&amp;subset=thai" rel="stylesheet">
 
-  <link rel="stylesheet" type="text/css" href="../css/navbar.css">
+    <!-- custom style -->
 
-  <style>
-    .hidden{
-      visibility: hidden;
-    }
-  </style>
+    <link rel="stylesheet" type="text/css" href="../css/newNavBar.css">
+    <link rel="stylesheet" type="text/css" href="../css/aboutShop.css">
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
 
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
 
+        <script src="../js/forSell.js"></script>
+        <script src="../js/card.js"></script>
+        <link rel="stylesheet" type="text/css" href="../css/aboutShop.css">
+        <link rel="stylesheet" type="text/css" href="../css/forSale.css">
 </head>
 
 <body>
-  <script>
-    /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
-    var dropdown = document.getElementsByClassName("dropdown-btn");
-    var i;
-    for (i = 0; i < dropdown.length; i++) {
-      dropdown[i].addEventListener("click", function () {
-        this.classList.toggle("active");
-        var dropdownContent = this.nextElementSibling;
-        if (dropdownContent.style.display === "block") {
-          dropdownContent.style.display = "none";
-        } else {
-          dropdownContent.style.display = "block";
-        }
-      });
-    }
-  </script>
 
-  <!-- DEFAULT NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-light">
-    <p class="nav-link" id="brandMenu" onclick="clickLogo()">WWWoof!</p>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
-      aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <!-- -------------------------- primary navbar ---------------------------- -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <p class="nav-link" id="brandMenu" onclick="clickLogo()">WWWoof!</p>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-        <li class="nav-item " id="shopMenu" onclick="clickShopMenu()">
-          <p style="padding-bottom:0 px" class="nav-link nav-menu">ร้านค้า<span class="sr-only">(current)</span></p>
-        </li>
-        <li class="nav-item" id="foundMenu" onclick="clickFoundationMenu()">
-          <p class="nav-link nav-menu">มูลนิธิ</p>
-        </li>
-      </ul>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item " id="shopMenu" onclick="clickShopMenu()">
+                    <p class="nav-link nav-menu">ร้านค้า<span class="sr-only">(current)</span></p>
+                </li>
+                <li class="nav-item" id="foundMenu" onclick="clickFoundationMenu()">
+                    <p class="nav-link nav-menu">มูลนิธิ</p>
+                </li>
+            </ul>
 
-      <form class="form-inline my-2 my-lg-0">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-          <li class="nav-item " id="loginMenu" onclick="">
-            <p class="nav-link nav-menu"><img src="../asset/Icon/person.svg" alt="" style="width:40px;" id="person">
-              Log in </p>
-          </li>
-          <li class="nav-item" id="signupMenu" onclick="">
-            <p class="nav-link nav-menu">Sign up</p>
-          </li>
-        </ul>
-      </form>
-    </div>
-  </nav>
-  <!---Side Bar -->
-  <div class="sidenav" style="position:absolute;width: 13%">
-    <a><input style="width: 100%" type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category"></a>
-    <a>Location</a>
-    <a><select name="Location" id="Shop">
-        <option value='0' selected disabled>Location</option>
-        <option value='1'>Korat</option>
-        <option value='2'>Yaha</option>
-        <option value='3'>Tokyo</option>
-        <option value='4'>Berlin</option>
-        <option value='5'>London</option>
-        <option value='6'>Bangkok</option>
-      </select></a>
+            <form class="form-inline my-2 my-lg-0">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item main-nav" id="loginMenu" onclick="">
+                        <p class="nav-link nav-menu cd-signin"><img src="../asset/icon/person.svg" alt="" style="width:40px;" id="person">
+                            ลงชื่อเข้าใช้
+                        </p>
+                    </li>
+                    <li class="nav-item main-nav" id="signupMenu" onclick="">
+                        <p class="nav-link nav-menu cd-signup">สมัครสมาชิก</p>
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </nav>
+    <br>
+    <!-- ------------------------------------------------------------------- -->
+
+    <!--------------------------------- Modal ------------------------------------>
+    <div class="cd-user-modal">
+        <!-- this is the entire modal form, including the background -->
+        <div class="cd-user-modal-container">
+            <!-- this is the container wrapper -->
+            <ul class="cd-switcher">
+                <li><a href="#0">ลงชื่อเข้าใช้</a></li>
+                <li><a href="#0">สมัครสมาชิก</a></li>
+            </ul>
+
+            <div id="cd-login">
+                <!-- log in form -->
+                <form class="cd-form">
+                    <p class="fieldset">
+                        <label class="image-replace cd-email" for="signin-email">อีเมล์</label>
+                        <input class="full-width has-padding has-border" name="email" id="signin-email" type="email"
+                            placeholder="E-mail">
+                        <span class="cd-error-message">Error message here!</span>
+                    </p>
+
+                    <p class="fieldset">
+                        <label class="image-replace cd-password" for="signin-password">รหัสผ่าน</label>
+                        <input class="full-width has-padding has-border" name="password" id="signin-password" type="text"
+                            placeholder="Password">
+                        <a href="#0" class="hide-password">Hide</a>
+                        <span class="cd-error-message">Error message here!</span>
+                    </p>
+
+                    <p class="fieldset">
+                        <input id="loginButton" class="full-width" type="submit" value="Login">
+                    </p>
+                </form>
+
+                <!-- <p class="cd-form-bottom-message"><a href="#0">Forgot your password?</a></p> -->
+                <!-- <a href="#0" class="cd-close-form">Close</a> -->
+            </div> <!-- cd-login -->
+
+            <div id="cd-signup">
+                <!-- sign up form -->
+                <form class="cd-form">
+                    <p class="fieldset">
+                        <label class="image-replace cd-username" for="signup-username">ชื่อร้านค้า</label>
+                        <input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Username" name="signup-username">
+                        <span class="cd-error-message">Error message here!</span>
+                    </p>
+
+                    <p class="fieldset">
+                        <label class="image-replace cd-email" for="signup-email">อีเมล์</label>
+                        <input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail" name="signup-email">
+                        <span class="cd-error-message">Error message here!</span>
+                    </p>
+
+                    <p class="fieldset">
+                        <label class="image-replace cd-password" for="signup-password">รหัสผ่าน</label>
+                        <input class="full-width has-padding has-border" id="signup-password" type="text" placeholder="Password" name="signup-password">
+                        <a href="#0" class="hide-password">Hide</a>
+                        <span class="cd-error-message">Error message here!</span>
+                    </p>
+
+                    <p class="fieldset">
+                        <input class="full-width has-padding" id="signUp" type="submit" value="Create account">
+                    </p>
+
+                    
+                </form>
+
+                <!-- <a href="#0" class="cd-close-form">Close</a> -->
+            </div> <!-- cd-signup -->
+
+            
+            <a href="#0" class="cd-close-form">ยกเลิก</a>
+        </div> <!-- cd-user-modal-container -->
+    </div> <!-- cd-user-modal -->
+<!---Side Bar -->
+<div class="sidenav" style="position:absolute;width: 15%">
+    
     <a>Breed</a>
-    <a><select name="Breed-type" id="Breed">
-        <!-- <option value="0" selected disabled>Breed</option>
-        <option value="1">Husky</option>
-        <option value="2">Shiba</option>
-        <option value="3">Kaka</option>
-        <option value="4">Baba</option>
-        <option value="5">Thai</option> -->
+    <a><select name="Breed-type" id="Breed"style="width: 60%">
+        <option value="0" selected disabled>Breed</option>
+        <option value="นิวฟาวด์แลนด์">นิวฟาวด์แลนด์</option>
+											<option value="บลูด็อก">บลูด็อก</option>
+											<option value="บลัดฮาวด์">บลัดฮาวด์</option>
+											<option value="บอสตัน เทอร์เรียร์">บอสตัน เทอร์เรียร์</option>
+											<option value="บิชอง ฟริเซ่">บิชอง ฟริเซ่</option>
+											<option value="บีเกิล">บีเกิล</option>
+											<option value="บุลล์แมสติฟฟ์">บุลล์แมสติฟฟ์</option>
+											<option value="ปอมเมอเรเนียน">ปอมเมอเรเนียน</option>
+											<option value="ปั๊ก">ปั๊ก</option>
+											<option value="ปาปิลอน">ปาปิลอน</option>
+											<option value="พันธุ์ทาง">พันธุ์ทาง</option>
+											<option value="พุดเดิ้ล">พุดเดิ้ล</option>
+											<option value="มอลทีส">มอลทีส</option>
+											<option value="ยอร์คเชียร์ เทอร์เรียร์">ยอร์คเชียร์ เทอร์เรียร์</option>
+											<option value="เยอรมัน เชฟเฟิร์ด">เยอรมัน เชฟเฟิร์ด</option>
+											<option value="ร็อตไวเลอร์">ร็อตไวเลอร์</option>
+											<option value="โรดีเชียน ริดจ์แบ็ค">โรดีเชียน ริดจ์แบ็ค</option>
+											<option value="ลาบลาดอร์ รีทรีฟเวอร์">ลาบลาดอร์ รีทรีฟเวอร์</option>
+											<option value="อาคิต้า">อาคิต้า</option>
       </select></a>
 
     <a>Size</a>
@@ -135,325 +194,333 @@ crossorigin="anonymous"></script>
       <button onclick="search()">GO!!</button>
     </a>
   </div>
-  <!-- Main -->
-  <div class="main">
-    <div>
-      <p style="position: relative;margin-left: 42%"><img src="../asset/icon/black-shop-tag.svg" style="float:left ;width:35px;height:35px;margin-right: 20px;">
-        For Sale
-      </p>
-    </div>
-    <div>
-      <p class="my-3 text-center" id="content" style="position: relative;">เย้</p>
-    </div>
-    <!-- CARDS -->
-    <div id="box1" style="overflow: hidden; display: flex; justify-content:space-around;">
-      <!-- CARD 0 -->
-      <div class="card my-3 mx-auto"onclick="clickSameDog()" id="picture">
-          <!---img0-------->
-          <img class='card-img-top' id='photo0' src="<%= dogs[0].pictures || '' %>"alt='dog'>
-          
-        <div class="card-body" id="body0">
-          <div class="row">
-            <div class="col-7"id="name0">
-                <!-- <p class='card-text' id='breed.titleFontPicture1'>"+shop[0].name+"</p>
-                  <p class='card-text' id='subFontPicture1'>"+shop[0].breed.title+"</p> -->
 
-                <p class="card-text" id="breed.titleFontPicture0"> <%= dogs[0].breed.title || '-' %> </p>
 
-                <% if(dogs[0].gender == 0){ %>
-                  <p class="card-text subFontPicture" id="subFontPicture0">ชื่อ <%= dogs[0].name || '-' %> (ผู้)</p>
-                <% } else if(dogs[0].gender== 1) { %>
-                  <p class="card-text subFontPicture" id="subFontPicture0">ชื่อ <%= dogs[0].name || '-' %> (เมีย)</p>
-                <% }else{ %>
-                  <p class="card-text subFontPicture" id="subFontPicture0">ชื่อ <%= dogs[0].name || '-' %> (-)</p>
-                <% } %>
-            
-               
-            </div>
-            <div class="col-5">
-              <p class="card-text " id="titleFontPicture0"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag"><%= dogs[0].sellPrice || '-' %></p>
+    <!-- ------------------------------------------------------------------- -->
+     <!-- main------------------------------------------------------------------- -->
+     <div class="main">
+        <div>
+          <p style="position: relative;margin-left: 42%"><img src="../asset/icon/black-shop-tag.svg" style="float:left ;width:35px;height:35px;margin-right: 20px;">
+            For Sale
+          </p>
+        </div>
+        <div>
+          <p class="my-3 text-center" id="content" style="position: relative;">เย้</p>
+        </div>
+        <!-- CARDS -->
+        <div id="box1" style="overflow: hidden; display: flex; justify-content:space-around;">
+          <!-- CARD 0 -->
+          <div class="card my-3 mx-auto"onclick="clickSameDog()" id="picture">
+              <!---img0-------->
+              <img class='card-img-top' id='photo0' src="<%= dogs[0].pictures || '' %>"alt='dog'>
+              
+            <div class="card-body" id="body0">
+              <div class="row">
+                <div class="col-7"id="name0">
+                    <!-- <p class='card-text' id='breed.titleFontPicture1'>"+shop[0].name+"</p>
+                      <p class='card-text' id='subFontPicture1'>"+shop[0].breed.title+"</p> -->
+    
+                    <p class="card-text" id="breed.titleFontPicture0"> <%= dogs[0].breed.title || '-' %> </p>
+    
+                    <% if(dogs[0].gender == 0){ %>
+                      <p class="card-text subFontPicture" id="subFontPicture0">ชื่อ <%= dogs[0].name || '-' %> (ผู้)</p>
+                    <% } else if(dogs[0].gender== 1) { %>
+                      <p class="card-text subFontPicture" id="subFontPicture0">ชื่อ <%= dogs[0].name || '-' %> (เมีย)</p>
+                    <% }else{ %>
+                      <p class="card-text subFontPicture" id="subFontPicture0">ชื่อ <%= dogs[0].name || '-' %> (-)</p>
+                    <% } %>
+                
+                   
+                </div>
+                <div class="col-5">
+                  <p class="card-text " id="titleFontPicture0"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag"><%= dogs[0].sellPrice || '-' %></p>
+                </div>
+              </div>
+    
             </div>
           </div>
-
+          <!-- CARD 1 -->
+          <div class="card my-3 mx-auto"onclick="clickSameDog()" id="picture">
+            <!---img1-------->
+            <img class='card-img-top' id='photo1' src="<%= dogs[1].pictures %>"alt='dog'>
+    
+             <div class="card-body" id="body1">
+               <div class="row">
+                 <div class="col-7"id="name1">
+                   <!---name1----->
+                   <p class="card-text" id="breed.titleFontPicture1"> <%= dogs[1].breed.title || '-' %> </p>
+    
+                    <% if(dogs[1].gender == 0){ %>
+                      <p class="card-text subFontPicture" id="subFontPicture1">ชื่อ <%= dogs[1].name || '-' %> (ผู้)</p>
+                      <% } else if(dogs[1].gender== 1) { %>
+                        <p class="card-text subFontPicture" id="subFontPicture1">ชื่อ <%= dogs[1].name || '-' %> (เมีย)</p>
+                      <% }else{ %>
+                        <p class="card-text subFontPicture" id="subFontPicture1">ชื่อ <%= dogs[1].name || '-' %> (-)</p>
+                      <% } %>
+    
+                 </div>
+                 <div class="col-5">
+                  <p class="card-text" id="titleFontPicture1"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag"><%= dogs[1].sellPrice || ' - ' %></p>
+                 </div>
+               </div>
+     
+             </div>
+           </div>
+          <!-- CARD 2 -->
+          <div class="card my-3 mx-auto"onclick="clickSameDog()" id="picture">
+            <!---img2-------->
+            <img class='card-img-top' id='photo2' src="<%= dogs[2].pictures %>"alt='dog'>
+    
+             <div class="card-body" id="body2">
+               <div class="row">
+                 <div class="col-7"id="name2">
+                   <!---name3----->
+                   <p class="card-text" id="breed.titleFontPicture2"> <%= dogs[2].breed.title %> </p>
+    
+                    <% if(dogs[2].gender == 0){ %>
+                      <p class="card-text subFontPicture" id="subFontPicture2">ชื่อ <%= dogs[2].name %> (ผู้)</p>
+                      <% } else if(dogs[2].gender== 1) { %>
+                        <p class="card-text subFontPicture" id="subFontPicture2">ชื่อ <%= dogs[2].name || '-' %> (เมีย)</p>
+                      <% }else{ %>
+                        <p class="card-text subFontPicture" id="subFontPicture2">ชื่อ <%= dogs[2].name || '-' %> (-)</p>
+                      <% } %>
+                 </div>
+                 <div class="col-5">
+                  <p class="card-text" id="titleFontPicture2"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag"><%= dogs[2].sellPrice || ' - ' %></p>
+                 </div>
+               </div>
+     
+             </div>
+           </div>
         </div>
+        <div style="overflow: hidden; display: flex; justify-content:space-around;">
+          <!-- CARD 3 -->
+          <div class="card my-3 mx-auto"onclick="clickSameDog()" id="picture">
+            <!---img3-------->
+            <img class='card-img-top' id='photo3' src="<%= dogs[3].pictures %>"alt='dog'>
+    
+             <div class="card-body" id="body3">
+               <div class="row">
+                 <div class="col-7"id="name3">
+                   <!---name3----->
+    
+                   <p class="card-text" id="breed.titleFontPicture3"> <%= dogs[3].breed.title %> </p>
+    
+                    <% if(dogs[3].gender == 0){ %>
+                      <p class="card-text subFontPicture" id="subFontPicture3">ชื่อ <%= dogs[3].name %> (ผู้)</p>
+                      <% } else if(dogs[3].gender== 1) { %>
+                        <p class="card-text subFontPicture" id="subFontPicture3">ชื่อ <%= dogs[3].name || '-' %> (เมีย)</p>
+                      <% }else{ %>
+                        <p class="card-text subFontPicture" id="subFontPicture3">ชื่อ <%= dogs[3].name || '-' %> (-)</p>
+                      <% } %>
+    
+                 </div>
+                 <div class="col-5">
+                  <p class="card-text" id="titleFontPicture3"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag"><%= dogs[3].sellPrice || ' - ' %></p>
+                 </div>
+               </div>
+     
+             </div>
+           </div>
+          <!-- CARD 4 -->
+          <div class="card my-3 mx-auto"onclick="clickSameDog()" id="picture">
+            <!---img4-------->
+            <img class='card-img-top' id='photo4' src="<%= dogs[4].pictures %>"alt='dog'>
+    
+             <div class="card-body" id="body4">
+               <div class="row">
+                 <div class="col-7"id="name4">
+                   <!---name4----->
+                   <p class="card-text" id="breed.titleFontPicture4"> <%= dogs[4].name || '-' %> </p>
+    
+                   <% if(dogs[4].gender == 0){ %>
+                    <p class="card-text subFontPicture" id="subFontPicture4">ชื่อ <%= dogs[4].name %> (ผู้)</p>
+                    <% } else if(dogs[4].gender== 1) { %>
+                      <p class="card-text subFontPicture" id="subFontPicture4">ชื่อ <%= dogs[4].name || '-' %> (เมีย)</p>
+                    <% }else{ %>
+                      <p class="card-text subFontPicture" id="subFontPicture4">ชื่อ <%= dogs[4].name || '-' %> (-) </p>
+                    <% } %>
+    
+                  
+    
+                 </div>
+                 <div class="col-5">
+                  <p class="card-text" id="titleFontPicture4"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag">30</p>
+                 </div>
+               </div>
+     
+             </div>
+           </div>
+          <!-- CARD 5 -->
+          <div class="card my-3 mx-auto"onclick="clickSameDog()" id="picture">
+            <!---img5-------->     
+            <img class='card-img-top' id='photo5' src="<%= dogs[5].pictures %>"alt='dog'>
+    
+             <div class="card-body" id="body5">
+               <div class="row">
+                 <div class="col-7"id="name5">
+                   <!---name5----->
+                   <p class="card-text" id="breed.titleFontPicture5"> <%= dogs[5].name || '-' %> </p>
+    
+                   <% if(dogs[5].gender == 0){ %>
+                    <p class="card-text subFontPicture" id="subFontPicture5">ชื่อ <%= dogs[5].name %> (ผู้)</p>
+                    <% } else if(dogs[5].gender== 1) { %>
+                      <p class="card-text subFontPicture" id="subFontPicture5">ชื่อ <%= dogs[5].name || '-' %> (เมีย)</p>
+                    <% }else{ %>
+                      <p class="card-text subFontPicture" id="subFontPicture5">ชื่อ <%= dogs[5].name || '-' %> (-) </p>
+                    <% } %>
+                  
+    
+                 </div>
+                 <div class="col-5">
+                  <p class="card-text" id="titleFontPicture5"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag">30</p>
+                 </div>
+               </div>
+     
+             </div>
+           </div>
+        </div>
+        <div style="overflow: hidden; display: flex; justify-content:space-around;">
+          <!-- CARD 6 -->
+          <div class="card my-3 mx-auto"onclick="clickSameDog()" id="picture">
+            <!---img6-------->
+            <img class='card-img-top' id='photo6' src="<%= dogs[6].pictures %>"alt='dog'>
+    
+             <div class="card-body" id="body6">
+               <div class="row">
+                 <div class="col-7"id="name6">
+                   <!---name6----->
+                   <p class="card-text" id="breed.titleFontPicture6"> <%= dogs[6].name || '-' %> </p>
+    
+                   <% if(dogs[6].gender == 0){ %>
+                    <p class="card-text subFontPicture" id="subFontPicture6">ชื่อ <%= dogs[6].name %> (ผู้)</p>
+                    <% } else if(dogs[6].gender== 1) { %>
+                      <p class="card-text subFontPicture" id="subFontPicture6">ชื่อ <%= dogs[6].name || '-' %> (เมีย)</p>
+                    <% }else{ %>
+                      <p class="card-text subFontPicture" id="subFontPicture6">ชื่อ <%= dogs[6].name || '-' %> (-) </p>
+                    <% } %>
+    
+                 </div>
+                 <div class="col-5">
+                  <p class="card-text" id="titleFontPicture"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag">30000</p>
+                 </div>
+               </div>
+     
+             </div>
+           </div>
+          <!-- CARD 7 -->
+          <div class="card my-3 mx-auto"onclick="clickSameDog()" id="picture">
+            <!---img7-------->
+            <img class='card-img-top' id='photo7' src="<%= dogs[7].pictures %>"alt='dog'>
+    
+             <div class="card-body" id="body7">
+               <div class="row">
+                 <div class="col-7"id="name7">
+                   <!---name7----->
+                   <p class="card-text" id="breed.titleFontPicture7"> <%= dogs[7].name || '-' %> </p>
+    
+                   <% if(dogs[7].gender == 0){ %>
+                    <p class="card-text subFontPicture" id="subFontPicture7">ชื่อ <%= dogs[7].name %> (ผู้)</p>
+                    <% } else if(dogs[7].gender== 1) { %>
+                      <p class="card-text subFontPicture" id="subFontPicture7">ชื่อ <%= dogs[7].name || '-' %> (เมีย)</p>
+                    <% }else{ %>
+                      <p class="card-text subFontPicture" id="subFontPicture7">ชื่อ <%= dogs[7].name || '-' %> (-) </p>
+                    <% } %>
+    
+                 </div>
+                 <div class="col-5">
+                  <p class="card-text" id="titleFontPicture"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag">30000</p>
+                 </div>
+               </div>
+     
+             </div>
+           </div>
+          <!-- CARD 8 -->
+          <div class="card my-3 mx-auto"onclick="clickSameDog()" id="picture">
+            <!---img8-------->
+            <img class='card-img-top' id='photo8' src="<%= dogs[8].pictures %>"alt='dog'>
+    
+             <div class="card-body" id="body8">
+               <div class="row">
+                 <div class="col-7"id="name8">
+                   <!---name8----->
+    
+                   <p class="card-text" id="breed.titleFontPicture8"> <%= dogs[8].name || '-' %> </p>
+    
+                   <% if(dogs[8].gender == 0){ %>
+                    <p class="card-text subFontPicture" id="subFontPicture8">ชื่อ <%= dogs[8].name %> (ผู้)</p>
+                    <% } else if(dogs[8].gender== 1) { %>
+                      <p class="card-text subFontPicture" id="subFontPicture8">ชื่อ <%= dogs[8].name || '-' %> (เมีย)</p>
+                    <% }else{ %>
+                      <p class="card-text subFontPicture" id="subFontPicture8">ชื่อ <%= dogs[8].name || '-' %> (-) </p>
+                    <% } %>
+    
+                 </div>
+                 <div class="col-5">
+                  <p class="card-text" id="titleFontPicture"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag">30000</p>
+                 </div>
+               </div>
+     
+             </div>
+           </div>
+        </div>
+    
+    
+    
+    
+    
       </div>
-      <!-- CARD 1 -->
-      <div class="card my-3 mx-auto"onclick="clickSameDog()" id="picture">
-        <!---img1-------->
-        <img class='card-img-top' id='photo1' src="<%= dogs[1].pictures %>"alt='dog'>
-
-         <div class="card-body" id="body1">
-           <div class="row">
-             <div class="col-7"id="name1">
-               <!---name1----->
-               <p class="card-text" id="breed.titleFontPicture1"> <%= dogs[1].breed.title || '-' %> </p>
-
-                <% if(dogs[1].gender == 0){ %>
-                  <p class="card-text subFontPicture" id="subFontPicture1">ชื่อ <%= dogs[1].name || '-' %> (ผู้)</p>
-                  <% } else if(dogs[1].gender== 1) { %>
-                    <p class="card-text subFontPicture" id="subFontPicture1">ชื่อ <%= dogs[1].name || '-' %> (เมีย)</p>
-                  <% }else{ %>
-                    <p class="card-text subFontPicture" id="subFontPicture1">ชื่อ <%= dogs[1].name || '-' %> (-)</p>
-                  <% } %>
-
-             </div>
-             <div class="col-5">
-              <p class="card-text" id="titleFontPicture1"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag"><%= dogs[1].sellPrice || ' - ' %></p>
-             </div>
-           </div>
- 
-         </div>
-       </div>
-      <!-- CARD 2 -->
-      <div class="card my-3 mx-auto"onclick="clickSameDog()" id="picture">
-        <!---img2-------->
-        <img class='card-img-top' id='photo2' src="<%= dogs[2].pictures %>"alt='dog'>
-
-         <div class="card-body" id="body2">
-           <div class="row">
-             <div class="col-7"id="name2">
-               <!---name3----->
-               <p class="card-text" id="breed.titleFontPicture2"> <%= dogs[2].breed.title %> </p>
-
-                <% if(dogs[2].gender == 0){ %>
-                  <p class="card-text subFontPicture" id="subFontPicture2">ชื่อ <%= dogs[2].name %> (ผู้)</p>
-                  <% } else if(dogs[2].gender== 1) { %>
-                    <p class="card-text subFontPicture" id="subFontPicture2">ชื่อ <%= dogs[2].name || '-' %> (เมีย)</p>
-                  <% }else{ %>
-                    <p class="card-text subFontPicture" id="subFontPicture2">ชื่อ <%= dogs[2].name || '-' %> (-)</p>
-                  <% } %>
-             </div>
-             <div class="col-5">
-              <p class="card-text" id="titleFontPicture2"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag"><%= dogs[2].sellPrice || ' - ' %></p>
-             </div>
-           </div>
- 
-         </div>
-       </div>
-    </div>
-    <div style="overflow: hidden; display: flex; justify-content:space-around;">
-      <!-- CARD 3 -->
-      <div class="card my-3 mx-auto"onclick="clickSameDog()" id="picture">
-        <!---img3-------->
-        <img class='card-img-top' id='photo3' src="<%= dogs[3].pictures %>"alt='dog'>
-
-         <div class="card-body" id="body3">
-           <div class="row">
-             <div class="col-7"id="name3">
-               <!---name3----->
-
-               <p class="card-text" id="breed.titleFontPicture3"> <%= dogs[3].breed.title %> </p>
-
-                <% if(dogs[3].gender == 0){ %>
-                  <p class="card-text subFontPicture" id="subFontPicture3">ชื่อ <%= dogs[3].name %> (ผู้)</p>
-                  <% } else if(dogs[3].gender== 1) { %>
-                    <p class="card-text subFontPicture" id="subFontPicture3">ชื่อ <%= dogs[3].name || '-' %> (เมีย)</p>
-                  <% }else{ %>
-                    <p class="card-text subFontPicture" id="subFontPicture3">ชื่อ <%= dogs[3].name || '-' %> (-)</p>
-                  <% } %>
-
-             </div>
-             <div class="col-5">
-              <p class="card-text" id="titleFontPicture3"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag"><%= dogs[3].sellPrice || ' - ' %></p>
-             </div>
-           </div>
- 
-         </div>
-       </div>
-      <!-- CARD 4 -->
-      <div class="card my-3 mx-auto"onclick="clickSameDog()" id="picture">
-        <!---img4-------->
-        <img class='card-img-top' id='photo4' src="<%= dogs[4].pictures %>"alt='dog'>
-
-         <div class="card-body" id="body4">
-           <div class="row">
-             <div class="col-7"id="name4">
-               <!---name4----->
-               <p class="card-text" id="breed.titleFontPicture4"> <%= dogs[4].name || '-' %> </p>
-
-               <% if(dogs[4].gender == 0){ %>
-                <p class="card-text subFontPicture" id="subFontPicture4">ชื่อ <%= dogs[4].name %> (ผู้)</p>
-                <% } else if(dogs[4].gender== 1) { %>
-                  <p class="card-text subFontPicture" id="subFontPicture4">ชื่อ <%= dogs[4].name || '-' %> (เมีย)</p>
-                <% }else{ %>
-                  <p class="card-text subFontPicture" id="subFontPicture4">ชื่อ <%= dogs[4].name || '-' %> (-) </p>
-                <% } %>
-
-              
-
-             </div>
-             <div class="col-5">
-              <p class="card-text" id="titleFontPicture4"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag">30</p>
-             </div>
-           </div>
- 
-         </div>
-       </div>
-      <!-- CARD 5 -->
-      <div class="card my-3 mx-auto"onclick="clickSameDog()" id="picture">
-        <!---img5-------->     
-        <img class='card-img-top' id='photo5' src="<%= dogs[5].pictures %>"alt='dog'>
-
-         <div class="card-body" id="body5">
-           <div class="row">
-             <div class="col-7"id="name5">
-               <!---name5----->
-               <p class="card-text" id="breed.titleFontPicture5"> <%= dogs[5].name || '-' %> </p>
-
-               <% if(dogs[5].gender == 0){ %>
-                <p class="card-text subFontPicture" id="subFontPicture5">ชื่อ <%= dogs[5].name %> (ผู้)</p>
-                <% } else if(dogs[5].gender== 1) { %>
-                  <p class="card-text subFontPicture" id="subFontPicture5">ชื่อ <%= dogs[5].name || '-' %> (เมีย)</p>
-                <% }else{ %>
-                  <p class="card-text subFontPicture" id="subFontPicture5">ชื่อ <%= dogs[5].name || '-' %> (-) </p>
-                <% } %>
-              
-
-             </div>
-             <div class="col-5">
-              <p class="card-text" id="titleFontPicture5"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag">30</p>
-             </div>
-           </div>
- 
-         </div>
-       </div>
-    </div>
-    <div style="overflow: hidden; display: flex; justify-content:space-around;">
-      <!-- CARD 6 -->
-      <div class="card my-3 mx-auto"onclick="clickSameDog()" id="picture">
-        <!---img6-------->
-        <img class='card-img-top' id='photo6' src="<%= dogs[6].pictures %>"alt='dog'>
-
-         <div class="card-body" id="body6">
-           <div class="row">
-             <div class="col-7"id="name6">
-               <!---name6----->
-               <p class="card-text" id="breed.titleFontPicture6"> <%= dogs[6].name || '-' %> </p>
-
-               <% if(dogs[6].gender == 0){ %>
-                <p class="card-text subFontPicture" id="subFontPicture6">ชื่อ <%= dogs[6].name %> (ผู้)</p>
-                <% } else if(dogs[6].gender== 1) { %>
-                  <p class="card-text subFontPicture" id="subFontPicture6">ชื่อ <%= dogs[6].name || '-' %> (เมีย)</p>
-                <% }else{ %>
-                  <p class="card-text subFontPicture" id="subFontPicture6">ชื่อ <%= dogs[6].name || '-' %> (-) </p>
-                <% } %>
-
-             </div>
-             <div class="col-5">
-              <p class="card-text" id="titleFontPicture"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag">30000</p>
-             </div>
-           </div>
- 
-         </div>
-       </div>
-      <!-- CARD 7 -->
-      <div class="card my-3 mx-auto"onclick="clickSameDog()" id="picture">
-        <!---img7-------->
-        <img class='card-img-top' id='photo7' src="<%= dogs[7].pictures %>"alt='dog'>
-
-         <div class="card-body" id="body7">
-           <div class="row">
-             <div class="col-7"id="name7">
-               <!---name7----->
-               <p class="card-text" id="breed.titleFontPicture7"> <%= dogs[7].name || '-' %> </p>
-
-               <% if(dogs[7].gender == 0){ %>
-                <p class="card-text subFontPicture" id="subFontPicture7">ชื่อ <%= dogs[7].name %> (ผู้)</p>
-                <% } else if(dogs[7].gender== 1) { %>
-                  <p class="card-text subFontPicture" id="subFontPicture7">ชื่อ <%= dogs[7].name || '-' %> (เมีย)</p>
-                <% }else{ %>
-                  <p class="card-text subFontPicture" id="subFontPicture7">ชื่อ <%= dogs[7].name || '-' %> (-) </p>
-                <% } %>
-
-             </div>
-             <div class="col-5">
-              <p class="card-text" id="titleFontPicture"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag">30000</p>
-             </div>
-           </div>
- 
-         </div>
-       </div>
-      <!-- CARD 8 -->
-      <div class="card my-3 mx-auto"onclick="clickSameDog()" id="picture">
-        <!---img8-------->
-        <img class='card-img-top' id='photo8' src="<%= dogs[8].pictures %>"alt='dog'>
-
-         <div class="card-body" id="body8">
-           <div class="row">
-             <div class="col-7"id="name8">
-               <!---name8----->
-
-               <p class="card-text" id="breed.titleFontPicture8"> <%= dogs[8].name || '-' %> </p>
-
-               <% if(dogs[8].gender == 0){ %>
-                <p class="card-text subFontPicture" id="subFontPicture8">ชื่อ <%= dogs[8].name %> (ผู้)</p>
-                <% } else if(dogs[8].gender== 1) { %>
-                  <p class="card-text subFontPicture" id="subFontPicture8">ชื่อ <%= dogs[8].name || '-' %> (เมีย)</p>
-                <% }else{ %>
-                  <p class="card-text subFontPicture" id="subFontPicture8">ชื่อ <%= dogs[8].name || '-' %> (-) </p>
-                <% } %>
-
-             </div>
-             <div class="col-5">
-              <p class="card-text" id="titleFontPicture"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag">30000</p>
-             </div>
-           </div>
- 
-         </div>
-       </div>
-    </div>
+      <p>
+      <h1 id="button" style="position: relative; left:75%;">
+        <!---------button------------------------------------------------->
+        <button class='button' id='previousBtn'style='box-shadow: 5px 5px 5px grey;'>PREVIOUS</button>
+    
+       
+    
+        <button onclick='next()' class='button'id='nextBtn'style='box-shadow: 5px 5px 5px grey;'>NEXT</button>
+      </h1>
+      
+      </p>
+      <div style="background-color:#FFE32E;">
+        <h1 id="aboutUs" style="position: relative;left: 45%; " onclick="goToShopInfo()">About Us</h1>
+        <h4 style="position: relative;left: 45%; ">Team of god of year</h4>
+    
+      </div>
+    <!-- ---------------------------- javascript ---------------------------------- -->
 
 
+	<script src="../js/config.js"></script>
+    <script src="../js/newNavBar.js"></script>
+    <script>
+        // previous button handler
+         document.getElementById("previousBtn").addEventListener("click",function(event){
+           console.log("previous button clicked"); 
+           var currPage = page; 
+           var url = ""; 
+           if(currPage != 1){ 
+               window.location.href = url +"/forSale?page=" + (currPage-1); 
+           }else{ 
+               document.getElementById("previousBtn").disabled = true; 
+               document.getElementById("previousBtn").classList.add("hidden"); 
+           } 
+         }); 
+    
+         // next button handler
+         document.getElementById("nextBtn").addEventListener("click",function(event){
+           console.log("next button clicked"); 
+           var currPage = page; 
+           var url = ""; 
+           if(currPage != pageLength){ 
+               window.location.href = url +"/forSale?page=" + (currPage+1); 
+           }else{ 
+               document.getElementById("nextBtn").disabled = true; 
+               document.getElementById("nextBtn").classList.add("hidden"); 
+           } 
+         }); 
+    
+      </script>
+    <!-- ------------------------------------------------------------------- -->
 
+</body>
 
-
-  </div>
-  <p>
-  <h1 id="button" style="position: relative; left:75%;">
-    <!---------button------------------------------------------------->
-    <button class='button' id='previousBtn'style='box-shadow: 5px 5px 5px grey;'>PREVIOUS</button>
-
-   
-
-    <button onclick='next()' class='button'id='nextBtn'style='box-shadow: 5px 5px 5px grey;'>NEXT</button>
-  </h1>
-  
-  </p>
-  <div style="background-color:#FFE32E;">
-    <h1 id="aboutUs" style="position: relative;left: 45%; " onclick="goToShopInfo()">About Us</h1>
-    <h4 style="position: relative;left: 45%; ">Team of god of year</h4>
-
-  </div>
-
-  <script>
-    // previous button handler
-     document.getElementById("previousBtn").addEventListener("click",function(event){
-       console.log("previous button clicked"); 
-       var currPage = page; 
-       var url = ""; 
-       if(currPage != 1){ 
-           window.location.href = url +"/forSale?page=" + (currPage-1); 
-       }else{ 
-           document.getElementById("previousBtn").disabled = true; 
-           document.getElementById("previousBtn").classList.add("hidden"); 
-       } 
-     }); 
-
-     // next button handler
-     document.getElementById("nextBtn").addEventListener("click",function(event){
-       console.log("next button clicked"); 
-       var currPage = page; 
-       var url = ""; 
-       if(currPage != pageLength){ 
-           window.location.href = url +"/forSale?page=" + (currPage+1); 
-       }else{ 
-           document.getElementById("nextBtn").disabled = true; 
-           document.getElementById("nextBtn").classList.add("hidden"); 
-       } 
-     }); 
-
-  </script>
-
-  </body>
-  </html>
-  
+</html>
