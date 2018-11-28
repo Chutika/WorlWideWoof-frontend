@@ -253,7 +253,7 @@
 		<div class="form-group">
 			<label for="weight">น้ำหนัก (กิโลกรัม)</label>
 			<input type="number" class="form-control" id="weight" name="weight" max="160" placeholder="xx กิโลกรัม" required>
-			<p id="weight-valid-msg" class="hidden valid-msg">ตัวเลขเท่านั้น</p>
+			<p id="weight-valid-msg" class="hidden valid-msg">ตัวเลขเท่านั้น ไม่เกิน 350 กิโลกรัม</p>
 		</div>
 		<div class="form-group">
 			<label for="primaryColor">สีขน</label>
@@ -370,31 +370,11 @@
 				<input type="number" class="form-control" id="price" name="price" min="0" placeholder="บาท" required>
 				<p id="price-valid-msg" class="hidden valid-msg">เลขจำนวนเต็มบวกเท่านั้น ไม่เกิน 1 ล้านบาท</p>
 			</div>
-			<div class="form-check">
-				<p>บริการ</p>
-				<input class="form-check-input" type="radio" name="service" id="both-services" value="2" checked>
-				<label class="form-check-label" for="both-services">
-					ทั้งขายและเช่า
-				</label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="radio" name="service" id="rent-service" value="0">
-				<label class="form-check-label" for="rent-service">
-					เช่า
-				</label>
-			</div>
-			<div class="form-check disabled">
-				<input class="form-check-input" type="radio" name="service" id="sale-service" value="1">
-				<label class="form-check-label" for="sale-service">
-					ขาย
-				</label>
-			</div>
+			
 
 
 			<button disabled id="submitBtn" class="btn btn-primary btn-lg">บันทึก</button>
 			</form>
-
-
 
 		</div>
 		<!-- ------------------------------------------------------------------- -->

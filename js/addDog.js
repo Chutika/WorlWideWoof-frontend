@@ -99,7 +99,7 @@ $(function () {
     $('input#monthInput').on("change", function () {
         var pattern = /^([0-9])/
         var value = $(this).val();
-        if (!value.match(pattern) || value < 0 || value > 30) {
+        if (!value.match(pattern) || value < 0 || value > 11) {
 
             $('#month-valid-msg').removeClass('hidden');
             $('#month-valid-msg').show();
@@ -217,7 +217,7 @@ $(function () {
             dadBreed: $('#dadBreed').val(),
             primaryColor: $('input[name=primaryColor]').val(),
             sellPrice: Number($("input[name=price]").val()),
-            service: $("input[name=service]:checked").val()
+           
         }
 
         var str = "";
