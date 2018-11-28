@@ -81,7 +81,7 @@
 			<hr class="sec-nav-line sec-nav-inactive">
 		</div>
 		<div class="menu-in-sec-nav">
-			<a id="dogListMenu" class="sec-nav-item navbar-nav nav-item nav-link active" href="dogList.html">รายการสุนัข</a>
+			<a id="dogListMenu" class="sec-nav-item navbar-nav nav-item nav-link active" href="dogList.html?page=1">รายการสุนัข</a>
 			<hr class="sec-nav-line sec-nav-active">
 		</div>
 	</nav>
@@ -194,7 +194,7 @@
 				<div class="card-body col-9">
 					<div class="row" id="titleCard">
 						<div class="col" onclick="goToDogInfo_forShop()">
-							<h3>Name</h3>
+							<h3><%= dog[0].name %></h3>
 						</div>
 						<div class="col">
 							<p id="deleteButton" onclick="deleteDog()">ลบ<img id="deleteIcon" src="../asset/Icon/delete.svg" alt="delete"></p>
@@ -204,12 +204,12 @@
 					<div class="row" onclick="goToDogInfo_forShop()">
 						<div class="col-lg-6">
 							<br>
-							<p class="infoDog">Labrador 3 month </p>
-							<p class="infoDog">30000</p>
+							<p class="infoDog"><%= dog[0].breed %> อายุ <%= dog[0].year %> ปี <%= dog[0].year %> เดือน</p>
+							<p class="infoDog"><%= dog[0].sellPrice %></p>
 						</div>
 						<div class="col-lg-6">
 							<h2 class="status">สถานะ</h2>
-							<p class="status">กำลังขาย</p>
+							<p class="status"><%= dog[0].status %> บาท</p>
 						</div>
 					</div>
 				</div>
@@ -224,7 +224,7 @@
 				<div class="card-body col-9">
 					<div class="row" id="titleCard">
 						<div class="col" onclick="goToDogInfo_forShop()">
-							<h3>Name</h3>
+							<h3><%= dog[1].name %></h3>
 						</div>
 						<div class="col">
 							<p id="deleteButton" onclick="deleteDog()">ลบ<img id="deleteIcon" src="../asset/Icon/delete.svg" alt="delete"></p>
@@ -234,18 +234,18 @@
 					<div class="row" onclick="goToDogInfo_forShop()">
 						<div class="col-lg-6">
 							<br>
-							<p class="infoDog">Labrador 3 month </p>
-							<p class="infoDog">30000</p>
+							<p class="infoDog"><%= dog[1].breed %> อายุ <%= dog[1].year %> ปี <%= dog[1].month%> เดือน</p>
+							<p class="infoDog"><%= dog[1].sellPrice %> บาท </p>
 						</div>
 						<div class="col-lg-6">
 							<h2 class="status">สถานะ</h2>
-							<p class="status">กำลังขาย</p>
+							<p class="status"><%= dog[1].status %></p>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-
+<!-- ---------------------------------------------------------------------------------------------------------------------------------- -->
 		<div class="card cardDog">
 			<div class="row">
 				<div class="col-3" onclick="goToDogInfo_forShop()">
@@ -254,7 +254,7 @@
 				<div class="card-body col-9">
 					<div class="row" id="titleCard">
 						<div class="col" onclick="goToDogInfo_forShop()">
-							<h3>Name</h3>
+							<h3><%= dog[2].name %></h3>
 						</div>
 						<div class="col">
 							<p id="deleteButton" onclick="deleteDog()">ลบ<img id="deleteIcon" src="../asset/Icon/delete.svg" alt="delete"></p>
@@ -264,18 +264,18 @@
 					<div class="row" onclick="goToDogInfo_forShop()">
 						<div class="col-lg-6">
 							<br>
-							<p class="infoDog">Labrador 3 month </p>
-							<p class="infoDog">30000</p>
+							<p class="infoDog"><%= dog[2].breed %> อายุ <%= dog[2].year %> ปี <%= dog[2].month %>เดือน </p>
+							<p class="infoDog"><%= dog[2].sellPrice %> บาท</p>
 						</div>
 						<div class="col-lg-6">
 							<h2 class="status">สถานะ</h2>
-							<p class="status">กำลังขาย</p>
+							<p class="status"><%= dog[2].status %></p>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-
+<!-- ---------------------------------------------------------------------------------------------------------------------------------- -->
 		<div class="card cardDog">
 			<div class="row">
 				<div class="col-3" onclick="goToDogInfo_forShop()">
@@ -284,7 +284,7 @@
 				<div class="card-body col-9">
 					<div class="row" id="titleCard">
 						<div class="col" onclick="goToDogInfo_forShop()">
-							<h3>Name</h3>
+							<h3><%= dog[3].name %></h3>
 						</div>
 						<div class="col">
 							<p id="deleteButton" onclick="deleteDog()">ลบ<img id="deleteIcon" src="../asset/Icon/delete.svg" alt="delete"></p>
@@ -294,12 +294,12 @@
 					<div class="row" onclick="goToDogInfo_forShop()">
 						<div class="col-lg-6">
 							<br>
-							<p class="infoDog">Labrador 3 month </p>
-							<p class="infoDog">30000</p>
+							<p class="infoDog"><%= dog[3].breed %> อายุ <%= dog[3].year %> ปี <%= dog[3].month %> เดือน</p>
+							<p class="infoDog"><%= dog[3].sellPrice %></p>
 						</div>
 						<div class="col-lg-6">
 							<h2 class="status">สถานะ</h2>
-							<p class="status">กำลังขาย</p>
+							<p class="status"><%= dog[3].status %></p>
 						</div>
 					</div>
 				</div>
@@ -307,7 +307,38 @@
 		</div>
 
 		<!-- ---------------------------------------------------------------------------------------------------------------------------------- -->
+	
+			<p id="page">Page <%= page %></p>
+			<button id="prevBtn" class="btn btn-info nextprev float-right">ก่อนหน้า</button>
+			<button id="nextBtn" class="btn btn-info nextprev float-right">ถัดไป</button>
+	
+		
 
+		<% $("button#prevBtn").click(){ %>
+			<% 	var currPage = page; %>
+			<% var url = ""; %>
+
+			<% if(currPage != 1){ %>
+				<% window.location.href = url + "/dogList.html?page=" +currPage-1; %>
+			<% }else{ %>
+				<% $(this).addClass("hidden"); %>
+				<% $(this).prop("disabled", true); %>
+			<% } %>
+			
+		<% } %>
+
+		<% $("button#nextBtn").click(){ %>
+			<% var currPage = page; %>
+			<% var url = ""; %>
+
+			<% if(currPage != pageLength){ %>
+				<% window.location.href = url + "/dogList.html?page=" +currPage+1; %>
+			<% }else{ %>
+				<% $(this).addClass("hidden"); %>
+				<% $(this).prop("disabled", true); %>
+			<% } %>
+			
+		<% }
 
 	</div>
 	<!-- ---------------------------- javascript ---------------------------------- -->

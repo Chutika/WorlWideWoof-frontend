@@ -65,3 +65,12 @@ p.dog-price{
 	font-size: 26px;
 	line-height: 0.7;
 }
+#page{
+	color: lightslategray;
+	font-size: 15px;
+	text-align: right;
+}
+button#prevBtn.btn.btn-info.nextprev, button#nextBtn.btn.btn-info.nextprev{
+	margin-left: 15px;
+
+}
