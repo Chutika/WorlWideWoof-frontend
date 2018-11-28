@@ -111,34 +111,34 @@
 							<div class="form-group ">
 								<label for="breed">สายพันธ์</label>
 								<select id="breed" class="form-control">
-									
+
 									<option value="โดเบอร์แมน พินช์เชอร์">โดเบอร์แมน พินช์เชอร์</option>
-											<option value="นิวฟาวด์แลนด์">นิวฟาวด์แลนด์</option>
-											<option value="บลูด็อก">บลูด็อก</option>
-											<option value="บลัดฮาวด์">บลัดฮาวด์</option>
-											<option value="บอสตัน เทอร์เรียร์">บอสตัน เทอร์เรียร์</option>
-											<option value="บิชอง ฟริเซ่">บิชอง ฟริเซ่</option>
-											<option value="บีเกิล">บีเกิล</option>
-											<option value="บุลล์แมสติฟฟ์">บุลล์แมสติฟฟ์</option>
-											<option value="ปอมเมอเรเนียน">ปอมเมอเรเนียน</option>
-											<option value="ปั๊ก">ปั๊ก</option>
-											<option value="ปาปิลอน">ปาปิลอน</option>
-											<option value="พันธุ์ทาง">พันธุ์ทาง</option>
-											<option value="พุดเดิ้ล">พุดเดิ้ล</option>
-											<option value="มอลทีส">มอลทีส</option>
-											<option value="ยอร์คเชียร์ เทอร์เรียร์">ยอร์คเชียร์ เทอร์เรียร์</option>
-											<option value="เยอรมัน เชฟเฟิร์ด">เยอรมัน เชฟเฟิร์ด</option>
-											<option value="ร็อตไวเลอร์">ร็อตไวเลอร์</option>
-											<option value="โรดีเชียน ริดจ์แบ็ค">โรดีเชียน ริดจ์แบ็ค</option>
-											<option value="ลาบลาดอร์ รีทรีฟเวอร์">ลาบลาดอร์ รีทรีฟเวอร์</option>
-											<option value="อาคิต้า">อาคิต้า</option>
+									<option value="นิวฟาวด์แลนด์">นิวฟาวด์แลนด์</option>
+									<option value="บลูด็อก">บลูด็อก</option>
+									<option value="บลัดฮาวด์">บลัดฮาวด์</option>
+									<option value="บอสตัน เทอร์เรียร์">บอสตัน เทอร์เรียร์</option>
+									<option value="บิชอง ฟริเซ่">บิชอง ฟริเซ่</option>
+									<option value="บีเกิล">บีเกิล</option>
+									<option value="บุลล์แมสติฟฟ์">บุลล์แมสติฟฟ์</option>
+									<option value="ปอมเมอเรเนียน">ปอมเมอเรเนียน</option>
+									<option value="ปั๊ก">ปั๊ก</option>
+									<option value="ปาปิลอน">ปาปิลอน</option>
+									<option value="พันธุ์ทาง">พันธุ์ทาง</option>
+									<option value="พุดเดิ้ล">พุดเดิ้ล</option>
+									<option value="มอลทีส">มอลทีส</option>
+									<option value="ยอร์คเชียร์ เทอร์เรียร์">ยอร์คเชียร์ เทอร์เรียร์</option>
+									<option value="เยอรมัน เชฟเฟิร์ด">เยอรมัน เชฟเฟิร์ด</option>
+									<option value="ร็อตไวเลอร์">ร็อตไวเลอร์</option>
+									<option value="โรดีเชียน ริดจ์แบ็ค">โรดีเชียน ริดจ์แบ็ค</option>
+									<option value="ลาบลาดอร์ รีทรีฟเวอร์">ลาบลาดอร์ รีทรีฟเวอร์</option>
+									<option value="อาคิต้า">อาคิต้า</option>
 								</select>
 							</div>
 
 							<div class="form-group">
-									<label for="sellPrice">ราคาขาย</label>
-									<input type="number" class="form-control" id="sellPrice" name="sellPrice" min="0" placeholder="บาท" required>
-									<p id="sellPrice-valid-msg" class="hidden valid-msg">เลขจำนวนเต็มบวกเท่านั้น ไม่เกิน 1 ล้านบาท</p>
+								<label for="sellPrice">ราคาขาย</label>
+								<input type="number" class="form-control" id="sellPrice" name="sellPrice" min="0" placeholder="บาท" required>
+								<p id="sellPrice-valid-msg" class="hidden valid-msg">เลขจำนวนเต็มบวกเท่านั้น ไม่เกิน 1 ล้านบาท</p>
 							</div>
 
 							<div class="form-group row">
@@ -180,18 +180,7 @@
 
 							<div class="form-group">
 								<div class="col-sm-10">
-									<button id="searchBtn" class="btn btn-primary">Search</button>
-
-									<% $("button#searchBtn").click(){ %>
-										<%	var url = ""; %>
-										<% var data = { %>
-											<% breed: $("#breed").val(), %>
-											<% sellPrice: $("input#sellPrice").val(), %>
-											<% size: $('input[name=size]:checked').val(), %>
-											<% gender: $('input[name=gender]:checked').val(), %>
-										<% } %>
-										<% window.location.href = url + "/dogList.html?breed=" +data.breed+ "&sellPrice=" +data.sellPrice+ "&size=" +data.size+ "&gender=" +data.gender; %>
-									<% } %>
+									<button id="searchBtn" class="btn btn-primary">ค้นหา</button>
 
 								</div>
 							</div>
@@ -204,169 +193,55 @@
 		<!-- --------------------------------------------------------------------------------------------- -->
 		<!-- --------------------------------------------- add dog ------------------------------------------------ -->
 		<div id="addButton">
-			<form action="addDog.html" method="GET">
-				<button type="submit" class="btn btn-primary btn-lg">Add Dog</button>
-			</form>
+			<!-- <form action="addDog.html" method="GET"> -->
+			<button id="addBtn" type="submit" class="btn btn-primary btn-lg">เพิ่มสุนัข</button>
+			<!-- </form> -->
 		</div>
 		<!-- --------------------------------------------- Card ------------------------------------------------ -->
-		<div class="card cardDog">
-			<div class="row">
-				<div class="col-3" onclick="goToDogInfo_forShop()">
-					<img src="https://s7d1.scene7.com/is/image/PETCO/puppy-090517-dog-featured-355w-200h-d" alt="Card image cap" id="picture">
-				</div>
-				<div class="card-body col-9">
-					<div class="row" id="titleCard">
-						<div class="col" onclick="goToDogInfo_forShop()">
-							<h3><%= dog[0].name %></h3>
-						</div>
-						<div class="col">
-							<p id="deleteButton" onclick="deleteDog()">ลบ<img id="deleteIcon" src="../asset/Icon/delete.svg" alt="delete"></p>
-						</div>
-					</div>
-
-					<div class="row" onclick="goToDogInfo_forShop()">
-						<div class="col-lg-6">
-							<br>
-							<p class="infoDog"><%= dog[0].breed %> อายุ <%= dog[0].year %> ปี <%= dog[0].year %> เดือน</p>
-							<p class="infoDog"><%= dog[0].sellPrice %></p>
-						</div>
-						<div class="col-lg-6">
-							<h2 class="status">สถานะ</h2>
-							<p class="status"><%= dog[0].status %> บาท</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- ---------------------------------------------------------------------------------------------------------------------------------- -->
-		<div class="card cardDog">
-			<div class="row">
-				<div class="col-3" onclick="goToDogInfo_forShop()">
-					<img src="https://s7d1.scene7.com/is/image/PETCO/puppy-090517-dog-featured-355w-200h-d" alt="Card image cap" id="picture">
-				</div>
-				<div class="card-body col-9">
-					<div class="row" id="titleCard">
-						<div class="col" onclick="goToDogInfo_forShop()">
-							<h3><%= dog[1].name %></h3>
-						</div>
-						<div class="col">
-							<p id="deleteButton" onclick="deleteDog()">ลบ<img id="deleteIcon" src="../asset/Icon/delete.svg" alt="delete"></p>
-						</div>
-					</div>
-
-					<div class="row" onclick="goToDogInfo_forShop()">
-						<div class="col-lg-6">
-							<br>
-							<p class="infoDog"><%= dog[1].breed %> อายุ <%= dog[1].year %> ปี <%= dog[1].month%> เดือน</p>
-							<p class="infoDog"><%= dog[1].sellPrice %> บาท </p>
-						</div>
-						<div class="col-lg-6">
-							<h2 class="status">สถานะ</h2>
-							<p class="status"><%= dog[1].status %></p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-<!-- ---------------------------------------------------------------------------------------------------------------------------------- -->
-		<div class="card cardDog">
-			<div class="row">
-				<div class="col-3" onclick="goToDogInfo_forShop()">
-					<img src="https://s7d1.scene7.com/is/image/PETCO/puppy-090517-dog-featured-355w-200h-d" alt="Card image cap" id="picture">
-				</div>
-				<div class="card-body col-9">
-					<div class="row" id="titleCard">
-						<div class="col" onclick="goToDogInfo_forShop()">
-							<h3><%= dog[2].name %></h3>
-						</div>
-						<div class="col">
-							<p id="deleteButton" onclick="deleteDog()">ลบ<img id="deleteIcon" src="../asset/Icon/delete.svg" alt="delete"></p>
-						</div>
-					</div>
-
-					<div class="row" onclick="goToDogInfo_forShop()">
-						<div class="col-lg-6">
-							<br>
-							<p class="infoDog"><%= dog[2].breed %> อายุ <%= dog[2].year %> ปี <%= dog[2].month %>เดือน </p>
-							<p class="infoDog"><%= dog[2].sellPrice %> บาท</p>
-						</div>
-						<div class="col-lg-6">
-							<h2 class="status">สถานะ</h2>
-							<p class="status"><%= dog[2].status %></p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-<!-- ---------------------------------------------------------------------------------------------------------------------------------- -->
-		<div class="card cardDog">
-			<div class="row">
-				<div class="col-3" onclick="goToDogInfo_forShop()">
-					<img src="https://s7d1.scene7.com/is/image/PETCO/puppy-090517-dog-featured-355w-200h-d" alt="Card image cap" id="picture">
-				</div>
-				<div class="card-body col-9">
-					<div class="row" id="titleCard">
-						<div class="col" onclick="goToDogInfo_forShop()">
-							<h3><%= dog[3].name %></h3>
-						</div>
-						<div class="col">
-							<p id="deleteButton" onclick="deleteDog()">ลบ<img id="deleteIcon" src="../asset/Icon/delete.svg" alt="delete"></p>
-						</div>
-					</div>
-
-					<div class="row" onclick="goToDogInfo_forShop()">
-						<div class="col-lg-6">
-							<br>
-							<p class="infoDog"><%= dog[3].breed %> อายุ <%= dog[3].year %> ปี <%= dog[3].month %> เดือน</p>
-							<p class="infoDog"><%= dog[3].sellPrice %></p>
-						</div>
-						<div class="col-lg-6">
-							<h2 class="status">สถานะ</h2>
-							<p class="status"><%= dog[3].status %></p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<!-- ---------------------------------------------------------------------------------------------------------------------------------- -->
-	
-			<p id="page">Page <%= page %></p>
-			<button id="prevBtn" class="btn btn-info nextprev float-right">ก่อนหน้า</button>
-			<button id="nextBtn" class="btn btn-info nextprev float-right">ถัดไป</button>
-	
 		
 
-		<% $("button#prevBtn").click(){ %>
-			<% 	var currPage = page; %>
-			<% var url = ""; %>
+		<!-- ---------------------------------------------------------------------------------------------------------------------------------- -->
+		<!-- <div class="card cardDog">
+			<div class="row">
+				<div class="col-3" onclick="goToDogInfo_forShop()">
+					<img src="https://s7d1.scene7.com/is/image/PETCO/puppy-090517-dog-featured-355w-200h-d" alt="Card image cap" id="picture">
+				</div>
+				<div class="card-body col-9">
+					<div class="row" id="titleCard">
+						<div class="col" onclick="goToDogInfo_forShop()">
+							<h3><%= dogs[3].name || '-' %></h3>
+						</div>
+						<div class="col">
+							<p id="deleteButton" onclick="deleteDog()">ลบ<img id="deleteIcon" src="../asset/Icon/delete.svg" alt="delete"></p>
+						</div>
+					</div>
 
-			<% if(currPage != 1){ %>
-				<% window.location.href = url + "/dogList.html?page=" +currPage-1; %>
-			<% }else{ %>
-				<% $(this).addClass("hidden"); %>
-				<% $(this).prop("disabled", true); %>
-			<% } %>
-			
-		<% } %>
+					<div class="row" onclick="goToDogInfo_forShop()">
+						<div class="col-lg-6">
+							<br>
+							<p class="infoDog"><%= dogs[3].breed || '-' %> อายุ <%= dogs[3].year || '-' %> ปี <%= dogs[3].month || '-' %> เดือน</p>
+							<p class="infoDog"><%= dogs[3].sellPrice || '-' %></p>
+						</div>
+						<div class="col-lg-6">
+							<h2 class="status">สถานะ</h2>
+							<p class="status"><%= dogs[3].status || '-' %></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> -->
 
-		<% $("button#nextBtn").click(){ %>
-			<% var currPage = page; %>
-			<% var url = ""; %>
 
-			<% if(currPage != pageLength){ %>
-				<% window.location.href = url + "/dogList.html?page=" +currPage+1; %>
-			<% }else{ %>
-				<% $(this).addClass("hidden"); %>
-				<% $(this).prop("disabled", true); %>
-			<% } %>
-			
-		<% }
 
 	</div>
+	<div id="nextPage">
+	<p id="page">Page</p>
+	<button id="prevBtn" class="btn btn-info nextprev float-right">ก่อนหน้า</button>
+	<button id="nextBtn" class="btn btn-info nextprev float-right">ถัดไป</button>
+</div>
 	<!-- ---------------------------- javascript ---------------------------------- -->
 
-
+	<script src="../js/config.js"></script>
 	<script src="../js/dogList.js"></script>
 	<script src="../js/navigation.js"></script>
 	<script src="../js/card.js"></script>
