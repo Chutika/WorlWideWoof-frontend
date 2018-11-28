@@ -32,7 +32,6 @@
   <script src="../js/config.js"></script>
   <script src="../js/newNavBar.js"></script>
 
-  <script src="../js/card.js"></script>
   <link rel="stylesheet" type="text/css" media="screen" href="../css/landingpage.css" />
   <script src="../js/landingPage.js"></script>
 
@@ -54,6 +53,7 @@
           <p class="nav-link nav-menu">ร้านค้า<span class="sr-only">(current)</span></p>
         </li>
         <!-- <li class="nav-item" id="foundMenu" onclick="clickFoundationMenu()">
+<<<<<<< HEAD
                 <p class="nav-link nav-menu">มูลนิธิ</p>
             </li> -->
       </ul>
@@ -68,6 +68,20 @@
           <li class="nav-item main-nav" id="signupMenu" onclick="">
             <p class="nav-link nav-menu cd-signup">สมัครสมาชิก</p>
           </li>
+=======
+          <p class="nav-link nav-menu">มูลนิธิ</p>
+        </li> -->
+      </ul>
+
+      <form class="form-inline my-2 my-lg-0">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item " id="shopMenu" onclick="clickShopMenu()">
+                <p class="nav-link nav-menu">ร้านค้า<span class="sr-only">(current)</span></p>
+            </li>
+            <!-- <li class="nav-item" id="foundMenu" onclick="clickFoundationMenu()">
+                <p class="nav-link nav-menu">มูลนิธิ</p>
+            </li> -->
+>>>>>>> 11806ac5c80f6d00122502ed2fe62eca7638d077
         </ul>
       </form>
     </div>
@@ -190,6 +204,7 @@
     </p>
   </div>
   <div>
+<<<<<<< HEAD
     <p id="content" style="position: relative; text-align: center">สนใจอยากจะซื้อสุนัขซักตัวเหรอคะ? คลิ้กดูเพิ่มเติมที่ปุ่ม more เลยค่ะ</p>
   </div>
   <div id="box1" style="overflow: hidden; display: flex; justify-content:space-around;">
@@ -197,6 +212,15 @@
     <div class="card my-3 mx-auto" onclick="clickSameDog()" id="picture">
       <!---img0-------->
       <img class='card-img-top' id='photo0' src="<%= dogs[0].pictures || '' %>" alt='dog'>
+=======
+    <!-- <p id="content" style="position: relative;left: 45%">เย้</p> -->
+  </div>
+  <div id="box1" style="overflow: hidden; display: flex; justify-content:space-around;">
+    <!-- CARD 0 -->
+    <div class="card my-3 mx-auto"  onclick=" location.href = '/api/dog/'+'<%= dogsForSale[0]._id %>' " id="picture">
+      <!---img0-------->
+      <img class='card-img-top' id='photo0' src="<%= dogsForSale[0].picture %>" alt='dog'>
+>>>>>>> 11806ac5c80f6d00122502ed2fe62eca7638d077
 
       <div class="card-body" id="body0">
         <div class="row">
@@ -204,6 +228,7 @@
             <!-- <p class='card-text' id='breed.titleFontPicture1'>"+shop[0].name+"</p>
                 <p class='card-text' id='subFontPicture1'>"+shop[0].breed.title+"</p> -->
 
+<<<<<<< HEAD
             <p class="card-text" id="breed.titleFontPicture0">
               <%= dogs[0].breed.title || '-' %>
             </p>
@@ -224,21 +249,41 @@
           <div class="col-5">
             <p class="card-text " id="titleFontPicture0"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag">
               <%= dogs[0].sellPrice || '-' %>
+=======
+            <p class="card-text" id="nameDog">
+              <%= dogsForSale[0].name %>
+              <span id="detailDog"><br>
+                <%= dogsForSale[0].breed %> <br>
+                <%= dogsForSale[0].year %> ปี 
+                <%= dogsForSale[0].month %> เดือน</span></p>
+          </div>
+          <div class="col-5">
+            <p class="card-text " id="titleFontPicture0"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag">
+              <%= dogsForSale[0].sellPrice %>
+>>>>>>> 11806ac5c80f6d00122502ed2fe62eca7638d077
             </p>
           </div>
         </div>
 
       </div>
     </div>
+
     <!-- CARD 1 -->
+<<<<<<< HEAD
     <div class="card my-3 mx-auto" onclick="clickSameDog()" id="picture">
       <!---img1-------->
       <img class='card-img-top' id='photo1' src="<%= dogs[1].pictures %>" alt='dog'>
+=======
+    <div class="card my-3 mx-auto" onclick=" location.href = '/api/dog/'+'<%= dogsForSale[1]._id %>' " id="picture">
+      <!---img1-------->
+      <img class='card-img-top' id='photo1' src="<%= dogsForSale[1].picture %>" alt='dog'>
+>>>>>>> 11806ac5c80f6d00122502ed2fe62eca7638d077
 
       <div class="card-body" id="body1">
         <div class="row">
           <div class="col-7" id="name1">
             <!---name1----->
+<<<<<<< HEAD
             <p class="card-text" id="breed.titleFontPicture1">
               <%= dogs[1].breed.title || '-' %>
             </p>
@@ -253,17 +298,30 @@
             <p class="card-text subFontPicture" id="subFontPicture1">ชื่อ
               <%= dogs[1].name || '-' %> (-)</p>
             <% } %>
+=======
+            <p class="card-text" id="nameDog">
+              <%= dogsForSale[1].name %>
+              <span id="detailDog"><br>
+                <%= dogsForSale[1].breed %> <br>
+                <%= dogsForSale[1].year %>ปี 
+                <%= dogsForSale[1].month %>เดือน</span></p>
+>>>>>>> 11806ac5c80f6d00122502ed2fe62eca7638d077
 
           </div>
           <div class="col-5">
             <p class="card-text" id="titleFontPicture1"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag">
+<<<<<<< HEAD
               <%= dogs[1].sellPrice || ' - ' %>
+=======
+              <%= dogsForSale[1].sellPrice %>
+>>>>>>> 11806ac5c80f6d00122502ed2fe62eca7638d077
             </p>
           </div>
         </div>
 
       </div>
     </div>
+<<<<<<< HEAD
     <!-- CARD 2 -->
     <div class="card my-3 mx-auto" onclick="clickSameDog()" id="picture">
       <!---img2-------->
@@ -419,15 +477,51 @@
     <a href="forAdopt.html" class="button" style="box-shadow: 5px 5px 5px grey;">MORE ></a>
   </h1> -->
 <!-- ----------------------------------- ----------------------------------------------------------- -->
+=======
+
+    <!-- CARD 2 -->
+    <div class="card my-3 mx-auto" onclick=" location.href = '/api/dog/'+'<%= dogsForSale[2]._id %>' " id="picture">
+      <!---img2-------->
+      <img class='card-img-top' id='photo2' src="<%= dogsForSale[2].picture %>" alt='dog'>
+
+      <div class="card-body" id="body2">
+        <div class="row">
+          <div class="col-7" id="name2">
+            <!---name3----->
+            <p class="card-text" id="nameDog">
+              <%= dogsForSale[2].name %>
+              <span id="detailDog"><br>
+                <%= dogsForSale[2].breed %> <br>
+                <%= dogsForSale[2].year %>ปี 
+                <%= dogsForSale[2].month %>เดือน</span></p>
+          </div>
+          <div class="col-5">
+            <p class="card-text" id="titleFontPicture2"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag">
+              <%= dogsForSale[2].sellPrice %>
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <h1 style="position: relative; left: 80%;">
+    <a href="forSale.html" class="button" style="box-shadow: 5px 5px 5px grey;">เพิ่มเติม ></a>
+  </h1>
+>>>>>>> 11806ac5c80f6d00122502ed2fe62eca7638d077
   <h2 style="color:white">aaaaaaaaaaa</h2>
+
   <div style="background-color:#FFE32E;">
     <h1 id="aboutUs" style="position: relative;left: 45%; " onclick="goToShopInfo()">About Us</h1>
     <h4 style="position: relative;left: 45%; ">Team of god of year</h4>
 
   </div>
 
+<<<<<<< HEAD
   <script src="../js/config.js"></script>
   <script src="../js/newNavBar.js"></script>
+=======
+>>>>>>> 11806ac5c80f6d00122502ed2fe62eca7638d077
 </body>
 
 </html>
