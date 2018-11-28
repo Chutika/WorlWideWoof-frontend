@@ -1,7 +1,10 @@
 $(function () {
 
 
-    $('#submitBtn').click(function (event) { event.preventDefault(); submitForm(); });
+    $('#submitBtn').click(function (event) {
+        event.preventDefault();
+        submitForm();
+    });
 
     //validate form info-----------------------------------------------------------------------------------
 
@@ -14,8 +17,7 @@ $(function () {
             $('#name-valid-msg').show();
             $("#submitBtn").prop("disabled", true);
 
-        }
-        else {
+        } else {
             // else, do not display message
             $('#name-valid-msg').addClass('hidden');
             $("#submitBtn").prop("disabled", false);
@@ -32,8 +34,7 @@ $(function () {
             $('#description-valid-msg').show();
             $("#submitBtn").prop("disabled", true);
 
-        }
-        else {
+        } else {
             // else, do not display message
             $('#description-valid-msg').addClass('hidden');
             $("#submitBtn").prop("disabled", false);
@@ -50,8 +51,7 @@ $(function () {
             $('#weight-valid-msg').show();
             $("#submitBtn").prop("disabled", true);
 
-        }
-        else {
+        } else {
             // else, do not display message
             $('#weight-valid-msg').addClass('hidden');
             $("#submitBtn").prop("disabled", false);
@@ -68,8 +68,7 @@ $(function () {
             $('#price-valid-msg').show();
             $("#submitBtn").prop("disabled", true);
 
-        }
-        else {
+        } else {
             // else, do not display message
             $('#price-valid-msg').addClass('hidden');
             $("#submitBtn").prop("disabled", false);
@@ -86,8 +85,7 @@ $(function () {
             $('#year-valid-msg').show();
             $("#submitBtn").prop("disabled", true);
 
-        }
-        else {
+        } else {
             // else, do not display message
             $('#year-valid-msg').addClass('hidden');
             $("#submitBtn").prop("disabled", false);
@@ -104,8 +102,7 @@ $(function () {
             $('#month-valid-msg').show();
             $("#submitBtn").prop("disabled", true);
 
-        }
-        else {
+        } else {
             // else, do not display message
             $('#month-valid-msg').addClass('hidden');
             $("#submitBtn").prop("disabled", false);
@@ -196,6 +193,7 @@ $(function () {
         }
 
     }
+
     function submitForm() {
 
         console.log("type of weight value " + typeof (Number($('input[name=weight]').val())));
@@ -223,24 +221,26 @@ $(function () {
         for (var key in formData) {
             str += formData[key];
         }
-        console.log(str);
-
-
+        console.log(JSON.stringify(formData));
+        var tempUrl = document.URL;
+        var splitedPath = tempUrl.split('/');
+        var dogId = splitedPath[splitedPath.length - 2];
+        var patchUrl = config.host + "/api/dog" + "/" + dogId + "/update";
+        console.log('patch '+patchUrl);
         $.ajax({
-            url: "https://us-central1-worldwidewoof-bcdfa.cloudfunctions.net/app/api/dog/new",
-            type: "POST",
+            url: config.host + "/api/dog" + "/" + dogId + "/update",
+            type: "PATCH",
             dataType: "json",
             data: formData,
-
             success: function (res) {
                 console.log("Data Form Sent Success " + res + " " + res.id);
                 $("input#dogId").val(res.id);
-               
-                imgAPI = "https://us-central1-worldwidewoof-bcdfa.cloudfunctions.net/app/api/dog/"+res.id+"/uploadImage"
-        
-                $('#uploadForm').attr('action', imgAPI);
-                console.log("action " +$('#uploadForm').attr('action'));
-                sendFiles();
+
+                // imgAPI = "https://us-central1-worldwidewoof-bcdfa.cloudfunctions.net/app/api/dog/" + res.id + "/uploadImage"
+
+                // $('#uploadForm').attr('action', imgAPI);
+                // console.log("action " + $('#uploadForm').attr('action'));
+                // sendFiles();
 
             },
             error: function (jqXHR, textStatus, errorThrown) {
@@ -253,10 +253,10 @@ $(function () {
     };
 
     function sendFiles(num) {
-       
+
         $('#uploadForm').ajaxSubmit({
             target: '#uploadStatus',
-          
+
             success: function (res) {
                 console.log("Files Form Sent Success " + res);
                 // ------------- reset -------------
@@ -279,7 +279,3 @@ $(function () {
 
 
 });
-
-
-
-
