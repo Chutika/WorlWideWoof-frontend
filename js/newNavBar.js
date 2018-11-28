@@ -3,7 +3,7 @@ const signUp_url = config.host + "/api/user";
 
 function clickLogo() {
     //route page
-    location.href = "landingPage.html";
+    location.href = config.host + "/api/dog/landing";
 
     //set current nav-menu
     $("#shopMenu p").removeClass("active");
@@ -13,7 +13,7 @@ function clickLogo() {
 }
 
 function clickShopMenu() {
-    location.href = "forSale.html"
+    location.href = config.host + "/api/dog/forSale"
 
     $("#shopMenu p").addClass("active");
     $("#foundMenu p").removeClass("active");
