@@ -12,37 +12,37 @@ $(function () {
         dataType: "json",
         // data: {number: "additional Data"},
         success: function (shop) {
-            console.log("recieved " + shop.url);
+            // console.log("recieved " + shop.url);
             
-            //Pic1
-            var img1 = "<a href='../html/dogInfo.html'><img class='card-img-top' src='"+shop[0].url+"'alt='dog'></a>";
-            var name1 ="<p class='card-text' id='titleFontPicture1'>"+shop[2].shopName+"<span id='subFontPicture'><br>"+shop[0].firstName+"</span></p>";
-            //Pic2
-            var img2 = "<a href='../html/dogInfo.html'><img class='card-img-top' src='"+shop[1].url+"'alt='dog'></a>";
-            var name2 ="<p class='card-text' id='titleFontPicture1'>"+shop[0].shopName+"<span id='subFontPicture'><br>"+shop[1].firstName+"</span></p>";
-            //Pic3
-            var img3 = "<a href='../html/dogInfo.html'><img class='card-img-top' src='"+shop[2].url+"'alt='dog'></a>";
-            var name3 ="<p class='card-text' id='titleFontPicture1'>"+shop[2].shopName+"<span id='subFontPicture'><br>"+shop[2].firstName+"</span></p>";
+            // //Pic1
+            // var img1 = "<a href='../html/dogInfo.html'><img class='card-img-top' src='"+shop[0].url+"'alt='dog'></a>";
+            // var name1 ="<p class='card-text' id='titleFontPicture1'>"+shop[2].shopName+"<span id='subFontPicture'><br>"+shop[0].firstName+"</span></p>";
+            // //Pic2
+            // var img2 = "<a href='../html/dogInfo.html'><img class='card-img-top' src='"+shop[1].url+"'alt='dog'></a>";
+            // var name2 ="<p class='card-text' id='titleFontPicture1'>"+shop[0].shopName+"<span id='subFontPicture'><br>"+shop[1].firstName+"</span></p>";
+            // //Pic3
+            // var img3 = "<a href='../html/dogInfo.html'><img class='card-img-top' src='"+shop[2].url+"'alt='dog'></a>";
+            // var name3 ="<p class='card-text' id='titleFontPicture1'>"+shop[2].shopName+"<span id='subFontPicture'><br>"+shop[2].firstName+"</span></p>";
            
-            //Pic4
-            var img4 = "<a href='../html/dogInfo.html'><img class='card-img-top' src='"+shop[0].url+"'alt='dog'></a>";
-            var name4 ="<p class='card-text' id='titleFontPicture1'>"+shop[0].shopName+"<span id='subFontPicture'><br>"+shop[0].firstName+"</span></p>";
-            //Pic5
-            var img5 = "<a href='../html/dogInfo.html'><img class='card-img-top' src='"+shop[1].url+"'alt='dog'></a>";
-            var name5 ="<p class='card-text' id='titleFontPicture1'>"+shop[2].shopName+"<span id='subFontPicture'><br>"+shop[1].firstName+"</span></p>";
-            //Pic6
-            var img6 = "<a href='../html/dogInfo.html'><img class='card-img-top' src='"+shop[1].url+"'alt='dog'></a>";
-            var name6 ="<p class='card-text' id='titleFontPicture1'>"+shop[0].shopName+"<span id='subFontPicture'><br>"+shop[1].firstName+"</span></p>";
-            //Pic7
-            var img7 = "<a href='../html/dogInfo.html'><img class='card-img-top' src='"+shop[1].url+"'alt='dog'></a>";
-            var name7 ="<p class='card-text' id='titleFontPicture1'>"+shop[0].shopName+"<span id='subFontPicture'><br>"+shop[1].firstName+"</span></p>";
-            //Pic8
-            var img8 = "<a href='../html/dogInfo.html'><img class='card-img-top' src='"+shop[2].url+"'alt='dog'></a>";
-            var name8 ="<p class='card-text' id='titleFontPicture1'>"+shop[2].shopName+"<span id='subFontPicture'><br>"+shop[2].firstName+"</span></p>";
+            // //Pic4
+            // var img4 = "<a href='../html/dogInfo.html'><img class='card-img-top' src='"+shop[0].url+"'alt='dog'></a>";
+            // var name4 ="<p class='card-text' id='titleFontPicture1'>"+shop[0].shopName+"<span id='subFontPicture'><br>"+shop[0].firstName+"</span></p>";
+            // //Pic5
+            // var img5 = "<a href='../html/dogInfo.html'><img class='card-img-top' src='"+shop[1].url+"'alt='dog'></a>";
+            // var name5 ="<p class='card-text' id='titleFontPicture1'>"+shop[2].shopName+"<span id='subFontPicture'><br>"+shop[1].firstName+"</span></p>";
+            // //Pic6
+            // var img6 = "<a href='../html/dogInfo.html'><img class='card-img-top' src='"+shop[1].url+"'alt='dog'></a>";
+            // var name6 ="<p class='card-text' id='titleFontPicture1'>"+shop[0].shopName+"<span id='subFontPicture'><br>"+shop[1].firstName+"</span></p>";
+            // //Pic7
+            // var img7 = "<a href='../html/dogInfo.html'><img class='card-img-top' src='"+shop[1].url+"'alt='dog'></a>";
+            // var name7 ="<p class='card-text' id='titleFontPicture1'>"+shop[0].shopName+"<span id='subFontPicture'><br>"+shop[1].firstName+"</span></p>";
+            // //Pic8
+            // var img8 = "<a href='../html/dogInfo.html'><img class='card-img-top' src='"+shop[2].url+"'alt='dog'></a>";
+            // var name8 ="<p class='card-text' id='titleFontPicture1'>"+shop[2].shopName+"<span id='subFontPicture'><br>"+shop[2].firstName+"</span></p>";
            
-            //Pic9
-            var img9 = "<a href='../html/dogInfo.html'><img class='card-img-top' src='"+shop[0].url+"'alt='dog'></a>";
-            var name9 ="<p class='card-text' id='titleFontPicture1'>"+shop[0].shopName+"<span id='subFontPicture'><br>"+shop[0].firstName+"</span></p>";
+            // //Pic9
+            // var img9 = "<a href='../html/dogInfo.html'><img class='card-img-top' src='"+shop[0].url+"'alt='dog'></a>";
+            // var name9 ="<p class='card-text' id='titleFontPicture1'>"+shop[0].shopName+"<span id='subFontPicture'><br>"+shop[0].firstName+"</span></p>";
            
             
             $("#body1").before(img1);

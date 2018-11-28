@@ -94,20 +94,32 @@ crossorigin="anonymous"></script>
   </nav>
   <!---Side Bar -->
   <div class="sidenav" style="position:absolute;width: 13%">
-    <a><input style="width: 100%" type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category"></a>
+    
    
     
     <a>Breed</a>
     <a><select name="Breed-type" id="Breed">
         <option value="0" selected disabled>Breed</option>
-        <option value="บลูด๊อก">บลูด๊อก</option>
-        <option value="บางแก้ว">บางแก้ว</option>
-        <option value="พันทาง">พันทาง</option>
-        <option value="ปั๊ก">ปั๊ก</option>
-        <option value="ชิวาวา">ชิวาวา</option>
-        <option value="บีเกิล">บีเกิล</option> 
-        <option value="ปอม">ปอม</option> 
-        <option value="ร๊อตไวเลอร์">ร๊อตไวเลอร์</option>
+        <option value="โดเบอร์แมน พินช์เชอร์">โดเบอร์แมน พินช์เชอร์</option>
+				<option value="นิวฟาวด์แลนด์">นิวฟาวด์แลนด์</option>
+				<option value="บลูด็อก">บลูด็อก</option>
+				<option value="บลัดฮาวด์">บลัดฮาวด์</option>
+				<option value="บอสตัน เทอร์เรียร์">บอสตัน เทอร์เรียร์</option>
+				<option value="บิชอง ฟริเซ่">บิชอง ฟริเซ่</option>
+				<option value="บีเกิล">บีเกิล</option>
+				<option value="บุลล์แมสติฟฟ์">บุลล์แมสติฟฟ์</option>
+				<option value="ปอมเมอเรเนียน">ปอมเมอเรเนียน</option>
+				<option value="ปั๊ก">ปั๊ก</option>
+				<option value="ปาปิลอน">ปาปิลอน</option>
+				<option value="พันธุ์ทาง">พันธุ์ทาง</option>
+				<option value="พุดเดิ้ล">พุดเดิ้ล</option>
+				<option value="มอลทีส">มอลทีส</option>
+				<option value="ยอร์คเชียร์ เทอร์เรียร์">ยอร์คเชียร์ เทอร์เรียร์</option>
+				<option value="เยอรมัน เชฟเฟิร์ด">เยอรมัน เชฟเฟิร์ด</option>
+				<option value="ร็อตไวเลอร์">ร็อตไวเลอร์</option>
+				<option value="โรดีเชียน ริดจ์แบ็ค">โรดีเชียน ริดจ์แบ็ค</option>
+				<option value="ลาบลาดอร์ รีทรีฟเวอร์">ลาบลาดอร์ รีทรีฟเวอร์</option>
+				<option value="อาคิต้า">อาคิต้า</option>
       </select></a>
 
     <a>Size</a>
@@ -129,6 +141,16 @@ crossorigin="anonymous"></script>
     </a>
     <a>
       <button onclick="search()">GO!!</button>
+      <% $("button#seach").click(){ %>
+        <%	var url = ""; %>
+        <% var data = { %>
+          <% breed: $("#Breed").val(), %>
+          
+          <% size: $('input#Size=size:checked').val(), %>
+          <% gender: $('input#Gender=gender:checked').val(), %>
+        <% } %>
+        <% window.location.href = url + "/dogList.html?breed=" +data.breed+ "&size=" +data.size+ "&gender=" +data.gender; %>
+      <% } %>
     </a>
   </div>
   <!-- Main -->
