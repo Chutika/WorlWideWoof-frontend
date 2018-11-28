@@ -16,9 +16,9 @@
 	<link href="https://fonts.googleapis.com/css?family=Kanit:300,400,500,600,700&amp;subset=thai" rel="stylesheet">
 
 	<!-- custom style -->
-	<link rel="stylesheet" type="text/css" href="../css/addDog.css">
-	<link rel="stylesheet" type="text/css" href="../css/newNavbar.css">
-	<link rel="stylesheet" type="text/css" href="../css/secNavBar.css">
+	<link rel="stylesheet" type="text/css" href="../../css/addDog.css">
+	<link rel="stylesheet" type="text/css" href="../../css/newNavbar.css">
+	<link rel="stylesheet" type="text/css" href="../../css/secNavBar.css">
 
 	<!-- jQuery CDN -->
 	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
@@ -59,7 +59,7 @@
 				<form class="form-inline my-2 my-lg-0">
 					<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 						<li class="nav-item main-nav" id="loginMenu" onclick="">
-							<p class="nav-link nav-menu cd-signin"><img src="../asset/icon/person.svg" alt="" style="width:40px;" id="person">
+							<p class="nav-link nav-menu cd-signin"><img src="../../asset/icon/person.svg" alt="" style="width:40px;" id="person">
 								ลงชื่อเข้าใช้
 							</p>
 						</li>
@@ -158,9 +158,11 @@
 		<!-- ---------------------------- javascript ---------------------------------- -->
 	
 	
-		<script src="../js/config.js"></script>
-		<script src="../js/newNavBar.js"></script>
-	
+		<!-- <script src="../../js/config.js"></script>
+		<script src="../../js/newNavBar.js"></script> -->
+		<script type="text/javascript" src="../../js/editDog.js"></script>
+		<script src="../../js/config.js"></script>
+		<script src="../../js/newNavBar.js"></script>
 		<!-- ------------------------------------------------------------------- -->
 
 
@@ -389,35 +391,8 @@
 			
 				<p id="price-valid-msg" class="hidden valid-msg">ตัวเลขจำนวนเต็มบวกเท่านั้น</p>
 			</div>
-
-			
-
-			<div class="form-check">
-				<p>บริการ</p>
-				<input class="form-check-input" type="radio" name="service" id="both-services" value="2" checked>
-				<label class="form-check-label" for="both-services">
-					ทั้งขายและเช่า
-				</label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="radio" name="service" id="rent-service" value="0">
-				<label class="form-check-label" for="rent-service">
-					เช่า
-				</label>
-			</div>
-			<div class="form-check disabled">
-				<input class="form-check-input" type="radio" name="service" id="sale-service" value="1">
-				<label class="form-check-label" for="sale-service">
-					ขาย
-				</label>
-			</div>
-
-
 			<button disabled id="submitBtn" class="btn btn-primary btn-lg">บันทึก</button>
 			</form>
-
-
-
 		</div>
 		<!-- ------------------------------------------------------------------- -->
 		<script>
@@ -458,9 +433,7 @@
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
 
 
-		<script type="text/javascript" src="../js/editDog.js"></script>
-		<script src="../js/config.js"></script>
-		<script src="../js/newNavBar.js"></script>
+	
 
 		<!-- ------------------------------------------------------------------- -->
 
