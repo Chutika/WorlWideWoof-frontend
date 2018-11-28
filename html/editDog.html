@@ -220,13 +220,13 @@
 			<label for="name">ชื่อสุนัข</label>
 			<input id="name" type="text" class="form-control" name="dogName" maxlength="9" placeholder="ชื่อสุนัข" required>
 			<% $("input[name = dogName]").val(dog.name) %>
-			<p id="name-valid-msg" class="hidden valid-msg">English only, no more than 9 characters</p>
+			<p id="name-valid-msg" class="hidden valid-msg">ตัวอักษรภาษาไทยหรือภาษาอังกฤษเท่านั้น ไม่เกิน 20 ตัวอักษร ไม่มีการเว้นวรรค</p>
 		</div>
 		<div class="form-group">
 			<label for="dogDescription">คำอธิบาย</label>
 			<input type="textarea" id="dogDescription" class="form-control" maxlength="140" name="description" placeholder="อธิบายสุนัขของคุณ ...">
 			<% $("input[name = description]").val(dog.description) %>
-			<p id="description-valid-msg" class="hidden valid-msg">no more than 140 characters</p>
+			<p id="description-valid-msg" class="hidden valid-msg">ตัวอักษรภาษาไทยหรือภาษาอังกฤษเท่านั้น ไม่เกิน 140 ตัวอักษร</p>
 		</div>
 
 		<div class="form-group">
@@ -288,7 +288,7 @@
 			<label for="primaryColor">สีขน </label>
 			<input type="text" id="primaryColor" class="form-control" name="primaryColor" maxlength="140" placeholder="สีขน">
 			<% $("input[name = primaryColor]").val(dog.primaryColor) %>
-			<p id="primaryColor-valid-msg" class="hidden valid-msg">ภาษาไทย ไม่เกิน 140 ตัวอักษร ไม่มีการเว้นวรรค</p>
+			<p id="primaryColor-valid-msg" class="hidden valid-msg">ตัวอักษรภาษาไทยหรือภาษาอังกฤษเท่านั้น ไม่มีการเว้นวรรค</p>
 		</div>
 		<div class="form-group">
 			<label for="breed">พันธุ์สุนัข</label>
