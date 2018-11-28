@@ -63,7 +63,7 @@ jQuery(document).ready(function ($) {
             // ------------------------------- post request login -------------------------------
             // select tag with id=get, if the selected is clicked POST request is sent
 
-            $("#loginButton").click(function () {
+            $("#loginButton").click(function (event) {
                 var data = JSON.stringify({
                     email: $('input[name=email]').val(),
                     password: $('input[name=password]').val()
@@ -84,13 +84,14 @@ jQuery(document).ready(function ($) {
                     }
                 });
                 console.log('clicked');
+                event.preventDefault();
             });
         }
 
         function submitSignup() {
             // ------------------------------- post request signup -------------------------------
             //select tag with id=post, if the selected is clicked POST request is sent
-            $("#post").click(function (event) {
+            $("#signupButton").click(function (event) {
 
                 //extract the value from form
                 var formData = {
