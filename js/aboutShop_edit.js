@@ -5,6 +5,130 @@ $(function () {
 
   initMap();
   getShopInfo();
+
+  // validate-------------------------------------------------------------
+  //name validate
+  $('input[name=shopName]').on("change", function () {
+    var pattern = /^[\u0E00-\u0E7Fa-zA-Z]+$/;
+    // var pattern = /^([a-zA-Z]{0,9})$/
+    if (!$(this).val().match(pattern)) {
+
+        $('#shopName-valid-msg').removeClass('hidden');
+        $('#shopName-valid-msg').show();
+        $("#submitBtn").prop("disabled", true);
+
+    }
+    else {
+        // else, do not display message
+        $('#shopName-valid-msg').addClass('hidden');
+        $("#submitBtn").prop("disabled", false);
+
+    }
+
+});
+
+//first name validate
+$('input[name=firstName]').on("change", function () {
+  var pattern = /^[\u0E00-\u0E7Fa-zA-Z]+$/;
+  // var pattern = /^([a-zA-Z]{0,9})$/
+  if (!$(this).val().match(pattern)) {
+
+      $('#firstName-valid-msg').removeClass('hidden');
+      $('#firstName-valid-msg').show();
+      $("#submitBtn").prop("disabled", true);
+
+  }
+  else {
+      // else, do not display message
+      $('#firstName-valid-msg').addClass('hidden');
+      $("#submitBtn").prop("disabled", false);
+
+  }
+
+});
+
+//last name validate
+$('input[name=lastName]').on("change", function () {
+  var pattern = /^[\u0E00-\u0E7Fa-zA-Z]+$/;
+  // var pattern = /^([a-zA-Z]{0,9})$/
+  if (!$(this).val().match(pattern)) {
+
+      $('#lastName-valid-msg').removeClass('hidden');
+      $('#lastName-valid-msg').show();
+      $("#submitBtn").prop("disabled", true);
+
+  }
+  else {
+      // else, do not display message
+      $('#lastName-valid-msg').addClass('hidden');
+      $("#submitBtn").prop("disabled", false);
+
+  }
+
+});
+
+// /^(?([0-9]{3}))*-([0-9]{7}))$/;
+//phone validate
+// $('input[name=phoneNumber]').on("change", function () {
+//   var pattern = /^(?([0-9]{3})*-([0-9]{7}))$/;
+//   // var pattern = /^([a-zA-Z]{0,9})$/
+//   if (!$(this).val().match(pattern)) {
+
+//       $('#phoneNumber-valid-msg').removeClass('hidden');
+//       $('#phoneNumber-valid-msg').show();
+//       $("#submitBtn").prop("disabled", true);
+
+//   }
+//   else {
+//       // else, do not display message
+//       $('#phoneNumber-valid-msg').addClass('hidden');
+//       $("#submitBtn").prop("disabled", false);
+
+//   }
+
+// });
+
+//description validate
+$('input[name=description]').on("change", function () {
+  var pattern = /^[\u0E00-\u0E7Fa-zA-Z]+$/;
+  // var pattern = /^([a-zA-Z]{0,9})$/
+  if (!$(this).val().match(pattern)) {
+
+      $('#description-valid-msg').removeClass('hidden');
+      $('#description-valid-msg').show();
+      $("#submitBtn").prop("disabled", true);
+
+  }
+  else {
+      // else, do not display message
+      $('#description-valid-msg').addClass('hidden');
+      $("#submitBtn").prop("disabled", false);
+
+  }
+
+});
+
+//shop location validate
+$('input[name=shopLocation]').on("change", function () {
+  var pattern = /^[\u0E00-\u0E7Fa-zA-Z]+$/;
+  // var pattern = /^([a-zA-Z]{0,9})$/
+  if (!$(this).val().match(pattern)) {
+
+      $('#shopLocation-valid-msg').removeClass('hidden');
+      $('#shopLocation-valid-msg').show();
+      $("#submitBtn").prop("disabled", true);
+
+  }
+  else {
+      // else, do not display message
+      $('#shopLocation-valid-msg').addClass('hidden');
+      $("#submitBtn").prop("disabled", false);
+
+  }
+
+});
+
+  // image-------------------------------------------------------------------
   $("#imgInp").on("change", chng);
 
   $("#imgInp").change(function () {
@@ -132,7 +256,7 @@ $(function () {
     console.log("placeMarker: " + $("#location-lat").val());
 
   }
-
+// ------------------ form ---------------------------------------
   function submitForm(location) {
 
     $('#submitBtn').click(function (event) {
