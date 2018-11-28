@@ -81,7 +81,7 @@
 			<hr class="sec-nav-line sec-nav-inactive">
 		</div>
 		<div class="menu-in-sec-nav">
-			<a id="dogListMenu" class="sec-nav-item navbar-nav nav-item nav-link active" href="dogList.html">รายการสุนัข</a>
+			<a id="dogListMenu" class="sec-nav-item navbar-nav nav-item nav-link active" href="dogList.html?page=1">รายการสุนัข</a>
 			<hr class="sec-nav-line sec-nav-active">
 		</div>
 	</nav>
@@ -109,25 +109,38 @@
 						<form>
 
 							<div class="form-group ">
-								<label for="inputState">สายพันธ์</label>
-								<select id="inputState" class="form-control">
-									<option selected>Choose...</option>
-									<option>...</option>
-									<option>...</option>
-									<option>...</option>
-									<option>...</option>
+								<label for="breed">สายพันธ์</label>
+								<select id="breed" class="form-control">
+										<option>โดเบอร์แมน พินช์เชอร์</option>
+										<option>นิวฟาวด์แลนด์</option>
+										<option>บลูด็อก</option>
+										<option>บลัดฮาวด์</option>
+										<option>บอสตัน เทอร์เรียร์</option>
+						
+										<option>บิชอง ฟริเซ่</option>
+										<option>บีเกิล</option>
+										<option>บุลล์แมสติฟฟ์</option>
+										<option>ปอมเมอเรเนียน</option>
+										<option>ปั๊ก</option>
+						
+										<option>ปาปิลอน</option>
+										<option>พันธุ์ทาง</option>
+										<option>พุดเดิ้ล</option>
+										<option>มอลทีส</option>
+										<option>ยอร์คเชียร์ เทอร์เรียร์</option>
+						
+										<option>เยอรมัน เชฟเฟิร์ด</option>
+										<option>ร็อตไวเลอร์</option>
+										<option>โรดีเชียน ริดจ์แบ็ค</option>
+										<option>ลาบลาดอร์ รีทรีฟเวอร์</option>
+										<option>อาคิต้า</option>
 								</select>
 							</div>
 
-							<div class="form-group ">
-								<label for="inputState">ราคา</label>
-								<select id="inputState" class="form-control">
-									<option selected>Choose...</option>
-									<option>...</option>
-									<option>...</option>
-									<option>...</option>
-									<option>...</option>
-								</select>
+							<div class="form-group">
+									<label for="sellPrice">ราคาขาย</label>
+									<input type="number" class="form-control" id="sellPrice" name="sellPrice" min="0" placeholder="บาท" required>
+									<p id="sellPrice-valid-msg" class="hidden valid-msg">เลขจำนวนเต็มบวกเท่านั้น ไม่เกิน 1 ล้านบาท</p>
 							</div>
 
 							<div class="form-group row">
@@ -136,16 +149,16 @@
 								</div>
 								<div class="form-check-inline">
 									<label class="form-check-label">
-										<input type="radio" class="form-check-input" name="size" value="S" id="size_s"> เล็ก
+										<input type="radio" class="form-check-input" name="size" value="เล็ก" id="s-size"> เล็ก
 									</label>
 								</div>
 								<div class="form-check-inline">
 									<label class="form-check-label">
-										<input type="radio" class="form-check-input" name="size" value="M" id="size_m">กลาง </label>
+										<input type="radio" class="form-check-input" name="size" value="กลาง" id="m-size">กลาง </label>
 								</div>
 								<div class="form-check-inline disabled">
 									<label class="form-check-label">
-										<input type="radio" class="form-check-input" name="size" value="L" id="size_l">ใหญ่
+										<input type="radio" class="form-check-input" name="size" value="ใหญ่" id="l-size">ใหญ่
 									</label>
 								</div>
 
@@ -157,19 +170,31 @@
 								</div>
 								<div class="form-check-inline">
 									<label class="form-check-label">
-										<input type="radio" class="form-check-input" name="gender" value="F" id="gender_f"> ผู้
+										<input type="radio" class="form-check-input" name="gender" value="1" id="f-gender"> ผู้
 									</label>
 								</div>
 								<div class="form-check-inline">
 									<label class="form-check-label">
-										<input type="radio" class="form-check-input" name="gender" value="M" id="gender_m">เมีย </label>
+										<input type="radio" class="form-check-input" name="gender" value="0" id="m-gender">เมีย </label>
 								</div>
 
 							</div>
 
 							<div class="form-group">
 								<div class="col-sm-10">
-									<button type="submit" class="btn btn-primary">Search</button>
+									<button id="searchBtn" class="btn btn-primary">Search</button>
+
+									<% $("button#searchBtn").click(){ %>
+										<%	var url = ""; %>
+										<% var data = { %>
+											<% breed: $("#breed").val(), %>
+											<% sellPrice: $("input#sellPrice").val(), %>
+											<% size: $('input[name=size]:checked').val(), %>
+											<% gender: $('input[name=gender]:checked').val(), %>
+										<% } %>
+										<% window.location.href = url + "/dogList.html?breed=" +data.breed+ "&sellPrice=" +data.sellPrice+ "&size=" +data.size+ "&gender=" +data.gender; %>
+									<% } %>
+
 								</div>
 							</div>
 						</form>
@@ -194,7 +219,7 @@
 				<div class="card-body col-9">
 					<div class="row" id="titleCard">
 						<div class="col" onclick="goToDogInfo_forShop()">
-							<h3>Name</h3>
+							<h3><%= dog[0].name %></h3>
 						</div>
 						<div class="col">
 							<p id="deleteButton" onclick="deleteDog()">ลบ<img id="deleteIcon" src="../asset/Icon/delete.svg" alt="delete"></p>
@@ -204,12 +229,12 @@
 					<div class="row" onclick="goToDogInfo_forShop()">
 						<div class="col-lg-6">
 							<br>
-							<p class="infoDog">Labrador 3 month </p>
-							<p class="infoDog">30000</p>
+							<p class="infoDog"><%= dog[0].breed %> อายุ <%= dog[0].year %> ปี <%= dog[0].year %> เดือน</p>
+							<p class="infoDog"><%= dog[0].sellPrice %></p>
 						</div>
 						<div class="col-lg-6">
 							<h2 class="status">สถานะ</h2>
-							<p class="status">กำลังขาย</p>
+							<p class="status"><%= dog[0].status %> บาท</p>
 						</div>
 					</div>
 				</div>
@@ -224,7 +249,7 @@
 				<div class="card-body col-9">
 					<div class="row" id="titleCard">
 						<div class="col" onclick="goToDogInfo_forShop()">
-							<h3>Name</h3>
+							<h3><%= dog[1].name %></h3>
 						</div>
 						<div class="col">
 							<p id="deleteButton" onclick="deleteDog()">ลบ<img id="deleteIcon" src="../asset/Icon/delete.svg" alt="delete"></p>
@@ -234,18 +259,18 @@
 					<div class="row" onclick="goToDogInfo_forShop()">
 						<div class="col-lg-6">
 							<br>
-							<p class="infoDog">Labrador 3 month </p>
-							<p class="infoDog">30000</p>
+							<p class="infoDog"><%= dog[1].breed %> อายุ <%= dog[1].year %> ปี <%= dog[1].month%> เดือน</p>
+							<p class="infoDog"><%= dog[1].sellPrice %> บาท </p>
 						</div>
 						<div class="col-lg-6">
 							<h2 class="status">สถานะ</h2>
-							<p class="status">กำลังขาย</p>
+							<p class="status"><%= dog[1].status %></p>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-
+<!-- ---------------------------------------------------------------------------------------------------------------------------------- -->
 		<div class="card cardDog">
 			<div class="row">
 				<div class="col-3" onclick="goToDogInfo_forShop()">
@@ -254,7 +279,7 @@
 				<div class="card-body col-9">
 					<div class="row" id="titleCard">
 						<div class="col" onclick="goToDogInfo_forShop()">
-							<h3>Name</h3>
+							<h3><%= dog[2].name %></h3>
 						</div>
 						<div class="col">
 							<p id="deleteButton" onclick="deleteDog()">ลบ<img id="deleteIcon" src="../asset/Icon/delete.svg" alt="delete"></p>
@@ -264,18 +289,18 @@
 					<div class="row" onclick="goToDogInfo_forShop()">
 						<div class="col-lg-6">
 							<br>
-							<p class="infoDog">Labrador 3 month </p>
-							<p class="infoDog">30000</p>
+							<p class="infoDog"><%= dog[2].breed %> อายุ <%= dog[2].year %> ปี <%= dog[2].month %>เดือน </p>
+							<p class="infoDog"><%= dog[2].sellPrice %> บาท</p>
 						</div>
 						<div class="col-lg-6">
 							<h2 class="status">สถานะ</h2>
-							<p class="status">กำลังขาย</p>
+							<p class="status"><%= dog[2].status %></p>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-
+<!-- ---------------------------------------------------------------------------------------------------------------------------------- -->
 		<div class="card cardDog">
 			<div class="row">
 				<div class="col-3" onclick="goToDogInfo_forShop()">
@@ -284,7 +309,7 @@
 				<div class="card-body col-9">
 					<div class="row" id="titleCard">
 						<div class="col" onclick="goToDogInfo_forShop()">
-							<h3>Name</h3>
+							<h3><%= dog[3].name %></h3>
 						</div>
 						<div class="col">
 							<p id="deleteButton" onclick="deleteDog()">ลบ<img id="deleteIcon" src="../asset/Icon/delete.svg" alt="delete"></p>
@@ -294,12 +319,12 @@
 					<div class="row" onclick="goToDogInfo_forShop()">
 						<div class="col-lg-6">
 							<br>
-							<p class="infoDog">Labrador 3 month </p>
-							<p class="infoDog">30000</p>
+							<p class="infoDog"><%= dog[3].breed %> อายุ <%= dog[3].year %> ปี <%= dog[3].month %> เดือน</p>
+							<p class="infoDog"><%= dog[3].sellPrice %></p>
 						</div>
 						<div class="col-lg-6">
 							<h2 class="status">สถานะ</h2>
-							<p class="status">กำลังขาย</p>
+							<p class="status"><%= dog[3].status %></p>
 						</div>
 					</div>
 				</div>
@@ -307,7 +332,38 @@
 		</div>
 
 		<!-- ---------------------------------------------------------------------------------------------------------------------------------- -->
+	
+			<p id="page">Page <%= page %></p>
+			<button id="prevBtn" class="btn btn-info nextprev float-right">ก่อนหน้า</button>
+			<button id="nextBtn" class="btn btn-info nextprev float-right">ถัดไป</button>
+	
+		
 
+		<% $("button#prevBtn").click(){ %>
+			<% 	var currPage = page; %>
+			<% var url = ""; %>
+
+			<% if(currPage != 1){ %>
+				<% window.location.href = url + "/dogList.html?page=" +currPage-1; %>
+			<% }else{ %>
+				<% $(this).addClass("hidden"); %>
+				<% $(this).prop("disabled", true); %>
+			<% } %>
+			
+		<% } %>
+
+		<% $("button#nextBtn").click(){ %>
+			<% var currPage = page; %>
+			<% var url = ""; %>
+
+			<% if(currPage != pageLength){ %>
+				<% window.location.href = url + "/dogList.html?page=" +currPage+1; %>
+			<% }else{ %>
+				<% $(this).addClass("hidden"); %>
+				<% $(this).prop("disabled", true); %>
+			<% } %>
+			
+		<% }
 
 	</div>
 	<!-- ---------------------------- javascript ---------------------------------- -->

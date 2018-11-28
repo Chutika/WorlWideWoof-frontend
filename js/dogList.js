@@ -1,4 +1,6 @@
 $(function(){
+
+  
     
 });
 
@@ -7,5 +9,5 @@ function goToDogInfo_forShop(){
   }
 
   function deleteDog(){
-    location.href="dogList.html";
+    location.href="/dogList.html?page=1";
   }

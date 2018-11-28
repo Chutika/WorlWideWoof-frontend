@@ -226,14 +226,15 @@ $(function () {
             name: $('input[name=dogName]').val(),
             description: $('input[name=description]').val(),
             size: $('input[name=size]:checked').val(),
+            gender: $('input[name=gender]:checked').val(),
             weight: Number($('input[name=weight]').val()),
-            // year: $('input#yearInput').val(),
-            // month: $('input#monthInput').val(),
+            year: Number( $('input#yearInput').val() ),
+            month: Number( $('input#monthInput').val() ),
             breed: $('#breed').val(),
             momBreed: $('#momBreed').val(),
             dadBreed: $('#dadBreed').val(),
             primaryColor: $('input[name=primaryColor]').val(),
-            sellPrice: $("input[name=price]").val(),
+            sellPrice: Number( $("input[name=price]").val() ),
             service: $("input[name=service]:checked").val()
         }
 

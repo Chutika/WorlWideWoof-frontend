@@ -27,3 +27,11 @@
 #submitBtn{
 	margin-top: 40px;
 }
+
+.valid-msg{
+	color: red;
+	font-size: 15px;
+}
+.hidden{
+	visibility:hidden;
+}
