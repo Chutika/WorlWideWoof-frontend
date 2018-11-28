@@ -218,25 +218,19 @@
 		<form id="dataForm" method="POST" action="https://us-central1-worldwidewoof-bcdfa.cloudfunctions.net/app/api/dog/new"></form>
 		<div class="form-group">
 			<label for="name">ชื่อสุนัข</label>
-			<input id="name" type="text" class="form-control" name="dogName" maxlength="9" placeholder="ชื่อสุนัข" required>
-			<% $("input[name = dogName]").val(dog.name) %>
+			<input id="name" type="text" class="form-control" name="dogName" value="<%= dog.name %>" maxlength="9" placeholder="ชื่อสุนัข" required>
+			
 			<p id="name-valid-msg" class="hidden valid-msg">ตัวอักษรภาษาไทยหรือภาษาอังกฤษเท่านั้น ไม่เกิน 20 ตัวอักษร ไม่มีการเว้นวรรค</p>
 		</div>
 		<div class="form-group">
 			<label for="dogDescription">คำอธิบาย</label>
-			<input type="textarea" id="dogDescription" class="form-control" maxlength="140" name="description" placeholder="อธิบายสุนัขของคุณ ...">
-			<% $("input[name = description]").val(dog.description) %>
+			<input type="textarea" id="dogDescription" class="form-control" maxlength="140" name="description" value="<%= dog.description %>" placeholder="อธิบายสุนัขของคุณ ...">
+			
 			<p id="description-valid-msg" class="hidden valid-msg">ตัวอักษรภาษาไทยหรือภาษาอังกฤษเท่านั้น ไม่เกิน 140 ตัวอักษร</p>
 		</div>
 
 		<div class="form-group">
-			<% if(dog.size == "S"){ %>
-			<%$('#s-size').attr("checked", "checked"); %>
-			<% }else if(dog.service == "M"){ %>
-			<% $('#m-size').attr("checked", "checked"); %>
-			<% }else{ %>
-			<%	$('#l-size').attr("checked", "checked"); %>
-			<% } %>
+			
 			<div class="form-check">
 				<p>ขนาด</p>
 				<input class="form-check-input" type="radio" name="size" id="s-size" value="เล็ก">
@@ -257,11 +251,7 @@
 				</label>
 			</div>
 		</div>
-		<% if(dog.gender == 0){ %>
-		<% $('#m-gender').attr("checked", "checked"); %>
-		<% }else { %>
-		<% $('#f-gender').attr("checked", "checked"); %>
-		<% } %>
+		
 
 		<div class="form-group">
 			<div class="form-check">
@@ -280,19 +270,25 @@
 		</div>
 		<div class="form-group">
 			<label for="weight">น้ำหนัก (กิโลกรัม)</label>
-			<input type="number" class="form-control" id="weight" name="weight" max="160" placeholder="xx กิโลกรัม">
-			<% $("input[name = weight]").val(dog.weight) %>
+			<input type="number" class="form-control" id="weight" name="weight" value="<%= dog.weight %>" max="160" placeholder="xx กิโลกรัม">
+			
 			<p id="weight-valid-msg" class="hidden valid-msg">ตัวเลขเท่านั้น</p>
 		</div>
 		<div class="form-group">
 			<label for="primaryColor">สีขน </label>
-			<input type="text" id="primaryColor" class="form-control" name="primaryColor" maxlength="140" placeholder="สีขน">
-			<% $("input[name = primaryColor]").val(dog.primaryColor) %>
-			<p id="primaryColor-valid-msg" class="hidden valid-msg">ตัวอักษรภาษาไทยหรือภาษาอังกฤษเท่านั้น ไม่มีการเว้นวรรค</p>
+			<select class="form-control" id="primaryColor">
+					<option value="ขาว">ขาว</option>
+					<option value="ครีม">ครีม</option>
+					<option value="ดำ">ดำ</option>
+					<option value="น้ำตาลเข้ม">น้ำตาลเข้ม</option>
+					<option value="น้ำตาลแดง">น้ำตาลแดง</option>
+					<option value="น้ำตาลอ่อน">น้ำตาลอ่อน</option>
+					<option value="ลายจุด">ลายจุด</option>
+			</select>
 		</div>
 		<div class="form-group">
 			<label for="breed">พันธุ์สุนัข</label>
-			<% $("input[name = breed]").val(dog.breed) %>
+			
 			<select class="form-control" id="breed">
 				<option>โดเบอร์แมน พินช์เชอร์</option>
 				<option>นิวฟาวด์แลนด์</option>
@@ -321,7 +317,7 @@
 		</div>
 		<div class="form-group">
 			<label for="momBreed">แม่พันธุ์</label>
-			<% $("input[name = momBreed]").val(dog.momBreed) %>
+			
 			<select class="form-control" id="momBreed">
 				<option>โดเบอร์แมน พินช์เชอร์</option>
 				<option>นิวฟาวด์แลนด์</option>
@@ -350,7 +346,7 @@
 		</div>
 		<div class="form-group">
 			<label for="dadBreed">พ่อพันธุ์</label>
-			<% $("input[name = dadBreed]").val(dog.dadBreed) %>
+			
 			<select class="form-control" id="dadBreed">
 				<option>โดเบอร์แมน พินช์เชอร์</option>
 				<option>นิวฟาวด์แลนด์</option>
@@ -383,13 +379,13 @@
 			<p>อายุ</p>
 			<div class="form-row">
 				<div class="col">
-					<input type="number" id="yearInput" class="form-control" min="0" max="30" placeholder="ปี">
-					<% $("input#yearInput").val(dog.year) %>
+					<input type="number" id="yearInput" name="year" value="<%= dog.year %>" class="form-control" min="0" max="30" placeholder="ปี">
+					
 					<p id="year-valid-msg" class="hidden valid-msg">โปรดใส่อายุระหว่าง 0-30 ปี</p>
 				</div>
 				<div class="col">
-					<input type="number" id="monthInput" class="form-control" min="0" max="11" placeholder="เดือน">
-					<% $("input#monthInput").val(dog.month) %>
+					<input type="number" id="monthInput" name="month" value="<%= dog.month %>" class="form-control" min="0" max="11" placeholder="เดือน">
+					
 					<p id="month-valid-msg" class="hidden valid-msg">โปรดใส่อายุระหว่าง 0-11 เดือน</p>
 				</div>
 			</div>
@@ -399,18 +395,12 @@
 
 			<div class="form-group">
 				<label for="price">ราคาขาย</label>
-				<input type="number" class="form-control" id="price" name="price" min="0" placeholder="บาท" required>
-				<% $("input[name = price]").val(dog.sellPrice) %>
+				<input type="number" class="form-control" id="price" name="price" value="<%= dog.sellPrice %>" min="0" placeholder="บาท" required>
+			
 				<p id="price-valid-msg" class="hidden valid-msg">ตัวเลขจำนวนเต็มบวกเท่านั้น</p>
 			</div>
 
-			<% if(dog.service == "sale"){ %>
-			<%$('#sale-service').attr("checked", "checked"); %>
-			<% }else if(dog.service == "rent"){ %>
-			<% $('#rent-service').attr("checked", "checked"); %>
-			<% }else{ %>
-			<%	$('#rent-service').attr("checked", "checked"); %>
-			<% } %>
+			
 
 			<div class="form-check">
 				<p>บริการ</p>
@@ -440,6 +430,37 @@
 
 		</div>
 		<!-- ------------------------------------------------------------------- -->
+		<script>
+			 if(dog.size == "เล็ก"){ 
+			document.getElementById("s-size").setAttribute("checked", "checked"); 
+			 }else if(dog.service == "กลาง"){ 
+			 document.getElementById("m-size").setAttribute("checked", "checked"); 
+			 }else{ 
+				document.getElementById("l-size").setAttribute("checked", "checked"); 
+			 } 
+				
+			 if(dog.gender == 0){ 
+		 document.getElementById("m-gender").setAttribute("checked", "checked"); 
+		 }else { 
+		 document.getElementById("f-gender").setAttribute("checked", "checked"); 
+		 } 
+
+			 document.getElementById("primaryColor").value = dog.primaryColor
+			 document.getElementById("breed").value = dog.breed
+			 document.getElementById("momBreed").value = dog.momBreed 
+			 document.getElementById("dadBreed").value = dog.dadBreed 
+
+
+			 if(dog.service == "sale"){ 
+			document.getElementById("sale-service").setAttribute("checked", "checked"); 
+			 }else if(dog.service == "rent"){ 
+			 document.getElementById("rent-service").setAttribute("checked", "checked"); 
+			}else{ 
+				document.getElementById("rent-service").setAttribute("checked", "checked"); 
+			 } 
+
+
+		</script>
 
 		<!-- jQuery upload files -->
 		<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="

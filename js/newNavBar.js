@@ -210,29 +210,7 @@ jQuery(document).ready(function ($) {
 
 
 
-    //IE9 placeholder fallback
-    //credits http://www.hagenburger.net/BLOG/HTML5-Input-Placeholder-Fix-With-jQuery.html
-    // if (!Modernizr.input.placeholder) {
-    //     $('[placeholder]').focus(function () {
-    //         var input = $(this);
-    //         if (input.val() == input.attr('placeholder')) {
-    //             input.val('');
-    //         }
-    //     }).blur(function () {
-    //         var input = $(this);
-    //         if (input.val() == '' || input.val() == input.attr('placeholder')) {
-    //             input.val(input.attr('placeholder'));
-    //         }
-    //     }).blur();
-    //     $('[placeholder]').parents('form').submit(function () {
-    //         $(this).find('[placeholder]').each(function () {
-    //             var input = $(this);
-    //             if (input.val() == input.attr('placeholder')) {
-    //                 input.val('');
-    //             }
-    //         });
-    //     });
-    // }
+
 
 });
 
