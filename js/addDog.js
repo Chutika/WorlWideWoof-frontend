@@ -61,22 +61,6 @@ $(function () {
         }
     });
 
-    $('input[name=primaryColor]').on("change", function () {
-        var pattern = /^[\u0E00-\u0E7Fa-zA-Z]+$/;
-        // var pattern = /^[a-zA-Z_ ]*$/
-        if (!$(this).val().match(pattern)) {
-
-            $('#primaryColor-valid-msg').removeClass('hidden');
-            $('#primaryColor-valid-msg').show();
-            $("#submitBtn").prop("disabled", true);
-
-        } else {
-            // else, do not display message
-            $('#primaryColor-valid-msg').addClass('hidden');
-            $("#submitBtn").prop("disabled", false);
-
-        }
-    });
 
     $('input[name=price]').on("change", function () {
         var pattern = /^([0-9])/

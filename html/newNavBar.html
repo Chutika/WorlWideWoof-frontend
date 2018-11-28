@@ -48,9 +48,11 @@
                 <li class="nav-item " id="shopMenu" onclick="clickShopMenu()">
                     <p class="nav-link nav-menu">ร้านค้า<span class="sr-only">(current)</span></p>
                 </li>
+                <!-- Comment Adoption
                 <li class="nav-item" id="foundMenu" onclick="clickFoundationMenu()">
                     <p class="nav-link nav-menu">มูลนิธิ</p>
                 </li>
+                -->
             </ul>
 
             <form class="form-inline my-2 my-lg-0">
@@ -65,6 +67,18 @@
                     </li>
                 </ul>
             </form>
+    <!-- Logged In--> 
+    <!--
+            <form class="form-inline my-2 my-lg-0">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item main-nav" id="logoutMenu" onclick="">
+                        <p class="nav-link nav-menu cd-logout">ออกจากระบบ</p>
+                    </li>
+                </ul>
+            </form> 
+    -->
+    <!-- End Logged In-->
+
         </div>
     </nav>
     <br>
@@ -86,20 +100,20 @@
                     <p class="fieldset">
                         <label class="image-replace cd-email" for="signin-email">อีเมล์</label>
                         <input class="full-width has-padding has-border" name="email" id="signin-email" type="email"
-                            placeholder="E-mail">
+                            placeholder="อีเมล">
                         <span class="cd-error-message">Error message here!</span>
                     </p>
 
                     <p class="fieldset">
                         <label class="image-replace cd-password" for="signin-password">รหัสผ่าน</label>
                         <input class="full-width has-padding has-border" name="password" id="signin-password" type="text"
-                            placeholder="Password">
+                            placeholder="รหัสผ่าน">
                         <a href="#0" class="hide-password">Hide</a>
                         <span class="cd-error-message">Error message here!</span>
                     </p>
 
                     <p class="fieldset">
-                        <input id="loginButton" class="full-width" type="submit" value="Login">
+                        <input id="loginButton" onclick = "login()" class="full-width" type="submit" value="Login">
                     </p>
                 </form>
 
@@ -110,19 +124,19 @@
                 <form class="cd-form">
                     <p class="fieldset">
                         <label class="image-replace cd-username" for="signup-username">ชื่อร้านค้า</label>
-                        <input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Username" name="signup-username">
+                        <input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="ชื่อร้าน" name="signup-username">
                         <span class="cd-error-message">Error message here!</span>
                     </p>
 
                     <p class="fieldset">
                         <label class="image-replace cd-email" for="signup-email">อีเมล์</label>
-                        <input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail" name="signup-email">
+                        <input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="อีเมล" name="signup-email">
                         <span class="cd-error-message">Error message here!</span>
                     </p>
 
                     <p class="fieldset">
                         <label class="image-replace cd-password" for="signup-password">รหัสผ่าน</label>
-                        <input class="full-width has-padding has-border" id="signup-password" type="text" placeholder="Password" name="signup-password">
+                        <input class="full-width has-padding has-border" id="signup-password" type="text" placeholder="รหัสผ่าน" name="signup-password">
                         <a href="#0" class="hide-password">Hide</a>
                         <span class="cd-error-message">Error message here!</span>
                     </p>
@@ -133,7 +147,7 @@
                 </form>
             </div> <!-- cd-signup -->
 
-            
+           
             <a href="#0" class="cd-close-form">ยกเลิก</a>
         </div> <!-- cd-user-modal-container -->
     </div> <!-- cd-user-modal -->
@@ -149,5 +163,13 @@
     <!-- ------------------------------------------------------------------- -->
 
 </body>
+<script>
+/*
+function login(){
+    document.getElementById("loginMenu").style.display = "none";
+  
 
+}
+*/
+</script>
 </html>

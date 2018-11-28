@@ -1,3 +1,3 @@
 var config = {
-    host: "http://localhost:8080"
+    host: "https://us-central1-worldwidewoof-bcdfa.cloudfunctions.net/app"
 }
