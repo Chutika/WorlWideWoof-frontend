@@ -226,6 +226,7 @@ $(function () {
             name: $('input[name=dogName]').val(),
             description: $('input[name=description]').val(),
             size: $('input[name=size]:checked').val(),
+            gender: $('input[name=gender]:checked').val(),
             weight: Number($('input[name=weight]').val()),
             year: Number( $('input#yearInput').val() ),
             month: Number( $('input#monthInput').val() ),
