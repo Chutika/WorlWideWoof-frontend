@@ -208,4 +208,8 @@ nav{
     font-family: 'kanitMedium', Kanit ,sans-serif;
     color: #352304;
     font-size: 13px;
+   
+}
+p.card-text.subFontPicture{
+    font-size: 15px;
 }

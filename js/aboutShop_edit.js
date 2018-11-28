@@ -70,23 +70,50 @@ $('input[name=lastName]').on("change", function () {
 // /^(?([0-9]{3}))*-([0-9]{7}))$/;
 //phone validate
 // $('input[name=phoneNumber]').on("change", function () {
-//   var pattern = /^(?([0-9]{3})*-([0-9]{7}))$/;
+//   var pattern = /([0-9]{3})-([0-9]{7})/;
 //   // var pattern = /^([a-zA-Z]{0,9})$/
-//   if (!$(this).val().match(pattern)) {
+//   if ($(this).val().match(pattern)) {
 
-//       $('#phoneNumber-valid-msg').removeClass('hidden');
-//       $('#phoneNumber-valid-msg').show();
-//       $("#submitBtn").prop("disabled", true);
+//       $('#phoneNumber-valid-msg').addClass('hidden');
+//       $("#submitBtn").prop("disabled", false);
+
+
 
 //   }
 //   else {
-//       // else, do not display message
-//       $('#phoneNumber-valid-msg').addClass('hidden');
-//       $("#submitBtn").prop("disabled", false);
+  //       $('#phoneNumber-valid-msg').removeClass('hidden');
+//       $('#phoneNumber-valid-msg').show();
+//       $("#submitBtn").prop("disabled", true);
+
 
 //   }
 
 // });
+
+//description validate
+$('input[name=phoneNumber]').on("change", function () {
+  var pattern = / ^(([0-9]{3})-([0-9]{7}))+$ /
+  // var pattern = /^([a-zA-Z]{0,9})$/
+  if (!$(this).val().match(pattern)) {
+    $('#phoneNumber-valid-msg').removeClass('hidden');
+      $('#phoneNumber-valid-msg').show();
+      $("#submitBtn").prop("disabled", true);
+
+    
+
+      
+
+  }
+  else {
+      // else, do not display message
+      $('#phoneNumber-valid-msg').addClass('hidden');
+      $("#submitBtn").prop("disabled", false);
+      
+      
+
+  }
+
+});
 
 //description validate
 $('input[name=description]').on("change", function () {
