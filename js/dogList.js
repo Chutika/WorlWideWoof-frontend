@@ -1,4 +1,4 @@
-const url = config.host + "/api/dog/dogShop";
+const url_1 = config.host + "/api/dog/dogShop";
 $(() => {
 
   function showDogs(dogs){
@@ -10,7 +10,7 @@ $(() => {
   }
 
   $.ajax({
-    url: url,
+    url: url_1,
     type: "GET",
     dataType: "json",
     // data: {number: "additional Data"},

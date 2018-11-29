@@ -74,7 +74,6 @@
 
         </div>
     </nav>
-    <br>
     <!-- -----------------------------End primary navbar-------------------------------- -->
 
     <!--------------------------------- Modal ------------------------------------>
@@ -177,7 +176,6 @@
 
               <p id="dogName"><%= dog.name %></p>
               <p><b>ร้าน</b> <span class="cursor" id="shop" onclick="goToPage()"><%= dog.shopName %></span></p>
-              <p class="content"><b>บริการ : </b> <span id="type"><%= dog.type %></span></p>
               <p class="content"><b>สายพันธ์ุ : </b><span id="breed"><%= dog.breed %></span> <b>ขนาด : </b><span id="size"><%= dog.size %></span></p>
               <p class="content"><b>เพศ :</b> <span id="gender"><%= dog.gender %></span></p>
               <p class="content"><b>อายุ : </b><span id="age"><%= dog.age %></span> <b>น้ำหนัก : </b><span id="weight"><%= dog.weight %></span> กก.</p>
@@ -233,7 +231,7 @@
             <div class="row">
               <div class="col-7">
                 <p class="card-text" id="nameDog"><%= similarDogs[0].name %>
-                  <span id="detailDog"><br><%= similarDogs[0].breed %> <%= similarDogs[0].age %></span></p>
+                  <span id="detailDog"><br><%= similarDogs[0].breed %><br> <%= similarDogs[0].age %></span></p>
               </div>
               <div class="col-5">
                 <p class="card-text" id="price"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag"><%= similarDogs[0].price %></p>
@@ -250,7 +248,7 @@
             <div class="row">
               <div class="col-7">
                 <p class="card-text" id="nameDog"><%= similarDogs[1].name %>
-                  <span id="detailDog"><br><%= similarDogs[1].breed %> <%= similarDogs[1].age %></span></p>
+                  <span id="detailDog"><br><%= similarDogs[1].breed %> <span><br><%= similarDogs[1].age %></span></span></p>
               </div>
               <div class="col-5">
                 <p class="card-text" id="price"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag"><%= similarDogs[1].price %></p>

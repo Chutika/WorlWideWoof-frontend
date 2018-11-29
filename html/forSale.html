@@ -70,7 +70,6 @@
             </form>
         </div>
     </nav>
-    <br>
     <!-- ------------------------------------------------------------------- -->
 
     <!--------------------------------- Modal ------------------------------------>
@@ -149,9 +148,9 @@
 <!---Side Bar -->
 <div class="sidenav" style="position:absolute;width: 15%">
     
-    <a>Breed</a>
+    <a>สายพันธ์ุ</a>
     <a><select name="Breed-type" id="Breed"style="width: 60%">
-        <option value="0" selected disabled>Breed</option>
+        <option value="0" selected disabled>นิวฟาวด์แลนด์</option>
         <option value="นิวฟาวด์แลนด์">นิวฟาวด์แลนด์</option>
 											<option value="บลูด็อก">บลูด็อก</option>
 											<option value="บลัดฮาวด์">บลัดฮาวด์</option>
@@ -173,25 +172,25 @@
 											<option value="อาคิต้า">อาคิต้า</option>
       </select></a>
 
-    <a>Size</a>
+    <a>ขนาด</a>
     <a>
       <input type="checkbox" name="radio-choice" id="s" value="choice-1" />
-      <label for="check-choice-1">S</label>
+      <label for="check-choice-1">เล็ก</label>
 
       <input type="checkbox" name="radio-choice" id="m" value="choice-2" />
-      <label for="check-choice-2">M</label>
+      <label for="check-choice-2">กลาง</label>
 
       <input type="checkbox" name="radio-choice" id="l" value="choice-2" />
-      <label for="check-choice-3">L</label>
+      <label for="check-choice-3">ใหญ่</label>
 
     </a>
-    <a>Gender</a>
+    <a>เพศ</a>
     <a>
-      <input type="checkbox" name="gen1" value="male"> Male<br>
-      <input type="checkbox" name="gen2" value="Female"> Female
+      <input type="checkbox" name="gen1" value="male"> ผู้<br>
+      <input type="checkbox" name="gen2" value="Female"> เมีย
     </a>
     <a>
-      <button onclick="search()">GO!!</button>
+      <button onclick="search()">ค้นหา</button>
     </a>
   </div>
 
@@ -199,18 +198,19 @@
     <!-- ------------------------------------------------------------------- -->
      <!-- main------------------------------------------------------------------- -->
      <div class="main">
+       <br>
         <div>
           <p style="position: relative;margin-left: 42%"><img src="../asset/icon/black-shop-tag.svg" style="float:left ;width:35px;height:35px;margin-right: 20px;">
             For Sale
           </p>
         </div>
         <div>
-          <p class="my-3 text-center" id="content" style="position: relative;">เย้</p>
+          <!-- <p class="my-3 text-center" id="content" style="position: relative;">เย้</p> -->
         </div>
         <!-- CARDS -->
         <div id="box1" style="overflow: hidden; display: flex; justify-content:space-around;">
           <!-- CARD 0 -->
-          <div class="card my-3 mx-auto"onclick="clickSameDog()" id="picture">
+          <div class="card my-3 mx-auto"onclick="location.href = config.host+ '/api/dog/'+'<%= dogs[0]._id %>'" id="picture">
               <!---img0-------->
               <img class='card-img-top' id='photo0' src="<%= dogs[0].pictures || '' %>"alt='dog'>
               
@@ -240,7 +240,7 @@
             </div>
           </div>
           <!-- CARD 1 -->
-          <div class="card my-3 mx-auto"onclick="clickSameDog()" id="picture">
+          <div class="card my-3 mx-auto" onclick=" location.href = config.host+ '/api/dog/'+'<%= dogs[1]._id %>' " id="picture">
             <!---img1-------->
             <img class='card-img-top' id='photo1' src="<%= dogs[1].pictures %>"alt='dog'>
     
@@ -267,7 +267,7 @@
              </div>
            </div>
           <!-- CARD 2 -->
-          <div class="card my-3 mx-auto"onclick="clickSameDog()" id="picture">
+          <div class="card my-3 mx-auto"onclick="location.href = config.host+ '/api/dog/'+'<%= dogs[2]._id %>'" id="picture">
             <!---img2-------->
             <img class='card-img-top' id='photo2' src="<%= dogs[2].pictures %>"alt='dog'>
     
@@ -295,7 +295,7 @@
         </div>
         <div style="overflow: hidden; display: flex; justify-content:space-around;">
           <!-- CARD 3 -->
-          <div class="card my-3 mx-auto"onclick="clickSameDog()" id="picture">
+          <div class="card my-3 mx-auto"onclick="location.href = config.host+ '/api/dog/'+'<%= dogs[3]._id %>'" id="picture">
             <!---img3-------->
             <img class='card-img-top' id='photo3' src="<%= dogs[3].pictures %>"alt='dog'>
     
@@ -323,7 +323,7 @@
              </div>
            </div>
           <!-- CARD 4 -->
-          <div class="card my-3 mx-auto"onclick="clickSameDog()" id="picture">
+          <div class="card my-3 mx-auto"onclick="location.href = config.host+ '/api/dog/'+'<%= dogs[4]._id %>'" id="picture">
             <!---img4-------->
             <img class='card-img-top' id='photo4' src="<%= dogs[4].pictures %>"alt='dog'>
     
@@ -352,7 +352,7 @@
              </div>
            </div>
           <!-- CARD 5 -->
-          <div class="card my-3 mx-auto"onclick="clickSameDog()" id="picture">
+          <div class="card my-3 mx-auto"onclick="location.href = config.host+ '/api/dog/'+'<%= dogs[5]._id %>'" id="picture">
             <!---img5-------->     
             <img class='card-img-top' id='photo5' src="<%= dogs[5].pictures %>"alt='dog'>
     
@@ -382,7 +382,7 @@
         </div>
         <div style="overflow: hidden; display: flex; justify-content:space-around;">
           <!-- CARD 6 -->
-          <div class="card my-3 mx-auto"onclick="clickSameDog()" id="picture">
+          <div class="card my-3 mx-auto"onclick="location.href = config.host+ '/api/dog/'+'<%= dogs[6]._id %>'" id="picture">
             <!---img6-------->
             <img class='card-img-top' id='photo6' src="<%= dogs[6].pictures %>"alt='dog'>
     
@@ -409,7 +409,7 @@
              </div>
            </div>
           <!-- CARD 7 -->
-          <div class="card my-3 mx-auto"onclick="clickSameDog()" id="picture">
+          <div class="card my-3 mx-auto"onclick="location.href = config.host+ '/api/dog/'+'<%= dogs[7]._id %>'" id="picture">
             <!---img7-------->
             <img class='card-img-top' id='photo7' src="<%= dogs[7].pictures %>"alt='dog'>
     
@@ -436,7 +436,7 @@
              </div>
            </div>
           <!-- CARD 8 -->
-          <div class="card my-3 mx-auto"onclick="clickSameDog()" id="picture">
+          <div class="card my-3 mx-auto"onclick="location.href = config.host+ '/api/dog/'+'<%= dogs[8]._id %>'" id="picture">
             <!---img8-------->
             <img class='card-img-top' id='photo8' src="<%= dogs[8].pictures %>"alt='dog'>
     
@@ -471,20 +471,18 @@
     
       </div>
       <p>
-      <h1 id="button" style="position: relative; left:75%;">
+      <div id="button" style="width: 80%; margin-left: 210px;" >
         <!---------button------------------------------------------------->
-        <button class='button' id='previousBtn'style='box-shadow: 5px 5px 5px grey;'>PREVIOUS</button>
+        <button class='button' id='previousBtn'style='box-shadow: 5px 5px 5px grey; float: right;'>PREVIOUS</button>
     
        
     
         <button onclick='next()' class='button'id='nextBtn'style='box-shadow: 5px 5px 5px grey;'>NEXT</button>
-      </h1>
+      </div>
       
       </p>
       <div style="background-color:#FFE32E;">
-        <h1 id="aboutUs" style="position: relative;left: 45%; " onclick="goToShopInfo()">About Us</h1>
-        <h4 style="position: relative;left: 45%; ">Team of god of year</h4>
-    
+        <h1 id="aboutUs"  style=" text-align: center;" onclick="location.href = config.host+ '/api/html/aboutShop.html'">About Us</h1>
       </div>
     <!-- ---------------------------- javascript ---------------------------------- -->
 
