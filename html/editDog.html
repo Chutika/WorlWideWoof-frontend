@@ -226,10 +226,10 @@
 			<div class="form-check">
 				<p>ขนาด</p>
 
-				<% if(dog.breed == "เล็ก"){ %>
-					<input class="form-check-input" type="radio" name="size" id="s-size" value="เล็ก" checked>
+				<% if(dog.breed == 0){ %>
+					<input class="form-check-input" type="radio" name="size" id="s-size" value="0" checked>
 				<% }else{ %>
-					<input class="form-check-input" type="radio" name="size" id="s-size" value="เล็ก">
+					<input class="form-check-input" type="radio" name="size" id="s-size" value="0">
 				<% } %>
 				
 				<label class="form-check-label" for="s-size">
@@ -237,10 +237,10 @@
 				</label>
 			</div>
 			<div class="form-check">
-					<% if(dog.breed == "กลาง"){ %>
-						<input class="form-check-input" type="radio" name="size" id="m-size" value="กลาง" checked>
+					<% if(dog.breed == 1){ %>
+						<input class="form-check-input" type="radio" name="size" id="m-size" value="1" checked>
 					<% }else{ %>
-						<input class="form-check-input" type="radio" name="size" id="m-size" value="กลาง">
+						<input class="form-check-input" type="radio" name="size" id="m-size" value="1">
 					<% } %>
 				<!-- <input class="form-check-input" type="radio" name="size" id="m-size" value="กลาง" checked="checked"> -->
 				<label class="form-check-label" for="m-size">
@@ -248,10 +248,10 @@
 				</label>
 			</div>
 			<div class="form-check disabled">
-					<% if(dog.breed == "ใหญ่"){ %>
-						<input class="form-check-input" type="radio" name="size" id="l-size" value="ใหญ่" checked>
+					<% if(dog.breed == 2){ %>
+						<input class="form-check-input" type="radio" name="size" id="l-size" value="2" checked>
 					<% }else{ %>
-						<input class="form-check-input" type="radio" name="size" id="l-size" value="ใหญ่">
+						<input class="form-check-input" type="radio" name="size" id="l-size" value="2">
 					<% } %>
 				<!-- <input class="form-check-input" type="radio" name="size" id="l-size" value="ใหญ่"> -->
 				<label class="form-check-label" for="l-size">
