@@ -1,4 +1,4 @@
-const url = config.host + "/api/user/login";
+const login_url = config.host + "/api/user/login";
 const signUp_url = config.host + "/api/user";
 
 function clickLogo() {
@@ -72,7 +72,7 @@ jQuery(document).ready(function ($) {
                 console.log(data);
                 $.ajax({
                     dataType: 'json',
-                    url: url,
+                    url: login_url,
                     method: 'POST',
                     data: data,
                     contentType: 'application/json; charset=utf-8',

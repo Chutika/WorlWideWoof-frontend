@@ -9,142 +9,138 @@
     crossorigin="anonymous">
 
   <link rel="stylesheet" type="text/css" media="screen" href="../css/dogInfo.css" />
-    <link rel="stylesheet" type="text/css" href="../css/newNavBar.css">
-
-  <script src="../js/dogInfo.js"></script>
-  <script src="../js/navigation.js"></script>
-  <script src="../js/config.js"></script>
-    <script src="../js/newNavBar.js"></script>
-
+  <link rel="stylesheet" type="text/css" href="../css/newNavBar.css">
 
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-	 crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
     crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-    crossorigin="anonymous"></script>
 
+  <script src="../js/dogInfo.js"></script>
+  <script src="../js/config.js"></script>
+  <script src="../js/newNavBar.js"></script>
 </head>
 
 <body>
 
   <!-- -------------------------- primary navbar ---------------------------- -->
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <p class="nav-link" id="brandMenu" onclick="clickLogo()">WWWoof!</p>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
-            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <p class="nav-link" id="brandMenu" onclick="clickLogo()">WWWoof!</p>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+      aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item " id="shopMenu" onclick="clickShopMenu()">
-                    <p class="nav-link nav-menu">ร้านค้า<span class="sr-only">(current)</span></p>
-                </li>
-                <!-- Comment Adoption
-                <li class="nav-item" id="foundMenu" onclick="clickFoundationMenu()">
-                    <p class="nav-link nav-menu">มูลนิธิ</p>
-                </li>
-                -->
-            </ul>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item " id="shopMenu" onclick="clickShopMenu()">
+          <p class="nav-link nav-menu">ร้านค้า<span class="sr-only">(current)</span></p>
+        </li>
+        <!-- Comment Adoption
+              <li class="nav-item" id="foundMenu" onclick="clickFoundationMenu()">
+                  <p class="nav-link nav-menu">มูลนิธิ</p>
+              </li>
+              -->
+      </ul>
 
-            <form class="form-inline my-2 my-lg-0">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <li class="nav-item main-nav" id="loginMenu" onclick="">
-                        <p class="nav-link nav-menu cd-signin"><img src="../asset/icon/person.svg" alt="" style="width:40px;" id="person">
-                            ลงชื่อเข้าใช้
-                        </p>
-                    </li>
-                    <li class="nav-item main-nav" id="signupMenu" onclick="">
-                        <p class="nav-link nav-menu cd-signup">สมัครสมาชิก</p>
-                    </li>
-                </ul>
-            </form>
-    <!-- Logged In--> 
-    <!--
-            <form class="form-inline my-2 my-lg-0">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <li class="nav-item main-nav" id="logoutMenu" onclick="">
-                        <p class="nav-link nav-menu cd-logout">ออกจากระบบ</p>
-                    </li>
-                </ul>
-            </form> 
-    -->
-    <!-- End Logged In-->
+      <form class="form-inline my-2 my-lg-0">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item main-nav" id="loginMenu" onclick="">
+            <p class="nav-link nav-menu cd-signin"><img src="../asset/icon/person.svg" alt="" style="width:40px;" id="person">
+              ลงชื่อเข้าใช้
+            </p>
+          </li>
+          <li class="nav-item main-nav" id="signupMenu" onclick="">
+            <p class="nav-link nav-menu cd-signup">สมัครสมาชิก</p>
+          </li>
+        </ul>
+      </form>
+      <!-- Logged In-->
+      <!--
+          <form class="form-inline my-2 my-lg-0">
+              <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                  <li class="nav-item main-nav" id="logoutMenu" onclick="">
+                      <p class="nav-link nav-menu cd-logout">ออกจากระบบ</p>
+                  </li>
+              </ul>
+          </form> 
+  -->
+      <!-- End Logged In-->
 
-        </div>
-    </nav>
-    <!-- -----------------------------End primary navbar-------------------------------- -->
+    </div>
+  </nav>
+  <!-- -----------------------------End primary navbar-------------------------------- -->
 
-    <!--------------------------------- Modal ------------------------------------>
-    <div class="cd-user-modal">
-        <!-- this is the entire modal form, including the background -->
-        <div class="cd-user-modal-container">
-            <!-- this is the container wrapper -->
-            <ul class="cd-switcher">
-                <li><a href="#0">ลงชื่อเข้าใช้</a></li>
-                <li><a href="#0">สมัครสมาชิก</a></li>
-            </ul>
+  <!--------------------------------- Modal ------------------------------------>
+  <div class="cd-user-modal">
+    <!-- this is the entire modal form, including the background -->
+    <div class="cd-user-modal-container">
+      <!-- this is the container wrapper -->
+      <ul class="cd-switcher">
+        <li><a href="#0">ลงชื่อเข้าใช้</a></li>
+        <li><a href="#0">สมัครสมาชิก</a></li>
+      </ul>
 
-            <div id="cd-login">
-                <!-- log in form -->
-                <form class="cd-form">
-                    <p class="fieldset">
-                        <label class="image-replace cd-email" for="signin-email">อีเมล์</label>
-                        <input class="full-width has-padding has-border" name="email" id="signin-email" type="email"
-                            placeholder="อีเมล">
-                        <span class="cd-error-message">Error message here!</span>
-                    </p>
+      <div id="cd-login">
+        <!-- log in form -->
+        <form class="cd-form">
+          <p class="fieldset">
+            <label class="image-replace cd-email" for="signin-email">อีเมล์</label>
+            <input class="full-width has-padding has-border" name="email" id="signin-email" type="email" placeholder="อีเมล">
+            <span class="cd-error-message">Error message here!</span>
+          </p>
 
-                    <p class="fieldset">
-                        <label class="image-replace cd-password" for="signin-password">รหัสผ่าน</label>
-                        <input class="full-width has-padding has-border" name="password" id="signin-password" type="text"
-                            placeholder="รหัสผ่าน">
-                        <a href="#0" class="hide-password">Hide</a>
-                        <span class="cd-error-message">Error message here!</span>
-                    </p>
+          <p class="fieldset">
+            <label class="image-replace cd-password" for="signin-password">รหัสผ่าน</label>
+            <input class="full-width has-padding has-border" name="password" id="signin-password" type="text"
+              placeholder="รหัสผ่าน">
+            <a href="#0" class="hide-password">Hide</a>
+            <span class="cd-error-message">Error message here!</span>
+          </p>
 
-                    <p class="fieldset">
-                        <input id="loginButton" onclick = "login()" class="full-width" type="submit" value="Login">
-                    </p>
-                </form>
+          <p class="fieldset">
+            <input id="loginButton" onclick="login()" class="full-width" type="submit" value="Login">
+          </p>
+        </form>
 
-            </div> <!-- cd-login -->
+      </div> <!-- cd-login -->
 
-            <div id="cd-signup">
-                <!-- sign up form -->
-                <form class="cd-form">
-                    <p class="fieldset">
-                        <label class="image-replace cd-username" for="signup-username">ชื่อร้านค้า</label>
-                        <input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="ชื่อร้าน" name="signup-username">
-                        <span class="cd-error-message">Error message here!</span>
-                    </p>
+      <div id="cd-signup">
+        <!-- sign up form -->
+        <form class="cd-form">
+          <p class="fieldset">
+            <label class="image-replace cd-username" for="signup-username">ชื่อร้านค้า</label>
+            <input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="ชื่อร้าน"
+              name="signup-username">
+            <span class="cd-error-message">Error message here!</span>
+          </p>
 
-                    <p class="fieldset">
-                        <label class="image-replace cd-email" for="signup-email">อีเมล์</label>
-                        <input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="อีเมล" name="signup-email">
-                        <span class="cd-error-message">Error message here!</span>
-                    </p>
+          <p class="fieldset">
+            <label class="image-replace cd-email" for="signup-email">อีเมล์</label>
+            <input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="อีเมล" name="signup-email">
+            <span class="cd-error-message">Error message here!</span>
+          </p>
 
-                    <p class="fieldset">
-                        <label class="image-replace cd-password" for="signup-password">รหัสผ่าน</label>
-                        <input class="full-width has-padding has-border" id="signup-password" type="text" placeholder="รหัสผ่าน" name="signup-password">
-                        <a href="#0" class="hide-password">Hide</a>
-                        <span class="cd-error-message">Error message here!</span>
-                    </p>
+          <p class="fieldset">
+            <label class="image-replace cd-password" for="signup-password">รหัสผ่าน</label>
+            <input class="full-width has-padding has-border" id="signup-password" type="text" placeholder="รหัสผ่าน"
+              name="signup-password">
+            <a href="#0" class="hide-password">Hide</a>
+            <span class="cd-error-message">Error message here!</span>
+          </p>
 
-                    <p class="fieldset">
-                        <input class="full-width has-padding" id="signUp" type="submit" value="Create account">
-                    </p>
-                </form>
-            </div> <!-- cd-signup -->
+          <p class="fieldset">
+            <input class="full-width has-padding" id="signUp" type="submit" value="Create account">
+          </p>
+        </form>
+      </div> <!-- cd-signup -->
 
-           
-            <a href="#0" class="cd-close-form">ยกเลิก</a>
-        </div> <!-- cd-user-modal-container -->
-    </div> <!-- cd-user-modal -->
-<!---side---->
-    <!-- ------------------------------End Modal -------------------------------- -->
+
+      <a href="#0" class="cd-close-form">ยกเลิก</a>
+    </div> <!-- cd-user-modal-container -->
+  </div> <!-- cd-user-modal -->
+  <!---side---->
+  <!-- ------------------------------End Modal -------------------------------- -->
 
   <div class="container-fluid" id="main">
     <div class="row">
@@ -152,21 +148,17 @@
         <div class="row">
           <div class="container-fluid col-sm-4" id="">
 
-            <img src=" <%= dog.pictures[0] %> "
-              alt="main picture" id="mainPicture">
+            <img src=" <%= dog.pictures[0] %> " alt="main picture" id="mainPicture">
 
             <div class="row" id="slideShow">
               <div class="column">
-                <img class="demo cursor" id="fontSide" src="<%= dog.pictures[0] %>"
-                  onclick="currentSlide(1)" alt="frontSide">
+                <img class="demo cursor" id="fontSide" src="<%= dog.pictures[0] %>" onclick="currentSlide(1)" alt="frontSide">
               </div>
               <div class="column" id="centerDemo">
-                <img class="demo cursor" id="picTwo" src="<%= dog.pictures[1] %>"
-                  onclick="currentSlide(2)" alt="leftSide">
+                <img class="demo cursor" id="picTwo" src="<%= dog.pictures[1] %>" onclick="currentSlide(2)" alt="leftSide">
               </div>
               <div class="column">
-                <img class="demo cursor" id="picThree" src="<%= dog.pictures[2] %>"
-                  onclick="currentSlide(3)" alt="rightSide">
+                <img class="demo cursor" id="picThree" src="<%= dog.pictures[2] %>" onclick="currentSlide(3)" alt="rightSide">
               </div>
             </div>
           </div>
@@ -174,18 +166,31 @@
           <div class="container-fluid col-sm-7" id="contentDog">
             <div class="container-fluid col-sm-9 " id="divContent">
 
-              <p id="dogName"><%= dog.name %></p>
-              <p><b>ร้าน</b> <span class="cursor" id="shop" onclick="goToPage()"><%= dog.shopName %></span></p>
-              <p class="content"><b>สายพันธ์ุ : </b><span id="breed"><%= dog.breed %></span> <b>ขนาด : </b><span id="size"><%= dog.size %></span></p>
-              <p class="content"><b>เพศ :</b> <span id="gender"><%= dog.gender %></span></p>
-              <p class="content"><b>อายุ : </b><span id="age"><%= dog.age %></span> <b>น้ำหนัก : </b><span id="weight"><%= dog.weight %></span> กก.</p>
-              <p class="content"><b>พ่อพันธ์ุ : </b><span id="father"><%= dog.dadBreed %></span></p>
-              <p class="content"><b>แม่พันธ์ุ : </b><span id="father"><%= dog.momBreed %></span></p>
-              <p class="content"><b>สีหลัก : </b><span id="primaryColor"><%= dog.primaryColor %></span>
-              <p class="content"><b>รายละเอียดอื่นๆ : </b><span id="description"><%= dog.description %></span>
+              <p id="dogName">
+                <%= dog.name %>
+              </p>
+              <p><b>ร้าน</b> <span class="cursor" id="shop" onclick="goToPage()">
+                  <%= dog.shopName %></span></p>
+              <p class="content"><b>สายพันธ์ุ : </b><span id="breed">
+                  <%= dog.breed %></span> <b>ขนาด : </b><span id="size">
+                  <%= dog.size %></span></p>
+              <p class="content"><b>เพศ :</b> <span id="gender">
+                  <%= dog.gender %></span></p>
+              <p class="content"><b>อายุ : </b><span id="age">
+                  <%= dog.age %></span> <b>น้ำหนัก : </b><span id="weight">
+                  <%= dog.weight %></span> กก.</p>
+              <p class="content"><b>พ่อพันธ์ุ : </b><span id="father">
+                  <%= dog.dadBreed %></span></p>
+              <p class="content"><b>แม่พันธ์ุ : </b><span id="father">
+                  <%= dog.momBreed %></span></p>
+              <p class="content"><b>สีหลัก : </b><span id="primaryColor">
+                  <%= dog.primaryColor %></span>
+                <p class="content"><b>รายละเอียดอื่นๆ : </b><span id="description">
+                    <%= dog.description %></span>
             </div>
             <div class="container-fluid mx-auto ">
-              <p id="Bath"><img id="tag" src="../asset/icon/black-shop-tag lightBrown.png" alt="tag" style="width:40px; margin-top:-3px; margin-right: 20px;"><%= dog.price %>
+              <p id="Bath"><img id="tag" src="../asset/icon/black-shop-tag lightBrown.png" alt="tag" style="width:40px; margin-top:-3px; margin-right: 20px;">
+                <%= dog.price %>
                 บาท</p>
               <button type="button" class="button" data-toggle="modal" data-target="#myModal">ติดต่อร้าน</button>
             </div>
@@ -200,13 +205,16 @@
 
             <!-- Modal Header -->
             <div class="modal-header">
-              <h4 class="modal-title" id="shopName"><%= dog.shopName %></h4>
+              <h4 class="modal-title" id="shopName">
+                <%= dog.shopName %>
+              </h4>
               <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
 
             <!-- Modal body -->
             <div class="modal-body">
-              <p> เบอร์โทรติดต่อ : <span id="phoneNumber"><%= dog.phoneNumber %></span> </p>
+              <p> เบอร์โทรติดต่อ : <span id="phoneNumber">
+                  <%= dog.phoneNumber %></span> </p>
               <p id="moreInfoAboutShop" onclick="gotoInfoShop()"> รายละเอียดเพิ่มเติมเกี่ยวกับร้าน</p>
             </div>
 
@@ -225,16 +233,20 @@
 
         <!-- --------------------------------------------- Card ------------------------------------------------ -->
         <div class="card my-3 mx-auto" id="pictureCard" onclick=" location.href =config.host+ '/api/dog/'+'<%= similarDogs[0]._id %>' ">
-          <img class="card-img-top" src="<%= similarDogs[0].picture %>"
-            alt="dog">
+          <img class="card-img-top" src="<%= similarDogs[0].picture %>" alt="dog">
           <div class="card-body">
             <div class="row">
               <div class="col-7">
-                <p class="card-text" id="nameDog"><%= similarDogs[0].name %>
-                  <span id="detailDog"><br><%= similarDogs[0].breed %><br> <%= similarDogs[0].age %></span></p>
+                <p class="card-text" id="nameDog">
+                  <%= similarDogs[0].name %>
+                  <span id="detailDog"><br>
+                    <%= similarDogs[0].breed %><br>
+                    <%= similarDogs[0].age %></span></p>
               </div>
               <div class="col-5">
-                <p class="card-text" id="price"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag"><%= similarDogs[0].price %></p>
+                <p class="card-text" id="price"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag">
+                  <%= similarDogs[0].price %>
+                </p>
               </div>
             </div>
 
@@ -242,16 +254,20 @@
         </div>
         <!-- ---------------------------------------------------------------------------------------------------------------------------------- -->
         <div class="card my-3 mx-auto" id="pictureCard" onclick=" location.href =config.host+ '/api/dog/'+'<%= similarDogs[1]._id %>' ">
-          <img class="card-img-top" src="<%= similarDogs[1].picture %>"
-            alt="dog">
+          <img class="card-img-top" src="<%= similarDogs[1].picture %>" alt="dog">
           <div class="card-body">
             <div class="row">
               <div class="col-7">
-                <p class="card-text" id="nameDog"><%= similarDogs[1].name %>
-                  <span id="detailDog"><br><%= similarDogs[1].breed %> <span><br><%= similarDogs[1].age %></span></span></p>
+                <p class="card-text" id="nameDog">
+                  <%= similarDogs[1].name %>
+                  <span id="detailDog"><br>
+                    <%= similarDogs[1].breed %> <span><br>
+                      <%= similarDogs[1].age %></span></span></p>
               </div>
               <div class="col-5">
-                <p class="card-text" id="price"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag"><%= similarDogs[1].price %></p>
+                <p class="card-text" id="price"><img src="../asset/icon/black-shop-tag.svg" alt="darkTag" id="darkTag">
+                  <%= similarDogs[1].price %>
+                </p>
               </div>
             </div>
 
@@ -263,9 +279,9 @@
     </div>
   </div>
 
-    <!-- ---------------------------- javascript ---------------------------------- -->
+  <!-- ---------------------------- javascript ---------------------------------- -->
 
-    <!-- -----------------------------End javascript--------------------------- -->
+  <!-- -----------------------------End javascript--------------------------- -->
 </body>
 
 </html>
