@@ -204,17 +204,17 @@ $(function () {
             shopId: "5bfae1f0d60e84c41ccde875",
             name: $('input[name=dogName]').val(),
             description: $('input[name=description]').val(),
-            size: $('input[name=size]:checked').val(),
+            size: Number( $('input[name=size]:checked').val() ),
             weight: Number($('input[name=weight]').val()),
-            gender: $("input[name=gender]:checked").val(),
-            year: $('input#yearInput').val(),
-            month: $('input#monthInput').val(),
+            gender: Number( $("input[name=gender]:checked").val() ),
+            year: Number ( $('input#yearInput').val() ),
+            month: Number( $('input#monthInput').val() ),
             breed: $('input[name=breed]').val(),
             momBreed: $('input[name=momBreed]').val(),
             dadBreed: $('input[name=dadBreed]').val(),
             primaryColor: $('input[name=primaryColor]').val(),
-            sellPrice: $("input[name=price]").val(),
-            service: $("input[name=service]:checked").val()
+            sellPrice: Number( $("input[name=price]").val() ),
+           
         }
 
         var str = "";

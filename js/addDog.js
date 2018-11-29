@@ -207,7 +207,7 @@ $(function () {
             shopId: "5bfd59a08122ce8779ca5d17",
             name: $('input[name=dogName]').val(),
             description: $('input[name=description]').val(),
-            size: $('input[name=size]:checked').val(),
+            size: Number( $('input[name=size]:checked').val() ),
             gender: $('input[name=gender]:checked').val(),
             weight: Number($('input[name=weight]').val()),
             year: Number($('input#yearInput').val()),
