@@ -348,7 +348,7 @@
 					<option value="น้ำตาลอ่อน" selected>น้ำตาลอ่อน</option>
 					<option value="ลายจุด">ลายจุด</option>
 
-				<% }else{ %>
+				<% }else if(dog.primaryColor == "ลายจุด"){ %>
 					<option value="ขาว">ขาว</option>
 					<option value="ครีม">ครีม</option>
 					<option value="ดำ">ดำ</option>
@@ -357,6 +357,15 @@
 					<option value="น้ำตาลอ่อน">น้ำตาลอ่อน</option>
 					<option value="ลายจุด" selected>ลายจุด</option>
 
+				<% } else{%>
+					<option value="ขาว">ขาว</option>
+					<option value="ครีม">ครีม</option>
+					<option value="ดำ">ดำ</option>
+					<option value="น้ำตาลเข้ม">น้ำตาลเข้ม</option>
+					<option value="น้ำตาลแดง">น้ำตาลแดง</option>
+					<option value="น้ำตาลอ่อน">น้ำตาลอ่อน</option>
+					<option value="ลายจุด">ลายจุด</option>
+					<option value="" selected>ยังไม่ได้เลือก</option>
 				<% } %>
 					
 			</select>
