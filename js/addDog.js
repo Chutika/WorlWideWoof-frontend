@@ -236,6 +236,8 @@ $(function () {
 
             success: function (res) {
                 console.log("Data Form Sent Success " + res + " " + res.id);
+                alert("Data form sent success");
+               
                 $("input#dogId").val(res.id);
 
                 imgAPI = config.host + "/api/dog/" + res.id + "/uploadImage"
