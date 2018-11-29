@@ -1,12 +1,16 @@
 const url_1 = config.host + "/api/dog/dogShop";
 $(() => {
+  function showDogs(dogs) {
+    for (i = 0; i < dogs.length; i++) {
+      // id=dogs[i]._id;
 
-  function showDogs(dogs){
-    for(i=0;i<dogs.length;i++){
-      s="<div class='card cardDog'><div class='row'><div class='col-3' onclick='goToDogInfo_forShop()'><img src="+dogs[i].pictures[0]+"alt='Card image cap' id='picture'></div><div class='card-body col-9'><div class='row' id='titleCard'><div class='col' onclick='goToDogInfo_forShop()'><h3>"+dogs[i].name+"</h3></div><div class='col'><p id='deleteButton' onclick='deleteDog()'>ลบ<img id='deleteIcon' src='../asset/Icon/delete.svg' alt='delete'></p></div></div><div class='row' onclick='goToDogInfo_forShop()'><div class='col-lg-6'><br><p class='infoDog'>"+dogs[i].breed+"</p><p class='age'>อายุ "+ dogs[i].year+" ปี "+ dogs[i].month +" เดือน </p><p class='age'>"+dogs[i].sellPrice+"</p></div><div class='col-lg-6'><h2 class='status'>สถานะ</h2><p class='status'>สัส</p></div></div></div></div></div>";
+      // s = "<div class='card cardDog'><div class='row'><div class='col-3' onclick='redirectToInfo(dogs[i]._id)'> <img src=" + dogs[i].pictures[0] + "alt='Card image cap' id='picture'></div><div class='card-body col-9'><div class='row' id='titleCard'> <div class='col-6' onclick='redirectToInfo(dogs[i]._id)'> <h3>" +dogs[i].name + "</h3></div><div class='col-6'><p id='deleteButton' onclick='deleteDog()'>ลบ<img id='deleteIcon' src='../asset/Icon/delete.svg'alt='delete'></p><p id='editButton' onclick='"+config.host + "/api/dog/" + dogs[i]._id + "/update'>แก้ไข <img id='editIcon'src='../asset/Icon/delete.svg' alt='edit'></p></div></div><div onclick='redirectToInfo(dogs[i]._id)'> <br><p class='infoDog'>"+ dogs[i].breed +"อายุ " + dogs[i].year + " ปี " + dogs[i].month + " เดือน </p><p class='infoDog'>" + dogs[i].sellPrice + "</p></div></div></div> </div>";
+      s = "<div class='card cardDog'><div class='row'><div class='col-3' onclick='gotoInfoDog(\""+String(dogs[i]._id)+"\")'> <img src=" + dogs[i].pictures[0] + "alt='Card image cap' id='picture'></div><div class='card-body col-9'><div class='row' id='titleCard'> <div class='col-6' onclick='gotoInfoDog(\""+String(dogs[i]._id)+"\")'> <h3>" +dogs[i].name + "</h3></div><div class='col-6'><p id='deleteButton' onclick='deleteDog()'>ลบ<img id='deleteIcon' src='../asset/Icon/delete.svg'alt='delete'></p><p id='editButton' onclick='gotoEditDog(\""+String(dogs[i]._id)+"\")'>แก้ไข <img id='editIcon'src='../asset/Icon/delete.svg' alt='edit'></p></div></div><div onclick='gotoInfoDog(\""+String(dogs[i]._id)+"\")'> <br><p class='infoDog'>"+ dogs[i].breed +"อายุ " + dogs[i].year + " ปี " + dogs[i].month + " เดือน </p><p class='infoDog'>" + dogs[i].sellPrice + "</p></div></div></div> </div>";
+      // s = "<div class='card cardDog'><div class='row'><div class='col-3' onclick='redirectToInfo(dogs[i]._id)'> <img src=" + dogs[i].pictures[0] + "alt='Card image cap' id='picture'></div><div class='card-body col-9'><div class='row' id='titleCard'> <div class='col-6' onclick='redirectToInfo(dogs[i]._id)'> <h3>" +dogs[i].name + "</h3></div><div class='col-6'><p id='deleteButton' onclick='deleteDog()'>ลบ<img id='deleteIcon' src='../asset/Icon/delete.svg'alt='delete'></p><p id='editButton' onclick='redirectToEdit(dogs[i]._id)'>แก้ไข <img id='editIcon'src='../asset/Icon/delete.svg' alt='edit'></p></div></div><div onclick='redirectToInfo(dogs[i]._id)'> <br><p class='infoDog'>"+ dogs[i].breed +"อายุ " + dogs[i].year + " ปี " + dogs[i].month + " เดือน </p><p class='infoDog'>" + dogs[i].sellPrice + "</p></div></div></div> </div>";
       $("#info").append(s);
     }
 
+    // s = "<div class='card cardDog'><div class='row'><div class='col-3' onclick='location.href=config.host+'/api/dog'"+dogs[i]._id+"'><img src=" + dogs[i].pictures[0] + "alt='Card image cap' id='picture'></div><div class='card-body col-9'><div class='row' id='titleCard'><div class='col' onclick='location.href=config.host+'/api/dog'"+dogs[i]._id+"'><h3>" + dogs[i].name + "</h3></div><div class='col-6'><p id='deleteButton' onclick='deleteDog()'>ลบ<img id='deleteIcon' src='../asset/Icon/delete.svg' alt='delete'></p><p id='editButton' onclick='location.href=config.host+'/delete/api/dog'"+dogs[i]._id+"'>แก้ไข<img id='editIcon' src='../asset/Icon/delete.svg' alt='edit'></p></div></div><div onclick='location.href=config.host+'/api/dog'"+dogs[i]._id+"'><br><p class='infoDog'>" + dogs[i].breed + "</p><p class='age'>อายุ " + dogs[i].year + " ปี " + dogs[i].month + " เดือน </p><p class='age'>" + dogs[i].sellPrice + "</p></div><div class='col-lg-6'></div></div></div></div></div>";    
   }
 
   $.ajax({
@@ -70,4 +74,14 @@ function goToDogInfo_forShop() {
 
 function deleteDog() {
   location.href = "/dogList.html?page=1";
+}
+function gotoInfoDog(dogid) {
+  console.log(dogid);
+  location.href = config.host + '/api/dog/' +dogid;
+  // location.href = "/dogList.html?page=1";
+}
+function gotoEditDog(dogid) {
+  console.log(dogid);
+  location.href = config.host + '/api/dog/' +dogid+ '/update';
+  // location.href = "/dogList.html?page=1";
 }

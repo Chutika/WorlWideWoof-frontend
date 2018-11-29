@@ -51,16 +51,25 @@ p.dog-price{
 	float: right;
 	width: 60px;
 }
+
+#editButton{
+	float: right;
+	width: 100px;
+}
+
 #deleteIcon{
 	width: 40%;
+}
+#editIcon{
+	width: 25%;
 }
 #titleCard{
 	height: 10%;
 }
 
 .infoDog{
-	line-height:0.2;
-	font-size: 25px;
+	line-height:0.8;
+	font-size: 20px;
 }
 .status{
 	color: #2EABFF;
