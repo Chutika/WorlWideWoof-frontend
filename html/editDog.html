@@ -287,7 +287,7 @@
 		</div>
 		<div class="form-group">
 			<label for="weight">น้ำหนัก (กิโลกรัม)</label>
-			<input type="number" class="form-control" id="weight" name="weight" value="<%= dog.weight %>" max="160" placeholder="xx กิโลกรัม">
+			<input type="number" class="form-control" id="weight" name="weight" value="<%= dog.weight %>" max="160" placeholder="xx กิโลกรัม" required>
 			
 			<p id="weight-valid-msg" class="hidden valid-msg">ตัวเลขเท่านั้น</p>
 		</div>
@@ -806,12 +806,12 @@
 			<p>อายุ</p>
 			<div class="form-row">
 				<div class="col">
-					<input type="number" id="yearInput" name="year" value="<%= dog.year %>" class="form-control" min="0" max="30" placeholder="ปี">
+					<input type="number" id="yearInput" name="year" value="<%= dog.year %>" class="form-control" min="0" max="30" placeholder="ปี" required>
 					
 					<p id="year-valid-msg" class="hidden valid-msg">โปรดใส่อายุระหว่าง 0-30 ปี</p>
 				</div>
 				<div class="col">
-					<input type="number" id="monthInput" name="month" value="<%= dog.month %>" class="form-control" min="0" max="11" placeholder="เดือน">
+					<input type="number" id="monthInput" name="month" value="<%= dog.month %>" class="form-control" min="0" max="11" placeholder="เดือน" required>
 					
 					<p id="month-valid-msg" class="hidden valid-msg">โปรดใส่อายุระหว่าง 0-11 เดือน</p>
 				</div>
