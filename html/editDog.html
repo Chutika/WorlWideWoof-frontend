@@ -210,6 +210,7 @@
 		<form id="dataForm" method="POST" action="https://us-central1-worldwidewoof-bcdfa.cloudfunctions.net/app/api/dog/new"></form>
 		<div class="form-group">
 			<label for="name">ชื่อสุนัข</label>
+
 			<input id="name" type="text" class="form-control" name="dogName" value="<%= dog.name %>" maxlength="9" placeholder="ชื่อสุนัข" required>
 			
 			<p id="name-valid-msg" class="hidden valid-msg">ตัวอักษรภาษาไทยหรือภาษาอังกฤษเท่านั้น ไม่เกิน 20 ตัวอักษร ไม่มีการเว้นวรรค</p>
@@ -225,8 +226,9 @@
 			
 			<div class="form-check">
 				<p>ขนาด</p>
+				<p><%= dog.size %></p>
 
-				<% if(dog.breed == 0){ %>
+				<% if(dog.size == 0){ %>
 					<input class="form-check-input" type="radio" name="size" id="s-size" value="0" checked>
 				<% }else{ %>
 					<input class="form-check-input" type="radio" name="size" id="s-size" value="0">
@@ -237,7 +239,7 @@
 				</label>
 			</div>
 			<div class="form-check">
-					<% if(dog.breed == 1){ %>
+					<% if(dog.size == 1){ %>
 						<input class="form-check-input" type="radio" name="size" id="m-size" value="1" checked>
 					<% }else{ %>
 						<input class="form-check-input" type="radio" name="size" id="m-size" value="1">
@@ -248,7 +250,7 @@
 				</label>
 			</div>
 			<div class="form-check disabled">
-					<% if(dog.breed == 2){ %>
+					<% if(dog.size == 2){ %>
 						<input class="form-check-input" type="radio" name="size" id="l-size" value="2" checked>
 					<% }else{ %>
 						<input class="form-check-input" type="radio" name="size" id="l-size" value="2">
@@ -264,6 +266,7 @@
 		<div class="form-group">
 			<div class="form-check">
 				<p>เพศ</p>
+				<p><%= dog.gender %></p>
 				<% if(dog.gender == 0){ %>
 					<input class="form-check-input" type="radio" name="gender" id="m-gender" value="0" checked >
 				<% }else{ %>
@@ -293,6 +296,7 @@
 		</div>
 		<div class="form-group">
 			<label for="primaryColor">สีขน </label>
+			<p><%= dog.primaryColor %></p>
 			<select class="form-control" id="primaryColor">
 				<% if(dog.primaryColor == "ขาว"){ %>
 					<option value="ขาว" selected>ขาว</option>
@@ -372,7 +376,7 @@
 		</div>
 		<div class="form-group">
 			<label for="breed">พันธุ์สุนัข</label>
-			
+			<p><%= dog.breed %></p>
 			<select class="form-control" id="breed">
 				<% if(dog.breed == "นิวฟาวด์แลนด์"){ %>
 					<option value="นิวฟาวด์แลนด์" selected>นิวฟาวด์แลนด์</option>
@@ -755,58 +759,916 @@
 					<option value="โรดีเชียน ริดจ์แบ็ค">โรดีเชียน ริดจ์แบ็ค</option>
 					<option value="ลาบลาดอร์ รีทรีฟเวอร์">ลาบลาดอร์ รีทรีฟเวอร์</option>
 					<option value="อาคิต้า" selected>อาคิต้า</option>
+				<% }else if(dog.breed == "ชิวาวา"){ %>
+					<option value="นิวฟาวด์แลนด์">นิวฟาวด์แลนด์</option>
+					<option value="บลูด็อก">บลูด็อก</option>
+					<option value="บลัดฮาวด์">บลัดฮาวด์</option>
+					<option value="บอสตัน เทอร์เรียร์">บอสตัน เทอร์เรียร์</option>
+					<option value="บิชอง ฟริเซ่">บิชอง ฟริเซ่</option>
+					<option value="บีเกิล">บีเกิล</option>
+					<option value="บุลล์แมสติฟฟ์">บุลล์แมสติฟฟ์</option>
+					<option value="ปอมเมอเรเนียน">ปอมเมอเรเนียน</option>
+					<option value="ปั๊ก">ปั๊ก</option>
+					<option value="ปาปิลอน">ปาปิลอน</option>
+					<option value="พันธุ์ทาง">พันธุ์ทาง</option>
+					<option value="พุดเดิ้ล">พุดเดิ้ล</option>
+					<option value="มอลทีส">มอลทีส</option>
+					<option value="ยอร์คเชียร์ เทอร์เรียร์">ยอร์คเชียร์ เทอร์เรียร์</option>
+					<option value="เยอรมัน เชฟเฟิร์ด">เยอรมัน เชฟเฟิร์ด</option>
+					<option value="ร็อตไวเลอร์">ร็อตไวเลอร์</option>
+					<option value="โรดีเชียน ริดจ์แบ็ค">โรดีเชียน ริดจ์แบ็ค</option>
+					<option value="ลาบลาดอร์ รีทรีฟเวอร์">ลาบลาดอร์ รีทรีฟเวอร์</option>
+					<option value="อาคิต้า">อาคิต้า</option>
+					<option value="ชิวาวา" selected>ชิวาวา</option>
+					<option value="">ยังไม่ได้เลือก</option>
+				<% } else { %>
+					<option value="นิวฟาวด์แลนด์">นิวฟาวด์แลนด์</option>
+					<option value="บลูด็อก">บลูด็อก</option>
+					<option value="บลัดฮาวด์">บลัดฮาวด์</option>
+					<option value="บอสตัน เทอร์เรียร์">บอสตัน เทอร์เรียร์</option>
+					<option value="บิชอง ฟริเซ่">บิชอง ฟริเซ่</option>
+					<option value="บีเกิล">บีเกิล</option>
+					<option value="บุลล์แมสติฟฟ์">บุลล์แมสติฟฟ์</option>
+					<option value="ปอมเมอเรเนียน">ปอมเมอเรเนียน</option>
+					<option value="ปั๊ก">ปั๊ก</option>
+					<option value="ปาปิลอน">ปาปิลอน</option>
+					<option value="พันธุ์ทาง">พันธุ์ทาง</option>
+					<option value="พุดเดิ้ล">พุดเดิ้ล</option>
+					<option value="มอลทีส">มอลทีส</option>
+					<option value="ยอร์คเชียร์ เทอร์เรียร์">ยอร์คเชียร์ เทอร์เรียร์</option>
+					<option value="เยอรมัน เชฟเฟิร์ด">เยอรมัน เชฟเฟิร์ด</option>
+					<option value="ร็อตไวเลอร์">ร็อตไวเลอร์</option>
+					<option value="โรดีเชียน ริดจ์แบ็ค">โรดีเชียน ริดจ์แบ็ค</option>
+					<option value="ลาบลาดอร์ รีทรีฟเวอร์">ลาบลาดอร์ รีทรีฟเวอร์</option>
+					<option value="อาคิต้า">อาคิต้า</option>
+					<option value="ชิวาวา" >ชิวาวา</option>
+					<option value="" selected>ยังไม่ได้เลือก</option>
 				<% } %>
 					
 			</select>
 		</div>
 		<div class="form-group">
 			<label for="momBreed">แม่พันธุ์</label>
-			
+			<p><%= dog.momBreed %></p>
 			<select class="form-control" id="momBreed">
-					<option value="นิวฟาวด์แลนด์">นิวฟาวด์แลนด์</option>
-					<option value="บลูด็อก">บลูด็อก</option>
-					<option value="บลัดฮาวด์">บลัดฮาวด์</option>
-					<option value="บอสตัน เทอร์เรียร์">บอสตัน เทอร์เรียร์</option>
-					<option value="บิชอง ฟริเซ่">บิชอง ฟริเซ่</option>
-					<option value="บีเกิล">บีเกิล</option>
-					<option value="บุลล์แมสติฟฟ์">บุลล์แมสติฟฟ์</option>
-					<option value="ปอมเมอเรเนียน">ปอมเมอเรเนียน</option>
-					<option value="ปั๊ก">ปั๊ก</option>
-					<option value="ปาปิลอน">ปาปิลอน</option>
-					<option value="พันธุ์ทาง">พันธุ์ทาง</option>
-					<option value="พุดเดิ้ล">พุดเดิ้ล</option>
-					<option value="มอลทีส">มอลทีส</option>
-					<option value="ยอร์คเชียร์ เทอร์เรียร์">ยอร์คเชียร์ เทอร์เรียร์</option>
-					<option value="เยอรมัน เชฟเฟิร์ด">เยอรมัน เชฟเฟิร์ด</option>
-					<option value="ร็อตไวเลอร์">ร็อตไวเลอร์</option>
-					<option value="โรดีเชียน ริดจ์แบ็ค">โรดีเชียน ริดจ์แบ็ค</option>
-					<option value="ลาบลาดอร์ รีทรีฟเวอร์">ลาบลาดอร์ รีทรีฟเวอร์</option>
-					<option value="อาคิต้า">อาคิต้า</option>
+					<% if(dog.momBreed == "นิวฟาวด์แลนด์"){ %>
+						<option value="นิวฟาวด์แลนด์" selected>นิวฟาวด์แลนด์</option>
+						<option value="บลูด็อก">บลูด็อก</option>
+						<option value="บลัดฮาวด์">บลัดฮาวด์</option>
+						<option value="บอสตัน เทอร์เรียร์">บอสตัน เทอร์เรียร์</option>
+						<option value="บิชอง ฟริเซ่">บิชอง ฟริเซ่</option>
+						<option value="บีเกิล">บีเกิล</option>
+						<option value="บุลล์แมสติฟฟ์">บุลล์แมสติฟฟ์</option>
+						<option value="ปอมเมอเรเนียน">ปอมเมอเรเนียน</option>
+						<option value="ปั๊ก">ปั๊ก</option>
+						<option value="ปาปิลอน">ปาปิลอน</option>
+						<option value="พันธุ์ทาง">พันธุ์ทาง</option>
+						<option value="พุดเดิ้ล">พุดเดิ้ล</option>
+						<option value="มอลทีส">มอลทีส</option>
+						<option value="ยอร์คเชียร์ เทอร์เรียร์">ยอร์คเชียร์ เทอร์เรียร์</option>
+						<option value="เยอรมัน เชฟเฟิร์ด">เยอรมัน เชฟเฟิร์ด</option>
+						<option value="ร็อตไวเลอร์">ร็อตไวเลอร์</option>
+						<option value="โรดีเชียน ริดจ์แบ็ค">โรดีเชียน ริดจ์แบ็ค</option>
+						<option value="ลาบลาดอร์ รีทรีฟเวอร์">ลาบลาดอร์ รีทรีฟเวอร์</option>
+						<option value="อาคิต้า">อาคิต้า</option>
+	
+					<% }else if(dog.momBreed == "บลูด็อก"){ %>
+						<option value="นิวฟาวด์แลนด์">นิวฟาวด์แลนด์</option>
+						<option value="บลูด็อก" selected>บลูด็อก</option>
+						<option value="บลัดฮาวด์">บลัดฮาวด์</option>
+						<option value="บอสตัน เทอร์เรียร์">บอสตัน เทอร์เรียร์</option>
+						<option value="บิชอง ฟริเซ่">บิชอง ฟริเซ่</option>
+						<option value="บีเกิล">บีเกิล</option>
+						<option value="บุลล์แมสติฟฟ์">บุลล์แมสติฟฟ์</option>
+						<option value="ปอมเมอเรเนียน">ปอมเมอเรเนียน</option>
+						<option value="ปั๊ก">ปั๊ก</option>
+						<option value="ปาปิลอน">ปาปิลอน</option>
+						<option value="พันธุ์ทาง">พันธุ์ทาง</option>
+						<option value="พุดเดิ้ล">พุดเดิ้ล</option>
+						<option value="มอลทีส">มอลทีส</option>
+						<option value="ยอร์คเชียร์ เทอร์เรียร์">ยอร์คเชียร์ เทอร์เรียร์</option>
+						<option value="เยอรมัน เชฟเฟิร์ด">เยอรมัน เชฟเฟิร์ด</option>
+						<option value="ร็อตไวเลอร์">ร็อตไวเลอร์</option>
+						<option value="โรดีเชียน ริดจ์แบ็ค">โรดีเชียน ริดจ์แบ็ค</option>
+						<option value="ลาบลาดอร์ รีทรีฟเวอร์">ลาบลาดอร์ รีทรีฟเวอร์</option>
+						<option value="อาคิต้า">อาคิต้า</option>
+					<% }else if(dog.momBreed == "บลัดฮาวด์"){ %>
+						<option value="นิวฟาวด์แลนด์">นิวฟาวด์แลนด์</option>
+						<option value="บลูด็อก">บลูด็อก</option>
+						<option value="บลัดฮาวด์"selected>บลัดฮาวด์</option>
+						<option value="บอสตัน เทอร์เรียร์">บอสตัน เทอร์เรียร์</option>
+						<option value="บิชอง ฟริเซ่">บิชอง ฟริเซ่</option>
+						<option value="บีเกิล">บีเกิล</option>
+						<option value="บุลล์แมสติฟฟ์">บุลล์แมสติฟฟ์</option>
+						<option value="ปอมเมอเรเนียน">ปอมเมอเรเนียน</option>
+						<option value="ปั๊ก">ปั๊ก</option>
+						<option value="ปาปิลอน">ปาปิลอน</option>
+						<option value="พันธุ์ทาง">พันธุ์ทาง</option>
+						<option value="พุดเดิ้ล">พุดเดิ้ล</option>
+						<option value="มอลทีส">มอลทีส</option>
+						<option value="ยอร์คเชียร์ เทอร์เรียร์">ยอร์คเชียร์ เทอร์เรียร์</option>
+						<option value="เยอรมัน เชฟเฟิร์ด">เยอรมัน เชฟเฟิร์ด</option>
+						<option value="ร็อตไวเลอร์">ร็อตไวเลอร์</option>
+						<option value="โรดีเชียน ริดจ์แบ็ค">โรดีเชียน ริดจ์แบ็ค</option>
+						<option value="ลาบลาดอร์ รีทรีฟเวอร์">ลาบลาดอร์ รีทรีฟเวอร์</option>
+						<option value="อาคิต้า">อาคิต้า</option>
+					<% }else if(dog.momBreed == "บอสตัน เทอร์เรียร์"){ %>
+						<option value="นิวฟาวด์แลนด์">นิวฟาวด์แลนด์</option>
+						<option value="บลูด็อก">บลูด็อก</option>
+						<option value="บลัดฮาวด์">บลัดฮาวด์</option>
+						<option value="บอสตัน เทอร์เรียร์" selected>บอสตัน เทอร์เรียร์</option>
+						<option value="บิชอง ฟริเซ่">บิชอง ฟริเซ่</option>
+						<option value="บีเกิล">บีเกิล</option>
+						<option value="บุลล์แมสติฟฟ์">บุลล์แมสติฟฟ์</option>
+						<option value="ปอมเมอเรเนียน">ปอมเมอเรเนียน</option>
+						<option value="ปั๊ก">ปั๊ก</option>
+						<option value="ปาปิลอน">ปาปิลอน</option>
+						<option value="พันธุ์ทาง">พันธุ์ทาง</option>
+						<option value="พุดเดิ้ล">พุดเดิ้ล</option>
+						<option value="มอลทีส">มอลทีส</option>
+						<option value="ยอร์คเชียร์ เทอร์เรียร์">ยอร์คเชียร์ เทอร์เรียร์</option>
+						<option value="เยอรมัน เชฟเฟิร์ด">เยอรมัน เชฟเฟิร์ด</option>
+						<option value="ร็อตไวเลอร์">ร็อตไวเลอร์</option>
+						<option value="โรดีเชียน ริดจ์แบ็ค">โรดีเชียน ริดจ์แบ็ค</option>
+						<option value="ลาบลาดอร์ รีทรีฟเวอร์">ลาบลาดอร์ รีทรีฟเวอร์</option>
+						<option value="อาคิต้า">อาคิต้า</option>
+					<% }else if(dog.momBreed == "บิชอง ฟริเซ่"){ %>
+						<option value="นิวฟาวด์แลนด์">นิวฟาวด์แลนด์</option>
+						<option value="บลูด็อก">บลูด็อก</option>
+						<option value="บลัดฮาวด์">บลัดฮาวด์</option>
+						<option value="บอสตัน เทอร์เรียร์">บอสตัน เทอร์เรียร์</option>
+						<option value="บิชอง ฟริเซ่" selected>บิชอง ฟริเซ่</option>
+						<option value="บีเกิล">บีเกิล</option>
+						<option value="บุลล์แมสติฟฟ์">บุลล์แมสติฟฟ์</option>
+						<option value="ปอมเมอเรเนียน">ปอมเมอเรเนียน</option>
+						<option value="ปั๊ก">ปั๊ก</option>
+						<option value="ปาปิลอน">ปาปิลอน</option>
+						<option value="พันธุ์ทาง">พันธุ์ทาง</option>
+						<option value="พุดเดิ้ล">พุดเดิ้ล</option>
+						<option value="มอลทีส">มอลทีส</option>
+						<option value="ยอร์คเชียร์ เทอร์เรียร์">ยอร์คเชียร์ เทอร์เรียร์</option>
+						<option value="เยอรมัน เชฟเฟิร์ด">เยอรมัน เชฟเฟิร์ด</option>
+						<option value="ร็อตไวเลอร์">ร็อตไวเลอร์</option>
+						<option value="โรดีเชียน ริดจ์แบ็ค">โรดีเชียน ริดจ์แบ็ค</option>
+						<option value="ลาบลาดอร์ รีทรีฟเวอร์">ลาบลาดอร์ รีทรีฟเวอร์</option>
+						<option value="อาคิต้า">อาคิต้า</option>
+					<% }else if(dog.momBreed == "บีเกิล"){ %>
+						<option value="นิวฟาวด์แลนด์">นิวฟาวด์แลนด์</option>
+						<option value="บลูด็อก">บลูด็อก</option>
+						<option value="บลัดฮาวด์">บลัดฮาวด์</option>
+						<option value="บอสตัน เทอร์เรียร์">บอสตัน เทอร์เรียร์</option>
+						<option value="บิชอง ฟริเซ่">บิชอง ฟริเซ่</option>
+						<option value="บีเกิล" selected>บีเกิล</option>
+						<option value="บุลล์แมสติฟฟ์">บุลล์แมสติฟฟ์</option>
+						<option value="ปอมเมอเรเนียน">ปอมเมอเรเนียน</option>
+						<option value="ปั๊ก">ปั๊ก</option>
+						<option value="ปาปิลอน">ปาปิลอน</option>
+						<option value="พันธุ์ทาง">พันธุ์ทาง</option>
+						<option value="พุดเดิ้ล">พุดเดิ้ล</option>
+						<option value="มอลทีส">มอลทีส</option>
+						<option value="ยอร์คเชียร์ เทอร์เรียร์">ยอร์คเชียร์ เทอร์เรียร์</option>
+						<option value="เยอรมัน เชฟเฟิร์ด">เยอรมัน เชฟเฟิร์ด</option>
+						<option value="ร็อตไวเลอร์">ร็อตไวเลอร์</option>
+						<option value="โรดีเชียน ริดจ์แบ็ค">โรดีเชียน ริดจ์แบ็ค</option>
+						<option value="ลาบลาดอร์ รีทรีฟเวอร์">ลาบลาดอร์ รีทรีฟเวอร์</option>
+						<option value="อาคิต้า">อาคิต้า</option>
+					<% }else if(dog.momBreed == "บุลล์แมสติฟฟ์"){ %>
+						<option value="นิวฟาวด์แลนด์">นิวฟาวด์แลนด์</option>
+						<option value="บลูด็อก">บลูด็อก</option>
+						<option value="บลัดฮาวด์">บลัดฮาวด์</option>
+						<option value="บอสตัน เทอร์เรียร์">บอสตัน เทอร์เรียร์</option>
+						<option value="บิชอง ฟริเซ่">บิชอง ฟริเซ่</option>
+						<option value="บีเกิล">บีเกิล</option>
+						<option value="บุลล์แมสติฟฟ์" selected>บุลล์แมสติฟฟ์</option>
+						<option value="ปอมเมอเรเนียน">ปอมเมอเรเนียน</option>
+						<option value="ปั๊ก">ปั๊ก</option>
+						<option value="ปาปิลอน">ปาปิลอน</option>
+						<option value="พันธุ์ทาง">พันธุ์ทาง</option>
+						<option value="พุดเดิ้ล">พุดเดิ้ล</option>
+						<option value="มอลทีส">มอลทีส</option>
+						<option value="ยอร์คเชียร์ เทอร์เรียร์">ยอร์คเชียร์ เทอร์เรียร์</option>
+						<option value="เยอรมัน เชฟเฟิร์ด">เยอรมัน เชฟเฟิร์ด</option>
+						<option value="ร็อตไวเลอร์">ร็อตไวเลอร์</option>
+						<option value="โรดีเชียน ริดจ์แบ็ค">โรดีเชียน ริดจ์แบ็ค</option>
+						<option value="ลาบลาดอร์ รีทรีฟเวอร์">ลาบลาดอร์ รีทรีฟเวอร์</option>
+						<option value="อาคิต้า">อาคิต้า</option>
+					<% }else if(dog.momBreed == "ปอมเมอเรเนียน"){ %>
+						<option value="นิวฟาวด์แลนด์">นิวฟาวด์แลนด์</option>
+						<option value="บลูด็อก">บลูด็อก</option>
+						<option value="บลัดฮาวด์">บลัดฮาวด์</option>
+						<option value="บอสตัน เทอร์เรียร์">บอสตัน เทอร์เรียร์</option>
+						<option value="บิชอง ฟริเซ่">บิชอง ฟริเซ่</option>
+						<option value="บีเกิล">บีเกิล</option>
+						<option value="บุลล์แมสติฟฟ์">บุลล์แมสติฟฟ์</option>
+						<option value="ปอมเมอเรเนียน" selected>ปอมเมอเรเนียน</option>
+						<option value="ปั๊ก">ปั๊ก</option>
+						<option value="ปาปิลอน">ปาปิลอน</option>
+						<option value="พันธุ์ทาง">พันธุ์ทาง</option>
+						<option value="พุดเดิ้ล">พุดเดิ้ล</option>
+						<option value="มอลทีส">มอลทีส</option>
+						<option value="ยอร์คเชียร์ เทอร์เรียร์">ยอร์คเชียร์ เทอร์เรียร์</option>
+						<option value="เยอรมัน เชฟเฟิร์ด">เยอรมัน เชฟเฟิร์ด</option>
+						<option value="ร็อตไวเลอร์">ร็อตไวเลอร์</option>
+						<option value="โรดีเชียน ริดจ์แบ็ค">โรดีเชียน ริดจ์แบ็ค</option>
+						<option value="ลาบลาดอร์ รีทรีฟเวอร์">ลาบลาดอร์ รีทรีฟเวอร์</option>
+						<option value="อาคิต้า">อาคิต้า</option>
+					<% }else if(dog.momBreed == "ปั๊ก"){ %>
+						<option value="นิวฟาวด์แลนด์">นิวฟาวด์แลนด์</option>
+						<option value="บลูด็อก">บลูด็อก</option>
+						<option value="บลัดฮาวด์">บลัดฮาวด์</option>
+						<option value="บอสตัน เทอร์เรียร์">บอสตัน เทอร์เรียร์</option>
+						<option value="บิชอง ฟริเซ่">บิชอง ฟริเซ่</option>
+						<option value="บีเกิล">บีเกิล</option>
+						<option value="บุลล์แมสติฟฟ์">บุลล์แมสติฟฟ์</option>
+						<option value="ปอมเมอเรเนียน">ปอมเมอเรเนียน</option>
+						<option value="ปั๊ก" selected>ปั๊ก</option>
+						<option value="ปาปิลอน">ปาปิลอน</option>
+						<option value="พันธุ์ทาง">พันธุ์ทาง</option>
+						<option value="พุดเดิ้ล">พุดเดิ้ล</option>
+						<option value="มอลทีส">มอลทีส</option>
+						<option value="ยอร์คเชียร์ เทอร์เรียร์">ยอร์คเชียร์ เทอร์เรียร์</option>
+						<option value="เยอรมัน เชฟเฟิร์ด">เยอรมัน เชฟเฟิร์ด</option>
+						<option value="ร็อตไวเลอร์">ร็อตไวเลอร์</option>
+						<option value="โรดีเชียน ริดจ์แบ็ค">โรดีเชียน ริดจ์แบ็ค</option>
+						<option value="ลาบลาดอร์ รีทรีฟเวอร์">ลาบลาดอร์ รีทรีฟเวอร์</option>
+						<option value="อาคิต้า">อาคิต้า</option>
+					<% }else if(dog.momBreed == "ปาปิลอน"){ %>
+						<option value="นิวฟาวด์แลนด์">นิวฟาวด์แลนด์</option>
+						<option value="บลูด็อก">บลูด็อก</option>
+						<option value="บลัดฮาวด์">บลัดฮาวด์</option>
+						<option value="บอสตัน เทอร์เรียร์">บอสตัน เทอร์เรียร์</option>
+						<option value="บิชอง ฟริเซ่">บิชอง ฟริเซ่</option>
+						<option value="บีเกิล">บีเกิล</option>
+						<option value="บุลล์แมสติฟฟ์">บุลล์แมสติฟฟ์</option>
+						<option value="ปอมเมอเรเนียน">ปอมเมอเรเนียน</option>
+						<option value="ปั๊ก">ปั๊ก</option>
+						<option value="ปาปิลอน" selected>ปาปิลอน</option>
+						<option value="พันธุ์ทาง">พันธุ์ทาง</option>
+						<option value="พุดเดิ้ล">พุดเดิ้ล</option>
+						<option value="มอลทีส">มอลทีส</option>
+						<option value="ยอร์คเชียร์ เทอร์เรียร์">ยอร์คเชียร์ เทอร์เรียร์</option>
+						<option value="เยอรมัน เชฟเฟิร์ด">เยอรมัน เชฟเฟิร์ด</option>
+						<option value="ร็อตไวเลอร์">ร็อตไวเลอร์</option>
+						<option value="โรดีเชียน ริดจ์แบ็ค">โรดีเชียน ริดจ์แบ็ค</option>
+						<option value="ลาบลาดอร์ รีทรีฟเวอร์">ลาบลาดอร์ รีทรีฟเวอร์</option>
+						<option value="อาคิต้า">อาคิต้า</option>
+					<% }else if(dog.momBreed == "พันธุ์ทาง"){ %>
+						<option value="นิวฟาวด์แลนด์">นิวฟาวด์แลนด์</option>
+						<option value="บลูด็อก">บลูด็อก</option>
+						<option value="บลัดฮาวด์">บลัดฮาวด์</option>
+						<option value="บอสตัน เทอร์เรียร์">บอสตัน เทอร์เรียร์</option>
+						<option value="บิชอง ฟริเซ่">บิชอง ฟริเซ่</option>
+						<option value="บีเกิล">บีเกิล</option>
+						<option value="บุลล์แมสติฟฟ์">บุลล์แมสติฟฟ์</option>
+						<option value="ปอมเมอเรเนียน">ปอมเมอเรเนียน</option>
+						<option value="ปั๊ก">ปั๊ก</option>
+						<option value="ปาปิลอน">ปาปิลอน</option>
+						<option value="พันธุ์ทาง" selected>พันธุ์ทาง</option>
+						<option value="พุดเดิ้ล">พุดเดิ้ล</option>
+						<option value="มอลทีส">มอลทีส</option>
+						<option value="ยอร์คเชียร์ เทอร์เรียร์">ยอร์คเชียร์ เทอร์เรียร์</option>
+						<option value="เยอรมัน เชฟเฟิร์ด">เยอรมัน เชฟเฟิร์ด</option>
+						<option value="ร็อตไวเลอร์">ร็อตไวเลอร์</option>
+						<option value="โรดีเชียน ริดจ์แบ็ค">โรดีเชียน ริดจ์แบ็ค</option>
+						<option value="ลาบลาดอร์ รีทรีฟเวอร์">ลาบลาดอร์ รีทรีฟเวอร์</option>
+						<option value="อาคิต้า">อาคิต้า</option>
+					<% }else if(dog.momBreed == "พุดเดิ้ล"){ %>
+						<option value="นิวฟาวด์แลนด์">นิวฟาวด์แลนด์</option>
+						<option value="บลูด็อก">บลูด็อก</option>
+						<option value="บลัดฮาวด์">บลัดฮาวด์</option>
+						<option value="บอสตัน เทอร์เรียร์">บอสตัน เทอร์เรียร์</option>
+						<option value="บิชอง ฟริเซ่">บิชอง ฟริเซ่</option>
+						<option value="บีเกิล">บีเกิล</option>
+						<option value="บุลล์แมสติฟฟ์">บุลล์แมสติฟฟ์</option>
+						<option value="ปอมเมอเรเนียน">ปอมเมอเรเนียน</option>
+						<option value="ปั๊ก">ปั๊ก</option>
+						<option value="ปาปิลอน">ปาปิลอน</option>
+						<option value="พันธุ์ทาง">พันธุ์ทาง</option>
+						<option value="พุดเดิ้ล" selected>พุดเดิ้ล</option>
+						<option value="มอลทีส">มอลทีส</option>
+						<option value="ยอร์คเชียร์ เทอร์เรียร์">ยอร์คเชียร์ เทอร์เรียร์</option>
+						<option value="เยอรมัน เชฟเฟิร์ด">เยอรมัน เชฟเฟิร์ด</option>
+						<option value="ร็อตไวเลอร์">ร็อตไวเลอร์</option>
+						<option value="โรดีเชียน ริดจ์แบ็ค">โรดีเชียน ริดจ์แบ็ค</option>
+						<option value="ลาบลาดอร์ รีทรีฟเวอร์">ลาบลาดอร์ รีทรีฟเวอร์</option>
+						<option value="อาคิต้า">อาคิต้า</option>
+					<% }else if(dog.momBreed == "มอลทีส"){ %>
+						<option value="นิวฟาวด์แลนด์">นิวฟาวด์แลนด์</option>
+						<option value="บลูด็อก">บลูด็อก</option>
+						<option value="บลัดฮาวด์">บลัดฮาวด์</option>
+						<option value="บอสตัน เทอร์เรียร์">บอสตัน เทอร์เรียร์</option>
+						<option value="บิชอง ฟริเซ่">บิชอง ฟริเซ่</option>
+						<option value="บีเกิล">บีเกิล</option>
+						<option value="บุลล์แมสติฟฟ์">บุลล์แมสติฟฟ์</option>
+						<option value="ปอมเมอเรเนียน">ปอมเมอเรเนียน</option>
+						<option value="ปั๊ก">ปั๊ก</option>
+						<option value="ปาปิลอน">ปาปิลอน</option>
+						<option value="พันธุ์ทาง">พันธุ์ทาง</option>
+						<option value="พุดเดิ้ล">พุดเดิ้ล</option>
+						<option value="มอลทีส" selected>มอลทีส</option>
+						<option value="ยอร์คเชียร์ เทอร์เรียร์">ยอร์คเชียร์ เทอร์เรียร์</option>
+						<option value="เยอรมัน เชฟเฟิร์ด">เยอรมัน เชฟเฟิร์ด</option>
+						<option value="ร็อตไวเลอร์">ร็อตไวเลอร์</option>
+						<option value="โรดีเชียน ริดจ์แบ็ค">โรดีเชียน ริดจ์แบ็ค</option>
+						<option value="ลาบลาดอร์ รีทรีฟเวอร์">ลาบลาดอร์ รีทรีฟเวอร์</option>
+						<option value="อาคิต้า">อาคิต้า</option>
+					<% }else if(dog.momBreed == "ยอร์คเชียร์ เทอร์เรียร์"){ %>
+						<option value="นิวฟาวด์แลนด์">นิวฟาวด์แลนด์</option>
+						<option value="บลูด็อก">บลูด็อก</option>
+						<option value="บลัดฮาวด์">บลัดฮาวด์</option>
+						<option value="บอสตัน เทอร์เรียร์">บอสตัน เทอร์เรียร์</option>
+						<option value="บิชอง ฟริเซ่">บิชอง ฟริเซ่</option>
+						<option value="บีเกิล">บีเกิล</option>
+						<option value="บุลล์แมสติฟฟ์">บุลล์แมสติฟฟ์</option>
+						<option value="ปอมเมอเรเนียน">ปอมเมอเรเนียน</option>
+						<option value="ปั๊ก">ปั๊ก</option>
+						<option value="ปาปิลอน">ปาปิลอน</option>
+						<option value="พันธุ์ทาง">พันธุ์ทาง</option>
+						<option value="พุดเดิ้ล">พุดเดิ้ล</option>
+						<option value="มอลทีส">มอลทีส</option>
+						<option value="ยอร์คเชียร์ เทอร์เรียร์" selected>ยอร์คเชียร์ เทอร์เรียร์</option>
+						<option value="เยอรมัน เชฟเฟิร์ด">เยอรมัน เชฟเฟิร์ด</option>
+						<option value="ร็อตไวเลอร์">ร็อตไวเลอร์</option>
+						<option value="โรดีเชียน ริดจ์แบ็ค">โรดีเชียน ริดจ์แบ็ค</option>
+						<option value="ลาบลาดอร์ รีทรีฟเวอร์">ลาบลาดอร์ รีทรีฟเวอร์</option>
+						<option value="อาคิต้า">อาคิต้า</option>
+					<% }else if(dog.momBreed == "เยอรมัน เชฟเฟิร์ด"){ %>
+						<option value="นิวฟาวด์แลนด์">นิวฟาวด์แลนด์</option>
+						<option value="บลูด็อก">บลูด็อก</option>
+						<option value="บลัดฮาวด์">บลัดฮาวด์</option>
+						<option value="บอสตัน เทอร์เรียร์">บอสตัน เทอร์เรียร์</option>
+						<option value="บิชอง ฟริเซ่">บิชอง ฟริเซ่</option>
+						<option value="บีเกิล">บีเกิล</option>
+						<option value="บุลล์แมสติฟฟ์">บุลล์แมสติฟฟ์</option>
+						<option value="ปอมเมอเรเนียน">ปอมเมอเรเนียน</option>
+						<option value="ปั๊ก">ปั๊ก</option>
+						<option value="ปาปิลอน">ปาปิลอน</option>
+						<option value="พันธุ์ทาง">พันธุ์ทาง</option>
+						<option value="พุดเดิ้ล">พุดเดิ้ล</option>
+						<option value="มอลทีส">มอลทีส</option>
+						<option value="ยอร์คเชียร์ เทอร์เรียร์">ยอร์คเชียร์ เทอร์เรียร์</option>
+						<option value="เยอรมัน เชฟเฟิร์ด" selected>เยอรมัน เชฟเฟิร์ด</option>
+						<option value="ร็อตไวเลอร์">ร็อตไวเลอร์</option>
+						<option value="โรดีเชียน ริดจ์แบ็ค">โรดีเชียน ริดจ์แบ็ค</option>
+						<option value="ลาบลาดอร์ รีทรีฟเวอร์">ลาบลาดอร์ รีทรีฟเวอร์</option>
+						<option value="อาคิต้า">อาคิต้า</option>
+					<% }else if(dog.momBreed == "ร็อตไวเลอร์"){ %>
+						<option value="นิวฟาวด์แลนด์">นิวฟาวด์แลนด์</option>
+						<option value="บลูด็อก">บลูด็อก</option>
+						<option value="บลัดฮาวด์">บลัดฮาวด์</option>
+						<option value="บอสตัน เทอร์เรียร์">บอสตัน เทอร์เรียร์</option>
+						<option value="บิชอง ฟริเซ่">บิชอง ฟริเซ่</option>
+						<option value="บีเกิล">บีเกิล</option>
+						<option value="บุลล์แมสติฟฟ์">บุลล์แมสติฟฟ์</option>
+						<option value="ปอมเมอเรเนียน">ปอมเมอเรเนียน</option>
+						<option value="ปั๊ก">ปั๊ก</option>
+						<option value="ปาปิลอน">ปาปิลอน</option>
+						<option value="พันธุ์ทาง">พันธุ์ทาง</option>
+						<option value="พุดเดิ้ล">พุดเดิ้ล</option>
+						<option value="มอลทีส">มอลทีส</option>
+						<option value="ยอร์คเชียร์ เทอร์เรียร์">ยอร์คเชียร์ เทอร์เรียร์</option>
+						<option value="เยอรมัน เชฟเฟิร์ด">เยอรมัน เชฟเฟิร์ด</option>
+						<option value="ร็อตไวเลอร์" selected>ร็อตไวเลอร์</option>
+						<option value="โรดีเชียน ริดจ์แบ็ค">โรดีเชียน ริดจ์แบ็ค</option>
+						<option value="ลาบลาดอร์ รีทรีฟเวอร์">ลาบลาดอร์ รีทรีฟเวอร์</option>
+						<option value="อาคิต้า">อาคิต้า</option>
+					<% }else if(dog.momBreed == "โรดีเชียน ริดจ์แบ็ค"){ %>
+						<option value="นิวฟาวด์แลนด์">นิวฟาวด์แลนด์</option>
+						<option value="บลูด็อก">บลูด็อก</option>
+						<option value="บลัดฮาวด์">บลัดฮาวด์</option>
+						<option value="บอสตัน เทอร์เรียร์">บอสตัน เทอร์เรียร์</option>
+						<option value="บิชอง ฟริเซ่">บิชอง ฟริเซ่</option>
+						<option value="บีเกิล">บีเกิล</option>
+						<option value="บุลล์แมสติฟฟ์">บุลล์แมสติฟฟ์</option>
+						<option value="ปอมเมอเรเนียน">ปอมเมอเรเนียน</option>
+						<option value="ปั๊ก">ปั๊ก</option>
+						<option value="ปาปิลอน">ปาปิลอน</option>
+						<option value="พันธุ์ทาง">พันธุ์ทาง</option>
+						<option value="พุดเดิ้ล">พุดเดิ้ล</option>
+						<option value="มอลทีส">มอลทีส</option>
+						<option value="ยอร์คเชียร์ เทอร์เรียร์">ยอร์คเชียร์ เทอร์เรียร์</option>
+						<option value="เยอรมัน เชฟเฟิร์ด">เยอรมัน เชฟเฟิร์ด</option>
+						<option value="ร็อตไวเลอร์">ร็อตไวเลอร์</option>
+						<option value="โรดีเชียน ริดจ์แบ็ค" selected>โรดีเชียน ริดจ์แบ็ค</option>
+						<option value="ลาบลาดอร์ รีทรีฟเวอร์">ลาบลาดอร์ รีทรีฟเวอร์</option>
+						<option value="อาคิต้า">อาคิต้า</option>
+					<% }else if(dog.momBreed == "ลาบลาดอร์ รีทรีฟเวอร์"){ %>
+						<option value="นิวฟาวด์แลนด์">นิวฟาวด์แลนด์</option>
+						<option value="บลูด็อก">บลูด็อก</option>
+						<option value="บลัดฮาวด์">บลัดฮาวด์</option>
+						<option value="บอสตัน เทอร์เรียร์">บอสตัน เทอร์เรียร์</option>
+						<option value="บิชอง ฟริเซ่">บิชอง ฟริเซ่</option>
+						<option value="บีเกิล">บีเกิล</option>
+						<option value="บุลล์แมสติฟฟ์">บุลล์แมสติฟฟ์</option>
+						<option value="ปอมเมอเรเนียน">ปอมเมอเรเนียน</option>
+						<option value="ปั๊ก">ปั๊ก</option>
+						<option value="ปาปิลอน">ปาปิลอน</option>
+						<option value="พันธุ์ทาง">พันธุ์ทาง</option>
+						<option value="พุดเดิ้ล">พุดเดิ้ล</option>
+						<option value="มอลทีส">มอลทีส</option>
+						<option value="ยอร์คเชียร์ เทอร์เรียร์">ยอร์คเชียร์ เทอร์เรียร์</option>
+						<option value="เยอรมัน เชฟเฟิร์ด">เยอรมัน เชฟเฟิร์ด</option>
+						<option value="ร็อตไวเลอร์">ร็อตไวเลอร์</option>
+						<option value="โรดีเชียน ริดจ์แบ็ค">โรดีเชียน ริดจ์แบ็ค</option>
+						<option value="ลาบลาดอร์ รีทรีฟเวอร์" selected>ลาบลาดอร์ รีทรีฟเวอร์</option>
+						<option value="อาคิต้า">อาคิต้า</option>
+					<% }else if(dog.momBreed == "อาคิต้า"){ %>
+						<option value="นิวฟาวด์แลนด์">นิวฟาวด์แลนด์</option>
+						<option value="บลูด็อก">บลูด็อก</option>
+						<option value="บลัดฮาวด์">บลัดฮาวด์</option>
+						<option value="บอสตัน เทอร์เรียร์">บอสตัน เทอร์เรียร์</option>
+						<option value="บิชอง ฟริเซ่">บิชอง ฟริเซ่</option>
+						<option value="บีเกิล">บีเกิล</option>
+						<option value="บุลล์แมสติฟฟ์">บุลล์แมสติฟฟ์</option>
+						<option value="ปอมเมอเรเนียน">ปอมเมอเรเนียน</option>
+						<option value="ปั๊ก">ปั๊ก</option>
+						<option value="ปาปิลอน">ปาปิลอน</option>
+						<option value="พันธุ์ทาง">พันธุ์ทาง</option>
+						<option value="พุดเดิ้ล">พุดเดิ้ล</option>
+						<option value="มอลทีส">มอลทีส</option>
+						<option value="ยอร์คเชียร์ เทอร์เรียร์">ยอร์คเชียร์ เทอร์เรียร์</option>
+						<option value="เยอรมัน เชฟเฟิร์ด">เยอรมัน เชฟเฟิร์ด</option>
+						<option value="ร็อตไวเลอร์">ร็อตไวเลอร์</option>
+						<option value="โรดีเชียน ริดจ์แบ็ค">โรดีเชียน ริดจ์แบ็ค</option>
+						<option value="ลาบลาดอร์ รีทรีฟเวอร์">ลาบลาดอร์ รีทรีฟเวอร์</option>
+						<option value="อาคิต้า" selected>อาคิต้า</option>
+					<% }else if(dog.momBreed == "ชิวาวา"){ %>
+						<option value="นิวฟาวด์แลนด์">นิวฟาวด์แลนด์</option>
+						<option value="บลูด็อก">บลูด็อก</option>
+						<option value="บลัดฮาวด์">บลัดฮาวด์</option>
+						<option value="บอสตัน เทอร์เรียร์">บอสตัน เทอร์เรียร์</option>
+						<option value="บิชอง ฟริเซ่">บิชอง ฟริเซ่</option>
+						<option value="บีเกิล">บีเกิล</option>
+						<option value="บุลล์แมสติฟฟ์">บุลล์แมสติฟฟ์</option>
+						<option value="ปอมเมอเรเนียน">ปอมเมอเรเนียน</option>
+						<option value="ปั๊ก">ปั๊ก</option>
+						<option value="ปาปิลอน">ปาปิลอน</option>
+						<option value="พันธุ์ทาง">พันธุ์ทาง</option>
+						<option value="พุดเดิ้ล">พุดเดิ้ล</option>
+						<option value="มอลทีส">มอลทีส</option>
+						<option value="ยอร์คเชียร์ เทอร์เรียร์">ยอร์คเชียร์ เทอร์เรียร์</option>
+						<option value="เยอรมัน เชฟเฟิร์ด">เยอรมัน เชฟเฟิร์ด</option>
+						<option value="ร็อตไวเลอร์">ร็อตไวเลอร์</option>
+						<option value="โรดีเชียน ริดจ์แบ็ค">โรดีเชียน ริดจ์แบ็ค</option>
+						<option value="ลาบลาดอร์ รีทรีฟเวอร์">ลาบลาดอร์ รีทรีฟเวอร์</option>
+						<option value="อาคิต้า">อาคิต้า</option>
+						<option value="ชิวาวา" selected>ชิวาวา</option>
+						<option value="">ยังไม่ได้เลือก</option>
+					<% } else { %>
+						<option value="นิวฟาวด์แลนด์">นิวฟาวด์แลนด์</option>
+						<option value="บลูด็อก">บลูด็อก</option>
+						<option value="บลัดฮาวด์">บลัดฮาวด์</option>
+						<option value="บอสตัน เทอร์เรียร์">บอสตัน เทอร์เรียร์</option>
+						<option value="บิชอง ฟริเซ่">บิชอง ฟริเซ่</option>
+						<option value="บีเกิล">บีเกิล</option>
+						<option value="บุลล์แมสติฟฟ์">บุลล์แมสติฟฟ์</option>
+						<option value="ปอมเมอเรเนียน">ปอมเมอเรเนียน</option>
+						<option value="ปั๊ก">ปั๊ก</option>
+						<option value="ปาปิลอน">ปาปิลอน</option>
+						<option value="พันธุ์ทาง">พันธุ์ทาง</option>
+						<option value="พุดเดิ้ล">พุดเดิ้ล</option>
+						<option value="มอลทีส">มอลทีส</option>
+						<option value="ยอร์คเชียร์ เทอร์เรียร์">ยอร์คเชียร์ เทอร์เรียร์</option>
+						<option value="เยอรมัน เชฟเฟิร์ด">เยอรมัน เชฟเฟิร์ด</option>
+						<option value="ร็อตไวเลอร์">ร็อตไวเลอร์</option>
+						<option value="โรดีเชียน ริดจ์แบ็ค">โรดีเชียน ริดจ์แบ็ค</option>
+						<option value="ลาบลาดอร์ รีทรีฟเวอร์">ลาบลาดอร์ รีทรีฟเวอร์</option>
+						<option value="อาคิต้า">อาคิต้า</option>
+						<option value="ชิวาวา" >ชิวาวา</option>
+						<option value="" selected>ยังไม่ได้เลือก</option>
+					<% } %>
 			</select>
 		</div>
 		<div class="form-group">
 			<label for="dadBreed">พ่อพันธุ์</label>
-			
+			<p><%= dog.dadBreed %></p>
 			<select class="form-control" id="dadBreed">
-					<option value="นิวฟาวด์แลนด์">นิวฟาวด์แลนด์</option>
-					<option value="บลูด็อก">บลูด็อก</option>
-					<option value="บลัดฮาวด์">บลัดฮาวด์</option>
-					<option value="บอสตัน เทอร์เรียร์">บอสตัน เทอร์เรียร์</option>
-					<option value="บิชอง ฟริเซ่">บิชอง ฟริเซ่</option>
-					<option value="บีเกิล">บีเกิล</option>
-					<option value="บุลล์แมสติฟฟ์">บุลล์แมสติฟฟ์</option>
-					<option value="ปอมเมอเรเนียน">ปอมเมอเรเนียน</option>
-					<option value="ปั๊ก">ปั๊ก</option>
-					<option value="ปาปิลอน">ปาปิลอน</option>
-					<option value="พันธุ์ทาง">พันธุ์ทาง</option>
-					<option value="พุดเดิ้ล">พุดเดิ้ล</option>
-					<option value="มอลทีส">มอลทีส</option>
-					<option value="ยอร์คเชียร์ เทอร์เรียร์">ยอร์คเชียร์ เทอร์เรียร์</option>
-					<option value="เยอรมัน เชฟเฟิร์ด">เยอรมัน เชฟเฟิร์ด</option>
-					<option value="ร็อตไวเลอร์">ร็อตไวเลอร์</option>
-					<option value="โรดีเชียน ริดจ์แบ็ค">โรดีเชียน ริดจ์แบ็ค</option>
-					<option value="ลาบลาดอร์ รีทรีฟเวอร์">ลาบลาดอร์ รีทรีฟเวอร์</option>
-					<option value="อาคิต้า">อาคิต้า</option>
+					<% if(dog.dadBreed == "นิวฟาวด์แลนด์"){ %>
+						<option value="นิวฟาวด์แลนด์" selected>นิวฟาวด์แลนด์</option>
+						<option value="บลูด็อก">บลูด็อก</option>
+						<option value="บลัดฮาวด์">บลัดฮาวด์</option>
+						<option value="บอสตัน เทอร์เรียร์">บอสตัน เทอร์เรียร์</option>
+						<option value="บิชอง ฟริเซ่">บิชอง ฟริเซ่</option>
+						<option value="บีเกิล">บีเกิล</option>
+						<option value="บุลล์แมสติฟฟ์">บุลล์แมสติฟฟ์</option>
+						<option value="ปอมเมอเรเนียน">ปอมเมอเรเนียน</option>
+						<option value="ปั๊ก">ปั๊ก</option>
+						<option value="ปาปิลอน">ปาปิลอน</option>
+						<option value="พันธุ์ทาง">พันธุ์ทาง</option>
+						<option value="พุดเดิ้ล">พุดเดิ้ล</option>
+						<option value="มอลทีส">มอลทีส</option>
+						<option value="ยอร์คเชียร์ เทอร์เรียร์">ยอร์คเชียร์ เทอร์เรียร์</option>
+						<option value="เยอรมัน เชฟเฟิร์ด">เยอรมัน เชฟเฟิร์ด</option>
+						<option value="ร็อตไวเลอร์">ร็อตไวเลอร์</option>
+						<option value="โรดีเชียน ริดจ์แบ็ค">โรดีเชียน ริดจ์แบ็ค</option>
+						<option value="ลาบลาดอร์ รีทรีฟเวอร์">ลาบลาดอร์ รีทรีฟเวอร์</option>
+						<option value="อาคิต้า">อาคิต้า</option>
+	
+					<% }else if(dog.dadBreed == "บลูด็อก"){ %>
+						<option value="นิวฟาวด์แลนด์">นิวฟาวด์แลนด์</option>
+						<option value="บลูด็อก" selected>บลูด็อก</option>
+						<option value="บลัดฮาวด์">บลัดฮาวด์</option>
+						<option value="บอสตัน เทอร์เรียร์">บอสตัน เทอร์เรียร์</option>
+						<option value="บิชอง ฟริเซ่">บิชอง ฟริเซ่</option>
+						<option value="บีเกิล">บีเกิล</option>
+						<option value="บุลล์แมสติฟฟ์">บุลล์แมสติฟฟ์</option>
+						<option value="ปอมเมอเรเนียน">ปอมเมอเรเนียน</option>
+						<option value="ปั๊ก">ปั๊ก</option>
+						<option value="ปาปิลอน">ปาปิลอน</option>
+						<option value="พันธุ์ทาง">พันธุ์ทาง</option>
+						<option value="พุดเดิ้ล">พุดเดิ้ล</option>
+						<option value="มอลทีส">มอลทีส</option>
+						<option value="ยอร์คเชียร์ เทอร์เรียร์">ยอร์คเชียร์ เทอร์เรียร์</option>
+						<option value="เยอรมัน เชฟเฟิร์ด">เยอรมัน เชฟเฟิร์ด</option>
+						<option value="ร็อตไวเลอร์">ร็อตไวเลอร์</option>
+						<option value="โรดีเชียน ริดจ์แบ็ค">โรดีเชียน ริดจ์แบ็ค</option>
+						<option value="ลาบลาดอร์ รีทรีฟเวอร์">ลาบลาดอร์ รีทรีฟเวอร์</option>
+						<option value="อาคิต้า">อาคิต้า</option>
+					<% }else if(dog.dadBreed == "บลัดฮาวด์"){ %>
+						<option value="นิวฟาวด์แลนด์">นิวฟาวด์แลนด์</option>
+						<option value="บลูด็อก">บลูด็อก</option>
+						<option value="บลัดฮาวด์"selected>บลัดฮาวด์</option>
+						<option value="บอสตัน เทอร์เรียร์">บอสตัน เทอร์เรียร์</option>
+						<option value="บิชอง ฟริเซ่">บิชอง ฟริเซ่</option>
+						<option value="บีเกิล">บีเกิล</option>
+						<option value="บุลล์แมสติฟฟ์">บุลล์แมสติฟฟ์</option>
+						<option value="ปอมเมอเรเนียน">ปอมเมอเรเนียน</option>
+						<option value="ปั๊ก">ปั๊ก</option>
+						<option value="ปาปิลอน">ปาปิลอน</option>
+						<option value="พันธุ์ทาง">พันธุ์ทาง</option>
+						<option value="พุดเดิ้ล">พุดเดิ้ล</option>
+						<option value="มอลทีส">มอลทีส</option>
+						<option value="ยอร์คเชียร์ เทอร์เรียร์">ยอร์คเชียร์ เทอร์เรียร์</option>
+						<option value="เยอรมัน เชฟเฟิร์ด">เยอรมัน เชฟเฟิร์ด</option>
+						<option value="ร็อตไวเลอร์">ร็อตไวเลอร์</option>
+						<option value="โรดีเชียน ริดจ์แบ็ค">โรดีเชียน ริดจ์แบ็ค</option>
+						<option value="ลาบลาดอร์ รีทรีฟเวอร์">ลาบลาดอร์ รีทรีฟเวอร์</option>
+						<option value="อาคิต้า">อาคิต้า</option>
+					<% }else if(dog.dadBreed == "บอสตัน เทอร์เรียร์"){ %>
+						<option value="นิวฟาวด์แลนด์">นิวฟาวด์แลนด์</option>
+						<option value="บลูด็อก">บลูด็อก</option>
+						<option value="บลัดฮาวด์">บลัดฮาวด์</option>
+						<option value="บอสตัน เทอร์เรียร์" selected>บอสตัน เทอร์เรียร์</option>
+						<option value="บิชอง ฟริเซ่">บิชอง ฟริเซ่</option>
+						<option value="บีเกิล">บีเกิล</option>
+						<option value="บุลล์แมสติฟฟ์">บุลล์แมสติฟฟ์</option>
+						<option value="ปอมเมอเรเนียน">ปอมเมอเรเนียน</option>
+						<option value="ปั๊ก">ปั๊ก</option>
+						<option value="ปาปิลอน">ปาปิลอน</option>
+						<option value="พันธุ์ทาง">พันธุ์ทาง</option>
+						<option value="พุดเดิ้ล">พุดเดิ้ล</option>
+						<option value="มอลทีส">มอลทีส</option>
+						<option value="ยอร์คเชียร์ เทอร์เรียร์">ยอร์คเชียร์ เทอร์เรียร์</option>
+						<option value="เยอรมัน เชฟเฟิร์ด">เยอรมัน เชฟเฟิร์ด</option>
+						<option value="ร็อตไวเลอร์">ร็อตไวเลอร์</option>
+						<option value="โรดีเชียน ริดจ์แบ็ค">โรดีเชียน ริดจ์แบ็ค</option>
+						<option value="ลาบลาดอร์ รีทรีฟเวอร์">ลาบลาดอร์ รีทรีฟเวอร์</option>
+						<option value="อาคิต้า">อาคิต้า</option>
+					<% }else if(dog.dadBreed == "บิชอง ฟริเซ่"){ %>
+						<option value="นิวฟาวด์แลนด์">นิวฟาวด์แลนด์</option>
+						<option value="บลูด็อก">บลูด็อก</option>
+						<option value="บลัดฮาวด์">บลัดฮาวด์</option>
+						<option value="บอสตัน เทอร์เรียร์">บอสตัน เทอร์เรียร์</option>
+						<option value="บิชอง ฟริเซ่" selected>บิชอง ฟริเซ่</option>
+						<option value="บีเกิล">บีเกิล</option>
+						<option value="บุลล์แมสติฟฟ์">บุลล์แมสติฟฟ์</option>
+						<option value="ปอมเมอเรเนียน">ปอมเมอเรเนียน</option>
+						<option value="ปั๊ก">ปั๊ก</option>
+						<option value="ปาปิลอน">ปาปิลอน</option>
+						<option value="พันธุ์ทาง">พันธุ์ทาง</option>
+						<option value="พุดเดิ้ล">พุดเดิ้ล</option>
+						<option value="มอลทีส">มอลทีส</option>
+						<option value="ยอร์คเชียร์ เทอร์เรียร์">ยอร์คเชียร์ เทอร์เรียร์</option>
+						<option value="เยอรมัน เชฟเฟิร์ด">เยอรมัน เชฟเฟิร์ด</option>
+						<option value="ร็อตไวเลอร์">ร็อตไวเลอร์</option>
+						<option value="โรดีเชียน ริดจ์แบ็ค">โรดีเชียน ริดจ์แบ็ค</option>
+						<option value="ลาบลาดอร์ รีทรีฟเวอร์">ลาบลาดอร์ รีทรีฟเวอร์</option>
+						<option value="อาคิต้า">อาคิต้า</option>
+					<% }else if(dog.dadBreed == "บีเกิล"){ %>
+						<option value="นิวฟาวด์แลนด์">นิวฟาวด์แลนด์</option>
+						<option value="บลูด็อก">บลูด็อก</option>
+						<option value="บลัดฮาวด์">บลัดฮาวด์</option>
+						<option value="บอสตัน เทอร์เรียร์">บอสตัน เทอร์เรียร์</option>
+						<option value="บิชอง ฟริเซ่">บิชอง ฟริเซ่</option>
+						<option value="บีเกิล" selected>บีเกิล</option>
+						<option value="บุลล์แมสติฟฟ์">บุลล์แมสติฟฟ์</option>
+						<option value="ปอมเมอเรเนียน">ปอมเมอเรเนียน</option>
+						<option value="ปั๊ก">ปั๊ก</option>
+						<option value="ปาปิลอน">ปาปิลอน</option>
+						<option value="พันธุ์ทาง">พันธุ์ทาง</option>
+						<option value="พุดเดิ้ล">พุดเดิ้ล</option>
+						<option value="มอลทีส">มอลทีส</option>
+						<option value="ยอร์คเชียร์ เทอร์เรียร์">ยอร์คเชียร์ เทอร์เรียร์</option>
+						<option value="เยอรมัน เชฟเฟิร์ด">เยอรมัน เชฟเฟิร์ด</option>
+						<option value="ร็อตไวเลอร์">ร็อตไวเลอร์</option>
+						<option value="โรดีเชียน ริดจ์แบ็ค">โรดีเชียน ริดจ์แบ็ค</option>
+						<option value="ลาบลาดอร์ รีทรีฟเวอร์">ลาบลาดอร์ รีทรีฟเวอร์</option>
+						<option value="อาคิต้า">อาคิต้า</option>
+					<% }else if(dog.dadBreed == "บุลล์แมสติฟฟ์"){ %>
+						<option value="นิวฟาวด์แลนด์">นิวฟาวด์แลนด์</option>
+						<option value="บลูด็อก">บลูด็อก</option>
+						<option value="บลัดฮาวด์">บลัดฮาวด์</option>
+						<option value="บอสตัน เทอร์เรียร์">บอสตัน เทอร์เรียร์</option>
+						<option value="บิชอง ฟริเซ่">บิชอง ฟริเซ่</option>
+						<option value="บีเกิล">บีเกิล</option>
+						<option value="บุลล์แมสติฟฟ์" selected>บุลล์แมสติฟฟ์</option>
+						<option value="ปอมเมอเรเนียน">ปอมเมอเรเนียน</option>
+						<option value="ปั๊ก">ปั๊ก</option>
+						<option value="ปาปิลอน">ปาปิลอน</option>
+						<option value="พันธุ์ทาง">พันธุ์ทาง</option>
+						<option value="พุดเดิ้ล">พุดเดิ้ล</option>
+						<option value="มอลทีส">มอลทีส</option>
+						<option value="ยอร์คเชียร์ เทอร์เรียร์">ยอร์คเชียร์ เทอร์เรียร์</option>
+						<option value="เยอรมัน เชฟเฟิร์ด">เยอรมัน เชฟเฟิร์ด</option>
+						<option value="ร็อตไวเลอร์">ร็อตไวเลอร์</option>
+						<option value="โรดีเชียน ริดจ์แบ็ค">โรดีเชียน ริดจ์แบ็ค</option>
+						<option value="ลาบลาดอร์ รีทรีฟเวอร์">ลาบลาดอร์ รีทรีฟเวอร์</option>
+						<option value="อาคิต้า">อาคิต้า</option>
+					<% }else if(dog.dadBreed == "ปอมเมอเรเนียน"){ %>
+						<option value="นิวฟาวด์แลนด์">นิวฟาวด์แลนด์</option>
+						<option value="บลูด็อก">บลูด็อก</option>
+						<option value="บลัดฮาวด์">บลัดฮาวด์</option>
+						<option value="บอสตัน เทอร์เรียร์">บอสตัน เทอร์เรียร์</option>
+						<option value="บิชอง ฟริเซ่">บิชอง ฟริเซ่</option>
+						<option value="บีเกิล">บีเกิล</option>
+						<option value="บุลล์แมสติฟฟ์">บุลล์แมสติฟฟ์</option>
+						<option value="ปอมเมอเรเนียน" selected>ปอมเมอเรเนียน</option>
+						<option value="ปั๊ก">ปั๊ก</option>
+						<option value="ปาปิลอน">ปาปิลอน</option>
+						<option value="พันธุ์ทาง">พันธุ์ทาง</option>
+						<option value="พุดเดิ้ล">พุดเดิ้ล</option>
+						<option value="มอลทีส">มอลทีส</option>
+						<option value="ยอร์คเชียร์ เทอร์เรียร์">ยอร์คเชียร์ เทอร์เรียร์</option>
+						<option value="เยอรมัน เชฟเฟิร์ด">เยอรมัน เชฟเฟิร์ด</option>
+						<option value="ร็อตไวเลอร์">ร็อตไวเลอร์</option>
+						<option value="โรดีเชียน ริดจ์แบ็ค">โรดีเชียน ริดจ์แบ็ค</option>
+						<option value="ลาบลาดอร์ รีทรีฟเวอร์">ลาบลาดอร์ รีทรีฟเวอร์</option>
+						<option value="อาคิต้า">อาคิต้า</option>
+					<% }else if(dog.dadBreed == "ปั๊ก"){ %>
+						<option value="นิวฟาวด์แลนด์">นิวฟาวด์แลนด์</option>
+						<option value="บลูด็อก">บลูด็อก</option>
+						<option value="บลัดฮาวด์">บลัดฮาวด์</option>
+						<option value="บอสตัน เทอร์เรียร์">บอสตัน เทอร์เรียร์</option>
+						<option value="บิชอง ฟริเซ่">บิชอง ฟริเซ่</option>
+						<option value="บีเกิล">บีเกิล</option>
+						<option value="บุลล์แมสติฟฟ์">บุลล์แมสติฟฟ์</option>
+						<option value="ปอมเมอเรเนียน">ปอมเมอเรเนียน</option>
+						<option value="ปั๊ก" selected>ปั๊ก</option>
+						<option value="ปาปิลอน">ปาปิลอน</option>
+						<option value="พันธุ์ทาง">พันธุ์ทาง</option>
+						<option value="พุดเดิ้ล">พุดเดิ้ล</option>
+						<option value="มอลทีส">มอลทีส</option>
+						<option value="ยอร์คเชียร์ เทอร์เรียร์">ยอร์คเชียร์ เทอร์เรียร์</option>
+						<option value="เยอรมัน เชฟเฟิร์ด">เยอรมัน เชฟเฟิร์ด</option>
+						<option value="ร็อตไวเลอร์">ร็อตไวเลอร์</option>
+						<option value="โรดีเชียน ริดจ์แบ็ค">โรดีเชียน ริดจ์แบ็ค</option>
+						<option value="ลาบลาดอร์ รีทรีฟเวอร์">ลาบลาดอร์ รีทรีฟเวอร์</option>
+						<option value="อาคิต้า">อาคิต้า</option>
+					<% }else if(dog.dadBreed == "ปาปิลอน"){ %>
+						<option value="นิวฟาวด์แลนด์">นิวฟาวด์แลนด์</option>
+						<option value="บลูด็อก">บลูด็อก</option>
+						<option value="บลัดฮาวด์">บลัดฮาวด์</option>
+						<option value="บอสตัน เทอร์เรียร์">บอสตัน เทอร์เรียร์</option>
+						<option value="บิชอง ฟริเซ่">บิชอง ฟริเซ่</option>
+						<option value="บีเกิล">บีเกิล</option>
+						<option value="บุลล์แมสติฟฟ์">บุลล์แมสติฟฟ์</option>
+						<option value="ปอมเมอเรเนียน">ปอมเมอเรเนียน</option>
+						<option value="ปั๊ก">ปั๊ก</option>
+						<option value="ปาปิลอน" selected>ปาปิลอน</option>
+						<option value="พันธุ์ทาง">พันธุ์ทาง</option>
+						<option value="พุดเดิ้ล">พุดเดิ้ล</option>
+						<option value="มอลทีส">มอลทีส</option>
+						<option value="ยอร์คเชียร์ เทอร์เรียร์">ยอร์คเชียร์ เทอร์เรียร์</option>
+						<option value="เยอรมัน เชฟเฟิร์ด">เยอรมัน เชฟเฟิร์ด</option>
+						<option value="ร็อตไวเลอร์">ร็อตไวเลอร์</option>
+						<option value="โรดีเชียน ริดจ์แบ็ค">โรดีเชียน ริดจ์แบ็ค</option>
+						<option value="ลาบลาดอร์ รีทรีฟเวอร์">ลาบลาดอร์ รีทรีฟเวอร์</option>
+						<option value="อาคิต้า">อาคิต้า</option>
+					<% }else if(dog.dadBreed == "พันธุ์ทาง"){ %>
+						<option value="นิวฟาวด์แลนด์">นิวฟาวด์แลนด์</option>
+						<option value="บลูด็อก">บลูด็อก</option>
+						<option value="บลัดฮาวด์">บลัดฮาวด์</option>
+						<option value="บอสตัน เทอร์เรียร์">บอสตัน เทอร์เรียร์</option>
+						<option value="บิชอง ฟริเซ่">บิชอง ฟริเซ่</option>
+						<option value="บีเกิล">บีเกิล</option>
+						<option value="บุลล์แมสติฟฟ์">บุลล์แมสติฟฟ์</option>
+						<option value="ปอมเมอเรเนียน">ปอมเมอเรเนียน</option>
+						<option value="ปั๊ก">ปั๊ก</option>
+						<option value="ปาปิลอน">ปาปิลอน</option>
+						<option value="พันธุ์ทาง" selected>พันธุ์ทาง</option>
+						<option value="พุดเดิ้ล">พุดเดิ้ล</option>
+						<option value="มอลทีส">มอลทีส</option>
+						<option value="ยอร์คเชียร์ เทอร์เรียร์">ยอร์คเชียร์ เทอร์เรียร์</option>
+						<option value="เยอรมัน เชฟเฟิร์ด">เยอรมัน เชฟเฟิร์ด</option>
+						<option value="ร็อตไวเลอร์">ร็อตไวเลอร์</option>
+						<option value="โรดีเชียน ริดจ์แบ็ค">โรดีเชียน ริดจ์แบ็ค</option>
+						<option value="ลาบลาดอร์ รีทรีฟเวอร์">ลาบลาดอร์ รีทรีฟเวอร์</option>
+						<option value="อาคิต้า">อาคิต้า</option>
+					<% }else if(dog.dadBreed == "พุดเดิ้ล"){ %>
+						<option value="นิวฟาวด์แลนด์">นิวฟาวด์แลนด์</option>
+						<option value="บลูด็อก">บลูด็อก</option>
+						<option value="บลัดฮาวด์">บลัดฮาวด์</option>
+						<option value="บอสตัน เทอร์เรียร์">บอสตัน เทอร์เรียร์</option>
+						<option value="บิชอง ฟริเซ่">บิชอง ฟริเซ่</option>
+						<option value="บีเกิล">บีเกิล</option>
+						<option value="บุลล์แมสติฟฟ์">บุลล์แมสติฟฟ์</option>
+						<option value="ปอมเมอเรเนียน">ปอมเมอเรเนียน</option>
+						<option value="ปั๊ก">ปั๊ก</option>
+						<option value="ปาปิลอน">ปาปิลอน</option>
+						<option value="พันธุ์ทาง">พันธุ์ทาง</option>
+						<option value="พุดเดิ้ล" selected>พุดเดิ้ล</option>
+						<option value="มอลทีส">มอลทีส</option>
+						<option value="ยอร์คเชียร์ เทอร์เรียร์">ยอร์คเชียร์ เทอร์เรียร์</option>
+						<option value="เยอรมัน เชฟเฟิร์ด">เยอรมัน เชฟเฟิร์ด</option>
+						<option value="ร็อตไวเลอร์">ร็อตไวเลอร์</option>
+						<option value="โรดีเชียน ริดจ์แบ็ค">โรดีเชียน ริดจ์แบ็ค</option>
+						<option value="ลาบลาดอร์ รีทรีฟเวอร์">ลาบลาดอร์ รีทรีฟเวอร์</option>
+						<option value="อาคิต้า">อาคิต้า</option>
+					<% }else if(dog.dadBreed == "มอลทีส"){ %>
+						<option value="นิวฟาวด์แลนด์">นิวฟาวด์แลนด์</option>
+						<option value="บลูด็อก">บลูด็อก</option>
+						<option value="บลัดฮาวด์">บลัดฮาวด์</option>
+						<option value="บอสตัน เทอร์เรียร์">บอสตัน เทอร์เรียร์</option>
+						<option value="บิชอง ฟริเซ่">บิชอง ฟริเซ่</option>
+						<option value="บีเกิล">บีเกิล</option>
+						<option value="บุลล์แมสติฟฟ์">บุลล์แมสติฟฟ์</option>
+						<option value="ปอมเมอเรเนียน">ปอมเมอเรเนียน</option>
+						<option value="ปั๊ก">ปั๊ก</option>
+						<option value="ปาปิลอน">ปาปิลอน</option>
+						<option value="พันธุ์ทาง">พันธุ์ทาง</option>
+						<option value="พุดเดิ้ล">พุดเดิ้ล</option>
+						<option value="มอลทีส" selected>มอลทีส</option>
+						<option value="ยอร์คเชียร์ เทอร์เรียร์">ยอร์คเชียร์ เทอร์เรียร์</option>
+						<option value="เยอรมัน เชฟเฟิร์ด">เยอรมัน เชฟเฟิร์ด</option>
+						<option value="ร็อตไวเลอร์">ร็อตไวเลอร์</option>
+						<option value="โรดีเชียน ริดจ์แบ็ค">โรดีเชียน ริดจ์แบ็ค</option>
+						<option value="ลาบลาดอร์ รีทรีฟเวอร์">ลาบลาดอร์ รีทรีฟเวอร์</option>
+						<option value="อาคิต้า">อาคิต้า</option>
+					<% }else if(dog.dadBreed == "ยอร์คเชียร์ เทอร์เรียร์"){ %>
+						<option value="นิวฟาวด์แลนด์">นิวฟาวด์แลนด์</option>
+						<option value="บลูด็อก">บลูด็อก</option>
+						<option value="บลัดฮาวด์">บลัดฮาวด์</option>
+						<option value="บอสตัน เทอร์เรียร์">บอสตัน เทอร์เรียร์</option>
+						<option value="บิชอง ฟริเซ่">บิชอง ฟริเซ่</option>
+						<option value="บีเกิล">บีเกิล</option>
+						<option value="บุลล์แมสติฟฟ์">บุลล์แมสติฟฟ์</option>
+						<option value="ปอมเมอเรเนียน">ปอมเมอเรเนียน</option>
+						<option value="ปั๊ก">ปั๊ก</option>
+						<option value="ปาปิลอน">ปาปิลอน</option>
+						<option value="พันธุ์ทาง">พันธุ์ทาง</option>
+						<option value="พุดเดิ้ล">พุดเดิ้ล</option>
+						<option value="มอลทีส">มอลทีส</option>
+						<option value="ยอร์คเชียร์ เทอร์เรียร์" selected>ยอร์คเชียร์ เทอร์เรียร์</option>
+						<option value="เยอรมัน เชฟเฟิร์ด">เยอรมัน เชฟเฟิร์ด</option>
+						<option value="ร็อตไวเลอร์">ร็อตไวเลอร์</option>
+						<option value="โรดีเชียน ริดจ์แบ็ค">โรดีเชียน ริดจ์แบ็ค</option>
+						<option value="ลาบลาดอร์ รีทรีฟเวอร์">ลาบลาดอร์ รีทรีฟเวอร์</option>
+						<option value="อาคิต้า">อาคิต้า</option>
+					<% }else if(dog.dadBreed == "เยอรมัน เชฟเฟิร์ด"){ %>
+						<option value="นิวฟาวด์แลนด์">นิวฟาวด์แลนด์</option>
+						<option value="บลูด็อก">บลูด็อก</option>
+						<option value="บลัดฮาวด์">บลัดฮาวด์</option>
+						<option value="บอสตัน เทอร์เรียร์">บอสตัน เทอร์เรียร์</option>
+						<option value="บิชอง ฟริเซ่">บิชอง ฟริเซ่</option>
+						<option value="บีเกิล">บีเกิล</option>
+						<option value="บุลล์แมสติฟฟ์">บุลล์แมสติฟฟ์</option>
+						<option value="ปอมเมอเรเนียน">ปอมเมอเรเนียน</option>
+						<option value="ปั๊ก">ปั๊ก</option>
+						<option value="ปาปิลอน">ปาปิลอน</option>
+						<option value="พันธุ์ทาง">พันธุ์ทาง</option>
+						<option value="พุดเดิ้ล">พุดเดิ้ล</option>
+						<option value="มอลทีส">มอลทีส</option>
+						<option value="ยอร์คเชียร์ เทอร์เรียร์">ยอร์คเชียร์ เทอร์เรียร์</option>
+						<option value="เยอรมัน เชฟเฟิร์ด" selected>เยอรมัน เชฟเฟิร์ด</option>
+						<option value="ร็อตไวเลอร์">ร็อตไวเลอร์</option>
+						<option value="โรดีเชียน ริดจ์แบ็ค">โรดีเชียน ริดจ์แบ็ค</option>
+						<option value="ลาบลาดอร์ รีทรีฟเวอร์">ลาบลาดอร์ รีทรีฟเวอร์</option>
+						<option value="อาคิต้า">อาคิต้า</option>
+					<% }else if(dog.dadBreed == "ร็อตไวเลอร์"){ %>
+						<option value="นิวฟาวด์แลนด์">นิวฟาวด์แลนด์</option>
+						<option value="บลูด็อก">บลูด็อก</option>
+						<option value="บลัดฮาวด์">บลัดฮาวด์</option>
+						<option value="บอสตัน เทอร์เรียร์">บอสตัน เทอร์เรียร์</option>
+						<option value="บิชอง ฟริเซ่">บิชอง ฟริเซ่</option>
+						<option value="บีเกิล">บีเกิล</option>
+						<option value="บุลล์แมสติฟฟ์">บุลล์แมสติฟฟ์</option>
+						<option value="ปอมเมอเรเนียน">ปอมเมอเรเนียน</option>
+						<option value="ปั๊ก">ปั๊ก</option>
+						<option value="ปาปิลอน">ปาปิลอน</option>
+						<option value="พันธุ์ทาง">พันธุ์ทาง</option>
+						<option value="พุดเดิ้ล">พุดเดิ้ล</option>
+						<option value="มอลทีส">มอลทีส</option>
+						<option value="ยอร์คเชียร์ เทอร์เรียร์">ยอร์คเชียร์ เทอร์เรียร์</option>
+						<option value="เยอรมัน เชฟเฟิร์ด">เยอรมัน เชฟเฟิร์ด</option>
+						<option value="ร็อตไวเลอร์" selected>ร็อตไวเลอร์</option>
+						<option value="โรดีเชียน ริดจ์แบ็ค">โรดีเชียน ริดจ์แบ็ค</option>
+						<option value="ลาบลาดอร์ รีทรีฟเวอร์">ลาบลาดอร์ รีทรีฟเวอร์</option>
+						<option value="อาคิต้า">อาคิต้า</option>
+					<% }else if(dog.dadBreed == "โรดีเชียน ริดจ์แบ็ค"){ %>
+						<option value="นิวฟาวด์แลนด์">นิวฟาวด์แลนด์</option>
+						<option value="บลูด็อก">บลูด็อก</option>
+						<option value="บลัดฮาวด์">บลัดฮาวด์</option>
+						<option value="บอสตัน เทอร์เรียร์">บอสตัน เทอร์เรียร์</option>
+						<option value="บิชอง ฟริเซ่">บิชอง ฟริเซ่</option>
+						<option value="บีเกิล">บีเกิล</option>
+						<option value="บุลล์แมสติฟฟ์">บุลล์แมสติฟฟ์</option>
+						<option value="ปอมเมอเรเนียน">ปอมเมอเรเนียน</option>
+						<option value="ปั๊ก">ปั๊ก</option>
+						<option value="ปาปิลอน">ปาปิลอน</option>
+						<option value="พันธุ์ทาง">พันธุ์ทาง</option>
+						<option value="พุดเดิ้ล">พุดเดิ้ล</option>
+						<option value="มอลทีส">มอลทีส</option>
+						<option value="ยอร์คเชียร์ เทอร์เรียร์">ยอร์คเชียร์ เทอร์เรียร์</option>
+						<option value="เยอรมัน เชฟเฟิร์ด">เยอรมัน เชฟเฟิร์ด</option>
+						<option value="ร็อตไวเลอร์">ร็อตไวเลอร์</option>
+						<option value="โรดีเชียน ริดจ์แบ็ค" selected>โรดีเชียน ริดจ์แบ็ค</option>
+						<option value="ลาบลาดอร์ รีทรีฟเวอร์">ลาบลาดอร์ รีทรีฟเวอร์</option>
+						<option value="อาคิต้า">อาคิต้า</option>
+					<% }else if(dog.dadBreed == "ลาบลาดอร์ รีทรีฟเวอร์"){ %>
+						<option value="นิวฟาวด์แลนด์">นิวฟาวด์แลนด์</option>
+						<option value="บลูด็อก">บลูด็อก</option>
+						<option value="บลัดฮาวด์">บลัดฮาวด์</option>
+						<option value="บอสตัน เทอร์เรียร์">บอสตัน เทอร์เรียร์</option>
+						<option value="บิชอง ฟริเซ่">บิชอง ฟริเซ่</option>
+						<option value="บีเกิล">บีเกิล</option>
+						<option value="บุลล์แมสติฟฟ์">บุลล์แมสติฟฟ์</option>
+						<option value="ปอมเมอเรเนียน">ปอมเมอเรเนียน</option>
+						<option value="ปั๊ก">ปั๊ก</option>
+						<option value="ปาปิลอน">ปาปิลอน</option>
+						<option value="พันธุ์ทาง">พันธุ์ทาง</option>
+						<option value="พุดเดิ้ล">พุดเดิ้ล</option>
+						<option value="มอลทีส">มอลทีส</option>
+						<option value="ยอร์คเชียร์ เทอร์เรียร์">ยอร์คเชียร์ เทอร์เรียร์</option>
+						<option value="เยอรมัน เชฟเฟิร์ด">เยอรมัน เชฟเฟิร์ด</option>
+						<option value="ร็อตไวเลอร์">ร็อตไวเลอร์</option>
+						<option value="โรดีเชียน ริดจ์แบ็ค">โรดีเชียน ริดจ์แบ็ค</option>
+						<option value="ลาบลาดอร์ รีทรีฟเวอร์" selected>ลาบลาดอร์ รีทรีฟเวอร์</option>
+						<option value="อาคิต้า">อาคิต้า</option>
+					<% }else if(dog.dadBreed == "อาคิต้า"){ %>
+						<option value="นิวฟาวด์แลนด์">นิวฟาวด์แลนด์</option>
+						<option value="บลูด็อก">บลูด็อก</option>
+						<option value="บลัดฮาวด์">บลัดฮาวด์</option>
+						<option value="บอสตัน เทอร์เรียร์">บอสตัน เทอร์เรียร์</option>
+						<option value="บิชอง ฟริเซ่">บิชอง ฟริเซ่</option>
+						<option value="บีเกิล">บีเกิล</option>
+						<option value="บุลล์แมสติฟฟ์">บุลล์แมสติฟฟ์</option>
+						<option value="ปอมเมอเรเนียน">ปอมเมอเรเนียน</option>
+						<option value="ปั๊ก">ปั๊ก</option>
+						<option value="ปาปิลอน">ปาปิลอน</option>
+						<option value="พันธุ์ทาง">พันธุ์ทาง</option>
+						<option value="พุดเดิ้ล">พุดเดิ้ล</option>
+						<option value="มอลทีส">มอลทีส</option>
+						<option value="ยอร์คเชียร์ เทอร์เรียร์">ยอร์คเชียร์ เทอร์เรียร์</option>
+						<option value="เยอรมัน เชฟเฟิร์ด">เยอรมัน เชฟเฟิร์ด</option>
+						<option value="ร็อตไวเลอร์">ร็อตไวเลอร์</option>
+						<option value="โรดีเชียน ริดจ์แบ็ค">โรดีเชียน ริดจ์แบ็ค</option>
+						<option value="ลาบลาดอร์ รีทรีฟเวอร์">ลาบลาดอร์ รีทรีฟเวอร์</option>
+						<option value="อาคิต้า" selected>อาคิต้า</option>
+					<% }else if(dog.dadBreed == "ชิวาวา"){ %>
+						<option value="นิวฟาวด์แลนด์">นิวฟาวด์แลนด์</option>
+						<option value="บลูด็อก">บลูด็อก</option>
+						<option value="บลัดฮาวด์">บลัดฮาวด์</option>
+						<option value="บอสตัน เทอร์เรียร์">บอสตัน เทอร์เรียร์</option>
+						<option value="บิชอง ฟริเซ่">บิชอง ฟริเซ่</option>
+						<option value="บีเกิล">บีเกิล</option>
+						<option value="บุลล์แมสติฟฟ์">บุลล์แมสติฟฟ์</option>
+						<option value="ปอมเมอเรเนียน">ปอมเมอเรเนียน</option>
+						<option value="ปั๊ก">ปั๊ก</option>
+						<option value="ปาปิลอน">ปาปิลอน</option>
+						<option value="พันธุ์ทาง">พันธุ์ทาง</option>
+						<option value="พุดเดิ้ล">พุดเดิ้ล</option>
+						<option value="มอลทีส">มอลทีส</option>
+						<option value="ยอร์คเชียร์ เทอร์เรียร์">ยอร์คเชียร์ เทอร์เรียร์</option>
+						<option value="เยอรมัน เชฟเฟิร์ด">เยอรมัน เชฟเฟิร์ด</option>
+						<option value="ร็อตไวเลอร์">ร็อตไวเลอร์</option>
+						<option value="โรดีเชียน ริดจ์แบ็ค">โรดีเชียน ริดจ์แบ็ค</option>
+						<option value="ลาบลาดอร์ รีทรีฟเวอร์">ลาบลาดอร์ รีทรีฟเวอร์</option>
+						<option value="อาคิต้า">อาคิต้า</option>
+						<option value="ชิวาวา" selected>ชิวาวา</option>
+						<option value="">ยังไม่ได้เลือก</option>
+					<% } else { %>
+						<option value="นิวฟาวด์แลนด์">นิวฟาวด์แลนด์</option>
+						<option value="บลูด็อก">บลูด็อก</option>
+						<option value="บลัดฮาวด์">บลัดฮาวด์</option>
+						<option value="บอสตัน เทอร์เรียร์">บอสตัน เทอร์เรียร์</option>
+						<option value="บิชอง ฟริเซ่">บิชอง ฟริเซ่</option>
+						<option value="บีเกิล">บีเกิล</option>
+						<option value="บุลล์แมสติฟฟ์">บุลล์แมสติฟฟ์</option>
+						<option value="ปอมเมอเรเนียน">ปอมเมอเรเนียน</option>
+						<option value="ปั๊ก">ปั๊ก</option>
+						<option value="ปาปิลอน">ปาปิลอน</option>
+						<option value="พันธุ์ทาง">พันธุ์ทาง</option>
+						<option value="พุดเดิ้ล">พุดเดิ้ล</option>
+						<option value="มอลทีส">มอลทีส</option>
+						<option value="ยอร์คเชียร์ เทอร์เรียร์">ยอร์คเชียร์ เทอร์เรียร์</option>
+						<option value="เยอรมัน เชฟเฟิร์ด">เยอรมัน เชฟเฟิร์ด</option>
+						<option value="ร็อตไวเลอร์">ร็อตไวเลอร์</option>
+						<option value="โรดีเชียน ริดจ์แบ็ค">โรดีเชียน ริดจ์แบ็ค</option>
+						<option value="ลาบลาดอร์ รีทรีฟเวอร์">ลาบลาดอร์ รีทรีฟเวอร์</option>
+						<option value="อาคิต้า">อาคิต้า</option>
+						<option value="ชิวาวา" >ชิวาวา</option>
+						<option value="" selected>ยังไม่ได้เลือก</option>
+					<% } %>
 			</select>
 		</div>
 
