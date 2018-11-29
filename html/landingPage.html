@@ -54,23 +54,24 @@
           <p class="nav-link nav-menu">ร้านค้า<span class="sr-only">(current)</span></p>
         </li>
         <!-- <li class="nav-item" id="foundMenu" onclick="clickFoundationMenu()">
-          <p class="nav-link nav-menu">มูลนิธิ</p>
-        </li> -->
+                <p class="nav-link nav-menu">มูลนิธิ</p>
+            </li> -->
       </ul>
 
       <form class="form-inline my-2 my-lg-0">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-          <li class="nav-item " id="shopMenu" onclick="clickShopMenu()">
-            <p class="nav-link nav-menu">ร้านค้า<span class="sr-only">(current)</span></p>
+          <li class="nav-item main-nav" id="loginMenu" onclick="">
+            <p class="nav-link nav-menu cd-signin"><img src="../asset/icon/person.svg" alt="" style="width:40px;" id="person">
+              ลงชื่อเข้าใช้
+            </p>
           </li>
-          <!-- <li class="nav-item" id="foundMenu" onclick="clickFoundationMenu()">
-                <p class="nav-link nav-menu">มูลนิธิ</p>
-            </li> -->
+          <li class="nav-item main-nav" id="signupMenu" onclick="">
+            <p class="nav-link nav-menu cd-signup">สมัครสมาชิก</p>
+          </li>
         </ul>
       </form>
     </div>
   </nav>
-  <br>
   <!-- ------------------------------------------------------------------- -->
 
   <!--------------------------------- Modal ------------------------------------>
@@ -182,8 +183,8 @@
   </div>
   <!-- SELL -->
   <div>
-      <p style="position: relative;left: 43%">
-    <!-- <img src="../asset/icon/black-shop-tag.svg" style="float:left ;width:35px;height:35px;"> -->
+    <p style="position: relative;left: 43%">
+      <!-- <img src="../asset/icon/black-shop-tag.svg" style="float:left ;width:35px;height:35px;"> -->
       <h2 class="my-3 text-center">สุนัขที่ถูกเพิ่มล่าสุด</h2>
     </p>
   </div>
@@ -273,13 +274,15 @@
     </div>
   </div>
   <h1 style="position: relative; left: 80%;">
-    <a href="forSale.html" class="button" style="box-shadow: 5px 5px 5px grey;">เพิ่มเติม ></a>
+    <p onclick=" location.href = config.host + '/api/dog/forSale'" class="button" style="box-shadow: 5px 5px 5px grey;">เพิ่มเติม
+      ></p>
   </h1>
   <h2 style="color:white">aaaaaaaaaaa</h2>
 
   <div style="background-color:#FFE32E;">
-    <h1 id="aboutUs" style="position: relative;left: 45%; " onclick="goToShopInfo()">About Us</h1>
-    <h4 style="position: relative;left: 45%; ">Team of god of year</h4>
+    <h1 id="aboutUs" style="position: relative;left: 45%; " onclick="location.href = config.host+ '/api/html/aboutShop.html'">About
+      Us</h1>
+    <!-- <h4 style="position: relative;left: 45%; ">Team of god of year</h4> -->
 
   </div>
 
